@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+p {
+    font: "Libre Baskerville", sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 90%;
+    max-width: 900;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h1 {
+    margin: 1em 0 0 0;
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2.3em;
+
+}
+h2 {
+    margin: 1em 0 0 0;
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+}
+a:link {
+    text-decoration: none;
+    color: #40a1e6;
+
+}
+a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: #40a1e6;
+}
+a:hover, a:focus, a:active {
+    text-decoration: underline;
+    color: #40a1e6;
+}
+p {
+    font: "Libre Baskerville", sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 95%;
+    max-width: 950;
+    font-size: 1.2em;
+}
+p.ex1 {
+  font: "Libre Baskerville", sans-serif;
+  padding-right: px;
+  font-size: 1.2em;
+}
+li {
+  font: "Libre Baskerville", sans-serif;
+  padding-right: px;
+  text-align: justify;
+  text-justify: inter-word;
+  width:95%;
+  width: 900;
+  font-size: 1.075em;
+}
+</style>
+</head>
+<body>
+</style>
+<h2>Summary Statistics</h2>
+
+<p class="ex1">
+We here present a range of summary statistics related to the data which powers the dashboard (and some which doesn't), updated as and when the Catalog is updated. Note that these summary statistics and the figures themselves only use raw (wrangled) data from the <a href="https://www.ebi.ac.uk/gwas/">Catalog</a>:
+<ul>
+<li> There are a total of 4085 studies in the Catalog.</li>
+<li> Earliest study in catalogued was PubMedID 15761122 on 2005-03-10 by Klein RJ et al.</li>
+<li> Most recent study in catalogued was PubMedID 31217584 on 2019-06-19 by Wojcik GL et al.</li>
+<li> Accession with biggest sample is PubMedID 30643256 (N=2370390) by Baselmans BML et al.</li>
+<li> There are a total of 7230 unique study accessions.</li>
+<li> There are a total of 4337 unique diseases	raits studied.</li>
+<li> There are a total of 2903 unique EBI "Mapped Traits".</li>
+<li> The total number of associations found is 149855.</li>
+<li> The average number of associations found is 20.73.</li>
+<li> Mean P-Value for the strongest SNP risk allele is: 0.</li>
+<li> The number of associations reaching the 5e-8 threshold: 99262.</li>
+<li> The journal to feature the most GWAS studies is: Nat Genet.</li>
+<li> Total number of different journals publishing GWAS is: 523.</li>
+</ul>
+</p>
