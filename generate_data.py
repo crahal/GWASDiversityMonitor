@@ -131,10 +131,10 @@ def update_summarystats(sumstats, summaryfile):
 def update_header(headerfile):
     ''' update the 'last updated' part of the header on both tabs '''
     today = datetime.date.today()
-    today.strftime('We are the %d, %b %Y')
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[-3] = today.strftime('Last Updated: %Y-%m-%d %H:%M:%S GMT')
+    header[-3] = 'Last updated: ' +\
+                 datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' GMT'
     with open(headerfile, 'w') as file:
         file.writelines(header)
 
