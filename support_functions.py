@@ -32,7 +32,7 @@ def create_width_dict():
                   'dohnut_height': 400, 'dohnut_width': 450,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 400, 'control_width': 275,
-                  'slider_height': 300, 'slider_width': 30,
+                  'slider_height': 330, 'slider_width': 30,
                   'twocolumn_width': 910, 'div_width': 15}
     return width_dict
 

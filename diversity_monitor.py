@@ -134,7 +134,7 @@ def update_choro_slider(attr, old, new):
     yr = slider.value
     new_data = json_data(yr)
     geosource.geojson = new_data
-    choro_plot.title.text = 'Participant Recruitment Over Time: %d' % yr
+    choro_plot.title.text = 'Participant Recruitment Over Time, All Parent Terms and Both Stages: %d' % yr
 
 
 def update_choro():
