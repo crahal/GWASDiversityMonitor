@@ -134,7 +134,7 @@ def update_header(headerfile):
     today.strftime('We are the %d, %b %Y')
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[-1] = today.strftime('Last Updated: %d, %b %Y')
+    header[-3] = today.strftime('Last Updated: %Y-%m-%d %H:%M:%S GMT')
     with open(headerfile, 'w') as file:
         file.writelines(header)
 
