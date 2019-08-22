@@ -152,7 +152,7 @@ def update_header(headerfile):
     today = datetime.date.today()
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[-3] = 'Last updated: ' +\
+    header[-2] = 'Last updated: ' +\
                  datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +\
                  ' GMT'
     with open(headerfile, 'w') as file:
