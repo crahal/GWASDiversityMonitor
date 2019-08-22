@@ -3,26 +3,6 @@ import geopandas as gpd
 from bokeh.models import Select, Slider
 import os
 from bokeh.models import Div
-import logging
-module_logger = logging.getLogger('diversity_logger')
-
-def setup_logging(logpath):
-    if os.path.exists(logpath) is False:
-        os.makedirs(logpath)
-    logger = logging.getLogger('diversity_logger')
-    logger.setLevel(logging.DEBUG)
-    fh = logging.FileHandler((os.path.abspath(
-        os.path.join(logpath, 'diversity_logger.log'))))
-    fh.setLevel(logging.DEBUG)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.ERROR)
-    formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    fh.setFormatter(formatter)
-    ch.setFormatter(formatter)
-    logger.addHandler(fh)
-    logger.addHandler(ch)
-    return logger
 
 
 def create_width_dict():
@@ -32,7 +12,7 @@ def create_width_dict():
                   'dohnut_height': 400, 'dohnut_width': 450,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 400, 'control_width': 275,
-                  'slider_height': 300, 'slider_width': 30,
+                  'slider_height': 330, 'slider_width': 30,
                   'twocolumn_width': 910, 'div_width': 15}
     return width_dict
 
