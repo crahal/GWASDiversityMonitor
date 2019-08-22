@@ -8,7 +8,26 @@ import requests_ftp
 import os
 import re
 import csv
-from support_functions import setup_logging
+import logging
+
+
+def setup_logging(logpath):
+    if os.path.exists(logpath) is False:
+        os.makedirs(logpath)
+    logger = logging.getLogger('diversity_logger')
+    logger.setLevel(logging.DEBUG)
+    fh = logging.FileHandler((os.path.abspath(
+        os.path.join(logpath, 'diversity_logger.log'))))
+    fh.setLevel(logging.DEBUG)
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.ERROR)
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    fh.setFormatter(formatter)
+    ch.setFormatter(formatter)
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+    return logger
 
 
 def create_summarystats(data_path):
@@ -189,8 +208,8 @@ def make_heatmatrix(merged, stage, out_path):
         sort_values(ascending=False, by='Count')
     df_count = pd.DataFrame(index=ancestry_ranking.index.tolist(),
                             columns=parent_ranking.index.tolist())
-    for index in df_count.index.to_list():
-        for column in df_count.columns.to_list():
+    for index in df_count.index:
+        for column in df_count.columns:
             df_count.at[index,
                         column] = len(merged[(merged['Broader'] == index) &
                                              (merged['parentterm'] == column)])
@@ -203,8 +222,8 @@ def make_heatmatrix(merged, stage, out_path):
                                   sum()).sort_values(ascending=False, by='N')
     df_sum = pd.DataFrame(index=ancestry_ranking.index.tolist(),
                           columns=parent_ranking.index.tolist())
-    for index in df_sum.index.to_list():
-        for column in df_sum.columns.to_list():
+    for index in df_sum.index:
+        for column in df_sum.columns:
             df_sum.at[index,
                       column] = merged[(merged['Broader'] == index) &
                                        (merged['parentterm'] == column)]['N'].\
@@ -850,26 +869,45 @@ def download_cat(data_path, ebi_download):
     """ download the data from the ebi main site and ftp"""
     try:
         r = requests.get(ebi_download + 'studies_alternative')
-        with open(os.path.join(data_path, 'catalog', 'raw',
-                               'Cat_Stud.tsv'), 'wb') as tsvfile:
-            tsvfile.write(r.content)
+        if r.status_code == 200:
+            with open(os.path.join(data_path, 'catalog', 'raw',
+                                   'Cat_Stud.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            catstud_name = r.headers['Content-Disposition'].split('=')[1]
+            diversity_logger.info('Successfully downloaded ' + catstud_name)
+        else:
+            diversity_logger.debug('Problem downloading the Cat_Stud file...')
         r = requests.get(ebi_download + 'ancestry')
-        with open(os.path.join(data_path, 'catalog', 'raw',
-                               'Cat_Anc.tsv'), 'wb') as tsvfile:
-            tsvfile.write(r.content)
-        r = requests.get(ebi_download + 'full')
-        with open(os.path.join(data_path, 'catalog', 'raw',
-                               'Cat_Full.tsv'), 'wb') as tsvfile:
-            tsvfile.write(r.content)
+        if r.status_code == 200:
+            with open(os.path.join(data_path, 'catalog', 'raw',
+                                   'Cat_Anc.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            catanc_name = r.headers['Content-Disposition'].split('=')[1]
+            diversity_logger.info('Successfully downloaded ' + catanc_name)
+        else:
+            diversity_logger.debug('Problem downloading the Cat_Anc file...')
+        if r.status_code == 200:
+            r = requests.get(ebi_download + 'full')
+            with open(os.path.join(data_path, 'catalog', 'raw',
+                                   'Cat_Full.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            catfull_name = r.headers['Content-Disposition'].split('=')[1]
+            diversity_logger.info('Successfully downloaded ' + catfull_name)
+        else:
+            diversity_logger.debug('Problem downloading the Cat_full file...')
         requests_ftp.monkeypatch_session()
         s = requests.Session()
         ftpsite = 'ftp://ftp.ebi.ac.uk/'
         subdom = '/pub/databases/gwas/releases/latest/'
         file = 'gwas-efo-trait-mappings.tsv'
         r = s.get(ftpsite+subdom+file)
-        with open(os.path.join(data_path, 'catalog', 'raw',
-                               'Cat_Map.tsv'), 'wb') as tsvfile:
-            tsvfile.write(r.content)
+        if r.status_code == 200:
+            with open(os.path.join(data_path, 'catalog', 'raw',
+                                   'Cat_Map.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            diversity_logger.info('Successfully downloaded efo-trait-mappings')
+        else:
+            diversity_logger.debug('Problem downloading efo-trait-mappings file...')
     except Exception as e:
         diversity_logger.debug('Problem downloading the Catalog data!' + str(e))
 
@@ -897,8 +935,8 @@ if __name__ == "__main__":
         update_summarystats(sumstats, os.path.abspath(
                                       os.path.join(__file__, '..', 'html_pages',
                                                    'summary_stats.html')))
-        diversity_logger.info('Catalog data successfully updated!')
+        diversity_logger.info('generate_data.py ran successfully!')
     except Exception as e:
-        diversity_logger.debug('Catalog data update failed, uncaught error: ' +
+        diversity_logger.debug('generate_data.py failed, uncaught error: ' +
                                str(e))
     logging.shutdown()
