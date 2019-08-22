@@ -1,4 +1,5 @@
 import pandas as pd
+from decimal import Decimal
 import json
 import logging
 import datetime
@@ -67,7 +68,7 @@ def create_summarystats(data_path):
                                          sum())
     sumstats['average_associations'] = float(Cat_Stud['ASSOCIATION COUNT'].
                                              mean())
-    sumstats['average_pval'] = int(round(Cat_Full['P-VALUE'].astype(float).
+    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).
                                          mean(), 10))
     sumstats['threshold_pvals'] = int(len(Cat_Full[Cat_Full['P-VALUE'].
                                           astype(float) < 5.000000e-8]))
@@ -136,7 +137,7 @@ def update_summarystats(sumstats, summaryfile):
     summary[-7] = '<li> The average number of associations found is ' +\
                   str(round(sumstats['average_associations'], 2)) + '.</li>\n'
     summary[-6] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
-                  str(round(sumstats['average_pval'], 8)) + '.</li>\n'
+                  "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</li>\n'
     summary[-5] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
                   str(sumstats['threshold_pvals']) + '.</li>\n'
     summary[-4] = '<li> The journal to feature the most GWAS studies is: ' +\
