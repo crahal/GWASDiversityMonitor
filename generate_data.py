@@ -10,6 +10,7 @@ import os
 import re
 import csv
 import logging
+import shutil
 
 
 def setup_logging(logpath):
@@ -912,6 +913,31 @@ def download_cat(data_path, ebi_download):
     except Exception as e:
         diversity_logger.debug('Problem downloading the Catalog data!' + str(e))
 
+def make_archive(source, destination):
+        base = os.path.basename(destination)
+        name = base.split('.')[0]
+        format = base.split('.')[1]
+        archive_from = os.path.dirname(source)
+        archive_to = os.path.basename(source.strip(os.sep))
+        print(source, destination, archive_from, archive_to)
+        shutil.make_archive(name, format, archive_from, archive_to)
+        shutil.move('%s.%s'%(name,format), destination)
+
+def zip_toplot(source, destination):
+    try:
+        base = os.path.basename(destination)
+        name = base.split('.')[0]
+        format = base.split('.')[1]
+#        archive_from = os.path.dirname(source)
+#        archive_to = os.path.basename(source.strip(os.sep))
+        shutil.make_archive(name, format, source)
+        shutil.move('%s.%s'%(name,format), destination)
+        diversity_logger.info('Successfully zipped the files to be downloaded')
+    except Exception as e:
+        diversity_logger.debug('Problem zipping the files to tbe downloaded' +
+                               str(e))
+
+
 if __name__ == "__main__":
     logpath = os.path.abspath(os.path.join(__file__, '..', 'logging'))
     diversity_logger = setup_logging(logpath)
@@ -937,6 +963,9 @@ if __name__ == "__main__":
                                       os.path.join(__file__, '..', 'html_pages',
                                                    'summary_stats.html')))
         diversity_logger.info('generate_data.py ran successfully!')
+        zip_toplot(os.path.join(data_path, 'toplot'),
+                   os.path.join(data_path, 'todownload',
+                                'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
                                str(e))

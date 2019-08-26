@@ -17,7 +17,7 @@ As a pre-requisite to running the Bokeh sever, you will need a working Python 3 
 
 ### Running the Code
 
-This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve diversity_monitor.py --show``` in a terminal to launch the server.
+This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve . --show``` in a terminal to launch the server.
 
 ### Versioning
 
