@@ -1,1 +1,1 @@
-a host for the files to be downloaded
+Thanks for downloading the data used to create the GWASDiversityMonitor!
