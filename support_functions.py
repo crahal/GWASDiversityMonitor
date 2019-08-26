@@ -20,6 +20,8 @@ def create_width_dict():
 def load_divs(twocolumn_width, divwidth):
     header = Div(text=open(os.path.join(os.path.dirname(__file__),
                                         'html_pages',"header.html")).read())
+    downloaddata = Div(text=open(os.path.join(os.path.dirname(__file__),
+                                        'html_pages',"downloaddata.html")).read())
     about = Div(text=open(os.path.join(os.path.dirname(__file__),
                                        'html_pages', "about.html")).read(),
                 width=twocolumn_width)
@@ -30,7 +32,7 @@ def load_divs(twocolumn_width, divwidth):
     summary = Div(text=open(os.path.join(os.path.dirname(__file__),
                             'html_pages', "summary_stats.html")).read(),
                   width=twocolumn_width)
-    return header, about, dumdiv, summary, footer
+    return header, about, dumdiv, summary, footer, downloaddata
 
 
 def import_data(data_path):

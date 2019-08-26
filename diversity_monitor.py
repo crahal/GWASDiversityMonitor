@@ -446,9 +446,9 @@ for control in controls:
     control.on_change('value', lambda attr, old, new: update_dohnut())
 update()
 
-header, about, dumdiv, summary, footer= load_divs(width_dict['twocolumn_width'],
-                                                  width_dict['div_width'])
-interact_fig = column(row(column(header, *controls,
+header, about, dumdiv, summary, footer, downloaddata = load_divs(width_dict['twocolumn_width'],
+                                                                 width_dict['div_width'])
+interact_fig = column(row(column(header, *controls, downloaddata,
                                  width=width_dict['headerbox_width'],
                                  height=width_dict['headerbox_width']),
                           bubble_plot, hbar_plot, sizing_mode="fixed"),
