@@ -1,1 +1,6 @@
 2019-08-17 16:13:29,477 - diversity_logger - INFO - Catalog data successfully updated!
+2019-08-26 16:52:41,998 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-07-30.tsv
+2019-08-26 16:52:43,157 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-07-30.tsv
+2019-08-26 16:52:56,686 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-07-30.tsv
+2019-08-26 16:52:57,855 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-08-26 16:52:59,071 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: File b'/media/charlie/raspi_usb/gwasdiversitymonitor/data/support/dict_replacer_broad.tsv' does not exist
