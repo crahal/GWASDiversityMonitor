@@ -22,6 +22,8 @@ Body mass index (change over time) in cancer or chronic obstructive pulmonary di
 Body mass index (change over time) in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Body mass index (change over time) in gastrointestinal cancer or chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Body mass index (change over time) in lung cancer or chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Change in quality of life in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Change in trough FEV1 in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Chronic bronchitis and chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Chronic bronchitis in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Chronic mucus hypersecretion in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -35,13 +37,16 @@ Chronic obstructive pulmonary disease or stroke (pleiotropy)	chronic obstructive
 Chronic obstructive pulmonary disease-related biomarkers	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Cotinine levels in smokers with chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Current cigarettes per day in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Exacerbation frequency in mepolizumab-treated chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Exhaled carbon monoxide levels in smokers with chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Frequency of exacerbations requiring hospitalisation in mepolizumab-treated chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Lifetime average cigarettes per day in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Post bronchodilator FEV1 in COPD	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Post bronchodilator FEV1/FVC ratio in COPD	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Pulmonary artery enlargement and chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Pulmonary artery enlargement in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to bronchodilator in chronic obstructive pulmonary disease (change in FEV1)	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to long-term oxygen therapy in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Resting oxygen saturation in chronic osbtructive pulmonary disease (pulse oxymetry)	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Smoking cessation in chronic obstructive pulmonary disease	chronic obstructive pulmonary disease	http://www.ebi.ac.uk/efo/EFO_0000341	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -125,6 +130,7 @@ Parkinson's disease (non-familial, age at onset)	parkinson's disease	http://www.
 Parkinson's disease (pesticide exposure interaction)	parkinson's disease	http://www.ebi.ac.uk/efo/EFO_0002508	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Parkinson's disease in GBA mutation carriers (age at onset)	parkinson's disease	http://www.ebi.ac.uk/efo/EFO_0002508	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Parkinsonism in frontotemporal lobe dementia	parkinson's disease	http://www.ebi.ac.uk/efo/EFO_0002508	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Acute post-radiotherapy pain in breast cancer	pain	http://www.ebi.ac.uk/efo/EFO_0003843	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Pain	pain	http://www.ebi.ac.uk/efo/EFO_0003843	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Pre-treatment pain in head and neck squamous cell carcinoma	pain	http://www.ebi.ac.uk/efo/EFO_0003843	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Aggressive prostate cancer	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -141,12 +147,16 @@ Prostate cancer (survival)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_00016
 Prostate cancer aggressiveness	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Prostate cancer aggressiveness (high vs low)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Prostate cancer aggressiveness (high vs low/intermediate)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Prostate cancer mortality	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Response to radiotherapy in cancer (late toxicity)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Response to radiotherapy in prostate cancer (overall toxicity)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Response to radiotherapy in prostate cancer (toxicity)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
-Response to radiotherapy in prostate cancer (toxicity, decreased urine stream)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Response to radiotherapy in prostate cancer (toxicity, rectal bleeding)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Response to radiotherapy in prostate cancer (toxicity, urinary frequency)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Toxicity response to radiotherapy in prostate cancer (decreased urine stream) (time to event)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Toxicity response to radiotherapy in prostate cancer (hematuria) (time to event)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Toxicity response to radiotherapy in prostate cancer (increased urinary frequency) (time to event)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Toxicity response to radiotherapy in prostate cancer (rectal bleeding) (time to event)	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Urinary symptoms in response to radiotherapy in prostate cancer	prostate carcinoma	http://www.ebi.ac.uk/efo/EFO_0001663	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 White matter hyperintensity volume in cerebral autosomal-dominant arteriopathy with subcortical infarcts and leukoencephalopathy	cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy	http://www.orpha.net/ORDO/Orphanet_136	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Influenza (severity)	influenza infection	http://www.ebi.ac.uk/efo/EFO_0001669	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -159,6 +169,7 @@ Cutaneous malignant melanoma	cutaneous melanoma	http://www.ebi.ac.uk/efo/EFO_000
 Nevus count or cutaneous melanoma	cutaneous melanoma	http://www.ebi.ac.uk/efo/EFO_0000389	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Lipoprotein (a) - cholesterol levels	lipoprotein A measurement	http://www.ebi.ac.uk/efo/EFO_0006925	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Lipoprotein (a) levels	lipoprotein A measurement	http://www.ebi.ac.uk/efo/EFO_0006925	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
+Lipoprotein (a) levels in coronary artery disease (percutaneous coronary intervention)	lipoprotein A measurement	http://www.ebi.ac.uk/efo/EFO_0006925	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Lipoprotein(a) levels adjusted for apolipoprotein(a) isoforms	lipoprotein A measurement	http://www.ebi.ac.uk/efo/EFO_0006925	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Lipoprotein phospholipase A2 activity in cardiovascular disease	lipoprotein-associated phospholipase a(2) measurement	http://www.ebi.ac.uk/efo/EFO_0004746	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Lipoprotein-associated phospholipase A2 (red blood cell fatty acid level interaction)	lipoprotein-associated phospholipase a(2) measurement	http://www.ebi.ac.uk/efo/EFO_0004746	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
@@ -259,6 +270,7 @@ Pulmonary function	pulmonary function measurement	http://www.ebi.ac.uk/efo/EFO_0
 Pulmonary function (smoking interaction)	pulmonary function measurement	http://www.ebi.ac.uk/efo/EFO_0003892	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pulmonary function in asthmatics	pulmonary function measurement	http://www.ebi.ac.uk/efo/EFO_0003892	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Amyotrophic lateral sclerosis and immune-mediated diseases (pleiotropy)	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Anti-adalimumab antibody production in response to treatment in Crohn's disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Chronic inflammatory diseases (ankylosing spondylitis, Crohn's disease, psoriasis, primary sclerosing cholangitis, ulcerative colitis) (pleiotropy)	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Corticobasal degeneration and immune-mediated diseases (pleiotropy)	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Crohn's disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
@@ -273,6 +285,7 @@ Crohn's disease and sarcoidosis (combined)	crohn's disease	http://www.ebi.ac.uk/
 Crohn's disease-related phenotypes	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Frontotemporal dementia and immune-mediated diseases (pleiotropy)	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Inflammatory bowel disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Infliximab-induced mucosal healing in Crohn's disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Paneth cell defects in Crohn's disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Pediatric autoimmune diseases	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Poor prognosis in Crohn's disease	crohn's disease	http://www.ebi.ac.uk/efo/EFO_0000384	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
@@ -416,12 +429,14 @@ Oppositional defiant disorder dimensions in attention-deficit hyperactivity diso
 Persistent attention-deficit hyperactivity disorder	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric diseases (pleiotropy) (HIPO component 1)	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric disorder	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder without cannabis use disorder	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to methylphenidate treatment in attention-deficit/hyperactivity disorder	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Sex difference in attention deficit hyperactivity disorder	attention deficit hyperactivity disorder	http://www.ebi.ac.uk/efo/EFO_0003888	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alanine aminotransferase (ALT) levels after remission induction therapy in actute lymphoblastic leukemia (ALL)	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Alanine aminotransferase levels	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Alanine aminotransferase levels in excessive alcohol consumption	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Alanine aminotransferase levels in low alcohol consumption	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
+Alanine aminotransferase levels in non-alcoholic fatty liver disease	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Alanine transaminase levels	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Hematological and biochemical traits	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Liver enzyme levels	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
@@ -445,6 +460,7 @@ Coronary artery disease in diabetes	coronary artery disease	http://www.ebi.ac.uk
 Coronary artery disease in type 1 diabetes	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Coronary artery disease severity measurement	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Estimated glomerular filtration rate in coronary artery disease and impaired kidney function	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Lipoprotein (a) levels in coronary artery disease (percutaneous coronary intervention)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Lumbar spine bone mineral density or coronary artery disease (pleiotropy)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Migraine or coronary artery disease	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Severe depressive disorders in coronary artery disease	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -494,6 +510,7 @@ Carotenoid and tocopherol levels	carotenoid measurement	http://www.ebi.ac.uk/efo
 Aspartate aminotransferase levels	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Aspartate aminotransferase levels in excessive alcohol consumption	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Aspartate aminotransferase levels in low alcohol consumption	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
+Aspartate aminotransferase levels in non-alcoholic fatty liver disease	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Cardiovascular disease risk factors	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Hematological and biochemical traits	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Liver enzyme levels (aspartate transaminase)	aspartate aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004736	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
@@ -520,6 +537,7 @@ End stage renal disease in APOL1 risk genotype-negative individuals	chronic kidn
 End stage renal disease in APOL1 risk genotype-positive individuals	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 End stage renal disease x APOL1 genotype interaction	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 End stage renal failure in renal transplantation (recipient effect)	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+End-stage kidney disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 End-stage renal disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 End-stage renal disease (non-diabetic)	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 End-stage renal disease in Type 1 diabetics	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -537,6 +555,7 @@ Kidney disease (end stage renal disease vs non-end stage renal disease) in type 
 Kidney disease (end stage renal disease vs normoalbuminuria) in type 1 diabetes	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Kidney disease (late stage) in type 1 diabetes	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Kidney function decline traits	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Mild to moderate chronic kidney disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Proteinuria and chronic kidney disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Proteinuria in chronic kidney disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Renal function and chronic kidney disease	chronic kidney disease	http://www.ebi.ac.uk/efo/EFO_0003884	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -569,6 +588,7 @@ Obstructive sleep apnea trait (apnea hypopnea index)	sleep apnea measurement	htt
 Obstructive sleep apnea trait (average respiratory event duration)	sleep apnea measurement	http://www.ebi.ac.uk/efo/EFO_0007817	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Red blood cell traits	erythrocyte indices	http://www.ebi.ac.uk/efo/EFO_0004306	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Adverse response to dabrafenib or dabrafenib-trametinib treatment in melanoma (pyrexia)	response to trametinib	http://www.ebi.ac.uk/efo/EFO_0007816	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Blood cell traits (multivariate analysis)	erythrocyte count	http://www.ebi.ac.uk/efo/EFO_0004305	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological parameters	erythrocyte count	http://www.ebi.ac.uk/efo/EFO_0004305	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematology traits	erythrocyte count	http://www.ebi.ac.uk/efo/EFO_0004305	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemostatic factors and hematological phenotypes	erythrocyte count	http://www.ebi.ac.uk/efo/EFO_0004305	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -584,13 +604,14 @@ Endurance athleticism	athletic endurance measurement	http://www.ebi.ac.uk/efo/EF
 World class endurance athleticism	athletic endurance measurement	http://www.ebi.ac.uk/efo/EFO_0007818	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cotinine levels in current smokers	cotinine measurement	http://www.ebi.ac.uk/efo/EFO_0007813	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cotinine levels in smokers with chronic obstructive pulmonary disease	cotinine measurement	http://www.ebi.ac.uk/efo/EFO_0007813	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Blood cell traits (multivariate analysis)	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cardiometabolic and hematological traits	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological parameters	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
-Hematology traits	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Platelet count	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Platelet count and reactivity phenotypes	platelet count	http://www.ebi.ac.uk/efo/EFO_0004309	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 IgG response to Plasmodium falciparum antigens (GLURP, MSP2 FC27, MSP2 3D7)	Plasmodium falciparum antigen IgG measurement	http://www.ebi.ac.uk/efo/EFO_0007812	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Adverse response to dabrafenib or dabrafenib-trametinib treatment in melanoma (pyrexia)	response to dabrafenib	http://www.ebi.ac.uk/efo/EFO_0007815	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Blood cell traits (multivariate analysis)	leukocyte count	http://www.ebi.ac.uk/efo/EFO_0004308	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 C-reactive protein and white blood cell count	leukocyte count	http://www.ebi.ac.uk/efo/EFO_0004308	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cardiometabolic and hematological traits	leukocyte count	http://www.ebi.ac.uk/efo/EFO_0004308	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological parameters	leukocyte count	http://www.ebi.ac.uk/efo/EFO_0004308	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -650,6 +671,7 @@ Metastasis in stage I-III microsatellite instability low/stable colorectal cance
 Progression free survival in metastatic colorectal cancer (CAPOX-B vs CAPOX-B plus cetuximab)	metastatic colorectal cancer	http://www.ebi.ac.uk/efo/EFO_1001480	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Progression free survival in metastatic colorectal cancer (chemotherapy interaction)	metastatic colorectal cancer	http://www.ebi.ac.uk/efo/EFO_1001480	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Anthracycline-induced cardiotoxicity in childhood cancer	cardiotoxicity	http://www.ebi.ac.uk/efo/EFO_1001482	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Nonobstructive coronary artery disease	non-obstructive coronary artery disease	http://www.ebi.ac.uk/efo/EFO_1001483	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Anti-gp210 seropositivity in primary biliary cholangitis	primary biliary cirrhosis	http://www.ebi.ac.uk/efo/EFO_1001486	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Anti-sp100 seropositivity in primary biliary cholangitis	primary biliary cirrhosis	http://www.ebi.ac.uk/efo/EFO_1001486	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Primary biliary cholangitis	primary biliary cirrhosis	http://www.ebi.ac.uk/efo/EFO_1001486	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -686,6 +708,8 @@ Lung function (forced expiratory volume in 1 second)	forced expiratory volume	ht
 Post bronchodilator FEV1	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Post bronchodilator FEV1 in COPD	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Post bronchodilator percent predicted FEV1 in smoking	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-bronchodilator FEV1 x air pollution (CO) interaction in childhood asthma	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-bronchodilator FEV1 x air pollution (NO2) interaction in childhood asthma	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Post-bronchodilator lung function in asthma (FEV1)	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pre bronchodilator FEV1	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pulmonary function	forced expiratory volume	http://www.ebi.ac.uk/efo/EFO_0004314	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -745,7 +769,9 @@ Balding	balding measurement	http://www.ebi.ac.uk/efo/EFO_0007825	Other measureme
 Balding type 1	balding measurement	http://www.ebi.ac.uk/efo/EFO_0007825	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Hair morphology traits	balding measurement	http://www.ebi.ac.uk/efo/EFO_0007825	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Male-pattern baldness	balding measurement	http://www.ebi.ac.uk/efo/EFO_0007825	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Response to cognitive-behavioural therapy in anxiety and major depressive disorders	cognitive behavioural therapy	http://www.ebi.ac.uk/efo/EFO_0007820	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Response to cognitive-behavioural therapy in anxiety disorder	cognitive behavioural therapy	http://www.ebi.ac.uk/efo/EFO_0007820	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Response to cognitive-behavioural therapy in major depressive disorder	cognitive behavioural therapy	http://www.ebi.ac.uk/efo/EFO_0007820	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Hemostatic factors and hematological phenotypes	plasminogen activator inhibitor 1 measurement	http://www.ebi.ac.uk/efo/EFO_0004792	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasminogen activator inhibitor type 1 levels (PAI-1)	plasminogen activator inhibitor 1 measurement	http://www.ebi.ac.uk/efo/EFO_0004792	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasminogen activator inhibitor-1 (PAI-1) levels	plasminogen activator inhibitor 1 measurement	http://www.ebi.ac.uk/efo/EFO_0004792	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -948,6 +974,7 @@ Familial lung adenocarcinoma	family history of lung cancer	http://www.ebi.ac.uk/
 Familial lung cancer	family history of lung cancer	http://www.ebi.ac.uk/efo/EFO_0006953	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Familial squamous cell lung carcinoma	family history of lung cancer	http://www.ebi.ac.uk/efo/EFO_0006953	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Lung cancer and family history of lung cancer	family history of lung cancer	http://www.ebi.ac.uk/efo/EFO_0006953	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Carbamazepine-induced Stevens-Johnson syndrome or toxic epidermal necrolysis (SJS/TEN)	toxic epidermal necrolysis	http://www.ebi.ac.uk/efo/EFO_0004775	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Cold medicine-related Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) with severe mucosal involvement	toxic epidermal necrolysis	http://www.ebi.ac.uk/efo/EFO_0004775	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Cold medicine-related Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) with severe ocular complications	toxic epidermal necrolysis	http://www.ebi.ac.uk/efo/EFO_0004775	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Drug-induced Stevens-Johnson syndrome or toxic epidermal necrolysis (SJS/TEN)	toxic epidermal necrolysis	http://www.ebi.ac.uk/efo/EFO_0004775	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -968,6 +995,7 @@ Limited cutaneous systemic scleroderma	limited scleroderma	http://www.ebi.ac.uk/
 Drug-induced liver injury	response to flupirtine	http://www.ebi.ac.uk/efo/EFO_0007809	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Age-related disease endophenotypes	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Age-related diseases, mortality and associated endophenotypes	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
+Blood cell traits (multivariate analysis)	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cardiometabolic and hematological traits	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematocrit	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological and biochemical traits	hematocrit	http://www.ebi.ac.uk/efo/EFO_0004348	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -990,6 +1018,7 @@ Facial morphology (factor 9, facial height related to vertical position of nasio
 Lower facial height	facial height measurement	http://www.ebi.ac.uk/efo/EFO_0007856	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 ACPA-negative rheumatoid arthritis (smoking interaction)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 ACPA-positive rheumatoid arthritis (smoking interaction)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Adenocarcinoma in never smokers	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Age-related macular degeneration (smoking status interaction)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Airway obstruction (FEV1/FVC<70%) in ever smokers	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Airway obstruction (FEV1/FVC<70%) in never smokers	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -1007,6 +1036,8 @@ Diastolic blood pressure x smoking status (current vs non-current) interaction (
 Diastolic blood pressure x smoking status (current vs non-current) interaction (2df test)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x smoking status (ever vs never) interaction (1df test)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x smoking status (ever vs never) interaction (2df test)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Emphysema annual change measurement in smokers (adjusted lung density)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Emphysema annual change measurement in smokers (percent low attenuation area)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Esophageal adenocarcinoma x smoking interaction	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Exhaled carbon monoxide levels in smokers with chronic obstructive pulmonary disease	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Fibrinogen levels (smoking status, alcohol consumption or body mass index interaction)	smoking status measurement	http://www.ebi.ac.uk/efo/EFO_0006527	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -1247,6 +1278,13 @@ Eudaimonic well-being	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869
 Hedonic well-being	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Life satisfaction	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Positive affect	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing (depressiveness)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing (health and vitality)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing (social role performance and self-confidence)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing index (total score)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing index 1 (lack of subjective wellbeing and health)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing index 12 (lack of enjoying daily life)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Psychological wellbeing index 3 (fatigue and loss of appetite)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Social science traits (pleiotropy) (HIPO component 1)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Subjective well-being	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Subjective well-being (MTAG)	wellbeing measurement	http://www.ebi.ac.uk/efo/EFO_0007869	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -1343,6 +1381,12 @@ Tonometry	blood pressure	http://www.ebi.ac.uk/efo/EFO_0004325	Other measurement	
 Triglycerides-Blood Pressure (TG-BP)	blood pressure	http://www.ebi.ac.uk/efo/EFO_0004325	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Uncontrolled blood pressure in combination therapy (beta blocker and thiazide diuretic)	blood pressure	http://www.ebi.ac.uk/efo/EFO_0004325	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol dependence	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (desire to cut drinking)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (drinking despite problems)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (drinking more than intended)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (time spent drinking)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (tolerance)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (withdrawal)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol dependence symptom count	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol misuse (trauma interaction)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol use disorder (dependence and problematic use scores)	alcohol dependence measurement	http://www.ebi.ac.uk/efo/EFO_0007835	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -1447,6 +1491,7 @@ Febrile seizures (MMR vaccine-related)	MMR-related febrile seizures	http://www.e
 Bipolar disorder or intelligence (pleiotropy)	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Cognitive ability	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Cognitive ability (MTAG)	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Cognitive ability in schizophrenia	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Cognitive function	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Extremely high intelligence	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Full scale intelligence quotient (cesarean section interaction)	intelligence	http://www.ebi.ac.uk/efo/EFO_0004337	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -1538,6 +1583,8 @@ White matter hyperintensity volume	white matter hyperintensity measurement	http:
 White matter hyperintensity volume in cerebral autosomal-dominant arteriopathy with subcortical infarcts and leukoencephalopathy	white matter hyperintensity measurement	http://www.ebi.ac.uk/efo/EFO_0005665	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-thyroid peroxidase (TPOAb) and anti-thyroglobulin (TgAb) levels in Hashimoto's thyroiditis	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-thyroid peroxidase (TPOAb) levels in Hashimoto's thyroiditis	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma anti-thyroglobulin and anti-thyroid peroxidase levels (bivariate analysis)	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma anti-thyroid peroxidase levels	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Thyroid peroxidase antibody levels	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Thyroid peroxidase antibody positivity	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Thyroid peroxidase autoantibody levels in type 1 diabetes	thyroid peroxidase antibody measurement	http://www.ebi.ac.uk/efo/EFO_0005666	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -1697,7 +1744,15 @@ Major depressive disorder (stressful life events interaction)	stressful life eve
 Psychological resilience (outcome-based) in high deployment stress exposure	stressful life event measurement	http://www.ebi.ac.uk/efo/EFO_0007781	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Reporting of stressful life event	stressful life event measurement	http://www.ebi.ac.uk/efo/EFO_0007781	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Chronic periodontitis (mean interproximal clinical attachment level)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
-Periodontal disease-related phenotypes	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Loose teeth	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Painful gums	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease related phenotype (PCT2)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease related phenotype (PCT3)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease related phenotype (PCT4)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease related phenotype (PCT5)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease related phenotype (PCT6)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontal disease-related phenotype (Socransky)	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Periodontitis or loose teeth	periodontal measurement	http://www.ebi.ac.uk/efo/EFO_0007780	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Iron deficiency	anemia	http://www.ebi.ac.uk/efo/EFO_0004272	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Ribavirin-induced anemia	anemia	http://www.ebi.ac.uk/efo/EFO_0004272	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Restless legs syndrome	restless legs syndrome	http://www.ebi.ac.uk/efo/EFO_0004270	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -1708,6 +1763,7 @@ Hematology traits	albumin:globulin ratio measurement	http://www.ebi.ac.uk/efo/EF
 Hepatitis C induced liver cirrhosis	hepatitis C induced liver cirrhosis	http://www.ebi.ac.uk/efo/EFO_0005129	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Metabolic traits	inflammatory response	http://purl.obolibrary.org/obo/GO_0006954	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Betaine levels in individuals undergoing cardiac evaluation	plasma betaine measurement	http://www.ebi.ac.uk/efo/EFO_0007787	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
+Carbamazepine-induced Stevens-Johnson syndrome or toxic epidermal necrolysis (SJS/TEN)	Stevens-Johnson syndrome	http://www.ebi.ac.uk/efo/EFO_0004276	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Cold medicine-related Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) with severe mucosal involvement	Stevens-Johnson syndrome	http://www.ebi.ac.uk/efo/EFO_0004276	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Cold medicine-related Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) with severe ocular complications	Stevens-Johnson syndrome	http://www.ebi.ac.uk/efo/EFO_0004276	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Drug-induced Stevens-Johnson syndrome or toxic epidermal necrolysis (SJS/TEN)	Stevens-Johnson syndrome	http://www.ebi.ac.uk/efo/EFO_0004276	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -1855,6 +1911,7 @@ Coronary arterial lesions in patients with Kawasaki disease	mucocutaneous lymph 
 Coronary artery aneurysm in Kawasaki disease	mucocutaneous lymph node syndrome	http://www.ebi.ac.uk/efo/EFO_0004246	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Inflammatory biomarkers in Kawasaki disease	mucocutaneous lymph node syndrome	http://www.ebi.ac.uk/efo/EFO_0004246	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Kawasaki disease	mucocutaneous lymph node syndrome	http://www.ebi.ac.uk/efo/EFO_0004246	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Response to intravenous immunoglobulin treatment in Kawasaki disease	mucocutaneous lymph node syndrome	http://www.ebi.ac.uk/efo/EFO_0004246	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Medication use (calcium channel blockers)	Calcium channel blocker use measurement	http://www.ebi.ac.uk/efo/EFO_0009930	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Interstitial lung disease	interstitial lung disease	http://www.ebi.ac.uk/efo/EFO_0004244	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Methotrexate-induced interstitial lung disease in rheumatoid arthritis	interstitial lung disease	http://www.ebi.ac.uk/efo/EFO_0004244	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -2025,6 +2082,8 @@ Serum ceruloplasmin levels	serum ceruloplasmin measurement	http://www.ebi.ac.uk/
 Developmental language disorder (linguistic errors)	linguistic error measurement	http://www.ebi.ac.uk/efo/EFO_0007798	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Ventricular fibrillation	ventricular fibrillation	http://www.ebi.ac.uk/efo/EFO_0004287	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Language performance in older adults (adjusted for episodic memory)	language measurement	http://www.ebi.ac.uk/efo/EFO_0007797	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma factor V levels in venous thrombosis	venous thromboembolism	http://www.ebi.ac.uk/efo/EFO_0004286	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Plasma factor V levels in venous thrombosis (conditioned on rs6027)	venous thromboembolism	http://www.ebi.ac.uk/efo/EFO_0004286	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Thrombosis	venous thromboembolism	http://www.ebi.ac.uk/efo/EFO_0004286	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Venous thromboembolism	venous thromboembolism	http://www.ebi.ac.uk/efo/EFO_0004286	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Venous thromboembolism (SNP x SNP interaction)	venous thromboembolism	http://www.ebi.ac.uk/efo/EFO_0004286	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -2169,10 +2228,13 @@ Asthma exacerbations in inhaled corticosteroid treatment	response to corticoster
 Baseline cortisol levels in response to low dose short synacthen test in corticosteroid treated asthma	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Bone mineral accretion in asthma (oral corticosteroid dose interaction)	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Bronchodilator response in asthma (inhaled corticosteroid treatment interaction)	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Change in quality of life in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Change in trough FEV1 in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Corticosteroid-induced adrenal suppression (peak cortisol < 350 nmol/L)	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Corticosteroid-induced adrenal suppression (peak cortisol < 500 nmol/L)	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Cytokine and corticosteroid-stimulated IL-6 production	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Peak cortisol response to low dose short synacthen test in corticosteroid treated asthma	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to inhaled corticosteroid treatment in asthma (change in FEV1)	response to corticosteroid	http://purl.obolibrary.org/obo/GO_0031960	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Hyperemesis gravidarum	hyperemesis gravidarum	http://www.ebi.ac.uk/efo/EFO_1000971	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Amyotrophic lateral sclerosis and immune-mediated diseases (pleiotropy)	ulcerative colitis	http://www.ebi.ac.uk/efo/EFO_0000729	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
@@ -2220,6 +2282,7 @@ Blood protein levels	macrophage metalloelastase measurement	http://www.ebi.ac.uk
 Circulating vasoactive peptide levels	vasoactive peptide measurement	http://www.ebi.ac.uk/efo/EFO_0005196	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Obesity-related traits	urinary nitrogen measurement	http://www.ebi.ac.uk/efo/EFO_0005190	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Obesity-related traits	waist height ratio	http://www.ebi.ac.uk/efo/EFO_0005191	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Blood cell traits (multivariate analysis)	red blood cell distribution width	http://www.ebi.ac.uk/efo/EFO_0005192	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Red blood cell traits	red blood cell distribution width	http://www.ebi.ac.uk/efo/EFO_0005192	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Red cell distribution width	red blood cell distribution width	http://www.ebi.ac.uk/efo/EFO_0005192	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Esophageal cancer	esophageal carcinoma	http://www.ebi.ac.uk/efo/EFO_0002916	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -2231,6 +2294,7 @@ Immunoglobulin A vasculitis	Henoch-Schoenlein purpura	http://www.ebi.ac.uk/efo/E
 Idiopathic inflammatory myopathy	myositis	http://www.ebi.ac.uk/efo/EFO_0000783	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Myositis	myositis	http://www.ebi.ac.uk/efo/EFO_0000783	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Systemic seropositive rheumatic diseases (Systemic sclerosis or systemic lupus erythematosus or rheumatoid arthritis or idiopathic inflammatory myopathies)	myositis	http://www.ebi.ac.uk/efo/EFO_0000783	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Acute post-radiotherapy pain in breast cancer	breast carcinoma	http://www.ebi.ac.uk/efo/EFO_0000305	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Adverse response to chemotherapy (congestive heart failure) in breast cancer	breast carcinoma	http://www.ebi.ac.uk/efo/EFO_0000305	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Breast Cancer in BRCA1 mutation carriers	breast carcinoma	http://www.ebi.ac.uk/efo/EFO_0000305	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Breast cancer	breast carcinoma	http://www.ebi.ac.uk/efo/EFO_0000305	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -2295,6 +2359,9 @@ Childhood dental caries in permanent teeth	dental caries	http://www.ebi.ac.uk/ef
 Childhood dental caries in primary teeth	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Dental caries	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Early childhood caries	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Number of decayed and filled tooth surfaces per available tooth surface	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Number of decayed, missing and filled tooth surfaces	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Number of decayed, missing and filled tooth surfaces or use of dentures	dental caries	http://www.ebi.ac.uk/efo/EFO_0003819	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Liver disease severity in Alagille syndrome	Alagille syndrome	http://www.orpha.net/ORDO/Orphanet_52	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Migraine	migraine disorder	http://www.ebi.ac.uk/efo/EFO_0003821	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Migraine - clinic-based	migraine disorder	http://www.ebi.ac.uk/efo/EFO_0003821	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -2484,6 +2551,7 @@ Worry/vulnerability (special factor of neuroticism)	worry measurement	http://www
 High altitude adaptation	high altitude adaptation	http://www.ebi.ac.uk/efo/EFO_0009105	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 QT interval (ambient particulate matter interaction)	particulate matter air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0008255	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	persulfide dioxygenase ETHE1, mitochondrial measurement	http://www.ebi.ac.uk/efo/EFO_0008258	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Number of children ever born	number of children ever born measurement	http://www.ebi.ac.uk/efo/EFO_0009102	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Skin hydration	skin hydration measurement	http://www.ebi.ac.uk/efo/EFO_0009586	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anhedonia in major depressive disorder	anhedonia measurement	http://www.ebi.ac.uk/efo/EFO_0009587	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	peptidyl-prolyl cis-trans isomerase E measurement	http://www.ebi.ac.uk/efo/EFO_0008257	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -2505,6 +2573,7 @@ Blood protein levels	plasma protease C1 inhibitor measurement	http://www.ebi.ac.
 Blood protein levels	plasma kallikrein measurement	http://www.ebi.ac.uk/efo/EFO_0008260	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Visual memory	visual memory measurement	http://www.ebi.ac.uk/efo/EFO_0009590	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Acute myeloid leukemia	acute myeloid leukemia	http://www.ebi.ac.uk/efo/EFO_0000222	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Core binding factor acute myeloid leukemia	acute myeloid leukemia	http://www.ebi.ac.uk/efo/EFO_0000222	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Urolithiasis	urolithiasis	http://purl.obolibrary.org/obo/MONDO_0024647	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Conotruncal heart defects	conotruncal heart defect	http://www.orpha.net/ORDO/Orphanet_2445	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Conotruncal heart defects (inherited effects)	conotruncal heart defect	http://www.orpha.net/ORDO/Orphanet_2445	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -2547,6 +2616,7 @@ Osteoprotegerin levels	osteoprotegerin measurement	http://www.ebi.ac.uk/efo/EFO_
 Recombination measurement	recombination measurement	http://www.ebi.ac.uk/efo/EFO_0005919	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Binge eating behaviour and bipolar disorder	binge eating	http://www.ebi.ac.uk/efo/EFO_0005924	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Binge eating behaviour in bipolar disorder	binge eating	http://www.ebi.ac.uk/efo/EFO_0005924	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
+Change in trough FEV1 in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	FEV change measurement	http://www.ebi.ac.uk/efo/EFO_0005921	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pulmonary function in asthmatics	FEV change measurement	http://www.ebi.ac.uk/efo/EFO_0005921	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Rate of change of FEV1 (time interaction)	FEV change measurement	http://www.ebi.ac.uk/efo/EFO_0005921	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Response to bronchodilator in chronic obstructive pulmonary disease (change in FEV1)	FEV change measurement	http://www.ebi.ac.uk/efo/EFO_0005921	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -2643,6 +2713,8 @@ Bipolar disorder lithium response (categorical) or schizophrenia	schizophrenia	h
 Bipolar disorder lithium response (continuous) or schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Brain imaging in schizophrenia (dorsolateral prefrontal cortex interaction)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Broad depression or schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Cannabis use disorder vs schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Cognitive ability in schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Disturbances of the gamma-frequency band of electroencephalography measures in schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Eye movement in schizophrenia (duration of fixations)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Eye movement in schizophrenia (horizontal position gain)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -2660,6 +2732,7 @@ Pharmacokinetics of antipsychotic drugs in severe mental disorder (concentration
 Pharmacokinetics of olanzapine in severe mental disorder (concentration dose ratio)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric diseases (pleiotropy) (HIPO component 1)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric disorder	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder without cannabis use disorder	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Pursuit maintenance gain in psychotic disorders	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Resistance to antipsychotic treatment in schizophrenia	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Resistance to antipsychotic treatment in schizophrenia (childhood trauma interaction)	schizophrenia	http://www.ebi.ac.uk/efo/EFO_0000692	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -2797,7 +2870,14 @@ Vitamin B12 levels	vitamin B12 measurement	http://www.ebi.ac.uk/efo/EFO_0004620	
 Non-Richardson's syndrome vs Richardson's syndrome in progressive supranuclear palsy	progressive supranuclear palsy	http://www.orpha.net/ORDO/Orphanet_683	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Progressive supranuclear palsy	progressive supranuclear palsy	http://www.orpha.net/ORDO/Orphanet_683	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Progressive supranuclear palsy and immune-mediated diseases (pleiotropy)	progressive supranuclear palsy	http://www.orpha.net/ORDO/Orphanet_683	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Corneal resistance factor	corneal resistance factor	http://www.ebi.ac.uk/efo/EFO_0010067	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Change in quality of life in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	respiratory symptom change measurement	http://www.ebi.ac.uk/efo/EFO_0010068	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Nontyphoidal Salmonella bacteraemia	non-typhoidal Salmonella bacteremia	http://www.ebi.ac.uk/efo/EFO_0009087	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Sural nerve conduction velocity	nerve conduction velocity	http://www.ebi.ac.uk/efo/EFO_0010069	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Infection persistence (>18 months) in genital human papillomavirus 16 infection	chronic human papillomavirus infection	http://www.ebi.ac.uk/efo/EFO_0010060	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Change in quality of life in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to salmeterol	http://www.ebi.ac.uk/efo/EFO_0010062	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Change in trough FEV1 in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to salmeterol	http://www.ebi.ac.uk/efo/EFO_0010062	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	response to salmeterol	http://www.ebi.ac.uk/efo/EFO_0010062	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Plasma omega-6 polyunsaturated fatty acid levels (arachidonic acid)	arachidonic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006808	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Red blood cell fatty acid levels	arachidonic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006808	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Intercellular adhesion molecule 1 (red blood cell fatty acid level interaction)	docosapentaenoic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006809	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
@@ -2805,6 +2885,9 @@ Plasma omega-3 polyunsaturated fatty acid levels (docosapentaenoic acid)	docosap
 Pulmonary function (FEV1) x omega-3 PUFA (docosapentaenoic acid) interaction (2df)	docosapentaenoic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006809	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Pulmonary function (FVC) x omega-3 PUFA (docosapentaenoic acid) interaction (2df)	docosapentaenoic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006809	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Red blood cell fatty acid levels	docosapentaenoic acid measurement	http://www.ebi.ac.uk/efo/EFO_0006809	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
+Response to intravenous immunoglobulin treatment in Kawasaki disease	response to intravenous immunoglobulin therapy	http://www.ebi.ac.uk/efo/EFO_0010065	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Toxicity response to radiotherapy in prostate cancer (hematuria) (time to event)	Hematuria	http://purl.obolibrary.org/obo/HP_0000790	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Corneal hysteresis	corneal hysteresis	http://www.ebi.ac.uk/efo/EFO_0010066	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Non-obstructive azoospermia	azoospermia	http://www.ebi.ac.uk/efo/EFO_0000279	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Blood protein levels	leptin receptor measurement	http://www.ebi.ac.uk/efo/EFO_0004635	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Soluble leptin receptor levels	leptin receptor measurement	http://www.ebi.ac.uk/efo/EFO_0004635	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -2850,6 +2933,7 @@ Intrinsic epigenetic age acceleration	aging	http://purl.obolibrary.org/obo/GO_00
 Residual cognition	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Anticoagulant levels	protein S measurement	http://www.ebi.ac.uk/efo/EFO_0004637	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemostatic factors and hematological phenotypes	protein S measurement	http://www.ebi.ac.uk/efo/EFO_0004637	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
+Geographic atrophy lesion growth rate in age-related macular degeneration	geographic atrophy lesion growth	http://www.ebi.ac.uk/efo/EFO_0010080	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Carotid atherosclerosis in HIV infection	carotid artery disease	http://www.ebi.ac.uk/efo/EFO_0003781	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Behcet's disease	Behcet's disease	http://www.ebi.ac.uk/efo/EFO_0003780	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Adult asthma	asthma	http://www.ebi.ac.uk/efo/EFO_0000270	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -2928,6 +3012,11 @@ vWF and FVIII levels	factor VIII measurement	http://www.ebi.ac.uk/efo/EFO_000463
 Atopic dermatitis	atopic eczema	http://www.ebi.ac.uk/efo/EFO_0000274	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Atopic march	atopic eczema	http://www.ebi.ac.uk/efo/EFO_0000274	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Inflammatory skin disease	atopic eczema	http://www.ebi.ac.uk/efo/EFO_0000274	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Dentures	dentures	http://www.ebi.ac.uk/efo/EFO_0010078	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Number of decayed, missing and filled tooth surfaces or use of dentures	dentures	http://www.ebi.ac.uk/efo/EFO_0010078	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Corneal endothelial cell density	corneal endothelial cell measurement	http://www.ebi.ac.uk/efo/EFO_0010079	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Corneal endothelial cell shape (percentage of hexagonally shaped cells)	corneal endothelial cell measurement	http://www.ebi.ac.uk/efo/EFO_0010079	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Corneal endothelial cell size variation coefficient	corneal endothelial cell measurement	http://www.ebi.ac.uk/efo/EFO_0010079	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Dimensional psychopathology (Cognitive)	cognitive domain measurement	http://www.ebi.ac.uk/efo/EFO_0009098	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Dimensional psychopathology (Arousal)	arousal domain measurement	http://www.ebi.ac.uk/efo/EFO_0009099	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Dimensional psychopathology (Negative)	negative domain measurement	http://www.ebi.ac.uk/efo/EFO_0009096	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -2935,8 +3024,16 @@ Dimensional psychopathology (Positive)	positive domain measurement	http://www.eb
 Idiopathic dilated cardiomyopathy	idiopathic dilated cardiomyopathy	http://www.ebi.ac.uk/efo/EFO_0009094	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Breast milk fatty acid composition (infant genotype effect)	breast milk measurement	http://www.ebi.ac.uk/efo/EFO_0009092	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Breast milk fatty acid composition (maternal genotype effect)	breast milk measurement	http://www.ebi.ac.uk/efo/EFO_0009092	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Sural nerve amplitude potential	nerve conduction amplitude	http://www.ebi.ac.uk/efo/EFO_0010070	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Cardiac troponin-I levels	cardiac troponin I measurement	http://www.ebi.ac.uk/efo/EFO_0010071	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Vision loss in proton beam irradiation treatment of choroidal melanoma	choroidal melanoma	http://www.ebi.ac.uk/efo/EFO_0009093	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Toothache	toothache	http://www.ebi.ac.uk/efo/EFO_0010072	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Number of natural teeth	number of teeth measurement	http://www.ebi.ac.uk/efo/EFO_0010073	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Crohn's disease-related phenotypes	mild disease course	http://www.ebi.ac.uk/efo/EFO_0006819	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Trochanter size	trochanter size	http://www.ebi.ac.uk/efo/EFO_0010074	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Intertrochanteric region size	intertrochanteric region size	http://www.ebi.ac.uk/efo/EFO_0010075	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Femoral neck size	femoral neck size	http://www.ebi.ac.uk/efo/EFO_0010076	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Response to belimumab (SLE response index) in systemic lupus erythematosus	response to belimumab	http://www.ebi.ac.uk/efo/EFO_0010077	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Autism and educational attainment (MTAG)	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Autism and major depressive disorder (MTAG)	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Autism and schizophrenia (MTAG)	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -2949,6 +3046,7 @@ Maternal genotype effects in autism spectrum disorder families	autism spectrum d
 Obsessive-compulsive disorder or autism spectrum disorder	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric diseases (pleiotropy) (HIPO component 1)	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric disorder	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder without cannabis use disorder	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Restricted and repetitive behaviours in autism spectrum disorder	autism spectrum disorder	http://www.ebi.ac.uk/efo/EFO_0003756	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Colorectal cancer (environment interaction)	overweight body mass index status	http://www.ebi.ac.uk/efo/EFO_0005935	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Overweight status	overweight body mass index status	http://www.ebi.ac.uk/efo/EFO_0005935	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
@@ -2988,6 +3086,8 @@ Alzheimer's disease (survival time)	Alzheimer's disease	http://www.ebi.ac.uk/efo
 Alzheimer's disease biomarkers	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alzheimer's disease in APOE e4+ carriers	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alzheimer's disease in APOE e4- carriers	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Alzheimer's disease in hypertension	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Alzheimer's disease in hypertension-negative individuals	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alzheimer's disease or HDL levels (pleiotropy)	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Alzheimer's disease or family history of Alzheimer's disease	Alzheimer's disease	http://www.ebi.ac.uk/efo/EFO_0000249	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -3023,6 +3123,9 @@ Asperger syndrome	asperger syndrome	http://www.ebi.ac.uk/efo/EFO_0003757	Neurolo
 Morphine dose requirement in tonsillectomy and adenoidectomy surgery	response to morphine	http://purl.obolibrary.org/obo/GO_0043278	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Common variable immunodeficiency	common variable immunodeficiency	http://www.orpha.net/ORDO/Orphanet_1572	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Pediatric autoimmune diseases	common variable immunodeficiency	http://www.orpha.net/ORDO/Orphanet_1572	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Asthma control	asthma symptoms measurement	http://www.ebi.ac.uk/efo/EFO_0010049	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Asthma control x inhaled corticosteroid treatment interaction (1df)	asthma symptoms measurement	http://www.ebi.ac.uk/efo/EFO_0010049	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Asthma control x inhaled corticosteroid treatment interaction (2df)	asthma symptoms measurement	http://www.ebi.ac.uk/efo/EFO_0010049	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Clozapine-induced agranulocytosis/granulocytopenia in treatment-resistant schizophrenia	treatment refractory schizophrenia	http://www.ebi.ac.uk/efo/EFO_0004609	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Neutrophil level response to clozapine in treatment-resistant schizophrenia	treatment refractory schizophrenia	http://www.ebi.ac.uk/efo/EFO_0004609	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Plasma clozapine levels in treatment-resistant schizophrenia	treatment refractory schizophrenia	http://www.ebi.ac.uk/efo/EFO_0004609	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -3271,6 +3374,8 @@ Placebo response in major depressive disorder (responder/non-responder status)	u
 Plasma kynurenine levels in major depressive disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Plasma kynurenine to tryptophan ratio in major depressive disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric diseases (pleiotropy) (HIPO component 1)	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder without cannabis use disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Recurrent major depressive disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Remission after SSRI treatment in MDD or neuroticism	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Remission after SSRI treatment in MDD or openness	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -3284,6 +3389,8 @@ Response to bupropion and depression	unipolar depression	http://www.ebi.ac.uk/ef
 Response to bupropion in depression	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to citalopram or escitalopram and depression	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to citalopram or escitalopram in depression	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Response to cognitive-behavioural therapy in anxiety and major depressive disorders	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Response to cognitive-behavioural therapy in major depressive disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ketamine in bipolar disorder or major depression (antidepressant effects)	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ketamine in bipolar disorder or major depression (dissociation effects)	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to selective serotonin reuptake inhibitors and depression	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -3301,7 +3408,12 @@ Suicide attempts in major depressive disorder	unipolar depression	http://www.ebi
 Suicide attempts in major depressive disorder or bipolar disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Suicide attempts in major depressive disorder or bipolar disorder or schizophrenia	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Suicide ideation score in major depressive disorder	unipolar depression	http://www.ebi.ac.uk/efo/EFO_0003761	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Liver iron content	liver iron measurement	http://www.ebi.ac.uk/efo/EFO_0010056	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Soluble VCAM-1 levels	vascular cell adhesion molecule-1 measurement	http://www.ebi.ac.uk/efo/EFO_0010057	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Cerebral microbleed progression	cerebral microbleeds	http://www.ebi.ac.uk/efo/EFO_0010059	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Cerebral microbleeds	cerebral microbleeds	http://www.ebi.ac.uk/efo/EFO_0010059	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Mitral valve prolapse	Mitral valve prolapse	http://purl.obolibrary.org/obo/HP_0001634	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Thyroglobulin plasma levels	thyroglobulin measurement	http://www.ebi.ac.uk/efo/EFO_0010050	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	factor VII measurement	http://www.ebi.ac.uk/efo/EFO_0004619	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Factor VII	factor VII measurement	http://www.ebi.ac.uk/efo/EFO_0004619	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Factor VII activity	factor VII measurement	http://www.ebi.ac.uk/efo/EFO_0004619	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3338,6 +3450,8 @@ Low bone mineral density (hip)	hip bone mineral density	http://www.ebi.ac.uk/efo
 Pediatric bone mineral density (hip)	hip bone mineral density	http://www.ebi.ac.uk/efo/EFO_0007702	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Depressive and manic episodes in bipolar disorder	manic episode measurement	http://www.ebi.ac.uk/efo/EFO_0007705	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Initial alcohol sensitivity	response to alcohol	http://www.ebi.ac.uk/efo/EFO_0005526	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Number of alcoholic drinks required to feel an effect (first five times drinking)	response to alcohol	http://www.ebi.ac.uk/efo/EFO_0005526	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Number of alcoholic drinks required to feel an effect (long-term average)	response to alcohol	http://www.ebi.ac.uk/efo/EFO_0005526	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Response to alcohol consumption (flushing response)	response to alcohol	http://www.ebi.ac.uk/efo/EFO_0005526	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Depressive and manic episodes in bipolar disorder	depressive episode measurement	http://www.ebi.ac.uk/efo/EFO_0007704	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Depressive episodes in bipolar disorder	depressive episode measurement	http://www.ebi.ac.uk/efo/EFO_0007704	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3366,6 +3480,7 @@ Exploratory eye movement dysfunction in schizophrenia (mean eye scanning length)
 Exploratory eye movement dysfunction in schizophrenia (number of eye fixations)	exploratory eye movement measurement	http://www.ebi.ac.uk/efo/EFO_0007700	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Exploratory eye movement dysfunction in schizophrenia (responsive search score)	exploratory eye movement measurement	http://www.ebi.ac.uk/efo/EFO_0007700	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Exploratory eye movement dysfunction in schizophrenia (total eye scanning length)	exploratory eye movement measurement	http://www.ebi.ac.uk/efo/EFO_0007700	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Early progression to active pulmonary tuberculosis in Mycobacterium tuberculosis-infected individuals	tuberculosis	http://www.orpha.net/ORDO/Orphanet_3389	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Liver injury in anti-tuberculosis drug treatment	tuberculosis	http://www.orpha.net/ORDO/Orphanet_3389	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Liver injury in combined anti-retroviral and anti-tuberculosis drug-treated HIV with tuberculosis	tuberculosis	http://www.orpha.net/ORDO/Orphanet_3389	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Tuberculosis	tuberculosis	http://www.orpha.net/ORDO/Orphanet_3389	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -3446,6 +3561,7 @@ Pharmacokinetics of antipsychotic drugs in severe mental disorder (concentration
 Pharmacokinetics of olanzapine in severe mental disorder (concentration dose ratio)	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric diseases (pleiotropy) (HIPO component 1)	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Psychiatric disorder	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Psychiatric disorder without cannabis use disorder	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Pursuit maintenance gain in psychotic disorders	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ketamine in bipolar disorder or major depression (antidepressant effects)	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ketamine in bipolar disorder or major depression (dissociation effects)	bipolar disorder	http://www.ebi.ac.uk/efo/EFO_0000289	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -3524,6 +3640,8 @@ Urinary bladder cancer	bladder carcinoma	http://www.ebi.ac.uk/efo/EFO_0000292	Ca
 Glucose homeostasis traits	disposition index measurement	http://www.ebi.ac.uk/efo/EFO_0006832	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Insulin disposition index	disposition index measurement	http://www.ebi.ac.uk/efo/EFO_0006832	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Insulin disposition index (BMI adjusted)	disposition index measurement	http://www.ebi.ac.uk/efo/EFO_0006832	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Anti-adalimumab antibody production in response to treatment in Crohn's disease	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Infliximab-induced mucosal healing in Crohn's disease	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to TNF antagonist treatment	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to TNF inhibitor in rheumatoid arthritis (change in disease activity score)	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to TNF inhibitor in rheumatoid arthritis (change in patient global heath assessment score)	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -3536,6 +3654,7 @@ Response to anti-TNF therapy in rheumatoid arthritis	response to tnf antagonist	
 Response to anti-TNF treatment (adalimumab, etanercept or infliximab) in rheumatoid arthritis	response to tnf antagonist	http://www.ebi.ac.uk/efo/EFO_0004653	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Idiopathic intracranial hypertension	idiopathic intracranial hypertension	http://www.ebi.ac.uk/efo/EFO_1001132	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Dupuytren's disease	dupuytren contracture	http://www.ebi.ac.uk/efo/EFO_0004229	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Carbamazepine-induced liver injury	drug-induced liver injury	http://www.ebi.ac.uk/efo/EFO_0004228	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Drug-induced cholestatic/mixed liver injury	drug-induced liver injury	http://www.ebi.ac.uk/efo/EFO_0004228	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Drug-induced hepatocellular liver injury	drug-induced liver injury	http://www.ebi.ac.uk/efo/EFO_0004228	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Drug-induced liver injury	drug-induced liver injury	http://www.ebi.ac.uk/efo/EFO_0004228	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
@@ -3621,6 +3740,8 @@ Graves' disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune syste
 Hashimoto thyroiditis versus Graves' disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Thionamide-induced agranulocytosis in Graves' disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Thyroid-associated orbitopathy in graves' disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Thyrotoxic hypokalemic periodic paralysis and Graves disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Thyrotoxic hypokalemic periodic paralysis in Graves disease	Graves disease	http://www.ebi.ac.uk/efo/EFO_0004237	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Medication use (beta blocking agents)	Beta blocking agent use measurement	http://www.ebi.ac.uk/efo/EFO_0009929	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Medication use (vasodilators used in cardiac diseases)	Vasodilators used in cardiac diseases use measurement	http://www.ebi.ac.uk/efo/EFO_0009926	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma proprotein convertase subtilisin/kexin type 9 levels in stable coronary artery disease	PCSK9 protein measurement	http://www.ebi.ac.uk/efo/EFO_0006899	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3673,6 +3794,7 @@ Oral cavity and pharyngeal cancer	oral cavity cancer	http://www.ebi.ac.uk/efo/EF
 Oral cavity cancer	oral cavity cancer	http://www.ebi.ac.uk/efo/EFO_0005570	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Takotsubo syndrome	Takotsubo cardiomyopathy	http://www.ebi.ac.uk/efo/EFO_1002000	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 High-altitude pulmonary edema	high-altitude pulmonary edema	http://www.ebi.ac.uk/efo/EFO_1002002	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Carbamazepine-induced reaction with eosinophilia and systemic symptoms	drug hypersensitivity syndrome	http://www.ebi.ac.uk/efo/EFO_1002004	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Nevirapine-induced hypersensitivity in HIV (hypersensitivity syndrome)	drug hypersensitivity syndrome	http://www.ebi.ac.uk/efo/EFO_1002004	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Nevirapine-induced hypersensitivity in HIV	hypersensitivity reaction disease	http://www.ebi.ac.uk/efo/EFO_1002003	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Resistance to antihypertensive treatment in hypertension	treatment-resistant hypertension	http://www.ebi.ac.uk/efo/EFO_1002006	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -3740,6 +3862,7 @@ Protein quantitative trait loci	tumor necrosis factor-alpha measurement	http://w
 Select biomarker traits	tumor necrosis factor-alpha measurement	http://www.ebi.ac.uk/efo/EFO_0004684	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Tumor necrosis factor alpha levels	tumor necrosis factor-alpha measurement	http://www.ebi.ac.uk/efo/EFO_0004684	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Mixed cellularity Hodgkin lymphoma	Hodgkin's lymphoma, mixed cellularity	http://www.ebi.ac.uk/efo/EFO_1002031	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Acute post-radiotherapy pain in breast cancer	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Adverse response to radiation therapy	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Breast cancer in childhood cancer survivors treated with more than 10 gray radiotherapy	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Erectile dysfunction and prostate cancer treatment	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -3749,9 +3872,12 @@ Radiation-induced brain injury in nasopharyngeal carcinoma	response to radiation
 Response to radiotherapy in cancer (late toxicity)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Response to radiotherapy in prostate cancer (overall toxicity)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Response to radiotherapy in prostate cancer (toxicity)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
-Response to radiotherapy in prostate cancer (toxicity, decreased urine stream)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Response to radiotherapy in prostate cancer (toxicity, rectal bleeding)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Response to radiotherapy in prostate cancer (toxicity, urinary frequency)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Toxicity response to radiotherapy in prostate cancer (decreased urine stream) (time to event)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Toxicity response to radiotherapy in prostate cancer (hematuria) (time to event)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Toxicity response to radiotherapy in prostate cancer (increased urinary frequency) (time to event)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Toxicity response to radiotherapy in prostate cancer (rectal bleeding) (time to event)	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Urinary symptoms in response to radiotherapy in prostate cancer	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Vision loss in proton beam irradiation treatment of choroidal melanoma	response to radiation	http://purl.obolibrary.org/obo/GO_0009314	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Behavioral disturbance or psychiatric symptoms and prion disease	behavioral abnormality	http://purl.obolibrary.org/obo/HP_0000708	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
@@ -3809,6 +3935,8 @@ Keloid	keloid	http://www.ebi.ac.uk/efo/EFO_0004212	Other disease	http://www.ebi.
 Electroencephalogram traits	delta wave measurement	http://www.ebi.ac.uk/efo/EFO_0006872	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Hypertriglyceridemia	hypertriglyceridemia	http://www.ebi.ac.uk/efo/EFO_0004211	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Intraocular pressure	intraocular pressure measurement	http://www.ebi.ac.uk/efo/EFO_0004695	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Intraocular pressure (Goldman correlated)	intraocular pressure measurement	http://www.ebi.ac.uk/efo/EFO_0004695	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Intraocular pressure (corneal compensated)	intraocular pressure measurement	http://www.ebi.ac.uk/efo/EFO_0004695	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Open-angle glaucoma and intra-ocular pressure	intraocular pressure measurement	http://www.ebi.ac.uk/efo/EFO_0004695	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Juvenile idiopathic arthritis (oligoarticular or rheumatoid factor-negative polyarticular)	polyarticular juvenile idiopathic arthritis, rheumatoid factor negative	http://www.ebi.ac.uk/efo/EFO_1002020	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Ankle injury	ankle injury	http://www.ebi.ac.uk/efo/EFO_1002021	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -3909,6 +4037,14 @@ Systolic blood pressure in sickle cell anemia	systolic blood pressure	http://www
 Systolic blood pressure x alcohol consumption (light vs heavy) interaction (2df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Systolic blood pressure x alcohol consumption interaction (1df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Systolic blood pressure x alcohol consumption interaction (2df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (least active quartile vs others) interaction (1df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (least active quartile vs others) interaction (2df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (least vs most active quartile) interaction (1df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (least vs most active quartile) interaction (2df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (less vs more active half) interaction (1df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity (less vs more active half) interaction (2df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity interaction (1df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity interaction (2df)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Systolic blood pressure x smoking status (current vs non-current) interaction (1df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Systolic blood pressure x smoking status (current vs non-current) interaction (2df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Systolic blood pressure x smoking status (ever vs never) interaction (1df test)	systolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006335	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3928,6 +4064,7 @@ Blood pressure measurement (high sodium and potassium intervention)	diastolic bl
 Blood pressure measurement (high sodium intervention)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood pressure measurement (low sodium intervention)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood pressure traits (multi-trait analysis)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+DIastolic blood pressure x physical activity interaction (2df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure (alcohol consumption interaction)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure (cigarette smoking interaction)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3937,6 +4074,13 @@ Diastolic blood pressure in combination therapy (beta blocker and thiazide diure
 Diastolic blood pressure x alcohol consumption (light vs heavy) interaction (2df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x alcohol consumption interaction (1df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x alcohol consumption interaction (2df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (least active quartile vs others) interaction (1df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (least active quartile vs others) interaction (2df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (least vs most active quartile) interaction (1df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (least vs most active quartile) interaction (2df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (less vs more active half) interaction (1df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity (less vs more active half) interaction (2df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity interaction (1df)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x smoking status (current vs non-current) interaction (1df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x smoking status (current vs non-current) interaction (2df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diastolic blood pressure x smoking status (ever vs never) interaction (1df test)	diastolic blood pressure	http://www.ebi.ac.uk/efo/EFO_0006336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4031,8 +4175,10 @@ Pharmacokinetics of antipsychotic drugs in severe mental disorder (concentration
 Pharmacokinetics of olanzapine in severe mental disorder (concentration dose ratio)	concentration dose ratio	http://www.ebi.ac.uk/efo/EFO_0007635	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anxiety disorder	anxiety disorder	http://www.ebi.ac.uk/efo/EFO_0006788	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Anxiety disorder or brain volume (pleiotropy)	anxiety disorder	http://www.ebi.ac.uk/efo/EFO_0006788	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Response to cognitive-behavioural therapy in anxiety and major depressive disorders	anxiety disorder	http://www.ebi.ac.uk/efo/EFO_0006788	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to cognitive-behavioural therapy in anxiety disorder	anxiety disorder	http://www.ebi.ac.uk/efo/EFO_0006788	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Hypersomnia during a major depressive episode in bipolar disorder	major depressive episode	http://www.ebi.ac.uk/efo/EFO_0007634	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Coffee consumption	coffee consumption measurement	http://www.ebi.ac.uk/efo/EFO_0006781	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Coffee consumption	cups of coffee per day measurement	http://www.ebi.ac.uk/efo/EFO_0006782	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Coffee consumption (cups per day)	cups of coffee per day measurement	http://www.ebi.ac.uk/efo/EFO_0006782	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Hexose levels	hexose measurement	http://www.ebi.ac.uk/efo/EFO_0007631	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4179,6 +4325,7 @@ Facial attractiveness (female raters)	facial attractiveness measurement	http://w
 Facial attractiveness (male raters)	facial attractiveness measurement	http://www.ebi.ac.uk/efo/EFO_0009892	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Acenocoumarol maintenance dosage	response to anticoagulant	http://purl.obolibrary.org/obo/GO_0061476	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Warfarin maintenance dose	response to anticoagulant	http://purl.obolibrary.org/obo/GO_0061476	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Warfarin maintenance dose (adjusted for clinical factors)	response to anticoagulant	http://purl.obolibrary.org/obo/GO_0061476	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Warfarin-associated bleeding	response to anticoagulant	http://purl.obolibrary.org/obo/GO_0061476	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Carbamazepine- or oxcarbazepine-induced hyponatremia in epilepsy	response to oxcarbazepine	http://www.ebi.ac.uk/efo/EFO_0009893	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Oxcarbazepine-induced hyponatremia in epilepsy	response to oxcarbazepine	http://www.ebi.ac.uk/efo/EFO_0009893	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -4207,7 +4354,9 @@ Reflection (response to stress)	reflective stress response	http://www.ebi.ac.uk/
 LDL peak particle diameter (total fat intake interaction)	LDL peak particle diameter measurement	http://www.ebi.ac.uk/efo/EFO_0007677	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Phenytoin-induced maculopapular exanthema	response to phenytoin	http://www.ebi.ac.uk/efo/EFO_0006345	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Phenytoin-induced severe cutaneous adverse reactions	response to phenytoin	http://www.ebi.ac.uk/efo/EFO_0006345	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Carbamazepine-induced serious cutaneous adverse reaction	severe cutaneous adverse reaction	http://www.ebi.ac.uk/efo/EFO_0006346	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Phenytoin-induced severe cutaneous adverse reactions	severe cutaneous adverse reaction	http://www.ebi.ac.uk/efo/EFO_0006346	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Severe cutaneous adverse drug reactions	severe cutaneous adverse reaction	http://www.ebi.ac.uk/efo/EFO_0006346	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to zileuton treatment in asthma (FEV1 change interaction)	response to zileuton	http://www.ebi.ac.uk/efo/EFO_0007676	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Rumination (response to stress)	ruminative stress response	http://www.ebi.ac.uk/efo/EFO_0009857	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Oppositional defiant disorder dimensions in attention-deficit hyperactivity disorder	oppositional defiant disorder measurement	http://www.ebi.ac.uk/efo/EFO_0007679	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4251,6 +4400,8 @@ Susceptibility to persistent hepatitis B virus infection	susceptibility to viral
 Vitamin D levels (dietary vitamin D intake interaction)	vitamin D dietary intake measurement	http://www.ebi.ac.uk/efo/EFO_0008539	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Helping behaviour (self reported)	helping behavior measurement	http://www.ebi.ac.uk/efo/EFO_0008538	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Post traumatic stress disorder symptom count in trauma-exposed individuals	post-traumatic stress disorder symptom measurement	http://www.ebi.ac.uk/efo/EFO_0008535	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-traumatic stress disorder (re-experiencing symptoms)	post-traumatic stress disorder symptom measurement	http://www.ebi.ac.uk/efo/EFO_0008535	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-traumatic stress disorder symptoms in trauma-exposed soldiers	post-traumatic stress disorder symptom measurement	http://www.ebi.ac.uk/efo/EFO_0008535	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 CSF tryptophan concentration in tuberculous meningitis	tryptophan measurement	http://www.ebi.ac.uk/efo/EFO_0008534	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma free amino acid levels	tryptophan measurement	http://www.ebi.ac.uk/efo/EFO_0008534	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma free amino acid levels (adjusted for one other PFAA)	tryptophan measurement	http://www.ebi.ac.uk/efo/EFO_0008534	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4391,11 +4542,14 @@ Electrocardiographic conduction measures	PR segment	http://www.ebi.ac.uk/efo/EFO
 PR segment	PR segment	http://www.ebi.ac.uk/efo/EFO_0005095	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Eotaxin levels	eotaxin measurement	http://www.ebi.ac.uk/efo/EFO_0008122	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	endothelin-converting enzyme 1 measurement	http://www.ebi.ac.uk/efo/EFO_0008121	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Basophil count	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
+Blood cell traits (multivariate analysis)	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Sum basophil neutrophil counts	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Sum eosinophil basophil counts	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 White blood cell count	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 White blood cell count (basophil)	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 White blood cell types	basophil count	http://www.ebi.ac.uk/efo/EFO_0005090	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
+Blood cell traits (multivariate analysis)	monocyte count	http://www.ebi.ac.uk/efo/EFO_0005091	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Monocyte count	monocyte count	http://www.ebi.ac.uk/efo/EFO_0005091	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 White blood cell count	monocyte count	http://www.ebi.ac.uk/efo/EFO_0005091	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 White blood cell count (monocyte)	monocyte count	http://www.ebi.ac.uk/efo/EFO_0005091	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -4436,6 +4590,8 @@ Neonatal cytokine/chemokine levels (fetal genetic effect)	CCL17 measurement	http
 Neonatal cytokine/chemokine levels (fetal genetic effect)	CCL19 measurement	http://www.ebi.ac.uk/efo/EFO_0009415	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-thyroglobulin (TgAb) levels in Hashimoto's thyroiditis	anti-thyroglobulin antibody measurement	http://www.ebi.ac.uk/efo/EFO_0009896	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-thyroid peroxidase (TPOAb) and anti-thyroglobulin (TgAb) levels in Hashimoto's thyroiditis	anti-thyroglobulin antibody measurement	http://www.ebi.ac.uk/efo/EFO_0009896	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma anti-thyroglobulin and anti-thyroid peroxidase levels (bivariate analysis)	anti-thyroglobulin antibody measurement	http://www.ebi.ac.uk/efo/EFO_0009896	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma anti-thyroglobulin levels	anti-thyroglobulin antibody measurement	http://www.ebi.ac.uk/efo/EFO_0009896	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Electrocardiographic traits	QRS complex	http://www.ebi.ac.uk/efo/EFO_0005054	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 QRS complex (12-leadsum)	QRS complex	http://www.ebi.ac.uk/efo/EFO_0005054	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 QRS complex (Cornell)	QRS complex	http://www.ebi.ac.uk/efo/EFO_0005054	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
@@ -4492,6 +4648,7 @@ Neonatal cytokine/chemokine levels (maternal genetic effect)	CXCL5 measurement	h
 Thrombin-activatable fibrinolysis inhibitor activation peptide	thrombin activatable fibrinolysis inhibitor activation peptide measurement	http://www.ebi.ac.uk/efo/EFO_0008582	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Blood protein levels	contactin-2 measurement	http://www.ebi.ac.uk/efo/EFO_0008100	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Taxane-induced peripheral neuropathy in breast cancer	response to taxane	http://www.ebi.ac.uk/efo/EFO_0008580	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Bleeding gums	gingival bleeding	http://purl.obolibrary.org/obo/HP_0000225	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Severe gingival inflammation	gingival bleeding	http://purl.obolibrary.org/obo/HP_0000225	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Idiopathic osteonecrosis of the femoral head	idiopathic osteonecrosis of the femoral head	http://www.ebi.ac.uk/efo/EFO_1001930	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Oropharynx cancer	oropharynx cancer	http://www.ebi.ac.uk/efo/EFO_1001931	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -4509,6 +4666,8 @@ Sex hormone-binding globulin levels in polycystic ovary syndrome	polycystic ovar
 Testosterone levels in polycystic ovary syndrome	polycystic ovary syndrome	http://www.ebi.ac.uk/efo/EFO_0000660	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Blood protein levels	granzyme A measurement	http://www.ebi.ac.uk/efo/EFO_0008145	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	hemojuvelin measurement	http://www.ebi.ac.uk/efo/EFO_0008148	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Cannabis use disorder	substance abuse	http://purl.obolibrary.org/obo/MONDO_0002491	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Cannabis use disorder vs schizophrenia	substance abuse	http://purl.obolibrary.org/obo/MONDO_0002491	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Blood protein levels	hepatocyte growth factor receptor measurement	http://www.ebi.ac.uk/efo/EFO_0008153	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	hepatocyte growth factor activator measurement	http://www.ebi.ac.uk/efo/EFO_0008152	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	histidine-rich glycoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0008155	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4590,13 +4749,14 @@ Chronic periodontitis (generalised)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0
 Chronic periodontitis (localised)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Chronic periodontitis (severe)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Chronic periodontitis (slight)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
-Periodontal disease-related phenotypes	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Periodontal disease-related phenotype (Socransky)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontal microbiota	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontitis	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontitis (CDC/AAP)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontitis (DPAL)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontitis (Mean PAL)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Periodontitis (PAL4Q3)	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Periodontitis or loose teeth	periodontitis	http://www.ebi.ac.uk/efo/EFO_0000649	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Anthracycline-induced cardiotoxicity in childhood cancer	childhood cancer	http://www.ebi.ac.uk/efo/EFO_1000654	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Breast cancer in childhood cancer survivors	childhood cancer	http://www.ebi.ac.uk/efo/EFO_1000654	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Breast cancer in childhood cancer survivors treated with less than 10 gray radiotherapy	childhood cancer	http://www.ebi.ac.uk/efo/EFO_1000654	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -4678,6 +4838,8 @@ Response to tocilizumab in rheumatoid arthritis	response to drug	http://purl.obo
 Treatment response for severe sepsis	response to drug	http://purl.obolibrary.org/obo/GO_0042493	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Blood protein levels	cell adhesion molecule-related/down-regulated by oncogenes measurement	http://www.ebi.ac.uk/efo/EFO_0008079	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	coagulation factor V measurement	http://www.ebi.ac.uk/efo/EFO_0008087	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma factor V levels in venous thrombosis	coagulation factor V measurement	http://www.ebi.ac.uk/efo/EFO_0008087	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Plasma factor V levels in venous thrombosis (conditioned on rs6027)	coagulation factor V measurement	http://www.ebi.ac.uk/efo/EFO_0008087	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	CMRF35-like molecule 6 measurement	http://www.ebi.ac.uk/efo/EFO_0008086	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	complement C1q subcomponent measurement	http://www.ebi.ac.uk/efo/EFO_0008089	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	collectin-11 measurement	http://www.ebi.ac.uk/efo/EFO_0008088	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4725,6 +4887,7 @@ Blood protein levels	C-X-C motif chemokine 11 measurement	http://www.ebi.ac.uk/e
 Neonatal cytokine/chemokine levels (fetal genetic effect)	C-X-C motif chemokine 11 measurement	http://www.ebi.ac.uk/efo/EFO_0008057	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sum basophil neutrophil counts	sum of basophil and neutrophil counts	http://www.ebi.ac.uk/efo/EFO_0009388	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Adenocarcinoma	lung adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000571	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Adenocarcinoma in never smokers	lung adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000571	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Cancer	lung adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000571	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Cancer (pleiotropy)	lung adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000571	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 EGFR mutation-positive lung adenocarcinoma	lung adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000571	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -4773,12 +4936,15 @@ Homeostasis model assessment of insulin resistance adjusted for BMI	HOMA-IR	http
 Obesity-related traits	HOMA-IR	http://www.ebi.ac.uk/efo/EFO_0004501	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Platelet count and reactivity phenotypes	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Platelet reactivity	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
+Platelet reactivity measurement (collagen-ADP)	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
+Platelet reactivity measurement (collagen-epinephrine)	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Platelet thrombus formation	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Response to clopidogrel therapy	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Response to clopidogrel therapy in coronary heart disease	platelet reactivity measurement	http://www.ebi.ac.uk/efo/EFO_0004985	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Spine bone size	spine bone size	http://www.ebi.ac.uk/efo/EFO_0004508	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 D-dimer levels	D dimer measurement	http://www.ebi.ac.uk/efo/EFO_0004507	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Monocyte early outgrowth colony forming units	monocyte early outgrowth colony forming unit	http://www.ebi.ac.uk/efo/EFO_0004506	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Leukocyte telomere length	telomere length	http://www.ebi.ac.uk/efo/EFO_0004505	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Telomere length	telomere length	http://www.ebi.ac.uk/efo/EFO_0004505	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Appendicular lean mass	appendicular lean mass	http://www.ebi.ac.uk/efo/EFO_0004980	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	complement C4 measurement	http://www.ebi.ac.uk/efo/EFO_0004984	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4786,6 +4952,7 @@ Complement C3 and C4 levels	complement C4 measurement	http://www.ebi.ac.uk/efo/E
 Complement C3 and C4 levels	complement C3 measurement	http://www.ebi.ac.uk/efo/EFO_0004983	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Chronic venous disease	Varicose veins	http://purl.obolibrary.org/obo/HP_0002619	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Varicose veins	Varicose veins	http://purl.obolibrary.org/obo/HP_0002619	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Blood cell traits (multivariate analysis)	hemoglobin measurement	http://www.ebi.ac.uk/efo/EFO_0004509	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Blood protein levels	hemoglobin measurement	http://www.ebi.ac.uk/efo/EFO_0004509	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Clinical laboratory measurements	hemoglobin measurement	http://www.ebi.ac.uk/efo/EFO_0004509	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Deoxygenated hemoglobin levels	hemoglobin measurement	http://www.ebi.ac.uk/efo/EFO_0004509	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -4847,6 +5014,7 @@ Serum creatinine levels	serum creatinine measurement	http://www.ebi.ac.uk/efo/EF
 Food antigen IgG levels	response to dietary antigen	http://www.ebi.ac.uk/efo/EFO_0005844	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Arterial stiffness	arterial stiffness measurement	http://www.ebi.ac.uk/efo/EFO_0004517	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Arterial stiffness (pulse-wave velocity)	arterial stiffness measurement	http://www.ebi.ac.uk/efo/EFO_0004517	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
+Arterial stiffness index	arterial stiffness measurement	http://www.ebi.ac.uk/efo/EFO_0004517	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 HbA2 levels	hemoglobin A2 measurement	http://www.ebi.ac.uk/efo/EFO_0005845	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemoglobin A2 levels in sickle cell anemia	hemoglobin A2 measurement	http://www.ebi.ac.uk/efo/EFO_0005845	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemoglobin levels	hemoglobin A2 measurement	http://www.ebi.ac.uk/efo/EFO_0005845	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -5008,9 +5176,9 @@ Docetaxel-induced peripheral neuropathy in metastatic castrate-resistant prostat
 Prostate cancer mortality	metastatic prostate cancer	http://www.ebi.ac.uk/efo/EFO_0000196	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Uveitis (juvenile idiopathic arthritis-associated)	uveitis	http://www.ebi.ac.uk/efo/EFO_1001231	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Uveitis in juvenile idiopathic arthritis	uveitis	http://www.ebi.ac.uk/efo/EFO_1001231	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Blood cell traits (multivariate analysis)	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cardiometabolic and hematological traits	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological parameters	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
-Hematology traits	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Mean corpuscular volume	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Red blood cell traits	mean corpuscular volume	http://www.ebi.ac.uk/efo/EFO_0004526	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Allergic rhinitis	allergic rhinitis	http://www.ebi.ac.uk/efo/EFO_0005854	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
@@ -5024,14 +5192,15 @@ Lipid traits	lipid measurement	http://www.ebi.ac.uk/efo/EFO_0004529	Other measur
 Metabolite levels	lipid measurement	http://www.ebi.ac.uk/efo/EFO_0004529	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Metabolite levels (lipid measures)	lipid measurement	http://www.ebi.ac.uk/efo/EFO_0004529	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Polyunsaturated fatty acid levels	lipid measurement	http://www.ebi.ac.uk/efo/EFO_0004529	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Blood cell traits (multivariate analysis)	mean corpuscular hemoglobin concentration	http://www.ebi.ac.uk/efo/EFO_0004528	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Mean corpuscular hemoglobin concentration	mean corpuscular hemoglobin concentration	http://www.ebi.ac.uk/efo/EFO_0004528	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Mean corpuscular hemoglobin concentration in sickle cell disease	mean corpuscular hemoglobin concentration	http://www.ebi.ac.uk/efo/EFO_0004528	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Other erythrocyte phenotypes	mean corpuscular hemoglobin concentration	http://www.ebi.ac.uk/efo/EFO_0004528	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Red blood cell traits	mean corpuscular hemoglobin concentration	http://www.ebi.ac.uk/efo/EFO_0004528	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
+Blood cell traits (multivariate analysis)	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cardiometabolic and hematological traits	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Clinical laboratory measurements	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hematological parameters	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
-Hematology traits	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemostatic factors and hematological phenotypes	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Mean corpuscular hemoglobin	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Red blood cell traits	mean corpuscular hemoglobin	http://www.ebi.ac.uk/efo/EFO_0004527	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -5196,6 +5365,7 @@ Hearing function (low tone)	hearing measurement	http://www.ebi.ac.uk/efo/EFO_000
 Hearing function (medium tone)	hearing measurement	http://www.ebi.ac.uk/efo/EFO_0007616	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Behavioural disinhibition (generation interaction)	non-substance related disinhibited behaviour	http://www.ebi.ac.uk/efo/EFO_0005432	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Non-substance related behavioral disinhibition	non-substance related disinhibited behaviour	http://www.ebi.ac.uk/efo/EFO_0005432	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Blood cell traits (multivariate analysis)	mean platelet volume	http://www.ebi.ac.uk/efo/EFO_0004584	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Mean platelet volume	mean platelet volume	http://www.ebi.ac.uk/efo/EFO_0004584	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Cancer	ovarian carcinoma	http://www.ebi.ac.uk/efo/EFO_0001075	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Cancer (pleiotropy)	ovarian carcinoma	http://www.ebi.ac.uk/efo/EFO_0001075	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -5235,6 +5405,7 @@ Type 2 diabetes (young onset) and obesity	obesity	http://www.ebi.ac.uk/efo/EFO_0
 Interleukin-18 levels	interleukin 18 measurement	http://www.ebi.ac.uk/efo/EFO_0004581	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Protein quantitative trait loci	interleukin 18 measurement	http://www.ebi.ac.uk/efo/EFO_0004581	Inflammatory measurement	http://www.ebi.ac.uk/efo/EFO_0004872
 Response to montelukast in asthma (change in FEV1)	response to Montelukast	http://www.ebi.ac.uk/efo/EFO_0007612	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Blood cell traits (multivariate analysis)	lymphocyte count	http://www.ebi.ac.uk/efo/EFO_0004587	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Lymphocyte counts	lymphocyte count	http://www.ebi.ac.uk/efo/EFO_0004587	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 White blood cell count	lymphocyte count	http://www.ebi.ac.uk/efo/EFO_0004587	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 White blood cell count (lymphocyte)	lymphocyte count	http://www.ebi.ac.uk/efo/EFO_0004587	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -5250,11 +5421,15 @@ Atopic march	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other d
 Baseline cortisol levels in response to low dose short synacthen test in corticosteroid treated asthma	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Childhood onset asthma (traffic air pollution exposure interaction)	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Peak cortisol response to low dose short synacthen test in corticosteroid treated asthma	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Post-bronchodilator FEV1 x air pollution (CO) interaction in childhood asthma	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Post-bronchodilator FEV1 x air pollution (NO2) interaction in childhood asthma	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Self-reported childhood asthma in adult smokers	childhood onset asthma	http://www.ebi.ac.uk/efo/EFO_0004591	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Huntington's disease (age at onset)	Huntington disease	http://www.orpha.net/ORDO/Orphanet_399	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Huntington's disease progression	Huntington disease	http://www.orpha.net/ORDO/Orphanet_399	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Hemoglobin A1c levels	hemoglobin A1 measurement	http://www.ebi.ac.uk/efo/EFO_0007629	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Hemoglobin levels	hemoglobin A1 measurement	http://www.ebi.ac.uk/efo/EFO_0007629	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
+Emphysema annual change measurement in smokers (adjusted lung density)	emphysema imaging measurement	http://www.ebi.ac.uk/efo/EFO_0007626	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Emphysema annual change measurement in smokers (percent low attenuation area)	emphysema imaging measurement	http://www.ebi.ac.uk/efo/EFO_0007626	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Emphysema imaging phenotypes	emphysema imaging measurement	http://www.ebi.ac.uk/efo/EFO_0007626	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Osteolysis in total hip arthroplasty	total hip arthroplasty	http://www.ebi.ac.uk/efo/EFO_0009806	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Osteolysis in total hip arthroplasty (time to prosthesis revision)	total hip arthroplasty	http://www.ebi.ac.uk/efo/EFO_0009806	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
@@ -5350,6 +5525,7 @@ Parent of origin effect on language impairment (maternal)	language impairment	ht
 Parent of origin effect on language impairment (paternal)	language impairment	http://www.ebi.ac.uk/efo/EFO_0005425	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Reading disability and language impairment	language impairment	http://www.ebi.ac.uk/efo/EFO_0005425	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Autism spectrum disorder-related traits	autism spectrum disorder symptom	http://www.ebi.ac.uk/efo/EFO_0005426	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Autistic traits score (Social and Communication Disorders Checklist)	autism spectrum disorder symptom	http://www.ebi.ac.uk/efo/EFO_0005426	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Social autistic-like traits	autism spectrum disorder symptom	http://www.ebi.ac.uk/efo/EFO_0005426	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Social communication problems	social communication impairment	http://www.ebi.ac.uk/efo/EFO_0005427	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Chemerin levels	chemerin measurement	http://www.ebi.ac.uk/efo/EFO_0004573	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
@@ -5441,6 +5617,7 @@ Lung cancer in never smokers	lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0001071
 Lung cancer x radon exposure interaction (1df)	lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0001071	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Multiple cancers (lung cancer, gastric cancer, and squamous cell carcinoma)	lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0001071	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Schizophrenia or lung cancer (pleiotropy)	lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0001071	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Peak expiratory flow	peak expiratory flow	http://www.ebi.ac.uk/efo/EFO_0009718	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Vestibular neuritis	vestibular neuronitis	http://www.ebi.ac.uk/efo/EFO_0007537	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Primary vesicoureteric reflux	vesicoureteric reflex	http://www.ebi.ac.uk/efo/EFO_0007536	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Menstruation quality of life impact (stiff neck)	Stiff neck	http://purl.obolibrary.org/obo/HP_0025258	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
@@ -5520,6 +5697,7 @@ IgG bisecting N-acetyl glucosamine phenotypes (multivariate analysis)	IgG bisect
 Brunt grade in nonalcoholic fatty liver disease	non-alcoholic fatty liver disease severity measurement	http://www.ebi.ac.uk/efo/EFO_0008421	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Brunt stage in nonalcoholic fatty liver disease	non-alcoholic fatty liver disease severity measurement	http://www.ebi.ac.uk/efo/EFO_0008421	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Hepatocyte fat droplet content in nonalcoholic fatty liver disease	non-alcoholic fatty liver disease severity measurement	http://www.ebi.ac.uk/efo/EFO_0008421	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Non-alcoholic fatty liver disease activity score	non-alcoholic fatty liver disease severity measurement	http://www.ebi.ac.uk/efo/EFO_0008421	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pediatric non-alcoholic fatty liver disease activity score	non-alcoholic fatty liver disease severity measurement	http://www.ebi.ac.uk/efo/EFO_0008421	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Abnormal white matter microstructure in first episode schizophrenia (multivariate analysis)	parietal cortex measurement	http://www.ebi.ac.uk/efo/EFO_0008420	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 White matter microstructure in first episode schizophrenia (left inferior parietal cortex)	parietal cortex measurement	http://www.ebi.ac.uk/efo/EFO_0008420	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5593,6 +5771,7 @@ Bone mineral accretion in asthma (oral corticosteroid dose interaction)	bone min
 Plasma free amino acid levels	leucine measurement	http://www.ebi.ac.uk/efo/EFO_0009770	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma free amino acid levels (adjusted for one other PFAA)	leucine measurement	http://www.ebi.ac.uk/efo/EFO_0009770	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Response to bleomycin (chromatid breaks)	chromatid break measurement	http://www.ebi.ac.uk/efo/EFO_0007593	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Early progression to active pulmonary tuberculosis in Mycobacterium tuberculosis-infected individuals	susceptibility to Mycobacterium tuberculosis infection measurement	http://www.ebi.ac.uk/efo/EFO_0008407	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Tuberculosis	susceptibility to Mycobacterium tuberculosis infection measurement	http://www.ebi.ac.uk/efo/EFO_0008407	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plantar warts	susceptibility to plantar warts measurement	http://www.ebi.ac.uk/efo/EFO_0008406	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Scarlet fever	susceptibility to scarlet fever measurement	http://www.ebi.ac.uk/efo/EFO_0008409	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5670,6 +5849,7 @@ Lateral ventricle volume in trauma-exposed individuals	response to trauma exposu
 Nucleus accumbens volume in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Pallidum volume in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Post traumatic stress disorder symptom count in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Post-traumatic stress disorder symptoms in trauma-exposed soldiers	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Problematic alcohol use in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Putamen volume in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Thalamus volume in trauma-exposed individuals	response to trauma exposure	http://www.ebi.ac.uk/efo/EFO_0008483	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -5684,8 +5864,12 @@ perceptual and visual search speed and executive function (trail making test BA)
 Insulin secretion rate	insulin secretion rate measurement	http://www.ebi.ac.uk/efo/EFO_0008001	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 insulin secretion rate (BMI adjusted)	insulin secretion rate measurement	http://www.ebi.ac.uk/efo/EFO_0008001	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Carbamazepine- or oxcarbazepine-induced hyponatremia in epilepsy	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Carbamazepine-induced Stevens-Johnson syndrome or toxic epidermal necrolysis (SJS/TEN)	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Carbamazepine-induced hyponatremia in epilepsy	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Carbamazepine-induced liver injury	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Carbamazepine-induced maculopapular exanthema	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Carbamazepine-induced reaction with eosinophilia and systemic symptoms	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Carbamazepine-induced serious cutaneous adverse reaction	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Severe carbamazepine- or oxcarbazepine-induced hyponatremia in epilepsy	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Chlamydia trachomatis seropositivity	Chlamydia trachomatis seropositivity	http://www.ebi.ac.uk/efo/EFO_0009330	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Peak insulin response	peak insulin response measurement	http://www.ebi.ac.uk/efo/EFO_0008000	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5742,6 +5926,8 @@ Atazanavir levels	atazanavir measurement	http://www.ebi.ac.uk/efo/EFO_0009306	Ot
 Tacrolimus trough concentration in kidney transplant patients	tacrolimus measurement	http://www.ebi.ac.uk/efo/EFO_0008458	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cannabis dependence symptom count	cannabis dependence measurement	http://www.ebi.ac.uk/efo/EFO_0008457	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Percent glycated albumin	percent glycated albumin	http://www.ebi.ac.uk/efo/EFO_0009304	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Exacerbation frequency in mepolizumab-treated chronic obstructive pulmonary disease	response to mepolizumab	http://www.ebi.ac.uk/efo/EFO_0008459	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Frequency of exacerbations requiring hospitalisation in mepolizumab-treated chronic obstructive pulmonary disease	response to mepolizumab	http://www.ebi.ac.uk/efo/EFO_0008459	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to mepolizumab in severe asthma	response to mepolizumab	http://www.ebi.ac.uk/efo/EFO_0008459	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Total glycated albumin levels	total glycated albumin	http://www.ebi.ac.uk/efo/EFO_0009305	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sasang constitutional medicine type (So-Eum)	So-Eum	http://www.ebi.ac.uk/efo/EFO_0007123	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
@@ -5773,6 +5959,7 @@ Anti-hepatitis B virus core antigen (HBc) IgG levels	Anti-hepatitis B virus core
 Anti-rubella virus IgG levels	Anti-rubella virus IgG measurement	http://www.ebi.ac.uk/efo/EFO_0009357	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	angiotensinogen measurement	http://www.ebi.ac.uk/efo/EFO_0008025	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-hepatitis B virus surface antigen (HBs) IgG levels	Anti-hepatitis B virus surface antigen IgG measurement	http://www.ebi.ac.uk/efo/EFO_0009358	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Response to hepatitis B vaccine	Anti-hepatitis B virus surface antigen IgG measurement	http://www.ebi.ac.uk/efo/EFO_0009358	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	angiostatin measurement	http://www.ebi.ac.uk/efo/EFO_0008024	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Celiac disease or Rheumatoid arthritis	immune system disease	http://www.ebi.ac.uk/efo/EFO_0000540	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Myasthenia gravis	immune system disease	http://www.ebi.ac.uk/efo/EFO_0000540	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -5787,6 +5974,7 @@ Heavy vaginal discharge	vaginal discharge	http://www.ebi.ac.uk/efo/EFO_0009365	O
 Vaginal discharge (metrorrhagia)	vaginal discharge	http://www.ebi.ac.uk/efo/EFO_0009365	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Blood protein levels	beta-endorphin measurement	http://www.ebi.ac.uk/efo/EFO_0008034	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Nicotine withdrawal	nicotine withdrawal measurement	http://www.ebi.ac.uk/efo/EFO_0009362	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Toxicity response to radiotherapy in prostate cancer (rectal bleeding) (time to event)	rectal bleeding	http://purl.obolibrary.org/obo/HP_0002573	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Blood protein levels	beta-Ala-His dipeptidase measurement	http://www.ebi.ac.uk/efo/EFO_0008033	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Chronic central serous retinopathy	chronic central serous retinopathy	http://www.ebi.ac.uk/efo/EFO_0009363	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Upper eyelid sagging severity	eyelid sagging measurement	http://www.ebi.ac.uk/efo/EFO_0009360	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5846,6 +6034,8 @@ Menstruation quality of life impact (edema)	edema	http://www.ebi.ac.uk/efo/EFO_0
 Blood protein levels	C-C motif chemokine 16 measurement	http://www.ebi.ac.uk/efo/EFO_0008044	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Energy intake	energy intake measurement	http://www.ebi.ac.uk/efo/EFO_0009374	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cannabis dependence	cannabis dependence	http://www.ebi.ac.uk/efo/EFO_0007191	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Cannabis use disorder	cannabis dependence	http://www.ebi.ac.uk/efo/EFO_0007191	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Cannabis use disorder vs schizophrenia	cannabis dependence	http://www.ebi.ac.uk/efo/EFO_0007191	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ketogenic dietary therapies in epilepsy	response to ketogenic diet	http://www.ebi.ac.uk/efo/EFO_0009372	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Blood protein levels	C-C motif chemokine 1 measurement	http://www.ebi.ac.uk/efo/EFO_0008041	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	breast cancer anti-estrogen resistance protein 3 measurement	http://www.ebi.ac.uk/efo/EFO_0008040	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5891,6 +6081,8 @@ Body mass index (physical activity interaction)	physical activity measurement	ht
 Body mass index (recreational physical activity interaction)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Body mass index in physically active individuals	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Body mass index in physically inactive individuals	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+DIastolic blood pressure x physical activity interaction (2df)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Diastolic blood pressure x physical activity interaction (1df)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Homeostasis model assessment of insulin resistance in higher physical activity	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Homeostasis model assessment of insulin resistance in lower physical activity	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Homeostasis model assessment of insulin resistance x physical activity interaction	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5906,6 +6098,8 @@ Physical activity (overall physical activity time)	physical activity measurement
 Physical activity (walking duration)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sedentary behaviour duration	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Strenuous sports or other exercises	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity interaction (1df)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Systolic blood pressure x physical activity interaction (2df)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Vigorous physical activity	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Waist circumference adjusted for BMI (joint analysis main effects and physical activity interaction)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Waist circumference adjusted for BMI (physical activity interaction)	physical activity measurement	http://www.ebi.ac.uk/efo/EFO_0008002	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5933,6 +6127,7 @@ Early-onset Parkinson's disease	Young adult-onset Parkinsonism	http://www.orpha.
 ADAMTS13 levels	a disintegrin and metalloproteinase with thrombospondin motifs 13	http://www.ebi.ac.uk/efo/EFO_0008011	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	a disintegrin and metalloproteinase with thrombospondin motifs 13	http://www.ebi.ac.uk/efo/EFO_0008011	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anti-Helicobacter pylori IgG seropositivity	Helicobacter pylori seropositivity	http://www.ebi.ac.uk/efo/EFO_0009341	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alzheimer's disease in hypertension	hypertension	http://www.ebi.ac.uk/efo/EFO_0000537	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Blood pressure response to hydrochlorothiazide in hypertension	hypertension	http://www.ebi.ac.uk/efo/EFO_0000537	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Blood pressure traits (multi-trait analysis)	hypertension	http://www.ebi.ac.uk/efo/EFO_0000537	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Cardiovascular disease in hypertension (ACE inhibitor interaction)	hypertension	http://www.ebi.ac.uk/efo/EFO_0000537	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -6035,6 +6230,7 @@ Esophageal adenocarcinoma x BMI interaction	Esophageal adenocarcinoma	http://www
 Esophageal adenocarcinoma x gastroesophageal reflux disease interaction	Esophageal adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000478	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Esophageal adenocarcinoma x pack-years of smoking exposure interaction	Esophageal adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000478	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Esophageal adenocarcinoma x smoking interaction	Esophageal adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_0000478	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Blood cell traits (multivariate analysis)	neutrophil count	http://www.ebi.ac.uk/efo/EFO_0004833	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Neutrophil count	neutrophil count	http://www.ebi.ac.uk/efo/EFO_0004833	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Neutrophil count in HIV-infection	neutrophil count	http://www.ebi.ac.uk/efo/EFO_0004833	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Neutrophil level response to clozapine in treatment-resistant schizophrenia	neutrophil count	http://www.ebi.ac.uk/efo/EFO_0004833	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -6224,6 +6420,8 @@ Recombination rate (males)	recombination rate	http://www.ebi.ac.uk/efo/EFO_00048
 Phytosterol levels	phytosterol measurement	http://www.ebi.ac.uk/efo/EFO_0004862	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Phosphorus levels	phosphorus measurement	http://www.ebi.ac.uk/efo/EFO_0004861	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Thyrotoxic hypokalemic periodic paralysis	thyrotoxic periodic paralysis	http://www.orpha.net/ORDO/Orphanet_79102	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
+Thyrotoxic hypokalemic periodic paralysis and Graves disease	thyrotoxic periodic paralysis	http://www.orpha.net/ORDO/Orphanet_79102	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
+Thyrotoxic hypokalemic periodic paralysis in Graves disease	thyrotoxic periodic paralysis	http://www.orpha.net/ORDO/Orphanet_79102	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Carotid atherosclerosis in HIV infection	common carotid intimal medial thickness	http://www.ebi.ac.uk/efo/EFO_0004860	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Carotid intima media thickness	common carotid intimal medial thickness	http://www.ebi.ac.uk/efo/EFO_0004860	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Common carotid intima-media thickness	common carotid intimal medial thickness	http://www.ebi.ac.uk/efo/EFO_0004860	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
@@ -6314,6 +6512,7 @@ Interferon alpha levels in systemic lupus erythematosus	systemic lupus erythemat
 Lupus	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Lupus nephritis in systemic lupus erythematosus	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Pediatric autoimmune diseases	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
+Response to belimumab (SLE response index) in systemic lupus erythematosus	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Response to cyclophosphamide in systemic lupus erythematosus with lupus nephritis	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Serologic markers in systemic lupus erythematosus	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
 Systemic lupus erythematosus	systemic lupus erythematosus	http://www.ebi.ac.uk/efo/EFO_0002690	Immune system disorder	http://www.ebi.ac.uk/efo/EFO_0000540
@@ -6351,6 +6550,7 @@ Age-related macular degeneration (extreme sampling)	age-related macular degenera
 Age-related macular degeneration (smoking status interaction)	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Age-related macular degeneration (wet)	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Disease progression in age-related macular degeneration	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Geographic atrophy lesion growth rate in age-related macular degeneration	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Neovascular age-related macular degeneration	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ranibizumab in age-related macular degeneration (additional treatment requirement)	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Response to ranibizumab in age-related macular degeneration (dry maculae)	age-related macular degeneration	http://www.ebi.ac.uk/efo/EFO_0001365	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -6368,12 +6568,15 @@ Circulating chromogranin peptide levels	CHGA cleavage product measurement	http:/
 Childhood onset asthma (traffic air pollution exposure interaction)	traffic air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0007908	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Coronary atherosclerosis (increased number of diseased vessels) (traffic exposure interaction)	traffic air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0007908	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Peripheral arterial disease (traffic-related air pollution interaction)	traffic air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0007908	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-bronchodilator FEV1 x air pollution (CO) interaction in childhood asthma	traffic air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0007908	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Post-bronchodilator FEV1 x air pollution (NO2) interaction in childhood asthma	traffic air pollution measurement	http://www.ebi.ac.uk/efo/EFO_0007908	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sepsis in extremely premature infants	Neonatal sepsis	http://purl.obolibrary.org/obo/HP_0040187	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Magnesium levels	magnesium measurement	http://www.ebi.ac.uk/efo/EFO_0004845	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Serum magnesium levels	magnesium measurement	http://www.ebi.ac.uk/efo/EFO_0004845	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Hip bone size	hip bone size	http://www.ebi.ac.uk/efo/EFO_0004844	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Folate pathway vitamin levels	vitamin B measurement	http://www.ebi.ac.uk/efo/EFO_0004843	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Vitamin B levels in ischemic stroke	vitamin B measurement	http://www.ebi.ac.uk/efo/EFO_0004843	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Blood cell traits (multivariate analysis)	eosinophil count	http://www.ebi.ac.uk/efo/EFO_0004842	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Eosinophil counts	eosinophil count	http://www.ebi.ac.uk/efo/EFO_0004842	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Sum eosinophil basophil counts	eosinophil count	http://www.ebi.ac.uk/efo/EFO_0004842	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Sum neutrophil eosinophil counts	eosinophil count	http://www.ebi.ac.uk/efo/EFO_0004842	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
@@ -6434,11 +6637,15 @@ Spherical equivalent or myopia (age of diagnosis)	Myopia	http://purl.obolibrary.
 Opioid sensitivity	response to opiate	http://purl.obolibrary.org/obo/GO_0014072	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Coronary atherosclerosis (increased number of diseased vessels) (traffic exposure interaction)	coronary atherosclerosis measurement	http://www.ebi.ac.uk/efo/EFO_0007938	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	blood protein measurement	http://www.ebi.ac.uk/efo/EFO_0007937	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Neurological blood protein biomarker levels	blood protein measurement	http://www.ebi.ac.uk/efo/EFO_0007937	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Protein quantitative trait loci	blood protein measurement	http://www.ebi.ac.uk/efo/EFO_0007937	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Serum total protein level	blood protein measurement	http://www.ebi.ac.uk/efo/EFO_0007937	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cough	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Dyspnea	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Exacerbation frequency in mepolizumab-treated chronic obstructive pulmonary disease	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Frequency of exacerbations requiring hospitalisation in mepolizumab-treated chronic obstructive pulmonary disease	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Phlegm	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease	respiratory symptom measurement	http://www.ebi.ac.uk/efo/EFO_0007939	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 6-month creatinine clearance change response to tenofovir treatment in HIV infection (concomitant antiretroviral treatment interaction)	creatinine clearance measurement	http://www.ebi.ac.uk/efo/EFO_0007934	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 6-month creatinine clearance change response to tenofovir treatment in HIV infection (treatment arm interaction)	creatinine clearance measurement	http://www.ebi.ac.uk/efo/EFO_0007934	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Creatinine clearance	creatinine clearance measurement	http://www.ebi.ac.uk/efo/EFO_0007934	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -6850,6 +7057,7 @@ Graft survival time in renal transplantation (donor effect)	donor genotype effec
 Graft survival time in renal transplantation (donor-recipient interaction)	donor genotype effect measurement	http://www.ebi.ac.uk/efo/EFO_0007892	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Carotenoid levels (lutein)	lutein measurement	http://www.ebi.ac.uk/efo/EFO_0007895	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Carotenoid levels (beta-carotene)	beta-carotene measurement	http://www.ebi.ac.uk/efo/EFO_0007894	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Toxicity response to radiotherapy in prostate cancer (increased urinary frequency) (time to event)	Abnormality of the urinary system	http://purl.obolibrary.org/obo/HP_0000079	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Rhegmatogenous retinal detachment	rhegmatogenous retinal detachment	http://www.ebi.ac.uk/efo/EFO_0005240	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Non-small cell lung cancer	non-small cell lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0003060	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Non-small cell lung cancer (recurrence rate)	non-small cell lung carcinoma	http://www.ebi.ac.uk/efo/EFO_0003060	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -6892,6 +7100,7 @@ Alcohol consumption (heavy vs. light/non-drinkers)	alcohol consumption measureme
 Alcohol consumption (max-drinks)	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol consumption in current drinkers	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol consumption over the past year	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alcohol dependence (giving up activities)	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alcohol use disorder (consumption score)	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Aspartate aminotransferase levels in excessive alcohol consumption	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Aspartate aminotransferase levels in low alcohol consumption	alcohol consumption measurement	http://www.ebi.ac.uk/efo/EFO_0007878	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -6980,6 +7189,7 @@ Gut microbiota (bacterial taxa)	taxonomic microbiome measurement	http://www.ebi.
 Trans-epidermal water loss	skin barrier function measurement	http://www.ebi.ac.uk/efo/EFO_0007891	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pericardial adipose tissue adjusted for height and weight	pericardial adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0007890	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pericardial fat	pericardial adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0007890	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Liver fibrosis in non-alcoholic fatty acid liver disease	Hepatic fibrosis	http://purl.obolibrary.org/obo/HP_0001395	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Liver fibrosis in pediatric non-alcoholic fatty acid liver disease	Hepatic fibrosis	http://purl.obolibrary.org/obo/HP_0001395	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Liver fibrosis severity in HIV/hepatitis C co-infection	Hepatic fibrosis	http://purl.obolibrary.org/obo/HP_0001395	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Tumor necrosis factor beta levels	tumor necrosis factor beta measurement	http://www.ebi.ac.uk/efo/EFO_0008308	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7088,11 +7298,15 @@ Sleep (number of episodes)	sleep quality	http://www.ebi.ac.uk/efo/EFO_0005272	Ot
 Sleep efficiency	sleep quality	http://www.ebi.ac.uk/efo/EFO_0005272	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sleep quality	sleep quality	http://www.ebi.ac.uk/efo/EFO_0005272	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Sleep depth	sleep depth	http://www.ebi.ac.uk/efo/EFO_0005273	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Alanine aminotransferase levels in non-alcoholic fatty liver disease	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Aspartate aminotransferase levels in non-alcoholic fatty liver disease	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Liver fibrosis in non-alcoholic fatty acid liver disease	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Liver fibrosis in pediatric non-alcoholic fatty acid liver disease	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Non-alcoholic fatty liver disease histology (AST)	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Non-alcoholic fatty liver disease histology (lobular)	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Non-alcoholic fatty liver disease histology (other)	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Nonalcoholic fatty liver disease	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Nonalcoholic fatty liver disease (SNP x SNP interaction)	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Pediatric non-alcoholic fatty liver disease activity score	non-alcoholic fatty liver disease	http://www.ebi.ac.uk/efo/EFO_0003095	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Plantar fascial disorders	Plantar Fibromatosis	http://www.ebi.ac.uk/efo/EFO_1000481	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Peanut allergy	peanut allergy measurement	http://www.ebi.ac.uk/efo/EFO_0007017	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7186,6 +7400,7 @@ Facial emotion recognition (fearful faces)	facial emotion recognition measuremen
 Facial emotion recognition (happy faces)	facial emotion recognition measurement	http://www.ebi.ac.uk/efo/EFO_0008329	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Facial emotion recognition (sad faces)	facial emotion recognition measurement	http://www.ebi.ac.uk/efo/EFO_0008329	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	a disintegrin and metalloproteinase with thrombospondin motifs 5 measurement	http://www.ebi.ac.uk/efo/EFO_0008326	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Response to radiotherapy in prostate cancer (overall toxicity)	adverse effect	http://www.ebi.ac.uk/efo/EFO_0009658	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Sotalol-induced IKr potassium channel inhibition  (T wave peak and end interval change)	response to sotalol	http://www.ebi.ac.uk/efo/EFO_0008325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Sotalol-induced IKr potassium channel inhibition  (ventricular repolarization duration change)	response to sotalol	http://www.ebi.ac.uk/efo/EFO_0008325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Sotalol-induced IKr potassium channel inhibition (T wave maximal amplitude change)	response to sotalol	http://www.ebi.ac.uk/efo/EFO_0008325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -7248,6 +7463,7 @@ Psychosis proneness (revised physical anhedonia scale)	psychosis predisposition 
 Psychosis proneness (revised social anhedonia scale)	psychosis predisposition measurement	http://www.ebi.ac.uk/efo/EFO_0008337	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Psychosis proneness (schizoidia scale)	psychosis predisposition measurement	http://www.ebi.ac.uk/efo/EFO_0008337	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Age at loss of ambulation in Duchenne muscular dystrophy	disease progression measurement	http://www.ebi.ac.uk/efo/EFO_0008336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Cerebral microbleed progression	disease progression measurement	http://www.ebi.ac.uk/efo/EFO_0008336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Crohn's disease (indolent vs progressive)	disease progression measurement	http://www.ebi.ac.uk/efo/EFO_0008336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Crohn's disease (time to first abdominal surgery)	disease progression measurement	http://www.ebi.ac.uk/efo/EFO_0008336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Crohn's disease (time to progression)	disease progression measurement	http://www.ebi.ac.uk/efo/EFO_0008336	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7394,11 +7610,23 @@ Response to antidepressants in depression	response to antidepressant	http://purl
 Response to citalopram treatment	response to antidepressant	http://purl.obolibrary.org/obo/GO_0036276	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Treatment resistant depression	response to antidepressant	http://purl.obolibrary.org/obo/GO_0036276	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Body mass index (physical activity interaction)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (least active quartile vs others) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (least active quartile vs others) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (least vs most active quartile) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (least vs most active quartile) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (less vs more active half) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Diastolic blood pressure x physical activity (less vs more active half) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 HDL cholesterol x physical activity interaction (1df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 HDL cholesterol x physical activity interaction (2df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 LDL cholesterol x physical activity interaction (1df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 LDL cholesterol x physical activity interaction (2df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Obesity-related traits	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (least active quartile vs others) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (least active quartile vs others) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (least vs most active quartile) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (least vs most active quartile) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (less vs more active half) interaction (1df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Systolic blood pressure x physical activity (less vs more active half) interaction (2df)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Triglycerides x physical activity interaction (1df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Triglycerides x physical activity interaction (2df test)	physical activity	http://www.ebi.ac.uk/efo/EFO_0003940	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Cocaine dependence	cocaine dependence	http://www.ebi.ac.uk/efo/EFO_0002610	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -7480,6 +7708,7 @@ Response to cyclophosphamide in systemic lupus erythematosus with lupus nephriti
 Digestive system disease (Barrett's esophagus and esophageal adenocarcinoma combined)	digestive system disease	http://www.ebi.ac.uk/efo/EFO_0000405	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Thiopurine-induced digestive symptoms in inflammatory bowel disease	digestive system disease	http://www.ebi.ac.uk/efo/EFO_0000405	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Ankle-brachial index	ankle brachial index	http://www.ebi.ac.uk/efo/EFO_0003912	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
+Minimum ankle–brachial index	ankle brachial index	http://www.ebi.ac.uk/efo/EFO_0003912	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Subclinical atherosclerosis traits (other)	ankle brachial index	http://www.ebi.ac.uk/efo/EFO_0003912	Cardiovascular measurement	http://www.ebi.ac.uk/efo/EFO_0004298
 Diffuse large B cell lymphoma	diffuse large b-cell lymphoma	http://www.ebi.ac.uk/efo/EFO_0000403	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Event free survival in diffuse large B-cell lymphoma treated with immunochemotherapy	diffuse large b-cell lymphoma	http://www.ebi.ac.uk/efo/EFO_0000403	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
@@ -7535,6 +7764,7 @@ Motor development (prenatal lead exposure interaction)	blood lead measurement	ht
 Immunoglobulin light chain (AL) amyloidosis (heart and kidney involvement)	kidney amyloid deposition measurement	http://www.ebi.ac.uk/efo/EFO_0008371	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Immunoglobulin light chain (AL) amyloidosis (kidney involvement)	kidney amyloid deposition measurement	http://www.ebi.ac.uk/efo/EFO_0008371	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Brain volume in infants (white matter)	infant white matter volume measurement	http://www.ebi.ac.uk/efo/EFO_0008370	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Toxicity response to radiotherapy in prostate cancer (decreased urine stream) (time to event)	Urinary retention	http://purl.obolibrary.org/obo/HP_0000016	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Obstructive sleep apnea	obstructive sleep apnea	http://www.ebi.ac.uk/efo/EFO_0003918	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Obstructive sleep apnea (average oxygen saturation during sleep)	obstructive sleep apnea	http://www.ebi.ac.uk/efo/EFO_0003918	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Obstructive sleep apnea trait (apnea hypopnea index)	obstructive sleep apnea	http://www.ebi.ac.uk/efo/EFO_0003918	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
