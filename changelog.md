@@ -3,7 +3,7 @@
 #### 22nd August 2019. Version 0.1.0.:
 * Registered domain.
 * Set up Heroku Dyno on free tier for prototyping.
-* Pushed everything from local host onto GitHub.
+* Pushed everything from localhost onto GitHub.
 * Launched prototype as deployed via Heroku CLI!
 
 #### 25th August 2019. Version 0.2.0.:
