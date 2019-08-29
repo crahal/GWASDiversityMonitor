@@ -49,3 +49,13 @@ European, African unspecified, South Asian, South East Asian, Central Asian, Eas
 South Asian, Central Asian
 2019-08-28 06:03:20,816 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-08-28 06:03:21,504 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-08-29 01:36:07,905 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-08-24.tsv
+2019-08-29 01:36:09,205 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-08-24.tsv
+2019-08-29 01:36:23,779 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-08-24.tsv
+2019-08-29 01:36:24,402 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-08-29 01:36:34,670 - diversity_logger - DEBUG - Wuhoh! Need to update dictionary terms:
+European, African American or Afro-Caribbean, Native American, NR
+European, African unspecified, South Asian, South East Asian, Central Asian, East Asian, African American or Afro-Caribbean, Greater Middle Eastern (Middle Eastern, North African or Persian), Native American, Other admixed ancestry
+South Asian, Central Asian
+2019-08-29 01:39:04,036 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-08-29 01:39:04,940 - diversity_logger - INFO - Successfully zipped the files to be downloaded
