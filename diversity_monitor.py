@@ -5,7 +5,7 @@ from bokeh.palettes import brewer
 from bokeh.plotting import curdoc, figure
 from bokeh.models.widgets import Tabs
 from bokeh.transform import cumsum
-from bokeh.palettes import Category20c
+from bokeh.palettes import Category10
 import datetime as dt
 import os
 from colorcet import blues
@@ -143,14 +143,14 @@ def update_choro():
     geosource.geojson = new_data
 
 
-def create_choro_plot():
+def create_choro_plot(year):
     '''
     Creates the choropleth plot. Returns:
         geosource -- the choropleth source
         choro_plot -- the choropleth map itself
         choro_hover -- the hovertool for the choropleth map
     '''
-    geosource = GeoJSONDataSource(geojson=json_data(2018))
+    geosource = GeoJSONDataSource(geojson=json_data(year))
     palette = brewer['Blues'][6]
     palette = palette[::-1][1:-1]
     palette[0] = '#eef2ff'
@@ -164,7 +164,7 @@ def create_choro_plot():
                          border_line_color=None, orientation='vertical',
                          width=int(width_dict['choro_width']/40))
     choro_plot = figure(title='Participant Recruitment Over Time, All ' +\
-                              'Parent Terms and Both Stages: 2018',
+                              'Parent Terms and Both Stages: ' + str(year),
                         plot_height=width_dict['choro_height'], tools=TOOLS,
                         plot_width=width_dict['choro_width'],
                         toolbar_location=None)
@@ -222,7 +222,7 @@ def update_ts():
         ts_plot.yaxis.axis_label = 'Percent of all Participants (%)'
 
 
-def create_ts_plot():
+def create_ts_plot(maxyear):
     '''
     Creates the time series plot. Returns:
         ts_source -- the source data which gets updated
@@ -231,7 +231,7 @@ def create_ts_plot():
     '''
     ts_source = ColumnDataSource(data=dict(index=[], Year=[], ts_toplot=[],
                                            ts_color=[], ts_legendval=[]))
-    ts_plot = figure(x_range=(2008, 2019), plot_height=width_dict['ts_height'],
+    ts_plot = figure(x_range=(2008, maxyear), plot_height=width_dict['ts_height'],
                      plot_width=width_dict['ts_width'], tools=TOOLS,
                      toolbar_location=None,
                      y_axis_label='Percent of all Studies (%)',
@@ -268,14 +268,14 @@ def create_bubble_plot():
                          plot_width=width_dict['bubble_width'],
                          y_axis_label='Number of Genotyped Participants',
                          x_axis_type='datetime', y_axis_location='left',
-                         x_range=(dt.date(2008, 1, 1), dt.date(2019, 8, 30)),
+                         x_range=(dt.date(2008, 1, 1), bubble_df['DATE'].max()),
                          tools=TOOLS, toolbar_location=None,
                          sizing_mode="scale_both")
     bubble_hover = bubble_plot.select(dict(type=HoverTool))
-    bubble_hover.tooltips = [("Ancestry", "@Broader"), ("Size", "@N"),
+    bubble_hover.tooltips = [("Size", "@N"),
                              ("PUBMEDID", "@PUBMEDID"),
                              ("First Author", "@AUTHOR"),
-                             ("Stage", "@STAGE"), ("Parent Term", "@PARENT")]
+                             ("Trait", "@TRAIT")]
     bubble_plot.circle(x='DATE', y='N', source=bubble_source,
                        color='bubble_color', size='size', alpha=0.45,
                        line_color='black', line_width=0.175, legend='Broader')
@@ -323,7 +323,8 @@ def update_bubble():
                               Broader=df['Broader'], size=df['size'],
                               AUTHOR=df['AUTHOR'], PUBMEDID=df['PUBMEDID'],
                               STAGE=df['STAGE'].str.title(),
-                              PARENT=df['parentterm'])
+                              PARENT=df['parentterm'],
+                              TRAIT=df['DiseaseOrTrait'])
 
 
 def create_dohnut_plot():
@@ -354,7 +355,8 @@ def create_dohnut_plot():
                               end_angle=cumsum('dohnut_angle'),
                               line_color="white", source=dohnut_source,
                               fill_color='dohnut_color', legend='Broader',
-                              direction='anticlock')
+                              direction='anticlock',
+                              fill_alpha=0.8)
     dohnut_plot.axis.axis_label = None
     dohnut_plot.axis.visible = False
     dohnut_plot.grid.grid_line_color = None
@@ -368,6 +370,8 @@ def create_dohnut_plot():
 
 def update_dohnut():
     ''' update the dohnut chart with interactive choices'''
+    colorlist = ['#fee08b', '#d53e4f', '#99d594', '#bdbdbd',
+                 '#3288bd', '#fc8d59', '#807dba']
     df = select_parent_dohnut()
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Initial':
@@ -376,7 +380,7 @@ def update_dohnut():
                                       dohnut_toplot=df['InitialCount']/100,
                                       dohnut_angle=df['InitialCount'] /
                                                    df['InitialCount'].sum()*2*pi,
-                                      dohnut_color=Category20c[len(df['InitialCount'])],
+                                      dohnut_color=colorlist,
                                       dohnut_stage=['Initial']*len(df))
         elif str(stage.value) == 'Replication':
             dohnut_source.data = dict(Broader=df['Broader'],
@@ -384,7 +388,7 @@ def update_dohnut():
                                       dohnut_toplot=df['ReplicationCount']/100,
                                       dohnut_angle=df['ReplicationCount'] /
                                                    df['ReplicationCount'].sum()*2*pi,
-                                      dohnut_color=Category20c[len(df['ReplicationCount'])],
+                                      dohnut_color=colorlist,
                                       dohnut_stage=['Replication']*len(df))
         dohnut_plot.title.text = 'Number Studies looking at ' +\
                                  str(parent.value) + ' at ' +\
@@ -396,7 +400,7 @@ def update_dohnut():
                                       dohnut_toplot=df['InitialN']/100,
                                       dohnut_angle=df['InitialN'] /
                                                    df['InitialN'].sum()*2*pi,
-                                      dohnut_color=Category20c[len(df['InitialN'])],
+                                      dohnut_color=colorlist,
                                       dohnut_stage=['Initial']*len(df))
         elif str(stage.value) == 'Replication':
             dohnut_source.data = dict(Broader=df['Broader'],
@@ -404,7 +408,7 @@ def update_dohnut():
                                       dohnut_toplot=df['ReplicationN']/100,
                                       dohnut_angle=df['ReplicationN'] /
                                                    df['ReplicationN'].sum()*2*pi,
-                                      dohnut_color=Category20c[len(df['ReplicationN'])],
+                                      dohnut_color=colorlist,
                                       dohnut_stage=['Replication']*len(df))
         dohnut_plot.title.text = 'Number Participants Studied for ' +\
                                  str(parent.value).title() + ' at ' +\
@@ -423,16 +427,18 @@ width_dict = create_width_dict()
 data_path = os.path.abspath(os.path.join('data'))
 bubble_df, freetext_df, ts_init_count, ts_init_sum, ts_rep_count,\
     ts_rep_sum, choro_df, gdf, dohnut_df = import_data(data_path)
+maxyear = bubble_df['DATE'].max().year
 stage, parent, ancestry, metric, slider = widgets(width_dict['control_width'],
                                                   width_dict['slider_height'],
                                                   width_dict['slider_width'],
-                                                  bubble_df, ts_init_count)
+                                                  bubble_df, ts_init_count,
+                                                  maxyear)
 slider.on_change('value', update_choro_slider)
 TOOLS = "hover,save,pan,box_zoom,reset,wheel_zoom"
 
 hbar_source, hbar_hover, hbar_plot = create_hbar_plot()
-geosource, choro_hover, choro_plot = create_choro_plot()
-ts_source, ts_hover, ts_plot = create_ts_plot()
+geosource, choro_hover, choro_plot = create_choro_plot(maxyear-1)
+ts_source, ts_hover, ts_plot = create_ts_plot(maxyear)
 bubble_source, bubble_hover, bubble_plot = create_bubble_plot()
 dohnut_source, dohnut_hover, dohnut_plot = create_dohnut_plot()
 
@@ -451,12 +457,12 @@ header, about, dumdiv, summary, footer, downloaddata = load_divs(width_dict['two
 interact_fig = column(row(column(header, *controls, downloaddata,
                                  width=width_dict['headerbox_width'],
                                  height=width_dict['headerbox_width']),
-                          bubble_plot, hbar_plot, sizing_mode="fixed"),
+                          bubble_plot, dumdiv, hbar_plot, sizing_mode="fixed"),
                       row(dohnut_plot, dumdiv, ts_plot, dumdiv,
                           row(choro_plot, slider), sizing_mode="fixed"))
 interact_tab = Panel(child=interact_fig, title='Interactive Figures')
-text = layout(row(column(header, summary, footer), about),
-              sizing_mode='stretch_both')
+text = layout(row(column(header, summary, footer), dumdiv, about),
+              sizing_mode='stretch_width')
 texttab = Panel(child=text, title='About')
 tabs = Tabs(tabs=[interact_tab, texttab])
 curdoc().add_root(tabs)

@@ -13,7 +13,7 @@ def create_width_dict():
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 400, 'control_width': 275,
                   'slider_height': 330, 'slider_width': 30,
-                  'twocolumn_width': 910, 'div_width': 15}
+                  'twocolumn_width': 900, 'div_width': 15}
     return width_dict
 
 
@@ -65,7 +65,7 @@ def import_data(data_path):
 
 
 def widgets(control_width, slider_height,
-            slider_width, bubble_df, ts_init_count):
+            slider_width, bubble_df, ts_init_count, maxyear):
     stage = Select(title="Research Stage", value="Initial",
                    options=['Initial', 'Replication'],
                    width=control_width)
@@ -80,9 +80,9 @@ def widgets(control_width, slider_height,
                     options=["Number of Studies (%)",
                              "Number of Participants (%)"],
                     width=control_width)
-    slider = Slider(title='', start=2008, end=2018, step=1,
+    slider = Slider(title='', start=2008, end=maxyear-1, step=1,
                     orientation="vertical", width=slider_width,
-                    height=slider_height, value=2018)
+                    height=slider_height, value=maxyear-1)
     return stage, parent, ancestry, metric, slider
 
 

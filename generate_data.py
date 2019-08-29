@@ -43,6 +43,8 @@ def create_summarystats(data_path):
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False, low_memory=False)
+    temp_bubble_df = pd.read_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'),
+                            sep=',', index_col=False, low_memory=False)
     sumstats = {}
     sumstats['number_studies'] = int(len(Cat_Stud['PUBMEDID'].unique()))
     sumstats['first_study_date'] = str(Cat_Stud['DATE'].min())
@@ -69,6 +71,11 @@ def create_summarystats(data_path):
                                          sum())
     sumstats['average_associations'] = float(Cat_Stud['ASSOCIATION COUNT'].
                                              mean())
+    noneuro_trait = pd.DataFrame(temp_bubble_df[temp_bubble_df['Broader']!='European'].\
+                    groupby(['DiseaseOrTrait']).size()).\
+                    sort_values(by=0, ascending=False).\
+                    reset_index()['DiseaseOrTrait'][0]
+    sumstats['noneuro_trait'] = str(noneuro_trait)
     sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).
                                          mean(), 10))
     sumstats['threshold_pvals'] = int(len(Cat_Full[Cat_Full['P-VALUE'].
@@ -105,46 +112,48 @@ def create_summarystats(data_path):
 def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[-15] = '<li> There are a total of ' + \
+    summary[-16] = '<li> There are a total of ' + \
                    str(sumstats['number_studies']) +\
                    ' studies in the Catalog.</li>\n'
-    summary[-14] = '<li> Earliest study in catalogued was PubMedID ' +\
+    summary[-15] = '<li> Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-13] = '<li> Most recent study in catalogued was PubMedID ' +\
+    summary[-14] = '<li> Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-12] = '<li> Accession with biggest sample is PubMedID ' +\
+    summary[-13] = '<li> Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-11] = '<li> There are a total of ' +\
+    summary[-12] = '<li> There are a total of ' +\
                    str(sumstats['number_accessions']) +\
                    ' unique study accessions.</li>\n'
-    summary[-10] = '<li> There are a total of ' +\
+    summary[-11] = '<li> There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
                    ' unique diseases\traits studied.</li>\n'
-    summary[-9] = '<li> There are a total of ' +\
-                  str(sumstats['number_mappedtrait']) +\
-                  ' unique EBI "Mapped Traits".</li>\n'
-    summary[-8] = '<li> The total number of associations found is ' +\
+    summary[-10] = '<li> There are a total of ' +\
+                   str(sumstats['number_mappedtrait']) +\
+                   ' unique EBI "Mapped Traits".</li>\n'
+    summary[-9] = '<li> The total number of associations found is ' +\
                   str(sumstats['found_associations']) +\
                   '.</li>\n'
-    summary[-7] = '<li> The average number of associations found is ' +\
+    summary[-8] = '<li> The average number of associations found is ' +\
                   str(round(sumstats['average_associations'], 2)) + '.</li>\n'
-    summary[-6] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
+    summary[-7] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
                   "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</li>\n'
-    summary[-5] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
+    summary[-6] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
                   str(sumstats['threshold_pvals']) + '.</li>\n'
-    summary[-4] = '<li> The journal to feature the most GWAS studies is: ' +\
+    summary[-5] = '<li> The journal to feature the most GWAS studies is: ' +\
                   str(sumstats['mostcommon_journal']) + '.</li>\n'
-    summary[-3] = '<li> Total number of different journals publishing GWAS is: ' +\
+    summary[-4] = '<li> Total number of different journals publishing GWAS is: ' +\
                   str(sumstats['unique_journals']) + '.</li>\n'
+    summary[-3] = '<li> Most frequently studied (Non-European) "Diseases Trait": ' +\
+                  str(sumstats['noneuro_trait']) + '.</li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
 
@@ -718,17 +727,18 @@ def make_bubbleplot_df(data_path):
                            sep='\t')
     Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
     with open(os.path.join(data_path, 'catalog', 'synthetic',
-                           'Mapped_EFO.csv'), 'w') as fileout:
+                           'Mapped_EFO.csv'), 'w', encoding="utf-8") as fileout:
         efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
         efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
-                          'PUBMEDID', 'ASSOCIATION COUNT'])
+                          'PUBMEDID', 'ASSOCIATION COUNT', 'DISEASE/TRAIT'])
         for index, row in Cat_Stud.iterrows():
             listoftraits = row['MAPPED_TRAIT_URI'].split(',')
             for trait in listoftraits:
                 efo_out.writerow([trait.lower().strip(),
                                   row['STUDY ACCESSION'],
                                   str(row['PUBMEDID']),
-                                  str(row['ASSOCIATION COUNT'])])
+                                  str(row['ASSOCIATION COUNT']),
+                                  str(row['DISEASE/TRAIT'])])
     EFOsPerPaper = pd.read_csv(os.path.join(data_path, 'catalog',
                                             'synthetic', 'Mapped_EFO.csv'),
                                sep=',')
@@ -750,11 +760,13 @@ def make_bubbleplot_df(data_path):
                                       '\t', index_col=False,
                                       parse_dates=['DATE'])
     merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-                                               'parentterm']],
+                                               'parentterm', 'DISEASE/TRAIT']],
                       Cat_Anc_withBroader, how='left', on='STUDY ACCESSION')
     merged["AUTHOR"] = merged["FIRST AUTHOR"]
-    merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR",
+    merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR", "DISEASE/TRAIT",
                      "STAGE", 'DATE', "STUDY ACCESSION", "parentterm"]]
+    merged = merged.rename(columns={'DISEASE/TRAIT':
+                                    'DiseaseOrTrait'})
     merged = merged[merged['Broader'] != 'In Part Not Recorded']
     merged["color"] = 'black'
     merged["color"] = np.where(merged["Broader"] == 'European',

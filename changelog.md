@@ -3,7 +3,7 @@
 #### 22nd August 2019. Version 0.1.0.:
 * Registered domain.
 * Set up Heroku Dyno on free tier for prototyping.
-* Pushed everything from localhost onto GitHub.
+* Pushed everything from local host onto GitHub.
 * Launched prototype as deployed via Heroku CLI!
 
 #### 25th August 2019. Version 0.2.0.:
@@ -20,5 +20,10 @@
 * Added EFO traits to the hovertool of the bubble plot.
 
 #### 27th August 2019. Version 0.3.0:
-* New function tabulates most frequently analyzed Parent terms.
+* New function tabulates most frequently analysed Parent terms.
 * Added summary statistics to Tab related to most frequent terms of ancestry.
+
+#### 28th August, 2019. Version 0.3.1:
+* Fixed spacing issues
+* Future proofed some of the backend
+* Enabled Automated Certificate Management (ACM) to manage TLS certificates.
