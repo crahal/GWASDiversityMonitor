@@ -6,8 +6,8 @@ from bokeh.models import Div
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 430,
-                  'choro_width': 775, 'ts_height': 430, 'ts_width': 515,
+    width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 415,
+                  'choro_width': 775, 'ts_height': 415, 'ts_width': 515,
                   'bubble_height': 425, 'bubble_width': 800,
                   'dohnut_height': 400, 'dohnut_width': 450,
                   'headerbox_height': 400, 'headerbox_width': 375,
