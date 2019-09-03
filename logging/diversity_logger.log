@@ -95,3 +95,9 @@ South Asian, Central Asian
 2019-09-02 06:00:27,205 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-02 06:03:05,699 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-02 06:03:06,597 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-03 06:00:11,689 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-08-24.tsv
+2019-09-03 06:00:12,818 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-08-24.tsv
+2019-09-03 06:00:24,833 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-08-24.tsv
+2019-09-03 06:00:25,497 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-03 06:03:06,605 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-03 06:03:07,497 - diversity_logger - INFO - Successfully zipped the files to be downloaded
