@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 correspondance/
 data/catalog/cached_files/*
 static_figures/
+=======
+correspondance
+data/catalog/cached_files/*
+static_figures
+>>>>>>> fbfc0d4e82e4b02f146d81094b7ddc824af2d8d9
