@@ -1,0 +1,3 @@
+correspondance/
+data/catalog/cached_files/
+static_figures/
