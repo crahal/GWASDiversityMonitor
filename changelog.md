@@ -25,5 +25,17 @@
 
 #### 28th August, 2019. Version 0.3.1:
 * Fixed spacing issues
-* Future proofed some of the backend
+* Future proofed some of the back-end
 * Enabled Automated Certificate Management (ACM) to manage TLS certificates.
+
+#### 4th September, 2019. Version 0.4.0:
+* Added ERC logo to represent their grateful contribution
+* Added links to curators academic homepages.
+* Replaced all strings away from basic 'Parents' to more clearly relate to 'Parent Categories'
+* Replaced all references to 'dohnut' with references to 'doughnut'
+* Added brief descriptions of all widgets and relevant hyperlinks
+* Renamed 'About' tab to 'Additional Information'
+* Added 'Figure X' into the titles of the 'Interactive Figures' tab.
+* Set up proper caching of all of the old files served up by the catalog
+* TODO: .git ignore
+* TODO: find stuff for melinda to put into the correspondance

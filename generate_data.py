@@ -606,7 +606,7 @@ def make_freetext_dfs(data_path):
     merged.to_csv(os.path.join(data_path, 'toplot', 'freetext_merged.csv'))
 
 
-def make_dohnut_df(data_path):
+def make_doughnut_df(data_path):
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t')
@@ -644,7 +644,7 @@ def make_dohnut_df(data_path):
                       Cat_Anc_withBroader[['STUDY ACCESSION',
                                            'Broader', 'N', 'STAGE']],
                       how='left', on='STUDY ACCESSION')
-    dohnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
+    doughnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
                                                 'InitialN', 'ReplicationN',
                                                 'InitialCount',
                                                 'ReplicationCount'])
@@ -652,28 +652,28 @@ def make_dohnut_df(data_path):
     merged = merged[merged['parentterm'].notnull()]
     counter = 0
     for ancestry in merged['Broader'].unique().tolist():
-        dohnut_df.at[counter, 'Broader'] = ancestry
-        dohnut_df.at[counter, 'parentterm'] = 'All'
-        dohnut_df.at[counter,
+        doughnut_df.at[counter, 'Broader'] = ancestry
+        doughnut_df.at[counter, 'parentterm'] = 'All'
+        doughnut_df.at[counter,
                      'ReplicationN'] = (merged[(
                                         merged['STAGE'] == 'replication') &
                                         (merged['Broader'] == ancestry)]['N'].
                                         sum() /
                                         merged[merged['STAGE'] ==
                                         'replication']['N'].sum())*100
-        dohnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
+        doughnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
                                                      'initial') &
                                                     (merged['Broader'] ==
                                                      ancestry)]['N'].sum() /
                                              merged[merged['STAGE'] ==
                                                     'initial']['N'].sum())*100
-        dohnut_df.at[counter, 'ReplicationCount'] = (len(merged[
+        doughnut_df.at[counter, 'ReplicationCount'] = (len(merged[
                                                          (merged['Broader'] ==
                                                           ancestry)]) /
                                                      len(merged[
                                                           merged['STAGE'] ==
                                                          'replication']))*100
-        dohnut_df.at[counter, 'InitialCount'] = (len(merged[
+        doughnut_df.at[counter, 'InitialCount'] = (len(merged[
                                                      (merged['STAGE'] ==
                                                       'initial') &
                                                      (merged['Broader'] ==
@@ -682,22 +682,22 @@ def make_dohnut_df(data_path):
                                                             'initial']))*100
         counter = counter + 1
         for parent in merged['parentterm'].unique().tolist():
-            dohnut_df.at[counter, 'Broader'] = ancestry
-            dohnut_df.at[counter, 'parentterm'] = parent
-            dohnut_df.at[counter,
+            doughnut_df.at[counter, 'Broader'] = ancestry
+            doughnut_df.at[counter, 'parentterm'] = parent
+            doughnut_df.at[counter,
                          'ReplicationN'] = (merged[
                                             (merged['STAGE'] == 'replication') &
                                             (merged['parentterm'] == parent) &
                                             (merged['Broader'] == ancestry)]['N'].sum() /
                                             merged[(merged['STAGE'] == 'replication') &
                                             (merged['parentterm'] == parent)]['N'].sum())*100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'InitialN'] = (merged[(merged['STAGE'] == 'initial') &
                                                (merged['Broader'] == ancestry) &
                                                (merged['parentterm'] == parent)]['N'].sum() /
                                         merged[(merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent)]['N'].sum())*100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'ReplicationCount'] = (len(merged[
                                                    (merged['STAGE'] == 'replication') &
                                                    (merged['parentterm'] == parent) &
@@ -705,7 +705,7 @@ def make_dohnut_df(data_path):
                                                 len(merged[
                                                    (merged['STAGE'] == 'replication') &
                                                    (merged['parentterm'] == parent)])) * 100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'InitialCount'] = (len(merged[
                                                (merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent) &
@@ -714,11 +714,11 @@ def make_dohnut_df(data_path):
                                                (merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent)])) * 100
             counter = counter + 1
-    dohnut_df['Broader'] = dohnut_df['Broader'].str.\
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('African Am./Caribbean', 'Af. Am./Carib.')
-    dohnut_df['Broader'] = dohnut_df['Broader'].str.\
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('Hispanic/Latin American', 'Hispanic/L.A.')
-    dohnut_df.to_csv(os.path.join('data', 'toplot', 'dohnut_df.csv'))
+    doughnut_df.to_csv(os.path.join('data', 'toplot', 'doughnut_df.csv'))
 
 
 def make_bubbleplot_df(data_path):
@@ -884,28 +884,40 @@ def download_cat(data_path, ebi_download):
     try:
         r = requests.get(ebi_download + 'studies_alternative')
         if r.status_code == 200:
+            catstud_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Stud.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catstud_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_stud', catstud_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catstud_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_Stud file...')
         r = requests.get(ebi_download + 'ancestry')
         if r.status_code == 200:
+            catanc_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Anc.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catanc_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_anc', catanc_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catanc_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_Anc file...')
+        r = requests.get(ebi_download + 'full')
         if r.status_code == 200:
-            r = requests.get(ebi_download + 'full')
+            catfull_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Full.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catfull_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_full', catfull_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catfull_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_full file...')
@@ -915,9 +927,14 @@ def download_cat(data_path, ebi_download):
         subdom = '/pub/databases/gwas/releases/latest/'
         file = 'gwas-efo-trait-mappings.tsv'
         r = s.get(ftpsite+subdom+file)
+        todaysdate = datetime.datetime.now().strftime("%Y_%m_%d")
         if r.status_code == 200:
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Map.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_map', 'cat_map_' + todaysdate),
+                      'wb') as tsvfile:
                 tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded efo-trait-mappings')
         else:
@@ -959,7 +976,7 @@ if __name__ == "__main__":
         download_cat(data_path, ebi_download)
         clean_gwas_cat(data_path)
         make_bubbleplot_df(data_path)
-        make_dohnut_df(data_path)
+        make_doughnut_df(data_path)
         make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
                                                     'synthetic',
                                                     'Cat_Anc_withBroader.tsv'),

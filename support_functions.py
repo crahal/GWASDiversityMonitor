@@ -6,14 +6,14 @@ from bokeh.models import Div
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 415,
-                  'choro_width': 775, 'ts_height': 415, 'ts_width': 515,
+    width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 430,
+                  'choro_width': 775, 'ts_height': 430, 'ts_width': 515,
                   'bubble_height': 425, 'bubble_width': 800,
-                  'dohnut_height': 400, 'dohnut_width': 450,
+                  'doughnut_height': 400, 'doughnut_width': 450,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 400, 'control_width': 275,
                   'slider_height': 330, 'slider_width': 30,
-                  'twocolumn_width': 900, 'div_width': 15}
+                  'twocolumn_width': 910, 'div_width': 15}
     return width_dict
 
 
@@ -59,9 +59,9 @@ def import_data(data_path):
                                                   'choro_df.csv'),
                                      os.path.join(data_path, 'shapefiles',
                                                   'ne_110m_admin_0_countries.shp'))
-    dohnut_df = pd.read_csv(os.path.join(data_path, 'toplot', 'dohnut_df.csv'))
+    doughnut_df = pd.read_csv(os.path.join(data_path, 'toplot', 'doughnut_df.csv'))
     return bubble_df, freetext_df, ts_init_count, ts_init_sum,\
-        ts_rep_count, ts_rep_sum, choro_df, gdf, dohnut_df
+        ts_rep_count, ts_rep_sum, choro_df, gdf, doughnut_df
 
 
 def widgets(control_width, slider_height,

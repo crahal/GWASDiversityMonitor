@@ -9,7 +9,7 @@ This is a repository to accompany the GWAS Diversity Monitor, currently maintain
 <div align="center"> <a href="http://www.gwasdiversitymonitor.com">gwasdiversitymonitor.com</a></div>
 <br/><br/>
 
-The interactive plots are written in [Bokeh](https://bokeh.pydata.org/en/latest) and hosted on Heroku (currently hobbyist-tier, while prototyping). Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we execute ```generate_date.py``` from within ```diversity_updater.sh``` which is run as a daily cron job, pushing to the master branch).
+The interactive plots are written in [Bokeh](https://bokeh.pydata.org/en/latest) and hosted on Heroku (currently free-tier, while prototyping). Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we run ```generate_date.py``` on a daily cron job and push to the master).
 
 ### Prerequisites
 
@@ -17,11 +17,11 @@ As a pre-requisite to running the Bokeh sever, you will need a working Python 3 
 
 ### Running the Code
 
-This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve diversity_monitor.py --show``` in a terminal to launch the server.
+This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve . --show``` in a terminal to launch the server.
 
 ### Versioning
 
-This dashboard is currently at version 0.3.1, and still represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes (this will also enter into the logfile), or any suggestions which you may have in general.
+This dashboard is currently at version 0.1.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
 
 ### License
 
