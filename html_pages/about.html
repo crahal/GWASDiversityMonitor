@@ -60,12 +60,12 @@ p {
     text-justify: inter-word;
     width: 90%;
     max-width: 900;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 p.ex1 {
   font: "Libre Baskerville", sans-serif;
   padding-right: px;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 li {
   font: "Libre Baskerville", sans-serif;
@@ -73,14 +73,14 @@ li {
   text-align: justify;
   text-justify: inter-word;
   width:95%;
-  font-size: 1.075em;
+  font-size: 1.05em;
 }
 </style>
 </head>
 <body>
 </style>
 <h2>About</h2>
-<p class="ex1"> This interactive dashboard monitors the diversity of participants across all <it>published</it> Genome Wide Association Studies, a commonly utilised type of observational study which scans the genome. The objective is to identify statistical associations between a set of genetic variants across different individuals (Single Nucleotide Polymorphisms, or 'SNPs') and specific traits of interest. It represents an extension of our earlier project, <a href="https://www.nature.com/articles/s42003-018-0261-x">'The Scientometrics of Genome Wide Association Studies'</a> published in Communications Biology in January 2019. As in that work, we leverage the magnificent dataset provided by the <a href="https://www.ebi.ac.uk/gwas/">NHGRI-EBI Catalog</a> to which me make full attribution (and their licensing information can be found <a href="https://www.ebi.ac.uk/about/terms-of-use">here</a>). The dashboard itself is written in <a href="http://www.google.com">Bokeh 1.2.0</a>, an interactive visualization library in Python which targets modern web browsers for presentation. The source code is hosted on <a href="https://github.com/crahal/GWASDiversityMonitor">GitHub</a>, and we are actively encouraging community based suggestions and contributions. The backend code checks daily for updates to the GWAS Catalog, and when there is an update, it writes to a log file and refreshes the dataset which powers the dashboard. The dashboard itself is hosted on <a href="https://www.heroku.com">Heroku</a> (a PaaS). The dashboard is under constant development and review, but is currently comprised of five widgets: 'Evaluation Metric', 'Broader Ancestry', 'Parent Term', 'Research Stage', 'Year'. Due to the relatively small size of the dataset, not all widgets apply to each figure, and we describe our design choices below:
+<p class="ex1"> This interactive dashboard monitors the diversity of participants across all <it>published</it> Genome Wide Association Studies, a commonly utilised type of observational study which scans the genome. The objective is to identify statistical associations between a set of genetic variants across different individuals (Single Nucleotide Polymorphisms, or 'SNPs') and specific traits of interest. It represents an extension of our earlier project, <a href="https://www.nature.com/articles/s42003-018-0261-x">'The Scientometrics of Genome Wide Association Studies'</a> published in Communications Biology in January 2019. As in that work, we leverage the magnificent dataset provided by the <a href="https://www.ebi.ac.uk/gwas/">NHGRI-EBI Catalog</a> to which me make full attribution (and their licensing information can be found <a href="https://www.ebi.ac.uk/about/terms-of-use">here</a>). The dashboard itself is written in <a href="http://www.google.com">Bokeh 1.2.0</a>, an interactive visualization library in Python which targets modern web browsers for presentation. The source code is hosted on <a href="https://github.com/crahal/GWASDiversityMonitor">GitHub</a>, and we are actively encouraging community based suggestions and contributions. The backend code checks daily for updates to the GWAS Catalog, and when there is an update, it writes to a log file and refreshes the dataset which powers the dashboard. The dashboard itself is hosted on <a href="https://www.heroku.com">Heroku</a> (a PaaS). The dashboard is under constant development and review, but is currently comprised of five widgets: 'Evaluation Metric' (whether the data is aggregated based on the number of studies or percent of participants), <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/data/support/dict_replacer_broad.tsv">'Broader Ancestry'</a> (grouped into one of six major ancestral categories), <a href="https://www.ebi.ac.uk/gwas/api/search/downloads/trait_mappings">'Parent Term'</a>, 'Research Stage' (whether the study concerns initial genetic discovery or replicating those discoveries), 'Year' (related to year of study). Due to the relatively small size of the dataset, not all widgets apply to each figure, and we describe our design choices below:
 <ul>
   <li> <b> Figure 1: Bubble Plot.</b> This provides a granular overview of all GWAS in the Catalog. It maps onto EFO Parent terms, and splits on commas. If a GWAS studies multiple Parent terms, both are included (i.e., we split on commas in a string such as 'Body Measurement, Cancer' and include both). Applicable widgets are: 'Broader Term', 'Parent Term' and 'Research Stage'.
   <br>
