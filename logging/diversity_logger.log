@@ -128,3 +128,6 @@ South Asian, Central Asian
 2019-09-06 00:22:39,198 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-08-24.tsv'
 2019-09-06 00:25:20,039 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-06 00:25:20,946 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-06 00:32:19,902 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-08-24.tsv'
+2019-09-06 00:34:58,948 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-06 00:34:59,853 - diversity_logger - INFO - Successfully zipped the files to be downloaded
