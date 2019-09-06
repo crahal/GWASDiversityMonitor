@@ -1,4 +1,5 @@
 import pandas as pd
+from decimal import Decimal
 import json
 import logging
 import datetime
@@ -9,6 +10,7 @@ import os
 import re
 import csv
 import logging
+import shutil
 
 
 def setup_logging(logpath):
@@ -41,6 +43,8 @@ def create_summarystats(data_path):
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False, low_memory=False)
+    temp_bubble_df = pd.read_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'),
+                            sep=',', index_col=False, low_memory=False)
     sumstats = {}
     sumstats['number_studies'] = int(len(Cat_Stud['PUBMEDID'].unique()))
     sumstats['first_study_date'] = str(Cat_Stud['DATE'].min())
@@ -67,7 +71,12 @@ def create_summarystats(data_path):
                                          sum())
     sumstats['average_associations'] = float(Cat_Stud['ASSOCIATION COUNT'].
                                              mean())
-    sumstats['average_pval'] = int(round(Cat_Full['P-VALUE'].astype(float).
+    noneuro_trait = pd.DataFrame(temp_bubble_df[temp_bubble_df['Broader']!='European'].\
+                    groupby(['DiseaseOrTrait']).size()).\
+                    sort_values(by=0, ascending=False).\
+                    reset_index()['DiseaseOrTrait'][0]
+    sumstats['noneuro_trait'] = str(noneuro_trait)
+    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).
                                          mean(), 10))
     sumstats['threshold_pvals'] = int(len(Cat_Full[Cat_Full['P-VALUE'].
                                           astype(float) < 5.000000e-8]))
@@ -103,46 +112,48 @@ def create_summarystats(data_path):
 def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[-15] = '<li> There are a total of ' + \
+    summary[-16] = '<li> There are a total of ' + \
                    str(sumstats['number_studies']) +\
                    ' studies in the Catalog.</li>\n'
-    summary[-14] = '<li> Earliest study in catalogued was PubMedID ' +\
+    summary[-15] = '<li> Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-13] = '<li> Most recent study in catalogued was PubMedID ' +\
+    summary[-14] = '<li> Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-12] = '<li> Accession with biggest sample is PubMedID ' +\
+    summary[-13] = '<li> Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
                    ' et al.</li>\n'
-    summary[-11] = '<li> There are a total of ' +\
+    summary[-12] = '<li> There are a total of ' +\
                    str(sumstats['number_accessions']) +\
                    ' unique study accessions.</li>\n'
-    summary[-10] = '<li> There are a total of ' +\
+    summary[-11] = '<li> There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
                    ' unique diseases\traits studied.</li>\n'
-    summary[-9] = '<li> There are a total of ' +\
-                  str(sumstats['number_mappedtrait']) +\
-                  ' unique EBI "Mapped Traits".</li>\n'
-    summary[-8] = '<li> The total number of associations found is ' +\
+    summary[-10] = '<li> There are a total of ' +\
+                   str(sumstats['number_mappedtrait']) +\
+                   ' unique EBI "Mapped Traits".</li>\n'
+    summary[-9] = '<li> The total number of associations found is ' +\
                   str(sumstats['found_associations']) +\
                   '.</li>\n'
-    summary[-7] = '<li> The average number of associations found is ' +\
+    summary[-8] = '<li> The average number of associations found is ' +\
                   str(round(sumstats['average_associations'], 2)) + '.</li>\n'
-    summary[-6] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
-                  str(round(sumstats['average_pval'], 8)) + '.</li>\n'
-    summary[-5] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
+    summary[-7] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
+                  "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</li>\n'
+    summary[-6] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
                   str(sumstats['threshold_pvals']) + '.</li>\n'
-    summary[-4] = '<li> The journal to feature the most GWAS studies is: ' +\
+    summary[-5] = '<li> The journal to feature the most GWAS studies is: ' +\
                   str(sumstats['mostcommon_journal']) + '.</li>\n'
-    summary[-3] = '<li> Total number of different journals publishing GWAS is: ' +\
+    summary[-4] = '<li> Total number of different journals publishing GWAS is: ' +\
                   str(sumstats['unique_journals']) + '.</li>\n'
+    summary[-3] = '<li> Most frequently studied (Non-European) "Diseases Trait": ' +\
+                  str(sumstats['noneuro_trait']) + '.</li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
 
@@ -595,7 +606,7 @@ def make_freetext_dfs(data_path):
     merged.to_csv(os.path.join(data_path, 'toplot', 'freetext_merged.csv'))
 
 
-def make_dohnut_df(data_path):
+def make_doughnut_df(data_path):
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t')
@@ -633,7 +644,7 @@ def make_dohnut_df(data_path):
                       Cat_Anc_withBroader[['STUDY ACCESSION',
                                            'Broader', 'N', 'STAGE']],
                       how='left', on='STUDY ACCESSION')
-    dohnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
+    doughnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
                                                 'InitialN', 'ReplicationN',
                                                 'InitialCount',
                                                 'ReplicationCount'])
@@ -641,28 +652,28 @@ def make_dohnut_df(data_path):
     merged = merged[merged['parentterm'].notnull()]
     counter = 0
     for ancestry in merged['Broader'].unique().tolist():
-        dohnut_df.at[counter, 'Broader'] = ancestry
-        dohnut_df.at[counter, 'parentterm'] = 'All'
-        dohnut_df.at[counter,
+        doughnut_df.at[counter, 'Broader'] = ancestry
+        doughnut_df.at[counter, 'parentterm'] = 'All'
+        doughnut_df.at[counter,
                      'ReplicationN'] = (merged[(
                                         merged['STAGE'] == 'replication') &
                                         (merged['Broader'] == ancestry)]['N'].
                                         sum() /
                                         merged[merged['STAGE'] ==
                                         'replication']['N'].sum())*100
-        dohnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
+        doughnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
                                                      'initial') &
                                                     (merged['Broader'] ==
                                                      ancestry)]['N'].sum() /
                                              merged[merged['STAGE'] ==
                                                     'initial']['N'].sum())*100
-        dohnut_df.at[counter, 'ReplicationCount'] = (len(merged[
+        doughnut_df.at[counter, 'ReplicationCount'] = (len(merged[
                                                          (merged['Broader'] ==
                                                           ancestry)]) /
                                                      len(merged[
                                                           merged['STAGE'] ==
                                                          'replication']))*100
-        dohnut_df.at[counter, 'InitialCount'] = (len(merged[
+        doughnut_df.at[counter, 'InitialCount'] = (len(merged[
                                                      (merged['STAGE'] ==
                                                       'initial') &
                                                      (merged['Broader'] ==
@@ -671,22 +682,22 @@ def make_dohnut_df(data_path):
                                                             'initial']))*100
         counter = counter + 1
         for parent in merged['parentterm'].unique().tolist():
-            dohnut_df.at[counter, 'Broader'] = ancestry
-            dohnut_df.at[counter, 'parentterm'] = parent
-            dohnut_df.at[counter,
+            doughnut_df.at[counter, 'Broader'] = ancestry
+            doughnut_df.at[counter, 'parentterm'] = parent
+            doughnut_df.at[counter,
                          'ReplicationN'] = (merged[
                                             (merged['STAGE'] == 'replication') &
                                             (merged['parentterm'] == parent) &
                                             (merged['Broader'] == ancestry)]['N'].sum() /
                                             merged[(merged['STAGE'] == 'replication') &
                                             (merged['parentterm'] == parent)]['N'].sum())*100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'InitialN'] = (merged[(merged['STAGE'] == 'initial') &
                                                (merged['Broader'] == ancestry) &
                                                (merged['parentterm'] == parent)]['N'].sum() /
                                         merged[(merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent)]['N'].sum())*100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'ReplicationCount'] = (len(merged[
                                                    (merged['STAGE'] == 'replication') &
                                                    (merged['parentterm'] == parent) &
@@ -694,7 +705,7 @@ def make_dohnut_df(data_path):
                                                 len(merged[
                                                    (merged['STAGE'] == 'replication') &
                                                    (merged['parentterm'] == parent)])) * 100
-            dohnut_df.at[counter,
+            doughnut_df.at[counter,
                          'InitialCount'] = (len(merged[
                                                (merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent) &
@@ -703,11 +714,11 @@ def make_dohnut_df(data_path):
                                                (merged['STAGE'] == 'initial') &
                                                (merged['parentterm'] == parent)])) * 100
             counter = counter + 1
-    dohnut_df['Broader'] = dohnut_df['Broader'].str.\
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('African Am./Caribbean', 'Af. Am./Carib.')
-    dohnut_df['Broader'] = dohnut_df['Broader'].str.\
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('Hispanic/Latin American', 'Hispanic/L.A.')
-    dohnut_df.to_csv(os.path.join('data', 'toplot', 'dohnut_df.csv'))
+    doughnut_df.to_csv(os.path.join('data', 'toplot', 'doughnut_df.csv'))
 
 
 def make_bubbleplot_df(data_path):
@@ -716,17 +727,18 @@ def make_bubbleplot_df(data_path):
                            sep='\t')
     Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
     with open(os.path.join(data_path, 'catalog', 'synthetic',
-                           'Mapped_EFO.csv'), 'w') as fileout:
+                           'Mapped_EFO.csv'), 'w', encoding="utf-8") as fileout:
         efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
         efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
-                          'PUBMEDID', 'ASSOCIATION COUNT'])
+                          'PUBMEDID', 'ASSOCIATION COUNT', 'DISEASE/TRAIT'])
         for index, row in Cat_Stud.iterrows():
             listoftraits = row['MAPPED_TRAIT_URI'].split(',')
             for trait in listoftraits:
                 efo_out.writerow([trait.lower().strip(),
                                   row['STUDY ACCESSION'],
                                   str(row['PUBMEDID']),
-                                  str(row['ASSOCIATION COUNT'])])
+                                  str(row['ASSOCIATION COUNT']),
+                                  str(row['DISEASE/TRAIT'])])
     EFOsPerPaper = pd.read_csv(os.path.join(data_path, 'catalog',
                                             'synthetic', 'Mapped_EFO.csv'),
                                sep=',')
@@ -748,11 +760,13 @@ def make_bubbleplot_df(data_path):
                                       '\t', index_col=False,
                                       parse_dates=['DATE'])
     merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-                                               'parentterm']],
+                                               'parentterm', 'DISEASE/TRAIT']],
                       Cat_Anc_withBroader, how='left', on='STUDY ACCESSION')
     merged["AUTHOR"] = merged["FIRST AUTHOR"]
-    merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR",
+    merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR", "DISEASE/TRAIT",
                      "STAGE", 'DATE', "STUDY ACCESSION", "parentterm"]]
+    merged = merged.rename(columns={'DISEASE/TRAIT':
+                                    'DiseaseOrTrait'})
     merged = merged[merged['Broader'] != 'In Part Not Recorded']
     merged["color"] = 'black'
     merged["color"] = np.where(merged["Broader"] == 'European',
@@ -870,28 +884,40 @@ def download_cat(data_path, ebi_download):
     try:
         r = requests.get(ebi_download + 'studies_alternative')
         if r.status_code == 200:
+            catstud_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Stud.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catstud_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_stud', catstud_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catstud_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_Stud file...')
         r = requests.get(ebi_download + 'ancestry')
         if r.status_code == 200:
+            catanc_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Anc.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catanc_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_anc', catanc_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catanc_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_Anc file...')
+        r = requests.get(ebi_download + 'full')
         if r.status_code == 200:
-            r = requests.get(ebi_download + 'full')
+            catfull_name = r.headers['Content-Disposition'].split('=')[1]
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Full.tsv'), 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            catfull_name = r.headers['Content-Disposition'].split('=')[1]
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_full', catfull_name),
+                'wb') as tsvfile:
+                tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded ' + catfull_name)
         else:
             diversity_logger.debug('Problem downloading the Cat_full file...')
@@ -901,15 +927,45 @@ def download_cat(data_path, ebi_download):
         subdom = '/pub/databases/gwas/releases/latest/'
         file = 'gwas-efo-trait-mappings.tsv'
         r = s.get(ftpsite+subdom+file)
+        todaysdate = datetime.datetime.now().strftime("%Y_%m_%d")
         if r.status_code == 200:
             with open(os.path.join(data_path, 'catalog', 'raw',
                                    'Cat_Map.tsv'), 'wb') as tsvfile:
+                tsvfile.write(r.content)
+            with open(os.path.join(data_path, 'catalog', 'cached_files',
+                                   'cat_map', 'cat_map_' + todaysdate),
+                      'wb') as tsvfile:
                 tsvfile.write(r.content)
             diversity_logger.info('Successfully downloaded efo-trait-mappings')
         else:
             diversity_logger.debug('Problem downloading efo-trait-mappings file...')
     except Exception as e:
         diversity_logger.debug('Problem downloading the Catalog data!' + str(e))
+
+def make_archive(source, destination):
+        base = os.path.basename(destination)
+        name = base.split('.')[0]
+        format = base.split('.')[1]
+        archive_from = os.path.dirname(source)
+        archive_to = os.path.basename(source.strip(os.sep))
+        print(source, destination, archive_from, archive_to)
+        shutil.make_archive(name, format, archive_from, archive_to)
+        shutil.move('%s.%s'%(name,format), destination)
+
+def zip_toplot(source, destination):
+    try:
+        base = os.path.basename(destination)
+        name = base.split('.')[0]
+        format = base.split('.')[1]
+#        archive_from = os.path.dirname(source)
+#        archive_to = os.path.basename(source.strip(os.sep))
+        shutil.make_archive(name, format, source)
+        shutil.move('%s.%s'%(name,format), destination)
+        diversity_logger.info('Successfully zipped the files to be downloaded')
+    except Exception as e:
+        diversity_logger.debug('Problem zipping the files to tbe downloaded' +
+                               str(e))
+
 
 if __name__ == "__main__":
     logpath = os.path.abspath(os.path.join(__file__, '..', 'logging'))
@@ -920,7 +976,7 @@ if __name__ == "__main__":
         download_cat(data_path, ebi_download)
         clean_gwas_cat(data_path)
         make_bubbleplot_df(data_path)
-        make_dohnut_df(data_path)
+        make_doughnut_df(data_path)
         make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
                                                     'synthetic',
                                                     'Cat_Anc_withBroader.tsv'),
@@ -936,6 +992,9 @@ if __name__ == "__main__":
                                       os.path.join(__file__, '..', 'html_pages',
                                                    'summary_stats.html')))
         diversity_logger.info('generate_data.py ran successfully!')
+        zip_toplot(os.path.join(data_path, 'toplot'),
+                   os.path.join(data_path, 'todownload',
+                                'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
                                str(e))

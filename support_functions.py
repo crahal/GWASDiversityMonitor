@@ -9,7 +9,7 @@ def create_width_dict():
     width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 430,
                   'choro_width': 775, 'ts_height': 430, 'ts_width': 515,
                   'bubble_height': 425, 'bubble_width': 800,
-                  'dohnut_height': 400, 'dohnut_width': 450,
+                  'doughnut_height': 400, 'doughnut_width': 450,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 400, 'control_width': 275,
                   'slider_height': 330, 'slider_width': 30,
@@ -20,6 +20,8 @@ def create_width_dict():
 def load_divs(twocolumn_width, divwidth):
     header = Div(text=open(os.path.join(os.path.dirname(__file__),
                                         'html_pages',"header.html")).read())
+    downloaddata = Div(text=open(os.path.join(os.path.dirname(__file__),
+                                        'html_pages',"downloaddata.html")).read())
     about = Div(text=open(os.path.join(os.path.dirname(__file__),
                                        'html_pages', "about.html")).read(),
                 width=twocolumn_width)
@@ -30,7 +32,7 @@ def load_divs(twocolumn_width, divwidth):
     summary = Div(text=open(os.path.join(os.path.dirname(__file__),
                             'html_pages', "summary_stats.html")).read(),
                   width=twocolumn_width)
-    return header, about, dumdiv, summary, footer
+    return header, about, dumdiv, summary, footer, downloaddata
 
 
 def import_data(data_path):
@@ -57,13 +59,13 @@ def import_data(data_path):
                                                   'choro_df.csv'),
                                      os.path.join(data_path, 'shapefiles',
                                                   'ne_110m_admin_0_countries.shp'))
-    dohnut_df = pd.read_csv(os.path.join(data_path, 'toplot', 'dohnut_df.csv'))
+    doughnut_df = pd.read_csv(os.path.join(data_path, 'toplot', 'doughnut_df.csv'))
     return bubble_df, freetext_df, ts_init_count, ts_init_sum,\
-        ts_rep_count, ts_rep_sum, choro_df, gdf, dohnut_df
+        ts_rep_count, ts_rep_sum, choro_df, gdf, doughnut_df
 
 
 def widgets(control_width, slider_height,
-            slider_width, bubble_df, ts_init_count):
+            slider_width, bubble_df, ts_init_count, maxyear):
     stage = Select(title="Research Stage", value="Initial",
                    options=['Initial', 'Replication'],
                    width=control_width)
@@ -78,9 +80,9 @@ def widgets(control_width, slider_height,
                     options=["Number of Studies (%)",
                              "Number of Participants (%)"],
                     width=control_width)
-    slider = Slider(title='', start=2008, end=2018, step=1,
+    slider = Slider(title='', start=2008, end=maxyear-1, step=1,
                     orientation="vertical", width=slider_width,
-                    height=slider_height, value=2018)
+                    height=slider_height, value=maxyear-1)
     return stage, parent, ancestry, metric, slider
 
 
