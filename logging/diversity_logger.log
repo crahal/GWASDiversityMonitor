@@ -163,3 +163,6 @@ South Asian, Central Asian
 2019-09-06 01:16:54,771 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-06 01:19:33,462 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-06 01:19:34,379 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-06 01:23:07,254 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-08-24.tsv'
+2019-09-06 01:25:45,437 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-06 01:25:46,338 - diversity_logger - INFO - Successfully zipped the files to be downloaded
