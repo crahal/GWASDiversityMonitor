@@ -29,6 +29,6 @@ This work is free. You can redistribute it and/or modify it under the terms of t
 
 ### To Do
 
-1. Javascript callbacks to better generate the summary_statistics.html...
-2. Better hashing and logging of changes in the data served by the Catalog...
-3. Better sizing for mobiles...
+1. Javascript callbacks to better generate the summary_statistics.html.
+2. Better sizing for mobiles.
+
