@@ -1,6 +1,0 @@
-correspondance/
-data/catalog/cached_files/cat_anc/
-data/catalog/cached_files/cat_map/
-data/catalog/cached_files/cat_full/
-data/catalog/cached_files/cat_stud/
-static_figures/
