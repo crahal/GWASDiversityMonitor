@@ -74,7 +74,7 @@ def update_hbar_source():
                hbar_color=["#2b83ba"]*10,
                hbar_legendval=['Replication Stage (%)']*10)
         hbar_plot.xaxis.axis_label = 'Percent of all Participants (%)'
-        titletext = 'Figure 2: Ancestral Terms in Free Text: ' +\
+        titletext = 'Figure 2: Ancestries in Free Text: ' +\
                     str(stage.value)
     hbar_plot.title.text = titletext + ' Stage: All Years and Parent Categories'
 
@@ -194,7 +194,7 @@ def update_ts():
                 ts_toplot=[ts_init_count[ancestry.value]/100],
                 ts_color=[["#d7191c"]],
                 ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Initial Stage Across all Parent Categories: ' +\
+            ts_plot.title.text = 'Figure 4: Initial Stage Across Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
@@ -202,7 +202,7 @@ def update_ts():
                 ts_toplot=[ts_rep_count[ancestry.value]/100],
                 ts_color=[["#2b83ba"]],
                 ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Replication Stage Across all Parent Categories: ' +\
+            ts_plot.title.text = 'Figure 4: Replication Stage Across Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         ts_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
@@ -212,7 +212,7 @@ def update_ts():
                 ts_toplot=[ts_init_sum[ancestry.value]/100],
                 ts_color=[["#d7191c"]],
                 ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Initial Stage Across all Parent Categories: ' +\
+            ts_plot.title.text = 'Figure 4: Initial Stage Across Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
@@ -220,7 +220,7 @@ def update_ts():
                 ts_toplot=[ts_rep_sum[ancestry.value]/100],
                 ts_color=[["#2b83ba"]],
                 ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Replication Stage Across all Parent Categories: ' +\
+            ts_plot.title.text = 'Figure 4: Replication Stage Across Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         ts_plot.yaxis.axis_label = 'Percent of all Participants (%)'
 
@@ -394,7 +394,7 @@ def update_doughnut():
                                                    df['ReplicationCount'].sum()*2*pi,
                                       doughnut_color=colorlist,
                                       doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Figure 3: Number Studies looking at ' +\
+        doughnut_plot.title.text = 'Figure 3: # Studies of ' +\
                                     str(parent.value) + ' at ' +\
                                     str(stage.value) + ' Stage.'
     elif 'number of participants' in str(metric.value).lower():
@@ -414,7 +414,7 @@ def update_doughnut():
                                                    df['ReplicationN'].sum()*2*pi,
                                       doughnut_color=colorlist,
                                       doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Figure 3: Number Participants Studied for ' +\
+        doughnut_plot.title.text = 'Figure 3: # Participants for ' +\
                                    str(parent.value).title() + ' at ' +\
                                    str(stage.value) + ' Stage.'
 
