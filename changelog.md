@@ -37,5 +37,3 @@
 * Renamed 'About' tab to 'Additional Information'
 * Added 'Figure X' into the titles of the 'Interactive Figures' tab.
 * Set up proper caching of all of the old files served up by the catalog
-* TODO: .git ignore
-* TODO: find stuff for melinda to put into the correspondance
