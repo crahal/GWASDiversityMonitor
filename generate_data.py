@@ -135,7 +135,7 @@ def update_summarystats(sumstats, summaryfile):
                    ' unique study accessions.</li>\n'
     summary[-11] = '<li> There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
-                   ' unique diseases\traits studied.</li>\n'
+                   ' unique diseases and traits studied.</li>\n'
     summary[-10] = '<li> There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</li>\n'
