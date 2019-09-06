@@ -37,3 +37,8 @@
 * Renamed 'About' tab to 'Additional Information'
 * Added 'Figure X' into the titles of the 'Interactive Figures' tab.
 * Set up proper caching of all of the old files served up by the catalog
+
+#### 4th September, 2019. Version 0.4.1:
+* Stopped titles running over on fixed scaling.
+* Added direct to 'Additional Information' tab. 
+* Fixed typo on summary_stats.html.
