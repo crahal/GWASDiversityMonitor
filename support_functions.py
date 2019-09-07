@@ -69,7 +69,7 @@ def widgets(control_width, slider_height,
     stage = Select(title="Research Stage", value="Initial",
                    options=['Initial', 'Replication'],
                    width=control_width)
-    parent = Select(title="Parent Term", value="Other measurement",
+    parent = Select(title="Parent Category", value="Cancer",
                     options=bubble_df['parentterm'].unique().tolist(),
                     width=control_width)
     ancestry = Select(title="Broader Ancestry", value="European",
