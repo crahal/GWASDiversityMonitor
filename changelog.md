@@ -47,3 +47,4 @@
 * Changed name of parent widget to 'Parent Category'
 * Changed Parent Category widget to default to 'Cancer'
 * Changed version number in the downloaddata.html
+* Added a dedicated License file
