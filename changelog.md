@@ -38,7 +38,12 @@
 * Added 'Figure X' into the titles of the 'Interactive Figures' tab.
 * Set up proper caching of all of the old files served up by the catalog
 
-#### 4th September, 2019. Version 0.4.1:
+#### 6th September, 2019. Version 0.4.1:
 * Stopped titles running over on fixed scaling.
 * Added direct to 'Additional Information' tab. 
 * Fixed typo on summary_stats.html.
+
+#### 7th September, 2019. Version 0.4.2:
+* Changed name of parent widget to 'Parent Category'
+* Changed Parent Category widget to default to 'Cancer'
+* Changed version number in the downloaddata.html
