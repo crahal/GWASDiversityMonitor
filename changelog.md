@@ -40,7 +40,7 @@
 
 #### 6th September, 2019. Version 0.4.1:
 * Stopped titles running over on fixed scaling.
-* Added direct to 'Additional Information' tab. 
+* Added direct to 'Additional Information' tab.
 * Fixed typo on summary_stats.html.
 
 #### 7th September, 2019. Version 0.4.2:
@@ -48,3 +48,12 @@
 * Changed Parent Category widget to default to 'Cancer'
 * Changed version number in the downloaddata.html
 * Added a dedicated License file
+
+#### 8th September, 2019. Version 0.5.0:
+* Added percentage stats to the Interactive Figures tab (and their dynamic updating)
+* Moved links to above the widgets
+* Added a link to privacy policy
+* Renamed 'Initial Stage' to 'Discovery Stage'
+* Shortened 'Figure' to 'Fig' to stop some titles getting cut off
+* Moved legend position on Fig 2
+* Changed color on fig 1 European and Asian reversed
