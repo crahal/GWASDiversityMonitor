@@ -33,7 +33,7 @@ def update_hbar_source():
     '''
 
     if 'number of studies' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             sorted_df = freetext_df.\
                         sort_values(by='Initial_Ancestry_Count_%',
                                     ascending=False)
@@ -54,7 +54,7 @@ def update_hbar_source():
         hbar_plot.xaxis.axis_label = 'Percent of all Studies (%)'
         titletext = 'Fig 2: Ancestries in Free Text: ' + str(stage.value)
     elif 'number of participants' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             sorted_df = freetext_df.\
                         sort_values(by='Initial_Ancestry_Sum_%',
                                     ascending=False)
@@ -188,12 +188,12 @@ def create_choro_plot(year):
 def update_ts():
     ''' updates ts_source'''
     if 'number of studies' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             ts_source.data = dict(
                 Year=[ts_init_count['index']],
                 ts_toplot=[ts_init_count[ancestry.value]/100],
                 ts_color=[["#2b83ba"]],
-                ts_legendval=[['Initial Stage (%)']])
+                ts_legendval=[['Discovery Stage (%)']])
             ts_plot.title.text = 'Fig 4: Discovery Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
@@ -206,7 +206,7 @@ def update_ts():
                                  str(ancestry.value) + ' Ancestry'
         ts_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             ts_source.data = dict(
                 Year=[ts_init_sum['index']],
                 ts_toplot=[ts_init_sum[ancestry.value]/100],
@@ -378,7 +378,7 @@ def update_doughnut():
                  '#3288bd', '#fc8d59', '#807dba']
     df = select_parent_doughnut()
     if 'number of studies' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             doughnut_source.data = dict(Broader=df['Broader'],
                                       parentterm=df['parentterm'],
                                       doughnut_toplot=df['InitialCount']/100,
@@ -398,7 +398,7 @@ def update_doughnut():
                                     str(parent.value) + ' at ' +\
                                     str(stage.value) + '.'
     elif 'number of participants' in str(metric.value).lower():
-        if str(stage.value) == 'Initial':
+        if str(stage.value) == 'Discovery':
             doughnut_source.data = dict(Broader=df['Broader'],
                                       parentterm=df['parentterm'],
                                       doughnut_toplot=df['InitialN']/100,

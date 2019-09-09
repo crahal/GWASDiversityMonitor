@@ -40,6 +40,8 @@ def import_data(data_path):
     bubble_df = pd.read_csv(os.path.join(data_path, 'toplot',
                                          'bubble_df.csv'),
                             parse_dates=['DATE'])
+    bubble_df['STAGE'] = bubble_df['STAGE'].str.replace('initial', 'Discovery')
+    print(bubble_df['STAGE'])
     bubble_df = bubble_df[bubble_df['Broader'].notnull()]
     bubble_df = bubble_df[bubble_df['N'].notnull()]
     bubble_df = bubble_df.drop_duplicates(subset=['Broader', 'DATE',
