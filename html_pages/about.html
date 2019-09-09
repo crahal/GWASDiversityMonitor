@@ -27,32 +27,11 @@ p {
   display: table;
   clear: both;
 }
-h1 {
-    margin: 1em 0 0 0;
-    color: #2e484c;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 2.3em;
-
-}
 h2 {
-    margin: 1em 0 0 0;
+    margin: 0.2em 0 0 0;
     color: #2e484c;
     font-family: 'Julius Sans One', sans-serif;
     font-size: 1.8em;
-}
-a:link {
-    text-decoration: none;
-    color: #40a1e6;
-
-}
-a:visited {
-    font-weight: bold;
-    text-decoration: none;
-    color: #40a1e6;
-}
-a:hover, a:focus, a:active {
-    text-decoration: underline;
-    color: #40a1e6;
 }
 p {
     font: "Libre Baskerville", sans-serif;
@@ -78,7 +57,6 @@ li {
 </style>
 </head>
 <body>
-</style>
 <h2>About</h2>
 <p class="ex1"> This interactive dashboard monitors the diversity of participants across all <it>published</it> Genome Wide Association Studies, a commonly utilised type of observational study which scans the genome. The objective is to identify statistical associations between a set of genetic variants across different individuals (Single Nucleotide Polymorphisms, or 'SNPs') and specific traits of interest. It represents an extension of our earlier project, <a href="https://www.nature.com/articles/s42003-018-0261-x">'The Scientometrics of Genome Wide Association Studies'</a> published in Communications Biology in January 2019. As in that work, we leverage the magnificent dataset provided by the <a href="https://www.ebi.ac.uk/gwas/">NHGRI-EBI Catalog</a> to which me make full attribution (and their licensing information can be found <a href="https://www.ebi.ac.uk/about/terms-of-use">here</a>). The dashboard itself is written in <a href="http://www.google.com">Bokeh 1.2.0</a>, an interactive visualization library in Python which targets modern web browsers for presentation. The source code is hosted on <a href="https://github.com/crahal/GWASDiversityMonitor">GitHub</a>, and we are actively encouraging community based suggestions and contributions. The backend code checks daily for updates to the GWAS Catalog, and when there is an update, it writes to a log file and refreshes the dataset which powers the dashboard. The dashboard itself is hosted on <a href="https://www.heroku.com">Heroku</a> (a PaaS). The dashboard is under constant development and review, but is currently comprised of five widgets: 'Evaluation Metric' (whether the data is aggregated based on the number of studies or percent of participants), <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/data/support/dict_replacer_broad.tsv">'Broader Ancestry'</a> (grouped into one of six major ancestral categories), <a href="https://www.ebi.ac.uk/gwas/api/search/downloads/trait_mappings">'Parent Term'</a>, 'Research Stage' (whether the study concerns initial genetic discovery or replicating those discoveries), 'Year' (related to year of study). Due to the relatively small size of the dataset, not all widgets apply to each figure, and we describe our design choices below:
 <ul>
