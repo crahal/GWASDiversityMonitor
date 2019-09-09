@@ -62,7 +62,7 @@ def update_hbar_source():
                 Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
                 toplot=sorted_df['Initial_Ancestry_Sum_%'][0:10]/100,
                 hbar_color=["#d7191c"]*10,
-                hbar_legendval=['Initial Stage (%)']*10)
+                hbar_legendval=['Discovery Stage (%)']*10)
         elif str(stage.value) == 'Replication':
             sorted_df = freetext_df.\
                         sort_values(by='Replication_Ancestry_Sum_%',
@@ -194,7 +194,7 @@ def update_ts():
                 ts_toplot=[ts_init_count[ancestry.value]/100],
                 ts_color=[["#2b83ba"]],
                 ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Fig 4: Initial Stage Across all Parent Categories: ' +\
+            ts_plot.title.text = 'Fig 4: Discovery Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
@@ -211,8 +211,8 @@ def update_ts():
                 Year=[ts_init_sum['index']],
                 ts_toplot=[ts_init_sum[ancestry.value]/100],
                 ts_color=[["#2b83ba"]],
-                ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Fig 4: Initial Stage Across all Parent Categories: ' +\
+                ts_legendval=[['Discovery Stage (%)']])
+            ts_plot.title.text = 'Fig 4: Discovery Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
