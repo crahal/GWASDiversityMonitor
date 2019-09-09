@@ -6,9 +6,9 @@ from bokeh.models import Div
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 430, 'hbar_width': 575,
+    width_dict = {'hbar_height': 443, 'hbar_width': 575,
                   'choro_height': 430, 'choro_width': 795,
-                  'ts_height': 430, 'ts_width': 575,
+                  'ts_height': 440, 'ts_width': 575,
                   'bubble_height': 430, 'bubble_width': 825,
                   'doughnut_height': 305, 'doughnut_width': 425,
                   'headerbox_height': 400, 'headerbox_width': 375,
@@ -67,8 +67,8 @@ def import_data(data_path):
 
 def widgets(control_width, slider_height,
             slider_width, bubble_df, ts_init_count, maxyear):
-    stage = Select(title="Research Stage", value="Initial",
-                   options=['Initial', 'Replication'],
+    stage = Select(title="Research Stage", value="Discovery",
+                   options=['Discovery', 'Replication'],
                    width=control_width)
     parent = Select(title="Parent Term", value="Cancer",
                     options=bubble_df['parentterm'].unique().tolist(),
