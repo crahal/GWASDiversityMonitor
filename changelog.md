@@ -36,7 +36,7 @@
 * Added brief descriptions of all widgets and relevant hyperlinks
 * Renamed 'About' tab to 'Additional Information'
 * Added 'Figure X' into the titles of the 'Interactive Figures' tab.
-* Set up proper caching of all of the old files served up by the catalog
+* Set up proper caching of all of the old files served up by the Catalog
 
 #### 6th September, 2019. Version 0.4.1:
 * Stopped titles running over on fixed scaling.
@@ -56,4 +56,5 @@
 * Renamed 'Initial Stage' to 'Discovery Stage'
 * Shortened 'Figure' to 'Fig' to stop some titles getting cut off
 * Moved legend position on Fig 2
-* Changed color on fig 1 European and Asian reversed
+* Changed color on Fig 1 European and Asian reversed
+* Better layout alignment.

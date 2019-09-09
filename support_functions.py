@@ -6,14 +6,15 @@ from bokeh.models import Div
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 425, 'hbar_width': 600, 'choro_height': 430,
-                  'choro_width': 775, 'ts_height': 430, 'ts_width': 515,
-                  'bubble_height': 425, 'bubble_width': 800,
-                  'doughnut_height': 400, 'doughnut_width': 450,
+    width_dict = {'hbar_height': 430, 'hbar_width': 575,
+                  'choro_height': 430, 'choro_width': 795,
+                  'ts_height': 430, 'ts_width': 575,
+                  'bubble_height': 430, 'bubble_width': 825,
+                  'doughnut_height': 305, 'doughnut_width': 425,
                   'headerbox_height': 400, 'headerbox_width': 375,
-                  'control_height': 400, 'control_width': 275,
-                  'slider_height': 330, 'slider_width': 30,
-                  'twocolumn_width': 910, 'div_width': 15}
+                  'control_height': 400, 'control_width': 325,
+                  'slider_height': 350, 'slider_width': 30,
+                  'twocolumn_width': 910, 'div_width': 20}
     return width_dict
 
 
@@ -69,7 +70,7 @@ def widgets(control_width, slider_height,
     stage = Select(title="Research Stage", value="Initial",
                    options=['Initial', 'Replication'],
                    width=control_width)
-    parent = Select(title="Parent Category", value="Cancer",
+    parent = Select(title="Parent Term", value="Cancer",
                     options=bubble_df['parentterm'].unique().tolist(),
                     width=control_width)
     ancestry = Select(title="Broader Ancestry", value="European",

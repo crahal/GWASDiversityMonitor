@@ -52,8 +52,7 @@ def update_hbar_source():
                 hbar_color=["#2b83ba"]*10,
                 hbar_legendval=['Replication Stage (%)']*10)
         hbar_plot.xaxis.axis_label = 'Percent of all Studies (%)'
-        titletext = 'Figure 2: Ancestral Terms in Free Text: ' +\
-                    str(stage.value)
+        titletext = 'Fig 2: Ancestries in Free Text: ' + str(stage.value)
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Initial':
             sorted_df = freetext_df.\
@@ -74,8 +73,7 @@ def update_hbar_source():
                hbar_color=["#2b83ba"]*10,
                hbar_legendval=['Replication Stage (%)']*10)
         hbar_plot.xaxis.axis_label = 'Percent of all Participants (%)'
-        titletext = 'Figure 2: Ancestries in Free Text: ' +\
-                    str(stage.value)
+        titletext = 'Fig 2: Free Text Anlaysis: ' + str(stage.value)
     hbar_plot.title.text = titletext + ' Stage: All Years and Parent Categories'
 
 
@@ -99,7 +97,7 @@ def create_hbar_plot():
     hbar_plot = figure(y_range=yrange,
                        plot_height=width_dict['hbar_height'],
                        plot_width=width_dict['hbar_width'],
-                       title="Figure 2: Ancestral Terms in Free Text Field",
+                       title="Fig 2: Ancestral Terms in Free Text Field",
                        tools=TOOLS, toolbar_location=None)
     hbar_plot.hbar(y='Cleaned_Ancestry', right='toplot', height=0.6,
                    source=hbar_source, color='hbar_color', alpha=.6,
@@ -136,7 +134,7 @@ def update_choro_slider(attr, old, new):
     yr = slider.value
     new_data = json_data(yr)
     geosource.geojson = new_data
-    choro_plot.title.text = 'Figure 5: Participant Recruitment Over Time, ' +\
+    choro_plot.title.text = 'Fig 5: Participant Recruitment Over Time, ' +\
                             'All Parent Categories and Both Stages: %d' % yr
 
 
@@ -166,7 +164,7 @@ def create_choro_plot(year):
                          height=int(width_dict['choro_height']*.84),
                          border_line_color=None, orientation='vertical',
                          width=int(width_dict['choro_width']/40))
-    choro_plot = figure(title='Figure 5: Participant Recruitment Over Time, All ' +\
+    choro_plot = figure(title='Fig 5: Participant Recruitment Over Time, All ' +\
                               'Parent Categories and Both Stages: ' + str(year),
                         plot_height=width_dict['choro_height'], tools=TOOLS,
                         plot_width=width_dict['choro_width'],
@@ -174,6 +172,8 @@ def create_choro_plot(year):
     choro_plot.patches('xs', 'ys', source=geosource, fill_alpha=1,
                        fill_color={'field': 'ToPlot', 'transform': color_map},
                        line_color='black', line_width=0.25)
+    choro_plot.yaxis.axis_label = 'Latitude'
+    choro_plot.xaxis.axis_label = 'Longitude'
     choro_hover = choro_plot.select(dict(type=HoverTool))
     choro_hover.tooltips = [('Country/region', '@country'),
                             ('Participants (m)', '@N'),
@@ -192,17 +192,17 @@ def update_ts():
             ts_source.data = dict(
                 Year=[ts_init_count['index']],
                 ts_toplot=[ts_init_count[ancestry.value]/100],
-                ts_color=[["#d7191c"]],
+                ts_color=[["#2b83ba"]],
                 ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Initial Stage Across Parent Categories: ' +\
+            ts_plot.title.text = 'Fig 4: Initial Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
                 Year=[ts_rep_count['index']],
                 ts_toplot=[ts_rep_count[ancestry.value]/100],
-                ts_color=[["#2b83ba"]],
+                ts_color=[["#d7191c"]],
                 ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Replication Stage Across Parent Categories: ' +\
+            ts_plot.title.text = 'Fig 4: Replication Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         ts_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
@@ -210,17 +210,17 @@ def update_ts():
             ts_source.data = dict(
                 Year=[ts_init_sum['index']],
                 ts_toplot=[ts_init_sum[ancestry.value]/100],
-                ts_color=[["#d7191c"]],
+                ts_color=[["#2b83ba"]],
                 ts_legendval=[['Initial Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Initial Stage Across Parent Categories: ' +\
+            ts_plot.title.text = 'Fig 4: Initial Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
             ts_source.data = dict(
                 Year=[ts_rep_sum['index']],
                 ts_toplot=[ts_rep_sum[ancestry.value]/100],
-                ts_color=[["#2b83ba"]],
+                ts_color=[["#d7191c"]],
                 ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Figure 4: Replication Stage Across Parent Categories: ' +\
+            ts_plot.title.text = 'Fig 4: Replication Stage Across all Parent Categories: ' +\
                                  str(ancestry.value) + ' Ancestry'
         ts_plot.yaxis.axis_label = 'Percent of all Participants (%)'
 
@@ -238,7 +238,7 @@ def create_ts_plot(maxyear):
                      plot_width=width_dict['ts_width'], tools=TOOLS,
                      toolbar_location=None,
                      y_axis_label='Percent of all Studies (%)',
-                     title="Figure 4: Percent of Studies Conducted (%)")
+                     title="Fig 4: Percent of Studies Conducted (%)")
     ts_plot.yaxis.formatter = NumeralTickFormatter(format='0 %')
     ts_hover = ts_plot.select(dict(type=HoverTool))
     ts_hover.tooltips = [("Year: ", "$x{int}"), ("Ancestry: ", ancestry.value),
@@ -247,7 +247,7 @@ def create_ts_plot(maxyear):
                        line_width=2, color='ts_color', legend='ts_legendval')
     ts_plot.legend.border_line_width = 1
     ts_plot.legend.border_line_color = "black"
-    ts_plot.legend.location = "top_left"
+    ts_plot.legend.location = "top_right"
     ts_plot.legend.orientation = "horizontal"
     ts_plot.xgrid.grid_line_dash = 'dashed'
     ts_plot.ygrid.grid_line_dash = 'dashed'
@@ -266,7 +266,7 @@ def create_bubble_plot():
     bubble_source = ColumnDataSource(data=dict(DATE=[], N=[], bubble_color=[],
                                      Broader=[], Size=[], PUBMEDID=[],
                                      Stage=[]))
-    bubble_plot = figure(title='Figure 1: Ancestry Across All Samples Over Time',
+    bubble_plot = figure(title='Fig 1: Ancestry Across All Samples Over Time',
                          plot_height=width_dict['bubble_height'],
                          plot_width=width_dict['bubble_width'],
                          y_axis_label='Number of Genotyped Participants',
@@ -345,7 +345,7 @@ def create_doughnut_plot():
     doughnut_plot = figure(plot_height=width_dict['doughnut_height'],
                          plot_width=width_dict['doughnut_width'],
                          tools=TOOLS, toolbar_location=None,
-                         title="Figure 3: Doughnut Chart",
+                         title="Fig 3: Doughnut Chart",
                          x_range=(-1, 1), y_range=(-1, 1))
     doughnut_hover = doughnut_plot.select(dict(type=HoverTool))
     doughnut_hover.tooltips = [("Ancestry: ", "@Broader"),
@@ -394,9 +394,9 @@ def update_doughnut():
                                                    df['ReplicationCount'].sum()*2*pi,
                                       doughnut_color=colorlist,
                                       doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Figure 3: # Studies of ' +\
+        doughnut_plot.title.text = 'Fig 3: # Studies for ' +\
                                     str(parent.value) + ' at ' +\
-                                    str(stage.value) + ' Stage.'
+                                    str(stage.value) + '.'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Initial':
             doughnut_source.data = dict(Broader=df['Broader'],
@@ -414,9 +414,9 @@ def update_doughnut():
                                                    df['ReplicationN'].sum()*2*pi,
                                       doughnut_color=colorlist,
                                       doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Figure 3: # Participants for ' +\
+        doughnut_plot.title.text = 'Fig 3: # Participants for ' +\
                                    str(parent.value).title() + ' at ' +\
-                                   str(stage.value) + ' Stage.'
+                                   str(stage.value) + '.'
 
 
 def select_parent_doughnut():
@@ -458,12 +458,9 @@ update()
 
 header, about, dumdiv, summary, footer, downloaddata = load_divs(width_dict['twocolumn_width'],
                                                                  width_dict['div_width'])
-interact_fig = column(row(column(header, *controls, downloaddata,
-                                 width=width_dict['headerbox_width'],
-                                 height=width_dict['headerbox_width']),
-                          bubble_plot, dumdiv, hbar_plot, sizing_mode="fixed"),
-                      row(doughnut_plot, dumdiv, ts_plot, dumdiv,
-                          row(choro_plot, slider), sizing_mode="fixed"))
+interact_fig = column(row(column(header, *controls, downloaddata, doughnut_plot),
+                          column(bubble_plot, row(dumdiv, choro_plot, slider)),
+                          column(ts_plot, hbar_plot), sizing_mode="fixed"))
 interact_tab = Panel(child=interact_fig, title='Interactive Figures')
 text = layout(row(column(header, summary, footer), dumdiv, about),
               sizing_mode='stretch_width')

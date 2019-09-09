@@ -103,6 +103,30 @@ def create_summarystats(data_path):
                                     sumstats['large_accesion_N'],
                                     'PUBMEDID']
     sumstats['large_accesion_pubmed'] = int(biggestpubmed.iloc[0])
+    Cat_Anc_withBroader = pd.read_csv(os.path.join(data_path, 'catalog',
+                                                   'synthetic',
+                                                   'Cat_Anc_withBroader.tsv'),
+                                      '\t', index_col=False, low_memory=False)
+    Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader']!='In Part Not Recorded']
+    Cat_Anc_NoNR.to_csv('C:\\Dropbox\\gwasdiversitymonitor\\temp.csv')
+    total_european = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'European']['N'].
+                             sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_european'] = total_european
+    total_asian = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'Asian']['N'].
+                          sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_asian'] = total_asian
+    total_african = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'African']['N'].
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_african'] = total_african
+    total_othermixed = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Other')]['N'].
+                               sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_othermixed'] = total_othermixed
+    total_afamafcam = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Cari')]['N'].
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_afamafcam'] = total_afamafcam
+    total_hisorlatinam = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Hispanic')]['N'].
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+    sumstats['total_hisorlatinam'] = total_hisorlatinam
     json_path = os.path.join(data_path, 'summary', 'summary.json')
     with open(json_path, 'w') as outfile:
         json.dump(sumstats, outfile)
@@ -135,7 +159,7 @@ def update_summarystats(sumstats, summaryfile):
                    ' unique study accessions.</li>\n'
     summary[-11] = '<li> There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
-                   ' unique diseases and traits studied.</li>\n'
+                   ' unique diseases\traits studied.</li>\n'
     summary[-10] = '<li> There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</li>\n'
@@ -157,15 +181,28 @@ def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
 
+def update_downloaddata(sumstats, downloaddata):
+    with open(downloaddata, 'r') as file:
+        download = file.readlines()
+    download[-9] =  "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
+    download[-8] =  "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
+    download[-7] =  "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African Am./Caribean ancestry.<br>\n"
+    download[-6] =  "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
+    download[-5] =  "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
+    download[-4] =  "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin Am. ancestry.<br>\n"
+    with open(downloaddata, 'w') as file:
+        file.writelines(download)
+
 
 def update_header(headerfile):
     ''' update the 'last updated' part of the header on both tabs '''
     today = datetime.date.today()
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[-1] = 'Last updated: ' +\
+    header[-4] = '<font size="2">Last updated: ' +\
                  datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +\
-                 ' GMT <br>'
+                 '. Privacy Policy <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/privacy_policy.md">here</a>.<br>\n'
+
     with open(headerfile, 'w') as file:
         file.writelines(header)
 
@@ -770,9 +807,9 @@ def make_bubbleplot_df(data_path):
     merged = merged[merged['Broader'] != 'In Part Not Recorded']
     merged["color"] = 'black'
     merged["color"] = np.where(merged["Broader"] == 'European',
-                               "#3288bd", merged["color"])
-    merged["color"] = np.where(merged["Broader"] == 'Asian',
                                "#d53e4f", merged["color"])
+    merged["color"] = np.where(merged["Broader"] == 'Asian',
+                               "#3288bd", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'African Am./Caribbean',
                                "#fee08b", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'Hispanic/Latin American',
@@ -991,6 +1028,9 @@ if __name__ == "__main__":
         update_summarystats(sumstats, os.path.abspath(
                                       os.path.join(__file__, '..', 'html_pages',
                                                    'summary_stats.html')))
+        update_downloaddata(sumstats, os.path.abspath(
+                                      os.path.join(__file__, '..', 'html_pages',
+                                                   'downloaddata.html')))
         diversity_logger.info('generate_data.py ran successfully!')
         zip_toplot(os.path.join(data_path, 'toplot'),
                    os.path.join(data_path, 'todownload',
