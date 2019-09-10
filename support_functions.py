@@ -26,7 +26,7 @@ def load_divs(width_dict):
                 height=int(0.12*width_dict['div_height']))
     downloaddata = Div(text=open(os.path.join(os.path.dirname(__file__),
                                         'html_pages',"downloaddata.html")).read(),
-                width=int(0.5*width_dict['twocolumn_width']),
+                width=int(0.502*width_dict['twocolumn_width']),
                 height=int(0.225*width_dict['div_height']))
     about = Div(text=open(os.path.join(os.path.dirname(__file__),
                                        'html_pages', "about.html")).read(),
