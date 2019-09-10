@@ -4,6 +4,8 @@ cd /media/charlie/raspi_usb/gwasdiversitymonitor/
 rm -rf .fuse*
 git add .
 git reset HEAD -- correspondance/
+git reset HEAD -- __pycache__/
 git reset HEAD -- data/catalog/cached_files/*/*
+git reset HEAD -- *swp
 git commit -m "daily update"
 git push origin master
