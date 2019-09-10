@@ -108,7 +108,6 @@ def create_summarystats(data_path):
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False, low_memory=False)
     Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader']!='In Part Not Recorded']
-    Cat_Anc_NoNR.to_csv('C:\\Dropbox\\gwasdiversitymonitor\\temp.csv')
     total_european = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'European']['N'].
                              sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
     sumstats['total_european'] = total_european
