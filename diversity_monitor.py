@@ -272,8 +272,7 @@ def create_bubble_plot():
                          y_axis_label='Number of Genotyped Participants',
                          x_axis_type='datetime', y_axis_location='left',
                          x_range=(dt.date(2008, 1, 1), bubble_df['DATE'].max()),
-                         tools=TOOLS, toolbar_location=None,
-                         sizing_mode="scale_both")
+                         tools=TOOLS, toolbar_location=None)
     bubble_hover = bubble_plot.select(dict(type=HoverTool))
     bubble_hover.tooltips = [("Size", "@N"),
                              ("PUBMEDID", "@PUBMEDID"),
@@ -343,10 +342,10 @@ def create_doughnut_plot():
                                      doughnut_angle=[], doughnut_color=[],
                                      parentterm=[], doughnut_stage=[]))
     doughnut_plot = figure(plot_height=width_dict['doughnut_height'],
-                         plot_width=width_dict['doughnut_width'],
-                         tools=TOOLS, toolbar_location=None,
-                         title="Fig 3: Doughnut Chart",
-                         x_range=(-1, 1), y_range=(-1, 1))
+                           plot_width=width_dict['doughnut_width'],
+                           tools=TOOLS, toolbar_location=None,
+                           title="Fig 3: Doughnut Chart",
+                           x_range=(-1, 1), y_range=(-1, 1))
     doughnut_hover = doughnut_plot.select(dict(type=HoverTool))
     doughnut_hover.tooltips = [("Ancestry: ", "@Broader"),
                              ("Stage: ", "@doughnut_stage"),
@@ -455,16 +454,14 @@ for control in controls:
     control.on_change('value', lambda attr, old, new: update_bubble())
     control.on_change('value', lambda attr, old, new: update_doughnut())
 update()
-
-header, about, dumdiv, summary, footer, downloaddata = load_divs(width_dict['twocolumn_width'],
-                                                                 width_dict['div_width'])
-interact_fig = column(row(column(header, *controls, downloaddata, doughnut_plot),
+header, about, dumdiv, summary, footer, downloaddata = load_divs(width_dict)
+interact_fig = layout(column(row(column(header, *controls, downloaddata, doughnut_plot),
                           column(bubble_plot, row(dumdiv, choro_plot, slider)),
-                          column(ts_plot, hbar_plot), sizing_mode="fixed"))
+                          column(ts_plot, hbar_plot), sizing_mode="stretch_width")))
 interact_tab = Panel(child=interact_fig, title='Interactive Figures')
 text = layout(row(column(header, summary, footer), dumdiv, about),
               sizing_mode='stretch_width')
 texttab = Panel(child=text, title="Additional Information")
 tabs = Tabs(tabs=[interact_tab, texttab])
-curdoc().add_root(tabs)
+curdoc().add_root(row(tabs, name='plotrow'))
 curdoc().title = "GWAS Diversity Monitor"

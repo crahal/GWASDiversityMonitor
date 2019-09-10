@@ -6,33 +6,43 @@ from bokeh.models import Div
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 443, 'hbar_width': 575,
-                  'choro_height': 430, 'choro_width': 795,
-                  'ts_height': 440, 'ts_width': 575,
+    width_dict = {'hbar_height': 430, 'hbar_width': 575,
+                  'choro_height': 430, 'choro_width': 775,
+                  'ts_height': 430, 'ts_width': 575,
                   'bubble_height': 430, 'bubble_width': 825,
                   'doughnut_height': 305, 'doughnut_width': 425,
                   'headerbox_height': 400, 'headerbox_width': 375,
-                  'control_height': 400, 'control_width': 325,
+                  'control_height': 390, 'control_width': 325,
                   'slider_height': 350, 'slider_width': 30,
-                  'twocolumn_width': 910, 'div_width': 20}
+                  'twocolumn_width': 910, 'div_width': 20,
+                  'div_height': 900}
     return width_dict
 
 
-def load_divs(twocolumn_width, divwidth):
+def load_divs(width_dict):
     header = Div(text=open(os.path.join(os.path.dirname(__file__),
-                                        'html_pages',"header.html")).read())
+                                        'html_pages',"header.html")).read(),
+                width=int(0.5*width_dict['twocolumn_width']),
+                height=int(0.12*width_dict['div_height']))
     downloaddata = Div(text=open(os.path.join(os.path.dirname(__file__),
-                                        'html_pages',"downloaddata.html")).read())
+                                        'html_pages',"downloaddata.html")).read(),
+                width=int(0.5*width_dict['twocolumn_width']),
+                height=int(0.225*width_dict['div_height']))
     about = Div(text=open(os.path.join(os.path.dirname(__file__),
                                        'html_pages', "about.html")).read(),
-                width=twocolumn_width)
+                width=width_dict['twocolumn_width'],
+                height=int(0.7*width_dict['div_height']))
     footer = Div(text=open(os.path.join(os.path.dirname(__file__),
                                         'html_pages', "footer.html")).read(),
-                width=twocolumn_width)
-    dumdiv = Div(text='', width=divwidth)
+                width=width_dict['twocolumn_width'],
+                height=int(0.3*width_dict['div_height']))
+    dumdiv = Div(text='',
+                 width=width_dict['div_width'],
+                 height=int(0.001*width_dict['div_height']))
     summary = Div(text=open(os.path.join(os.path.dirname(__file__),
                             'html_pages', "summary_stats.html")).read(),
-                  width=twocolumn_width)
+                  width=width_dict['twocolumn_width'],
+                  height=int(0.475*width_dict['div_height']))
     return header, about, dumdiv, summary, footer, downloaddata
 
 
@@ -41,7 +51,6 @@ def import_data(data_path):
                                          'bubble_df.csv'),
                             parse_dates=['DATE'])
     bubble_df['STAGE'] = bubble_df['STAGE'].str.replace('initial', 'Discovery')
-    print(bubble_df['STAGE'])
     bubble_df = bubble_df[bubble_df['Broader'].notnull()]
     bubble_df = bubble_df[bubble_df['N'].notnull()]
     bubble_df = bubble_df.drop_duplicates(subset=['Broader', 'DATE',
