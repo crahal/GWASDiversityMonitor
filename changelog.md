@@ -58,3 +58,6 @@
 * Moved legend position on Fig 2
 * Changed color on Fig 1 European and Asian reversed
 * Better layout alignment.
+
+#### 10th September, 2019. Version 0.5.1:
+* A few layout and title tweaks
