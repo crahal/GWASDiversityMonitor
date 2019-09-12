@@ -43,8 +43,9 @@ def create_summarystats(data_path):
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False, low_memory=False)
-    temp_bubble_df = pd.read_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'),
-                            sep=',', index_col=False, low_memory=False)
+    temp_bubble_df = pd.read_csv(os.path.join(data_path,
+                                              'toplot', 'bubble_df.csv'),
+                                 sep=',', index_col=False, low_memory=False)
     sumstats = {}
     sumstats['number_studies'] = int(len(Cat_Stud['PUBMEDID'].unique()))
     sumstats['first_study_date'] = str(Cat_Stud['DATE'].min())
@@ -76,8 +77,7 @@ def create_summarystats(data_path):
                     sort_values(by=0, ascending=False).\
                     reset_index()['DiseaseOrTrait'][0]
     sumstats['noneuro_trait'] = str(noneuro_trait)
-    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).
-                                         mean(), 10))
+    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).mean(), 10))
     sumstats['threshold_pvals'] = int(len(Cat_Full[Cat_Full['P-VALUE'].
                                           astype(float) < 5.000000e-8]))
     sumstats['mostcommon_journal'] = str(Cat_Stud['JOURNAL'].mode()[0])
@@ -135,70 +135,70 @@ def create_summarystats(data_path):
 def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[-16] = '<li> There are a total of ' + \
+    summary[103] = '<li> <p>There are a total of ' + \
                    str(sumstats['number_studies']) +\
-                   ' studies in the Catalog.</li>\n'
-    summary[-15] = '<li> Earliest study in catalogue was PubMedID ' +\
+                   ' studies in the Catalog.</p></li>\n'
+    summary[104] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
-                   ' et al.</li>\n'
-    summary[-14] = '<li> Most recent study in the catalogue was PubMedID ' +\
+                   ' et al.</p></li>\n'
+    summary[105] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
-                   ' et al.</li>\n'
-    summary[-13] = '<li> Accession with biggest sample is PubMedID ' +\
+                   ' et al.</p></li>\n'
+    summary[106] = '<li> <p>Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
-                   ' et al.</li>\n'
-    summary[-12] = '<li> There are a total of ' +\
+                   ' et al.</p></li>\n'
+    summary[107] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_accessions']) +\
-                   ' unique study accessions.</li>\n'
-    summary[-11] = '<li> There are a total of ' +\
+                   ' unique study accessions.</p></li>\n'
+    summary[108] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
-                   ' unique diseases\traits studied.</li>\n'
-    summary[-10] = '<li> There are a total of ' +\
+                   ' unique diseases\traits studied.</p></li>\n'
+    summary[109] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
-                   ' unique EBI "Mapped Traits".</li>\n'
-    summary[-9] = '<li> The total number of associations found is ' +\
-                  str(sumstats['found_associations']) +\
-                  '.</li>\n'
-    summary[-8] = '<li> The average number of associations found is ' +\
-                  str(round(sumstats['average_associations'], 2)) + '.</li>\n'
-    summary[-7] = '<li> Mean P-Value for the strongest SNP risk allele is: ' +\
-                  "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</li>\n'
-    summary[-6] = '<li> The number of associations reaching the 5e-8 threshold: ' +\
-                  str(sumstats['threshold_pvals']) + '.</li>\n'
-    summary[-5] = '<li> The journal to feature the most GWAS studies is: ' +\
-                  str(sumstats['mostcommon_journal']) + '.</li>\n'
-    summary[-4] = '<li> Total number of different journals publishing GWAS is: ' +\
-                  str(sumstats['unique_journals']) + '.</li>\n'
-    summary[-3] = '<li> Most frequently studied (Non-European) "Diseases Trait": ' +\
-                  str(sumstats['noneuro_trait']) + '.</li>\n'
+                   ' unique EBI "Mapped Traits".</p></li>\n'
+    summary[110] = '<li> <p>The total number of associations found is ' +\
+                   str(sumstats['found_associations']) +\
+                   '.</p></li>\n'
+    summary[111] = '<li> <p>The average number of associations found is ' +\
+                   str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
+    summary[112] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
+                   "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
+    summary[113] = '<li> <p>The number of associations reaching the 5e-8 threshold: ' +\
+                   str(sumstats['threshold_pvals']) + '.</p></li>\n'
+    summary[114] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
+                   str(sumstats['mostcommon_journal']) + '.</p></li>\n'
+    summary[115] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
+                   str(sumstats['unique_journals']) + '.</p></li>\n'
+    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) "Diseases Trait": ' +\
+                   str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
+
 
 def update_downloaddata(sumstats, downloaddata):
     with open(downloaddata, 'r') as file:
         download = file.readlines()
-    download[-9] =  "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
-    download[-8] =  "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
-    download[-7] =  "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African Am./Caribean ancestry.<br>\n"
-    download[-6] =  "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
-    download[-5] =  "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
-    download[-4] =  "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin Am. ancestry.<br>\n"
+    download[77] = "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
+    download[78] = "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
+    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
+    download[80] = "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
+    download[81] = "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
+    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
     with open(downloaddata, 'w') as file:
         file.writelines(download)
 
 
 def update_header(headerfile):
     ''' update the 'last updated' part of the header on both tabs '''
-    today = datetime.date.today()
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[-4] = '<font size="2">Last updated: ' +\
+    header[73] = '<p style="font-size:14px;">Last updated: ' +\
                  datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +\
                  '. Privacy Policy <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/privacy_policy.md">here</a>.<br>\n'
 
@@ -978,15 +978,17 @@ def download_cat(data_path, ebi_download):
     except Exception as e:
         diversity_logger.debug('Problem downloading the Catalog data!' + str(e))
 
+
 def make_archive(source, destination):
-        base = os.path.basename(destination)
-        name = base.split('.')[0]
-        format = base.split('.')[1]
-        archive_from = os.path.dirname(source)
-        archive_to = os.path.basename(source.strip(os.sep))
-        print(source, destination, archive_from, archive_to)
-        shutil.make_archive(name, format, archive_from, archive_to)
-        shutil.move('%s.%s'%(name,format), destination)
+    base = os.path.basename(destination)
+    name = base.split('.')[0]
+    format = base.split('.')[1]
+    archive_from = os.path.dirname(source)
+    archive_to = os.path.basename(source.strip(os.sep))
+    print(source, destination, archive_from, archive_to)
+    shutil.make_archive(name, format, archive_from, archive_to)
+    shutil.move('%s.%s' % (name, format), destination)
+
 
 def zip_toplot(source, destination):
     try:
@@ -996,7 +998,7 @@ def zip_toplot(source, destination):
 #        archive_from = os.path.dirname(source)
 #        archive_to = os.path.basename(source.strip(os.sep))
         shutil.make_archive(name, format, source)
-        shutil.move('%s.%s'%(name,format), destination)
+        shutil.move('%s.%s' % (name, format), destination)
         diversity_logger.info('Successfully zipped the files to be downloaded')
     except Exception as e:
         diversity_logger.debug('Problem zipping the files to tbe downloaded' +
@@ -1004,9 +1006,13 @@ def zip_toplot(source, destination):
 
 
 if __name__ == "__main__":
-    logpath = os.path.abspath(os.path.join(__file__, '..', 'logging'))
+    logpath = os.path.abspath(os.path.join(__file__, '..',
+                                           'logging'))
     diversity_logger = setup_logging(logpath)
-    data_path = os.path.abspath(os.path.join('data'))
+    data_path = os.path.abspath(os.path.join(__file__, '..',
+                                             'data'))
+    index_filepath = os.path.abspath(os.path.join(__file__, '..',
+                                                  'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
         download_cat(data_path, ebi_download)
@@ -1020,16 +1026,10 @@ if __name__ == "__main__":
         make_choro_df(data_path)
         make_freetext_dfs(data_path)
         make_heatmap_dfs(data_path)
-        update_header(os.path.abspath(
-                      os.path.join(__file__, '..',
-                                   'html_pages', 'header.html')))
+        update_header(index_filepath)
         sumstats = create_summarystats(data_path)
-        update_summarystats(sumstats, os.path.abspath(
-                                      os.path.join(__file__, '..', 'html_pages',
-                                                   'summary_stats.html')))
-        update_downloaddata(sumstats, os.path.abspath(
-                                      os.path.join(__file__, '..', 'html_pages',
-                                                   'downloaddata.html')))
+        update_summarystats(sumstats, index_filepath)
+        update_downloaddata(sumstats, index_filepath)
         diversity_logger.info('generate_data.py ran successfully!')
         zip_toplot(os.path.join(data_path, 'toplot'),
                    os.path.join(data_path, 'todownload',
