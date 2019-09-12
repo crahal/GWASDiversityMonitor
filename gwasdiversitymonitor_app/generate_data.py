@@ -1006,12 +1006,12 @@ def zip_toplot(source, destination):
 
 
 if __name__ == "__main__":
-    logpath = os.path.abspath(os.path.join(__file__, '.',
+    logpath = os.path.abspath(os.path.join(__file__, '..',
                                            'logging'))
     diversity_logger = setup_logging(logpath)
-    data_path = os.path.abspath(os.path.join(__file__, '.',
+    data_path = os.path.abspath(os.path.join(__file__, '..',
                                              'data'))
-    index_filepath = os.path.abspath(os.path.join(__file__, '.',
+    index_filepath = os.path.abspath(os.path.join(__file__, '..',
                                                   'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
