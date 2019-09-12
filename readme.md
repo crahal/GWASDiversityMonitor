@@ -21,7 +21,7 @@ This server is operating system independent (through the ``os`` module) and shou
 
 ### Versioning
 
-This dashboard is currently at version 0.5.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
+This dashboard is currently at Version 0.6.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
 
 ### License
 
