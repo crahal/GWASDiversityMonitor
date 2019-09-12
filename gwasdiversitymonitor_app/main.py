@@ -132,7 +132,7 @@ def update_choro_slider(attr, old, new):
     new_data = json_data(yr)
     geosource.geojson = new_data
     choro_plot.title.text = 'Fig 4: Participant Recruitment Over Time, ' +\
-                            'All Parent Categories and Both Stages: %d' % yr
+                            'All Parent Categories and Both Resaerch Stages: %d' % yr
 
 
 def update_choro():
@@ -162,7 +162,7 @@ def create_choro_plot(year):
                          border_line_color=None, orientation='vertical',
                          width=int(width_dict['choro_width']/40))
     choro_plot = figure(title='Fig 4: Participant Recruitment Over Time, All ' +\
-                              'Parent Categories and Both Stages: ' + str(year),
+                              'Parent Categories and Both Research Stages: ' + str(year),
                         plot_height=width_dict['choro_height'], tools=TOOLS,
                         plot_width=width_dict['choro_width'],
                         toolbar_location=None)
@@ -331,6 +331,7 @@ def update_bubble():
                               TRAIT=df['DiseaseOrTrait'])
     bubble_plot.title.text = 'Fig 1: Ancestry Over Time Studying: ' +\
                                  str(parent.value)
+    bubble_plot.x_range.start = dt.date(slider.value, 1, 1)
 
 
 def create_doughnut_plot():
