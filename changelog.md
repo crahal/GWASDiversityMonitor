@@ -64,6 +64,7 @@
 
 #### 12th September, 2019. Version 0.6.0:
 * Major rehaul -- dashboard is now roots embedded into a jinja template
+* Moved all htmls into the jinja template
 * A lot of reworkings to the html
 * New header
 * Added slider application to the bubble plot
