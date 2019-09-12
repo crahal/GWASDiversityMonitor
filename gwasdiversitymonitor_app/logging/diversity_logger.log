@@ -16,3 +16,5 @@
 2019-09-12 15:43:34,479 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
 2019-09-12 15:59:18,674 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/gwasdiversitymonitor_app/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-09-05.tsv'
 2019-09-12 15:59:38,791 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
+2019-09-12 16:03:33,416 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/gwasdiversitymonitor_app/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-09-05.tsv'
+2019-09-12 16:03:54,134 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
