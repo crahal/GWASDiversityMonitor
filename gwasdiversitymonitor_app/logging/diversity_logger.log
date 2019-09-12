@@ -55,3 +55,8 @@
 2019-09-12 23:10:23,897 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
 2019-09-12 23:10:25,174 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-12 23:10:45,571 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
+2019-09-13 00:05:55,638 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-05.tsv
+2019-09-13 00:06:01,241 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-05.tsv
+2019-09-13 00:06:30,017 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
+2019-09-13 00:06:31,225 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-13 00:06:52,267 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
