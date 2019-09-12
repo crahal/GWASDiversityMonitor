@@ -131,8 +131,8 @@ def update_choro_slider(attr, old, new):
     yr = slider.value
     new_data = json_data(yr)
     geosource.geojson = new_data
-    choro_plot.title.text = 'Fig 4: Participant Recruitment Over Time, ' +\
-                            'All Parent Categories and Both Resaerch Stages: %d' % yr
+    choro_plot.title.text = 'Fig 4: Recruitment Over Time, ' +\
+                            'All Parent Categories and Both Research Stages: %d' % yr
 
 
 def update_choro():
@@ -329,8 +329,9 @@ def update_bubble():
                               STAGE=df['STAGE'].str.title(),
                               PARENT=df['parentterm'],
                               TRAIT=df['DiseaseOrTrait'])
-    bubble_plot.title.text = 'Fig 1: Ancestry Over Time Studying: ' +\
-                                 str(parent.value)
+    bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) + ' Ancestry and ' +\
+                             str(parent.value) + ', ' + str(slider.value) +\
+                             ' to Present Day (' + str(stage.value) + ').'
     bubble_plot.x_range.start = dt.date(slider.value, 1, 1)
 
 
