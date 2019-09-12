@@ -186,10 +186,10 @@ def update_downloaddata(sumstats, downloaddata):
         download = file.readlines()
     download[77] = "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
     download[78] = "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
-    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
+    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African Am./Caribean ancestry.<br>\n"
     download[80] = "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
     download[81] = "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
-    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
+    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin Am. ancestry.<br>\n"
     with open(downloaddata, 'w') as file:
         file.writelines(download)
 
