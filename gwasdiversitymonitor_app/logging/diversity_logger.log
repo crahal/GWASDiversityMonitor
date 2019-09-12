@@ -12,3 +12,5 @@
 2019-09-12 15:26:58,078 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-12 15:27:10,878 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-12 15:27:10,918 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-12 15:43:13,872 - diversity_logger - DEBUG - Problem downloading the Catalog data![Errno 2] No such file or directory: '/media/charlie/raspi_usb/gwasdiversitymonitor/gwasdiversitymonitor_app/data/catalog/cached_files/cat_stud/gwas_catalog_v1.0.2-studies_r2019-09-05.tsv'
+2019-09-12 15:43:34,479 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: [Errno 2] No such file or directory: 'data/toplot/bubble_df.csv'
