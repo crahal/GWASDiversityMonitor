@@ -109,22 +109,22 @@ def create_summarystats(data_path):
                                       '\t', index_col=False, low_memory=False)
     Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader']!='In Part Not Recorded']
     total_european = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'European']['N'].
-                             sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                             sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_european'] = total_european
     total_asian = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'Asian']['N'].
-                          sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                          sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_asian'] = total_asian
     total_african = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'African']['N'].
-                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_african'] = total_african
     total_othermixed = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Other')]['N'].
-                               sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                               sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_othermixed'] = total_othermixed
     total_afamafcam = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Cari')]['N'].
-                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_afamafcam'] = total_afamafcam
     total_hisorlatinam = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Hispanic')]['N'].
-                           sum() / Cat_Anc_NoNR['N'].sum())*100), 3)
+                           sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_hisorlatinam'] = total_hisorlatinam
     json_path = os.path.join(data_path, 'summary', 'summary.json')
     with open(json_path, 'w') as outfile:
@@ -158,7 +158,7 @@ def update_summarystats(sumstats, summaryfile):
                    ' unique study accessions.</p></li>\n'
     summary[108] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
-                   ' unique diseases\traits studied.</p></li>\n'
+                   ' unique diseases and traits studied.</p></li>\n'
     summary[109] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</p></li>\n'
@@ -169,13 +169,13 @@ def update_summarystats(sumstats, summaryfile):
                    str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
     summary[112] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
                    "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
-    summary[113] = '<li> <p>The number of associations reaching the 5e-8 threshold: ' +\
+    summary[113] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
                    str(sumstats['threshold_pvals']) + '.</p></li>\n'
     summary[114] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
                    str(sumstats['mostcommon_journal']) + '.</p></li>\n'
     summary[115] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
                    str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) "Diseases Trait": ' +\
+    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait": ' +\
                    str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
@@ -184,12 +184,12 @@ def update_summarystats(sumstats, summaryfile):
 def update_downloaddata(sumstats, downloaddata):
     with open(downloaddata, 'r') as file:
         download = file.readlines()
-    download[77] = "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
-    download[78] = "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
-    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African Am./Caribean ancestry.<br>\n"
-    download[80] = "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
-    download[81] = "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
-    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin Am. ancestry.<br>\n"
+    download[77] = "&emsp;<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
+    download[78] = "&emsp;<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
+    download[79] = "&emsp;<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
+    download[80] = "&emsp;<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
+    download[81] = "&emsp;<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
+    download[82] = "&emsp;<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
     with open(downloaddata, 'w') as file:
         file.writelines(download)
 
