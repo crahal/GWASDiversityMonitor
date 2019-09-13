@@ -469,7 +469,7 @@ def make_choro_df(data_path):
                                             'Cat_Anc_withBroader.tsv'),
                                sep='\t')
     annual_df = pd.DataFrame(columns=['Year', 'N', 'Count'])
-    Clean_CoR = make_clean_CoR(Cat_Ancestry)
+    Clean_CoR = make_clean_CoR(Cat_Ancestry, data_path)
     countrylookup = pd.read_csv(os.path.join(data_path,
                                              'shapefiles',
                                              'Country_Lookup.csv'),
@@ -504,7 +504,7 @@ def make_choro_df(data_path):
     annual_df.to_csv(os.path.join(data_path, 'toplot', 'choro_df.csv'))
 
 
-def make_timeseries_df(Cat_Ancestry):
+def make_timeseries_df(Cat_Ancestry, data_path):
     Cat_Ancestry = Cat_Ancestry[Cat_Ancestry['Broader'] !=
                                 'In Part Not Recorded']
     DateSplit = Cat_Ancestry['DATE'].str.\
@@ -537,18 +537,18 @@ def make_timeseries_df(Cat_Ancestry):
             ts_replication_count.at[year, ancestry] = len(temp_df['N'])
     ts_initial_sum_pc = ((ts_initial_sum.T / ts_initial_sum.T.sum()).T)*100
     ts_initial_sum_pc = ts_initial_sum_pc.reset_index()
-    ts_initial_sum_pc.to_csv(os.path.join('data', 'toplot',
+    ts_initial_sum_pc.to_csv(os.path.join(data_path, 'toplot',
                                           'ts_initial_sum.csv'), index=False)
     ts_initial_count_pc = ((ts_initial_count.T /
                             ts_initial_count.T.sum()).T)*100
     ts_initial_count_pc = ts_initial_count_pc.reset_index()
-    ts_initial_count_pc.to_csv(os.path.join('data', 'toplot',
+    ts_initial_count_pc.to_csv(os.path.join(data_path, 'toplot',
                                             'ts_initial_count.csv'),
                                index=False)
     ts_replication_sum_pc = ((ts_replication_sum.T /
                               ts_replication_sum.T.sum()).T)*100
     ts_replication_sum_pc = ts_replication_sum_pc.reset_index()
-    ts_replication_sum_pc.to_csv(os.path.join('data', 'toplot',
+    ts_replication_sum_pc.to_csv(os.path.join(data_path, 'toplot',
                                               'ts_replication_sum.csv'),
                                  index=False)
     ts_replication_count_pc = ((ts_replication_count.T /
@@ -862,11 +862,11 @@ def clean_gwas_cat(data_path):
                         isnull()]['BROAD ANCESTRAL'].unique()))
 
 
-def make_clean_CoR(Cat_Anc):
+def make_clean_CoR(Cat_Anc, data_path):
     """ clean the country of recruitment field for the geospatial analysis
     """
     with open(os.path.abspath(
-              os.path.join('data', 'catalog', 'synthetic',
+              os.path.join(data_path, 'catalog', 'synthetic',
                            'ancestry_CoR.csv')), 'w') as fileout:
         rec_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
         rec_out .writerow(['Date', 'PUBMEDID', 'N', 'Cleaned Country'])
@@ -877,7 +877,7 @@ def make_clean_CoR(Cat_Anc):
                                    str(row['N']),
                                    row['COUNTRY OF RECRUITMENT']])
     Clean_CoR = pd.read_csv(os.path.abspath(
-                            os.path.join('data', 'catalog', 'synthetic',
+                            os.path.join(data_path, 'catalog', 'synthetic',
                                          'ancestry_CoR.csv')))
     Clean_CoR['Cleaned Country'] = Clean_CoR['Cleaned Country'].str.replace(
         'U.S.', 'United States')
@@ -909,7 +909,7 @@ def make_clean_CoR(Cat_Anc):
 #    print(str(round((Clean_CoR['N'].sum() / Cat_Anc['N'].sum()) * 100, 2)) +
 #          '% of the N remains.')
     Clean_CoR.to_csv(os.path.abspath(
-                     os.path.join('data', 'catalog', 'synthetic',
+                     os.path.join(data_path, 'catalog', 'synthetic',
                                   'GWAScatalogue_CleanedCountry.tsv')),
                      sep='\t', index=False)
     return Clean_CoR
@@ -1022,7 +1022,7 @@ if __name__ == "__main__":
         make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
                                                     'synthetic',
                                                     'Cat_Anc_withBroader.tsv'),
-                                       sep='\t'))
+                                       sep='\t'), data_path)
         make_choro_df(data_path)
         make_freetext_dfs(data_path)
         make_heatmap_dfs(data_path)
