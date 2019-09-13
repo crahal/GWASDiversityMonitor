@@ -175,7 +175,7 @@ def update_summarystats(sumstats, summaryfile):
                    str(sumstats['mostcommon_journal']) + '.</p></li>\n'
     summary[115] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
                    str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait": ' +\
+    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
                    str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
@@ -184,12 +184,12 @@ def update_summarystats(sumstats, summaryfile):
 def update_downloaddata(sumstats, downloaddata):
     with open(downloaddata, 'r') as file:
         download = file.readlines()
-    download[77] = "&emsp;<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
-    download[78] = "&emsp;<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
-    download[79] = "&emsp;<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
-    download[80] = "&emsp;<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
-    download[81] = "&emsp;<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
-    download[82] = "&emsp;<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
+    download[77] = "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
+    download[78] = "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
+    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
+    download[80] = "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
+    download[81] = "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
+    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
     with open(downloaddata, 'w') as file:
         file.writelines(download)
 
