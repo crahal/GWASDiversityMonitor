@@ -501,7 +501,7 @@ def make_choro_df(data_path):
         annual_df = annual_df.append(country_merged, sort=True)
     annual_df = annual_df.reset_index().drop(['level_0'], axis=1)
     del annual_df.index.name
-    annual_df.to_csv(os.path.join('data', 'toplot', 'choro_df.csv'))
+    annual_df.to_csv(os.path.join(data_path, 'toplot', 'choro_df.csv'))
 
 
 def make_timeseries_df(Cat_Ancestry):
@@ -554,7 +554,7 @@ def make_timeseries_df(Cat_Ancestry):
     ts_replication_count_pc = ((ts_replication_count.T /
                                 ts_replication_count.T.sum()).T)*100
     ts_replication_count_pc = ts_replication_count_pc.reset_index()
-    ts_replication_count_pc.to_csv(os.path.join('data', 'toplot',
+    ts_replication_count_pc.to_csv(os.path.join(data_path, 'toplot',
                                                 'ts_replication_count.csv'),
                                    index=False)
 
@@ -754,7 +754,7 @@ def make_doughnut_df(data_path):
         replace('African Am./Caribbean', 'Af. Am./Carib.')
     doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('Hispanic/Latin American', 'Hispanic/L.A.')
-    doughnut_df.to_csv(os.path.join('data', 'toplot', 'doughnut_df.csv'))
+    doughnut_df.to_csv(os.path.join(data_path, 'toplot', 'doughnut_df.csv'))
 
 
 def make_bubbleplot_df(data_path):
@@ -817,7 +817,7 @@ def make_bubbleplot_df(data_path):
                                "#99d594", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'African',
                                "#fc8d59", merged["color"])
-    merged.to_csv(os.path.join('data', 'toplot', 'bubble_df.csv'))
+    merged.to_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'))
 
 
 def clean_gwas_cat(data_path):
