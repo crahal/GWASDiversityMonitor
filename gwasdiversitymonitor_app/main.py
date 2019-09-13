@@ -161,7 +161,7 @@ def create_choro_plot(year):
                          height=int(width_dict['choro_height']*.84),
                          border_line_color=None, orientation='vertical',
                          width=int(width_dict['choro_width']/40))
-    choro_plot = figure(title='Fig 4: Participant Recruitment Over Time, All ' +\
+    choro_plot = figure(title='Fig 4: Recruitment Over Time, All ' +\
                               'Parent Categories and Both Research Stages: ' + str(year),
                         plot_height=width_dict['choro_height'], tools=TOOLS,
                         plot_width=width_dict['choro_width'],
