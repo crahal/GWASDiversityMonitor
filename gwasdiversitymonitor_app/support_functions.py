@@ -2,12 +2,11 @@ import pandas as pd
 import geopandas as gpd
 from bokeh.models import Select, Slider
 import os
-from bokeh.models import Div
 
 
 def create_width_dict():
     width_dict = {'hbar_height': 430, 'hbar_width': 575,
-                  'choro_height': 430, 'choro_width': 825,
+                  'choro_height': 430, 'choro_width': 855,
                   'ts_height': 430, 'ts_width': 575,
                   'bubble_height': 430, 'bubble_width': 825,
                   'doughnut_height': 285, 'doughnut_width': 425,
@@ -63,9 +62,9 @@ def widgets(control_width, bubble_df, ts_init_count, maxyear):
                     options=["Number of Studies (%)",
                              "Number of Participants (%)"],
                     width=control_width)
-    slider = Slider(title='', start=2008, end=maxyear-1, step=1,
+    slider = Slider(title='Year', start=2008, end=maxyear-1, step=1,
                     orientation="horizontal", width=control_width,
-                    value=maxyear-1)
+                    value=2008)
     return stage, parent, ancestry, metric, slider
 
 
