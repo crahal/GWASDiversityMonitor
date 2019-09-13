@@ -69,3 +69,7 @@
 * New header
 * Added slider application to the bubble plot
 * Moved slider to the widget set and added title to it
+
+#### 12th September, 2019. Version 0.7.0:
+* Reworked the summary part with cards and pill badges
+* removed colourbar and moved the slider
