@@ -36,16 +36,16 @@
   }
 }
 h1 {
-    margin: 0.1em 0 0.1em 0;
+    margin: 0.25em 0 0.1em 0;
     color: #2e484c;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 2.25em;
+    font-size: 2.1em;
 }
 h4 {
-    margin: 0.1em 0 0.1em 0;
+    margin: 0.5em 0 0.3em 0;
     color: #2e484c;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 p {
   font-family:Arial, Helvetica, sans-serif;
@@ -55,6 +55,43 @@ p {
 }
 .nav {
   overflow:hidden;
+}
+.box div.topleft {
+	display: block;
+	background: url("images/box-bg.png") top left no-repeat white;
+	padding: 2.0em 0em 0em 2.0em;
+}
+
+.box div.topright {
+	display: block;
+	background: url("images/box-bg.png") top right no-repeat white;
+	padding: 2.0em;
+	margin: -2.0em 0 0 2.0em;
+}
+
+.box div.bottomleft {
+	display: block;
+	height: 45px;
+	margin-top: -2.0em;
+	background: url("images/box-bg.png") bottom left no-repeat white;
+}
+
+.box div.bottomright {
+	display: block;
+	background: url("images/box-bg.png") bottom right no-repeat white;
+	height: 45px;
+	margin-left: 3.0em;
+.card-text { height: 42px; overflow-x: scroll; width: 100%; }
+a.list-group-item {
+  overflow: hidden;
+  display: table;
+}
+
+a.list-group-item > div {
+  display: table-cell;
+  vertical-align: middle;
+  float:none;
+}
 }
 </style>
 <body>
@@ -69,18 +106,41 @@ p {
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-3">
-            <br>
             <h1>GWAS Diversity Monitor</h1>
-<p style="font-size:14px;">Last updated: 2019-09-13 15:35:35. Privacy Policy <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/privacy_policy.md">here</a>.<br>
-            This is Version 0.5.0. Changelog available <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/changelog.md">here</a>. Download data <a href="https://github.com/crahal/gwasdiversitymonitor/raw/master/data/todownload/gwasdiversitymonitor_download.zip">here</a>.<br></p>
+<p style="font-size:14px;">Last updated: 2019-09-13 18:23:25. Privacy Policy <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/privacy_policy.md">here</a>.<br>
+            This is Version 0.5.0. Changelog available <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/changelog.md">here</a>. Download data <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/gwasdiversitymonitor_app/data/todownload/gwasdiversitymonitor_download.zip">here</a>.<br></p>
             {{ embed(doc.roots[5]) }}
-&emsp;<h4> Current GWAS Diversity by Ancestry:</h4>
-<strong>87.99%</strong> of participants used have European ancestry.<br>
-<strong>0.35%</strong> of participants used have African ancestry.<br>
-<strong>1.51%</strong> of participants used have African American/Caribean ancestry.<br>
-<strong>1.0%</strong> of participants used have Other/Mixed ancestry.<br>
-<strong>8.0%</strong> of participants used have Asian ancestry.<br>
-<strong>1.16%</strong> of participants used have Hispanic/Latin American ancestry.<br>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4 ">
+                  <div class="card text-dark bg-light">
+                    <div class="card-header bg-dark text-center text-light"><h4>GWAS Diversity by Ancestry:</h4></div>
+                    <div class="card-body">
+                      <div class="list-group">
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">European Participants:
+<span class="badge badge-primary badge-pill">87.99%</span>
+                        </p>
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">African Participants:
+<span class="badge badge-primary badge-pill">0.35%</span>
+                        </p>
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">African American/Caribean Participants:
+<span class="badge badge-primary badge-pill">1.51%</span>
+                        </p>
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-info">Other/Mixed Participants:
+<span class="badge badge-primary badge-pill">1.0%</span>
+                        </p>
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-secondary disabled">Asian Participants:
+<span class="badge badge-primary badge-pill">8.0%</span>
+                        </p>
+                        <p style="font-size:12px; height: 36px;" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-warning">Hispanic/Latin American Participants:
+<span class="badge badge-primary badge-pill">1.16%</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             {{ embed(doc.roots[4]) }}
           </div>
           <div class="col-sm-5">

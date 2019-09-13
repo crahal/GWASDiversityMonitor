@@ -135,47 +135,47 @@ def create_summarystats(data_path):
 def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[103] = '<li> <p>There are a total of ' + \
+    summary[163] = '<li> <p>There are a total of ' + \
                    str(sumstats['number_studies']) +\
                    ' studies in the Catalog.</p></li>\n'
-    summary[104] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
+    summary[164] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[105] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
+    summary[165] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[106] = '<li> <p>Accession with biggest sample is PubMedID ' +\
+    summary[166] = '<li> <p>Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[107] = '<li> <p>There are a total of ' +\
+    summary[167] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_accessions']) +\
                    ' unique study accessions.</p></li>\n'
-    summary[108] = '<li> <p>There are a total of ' +\
+    summary[168] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
                    ' unique diseases and traits studied.</p></li>\n'
-    summary[109] = '<li> <p>There are a total of ' +\
+    summary[169] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</p></li>\n'
-    summary[110] = '<li> <p>The total number of associations found is ' +\
+    summary[170] = '<li> <p>The total number of associations found is ' +\
                    str(sumstats['found_associations']) +\
                    '.</p></li>\n'
-    summary[111] = '<li> <p>The average number of associations found is ' +\
+    summary[171] = '<li> <p>The average number of associations found is ' +\
                    str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
-    summary[112] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
+    summary[172] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
                    "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
-    summary[113] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
+    summary[173] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
                    str(sumstats['threshold_pvals']) + '.</p></li>\n'
-    summary[114] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
+    summary[174] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
                    str(sumstats['mostcommon_journal']) + '.</p></li>\n'
-    summary[115] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
+    summary[175] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
                    str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[116] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
+    summary[176] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
                    str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
@@ -184,21 +184,21 @@ def update_summarystats(sumstats, summaryfile):
 def update_downloaddata(sumstats, downloaddata):
     with open(downloaddata, 'r') as file:
         download = file.readlines()
-    download[77] = "<strong>" + str(sumstats['total_european']) + "%</strong> of participants used have European ancestry.<br>\n"
-    download[78] = "<strong>" + str(sumstats['total_african']) + "%</strong> of participants used have African ancestry.<br>\n"
-    download[79] = "<strong>" + str(sumstats['total_afamafcam']) + "%</strong> of participants used have African American/Caribean ancestry.<br>\n"
-    download[80] = "<strong>" + str(sumstats['total_othermixed']) + "%</strong> of participants used have Other/Mixed ancestry.<br>\n"
-    download[81] = "<strong>" + str(sumstats['total_asian']) + "%</strong> of participants used have Asian ancestry.<br>\n"
-    download[82] = "<strong>" + str(sumstats['total_hisorlatinam']) + "%</strong> of participants used have Hispanic/Latin American ancestry.<br>\n"
+    download[120] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_european']) + '%</span>\n'
+    download[123] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_african']) + '%</span>\n'
+    download[126] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_afamafcam']) + '%</span>\n'
+    download[129] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_othermixed']) + '%</span>\n'
+    download[132] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_asian']) + '%</span>\n'
+    download[135] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_hisorlatinam']) +'%</span>\n'
     with open(downloaddata, 'w') as file:
         file.writelines(download)
-
+    
 
 def update_header(headerfile):
     ''' update the 'last updated' part of the header on both tabs '''
     with open(headerfile, 'r') as file:
         header = file.readlines()
-    header[73] = '<p style="font-size:14px;">Last updated: ' +\
+    header[109] = '<p style="font-size:14px;">Last updated: ' +\
                  datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +\
                  '. Privacy Policy <a href="https://github.com/crahal/gwasdiversitymonitor/blob/master/privacy_policy.md">here</a>.<br>\n'
 

@@ -116,3 +116,15 @@
 2019-09-13 15:35:22,737 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-13 15:35:37,050 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-13 15:35:37,118 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-13 18:16:58,288 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-05.tsv
+2019-09-13 18:17:01,394 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-05.tsv
+2019-09-13 18:17:19,945 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
+2019-09-13 18:17:21,409 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-13 18:17:34,300 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-13 18:17:34,353 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-13 18:22:11,885 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-05.tsv
+2019-09-13 18:22:15,623 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-05.tsv
+2019-09-13 18:23:12,018 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
+2019-09-13 18:23:13,734 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-13 18:23:27,251 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-13 18:23:27,306 - diversity_logger - INFO - Successfully zipped the files to be downloaded

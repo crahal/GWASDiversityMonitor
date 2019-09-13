@@ -156,11 +156,11 @@ def create_choro_plot(year):
                                   nan_color='white')
     tick_labels = {'0': '0%', '5': '5%', '10': '10%',
                    '15': '15%', '20': '20%', '25': '>25%'}
-    color_bar = ColorBar(color_mapper=color_map, location=(0, 0),
-                         label_standoff=8, major_label_overrides=tick_labels,
-                         height=int(width_dict['choro_height']*.84),
-                         border_line_color=None, orientation='vertical',
-                         width=int(width_dict['choro_width']/40))
+#    color_bar = ColorBar(color_mapper=color_map, location=(0, 0),
+#                         label_standoff=8, major_label_overrides=tick_labels,
+#                         height=int(width_dict['choro_height']*.84),
+#                         border_line_color=None, orientation='vertical',
+#                         width=int(width_dict['choro_width']/40))
     choro_plot = figure(title='Fig 4: Recruitment Over Time, All ' +\
                               'Parent Categories and Both Research Stages: ' + str(year),
                         plot_height=width_dict['choro_height'], tools=TOOLS,
@@ -175,7 +175,7 @@ def create_choro_plot(year):
     choro_hover.tooltips = [('Country/region', '@country'),
                             ('Participants (m)', '@N'),
                             ('Number of Studies Used', '@Count')]
-    choro_plot.add_layout(color_bar, 'right')
+#    choro_plot.add_layout(color_bar, 'right')
     choro_plot.outline_line_color = None
     choro_plot.xgrid.grid_line_color = None
     choro_plot.ygrid.grid_line_color = None
@@ -357,8 +357,8 @@ def create_doughnut_plot():
                              ("Stage: ", "@doughnut_stage"),
                              ("Parent Category: ", "@parentterm"),
                              ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot.annular_wedge(x=-.35, y=0, inner_radius=0.25,
-                              outer_radius=0.55,
+    doughnut_plot.annular_wedge(x=-.35, y=0, inner_radius=0.225,
+                              outer_radius=0.525,
                               start_angle=cumsum('doughnut_angle',
                                                  include_zero=True),
                               end_angle=cumsum('doughnut_angle'),
@@ -460,6 +460,8 @@ for control in controls:
     control.on_change('value', lambda attr, old, new: update_bubble())
     control.on_change('value', lambda attr, old, new: update_doughnut())
 update()
+controls=controls[:-1]
+print(controls)
 doughnut_plot.sizing_mode = "stretch_both"
 bubble_plot.sizing_mode = "stretch_both"
 choro_plot.sizing_mode = "stretch_both"
@@ -471,4 +473,4 @@ curdoc().add_root(row(choro_plot, name='choro'))
 curdoc().add_root(row(ts_plot, name='ts'))
 curdoc().add_root(row(hbar_plot, name='hbar'))
 curdoc().add_root(row(doughnut_plot, name='doh'))
-curdoc().add_root(column(*controls, name='controls'))
+curdoc().add_root(row(column(*controls), slider))
