@@ -17,11 +17,11 @@ As a pre-requisite to running the Bokeh sever, you will need a working Python 3 
 
 ### Running the Code
 
-This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve diversity_monitor.py --show``` in a terminal to launch the server.
+This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve gwasdiversitymonitor_app --show``` in a terminal to launch the server.
 
 ### Versioning
 
-This dashboard is currently at Version 0.6.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
+This dashboard is currently at Version 0.7.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
 
 ### License
 
