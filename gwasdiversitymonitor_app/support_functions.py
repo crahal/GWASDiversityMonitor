@@ -63,7 +63,7 @@ def widgets(control_width, bubble_df, ts_init_count, maxyear):
                              "Number of Participants (%)"],
                     width=control_width)
     slider = Slider(title='', start=2008, end=maxyear-1, step=1,
-                    orientation="vertical", height=int(control_width*0.6),
+                    orientation="vertical", height=int(control_width*0.7),
                     width=int(control_width/8), value=2009)
     return stage, parent, ancestry, metric, slider
 
