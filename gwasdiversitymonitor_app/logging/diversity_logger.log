@@ -182,3 +182,22 @@
 2019-09-19 06:03:22,750 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-09-19 06:06:02,204 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-19 06:06:03,113 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-09-19 17:37:57,485 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-05.tsv
+2019-09-19 17:38:00,592 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-05.tsv
+2019-09-19 17:38:33,344 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
+2019-09-19 17:38:34,601 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-19 17:38:42,835 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'Year'
+2019-09-19 17:43:07,015 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-05.tsv
+2019-09-19 17:43:10,467 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-05.tsv
+2019-09-19 17:43:34,142 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e97_r2019-09-05.tsv
+2019-09-19 17:43:34,419 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-19 17:43:42,713 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'function' object has no attribute 'str'
+2019-09-19 17:43:44,376 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'function' object has no attribute 'str'
+2019-09-19 17:44:08,700 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'StringMethods' object is not callable
+2019-09-19 17:44:55,032 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-19 17:54:06,368 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'Cleaned_Ancestry'
+2019-09-19 17:54:40,357 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'DataFrame' object has no attribute 'cols'
+2019-09-19 17:54:53,952 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'Cleaned_Ancestry'
+2019-09-19 17:55:11,611 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: 'Cleaned_Ancestry'
+2019-09-19 17:56:50,144 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-19 17:56:56,865 - diversity_logger - INFO - generate_data.py ran successfully!

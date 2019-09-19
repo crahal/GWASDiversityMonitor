@@ -192,7 +192,7 @@ def update_downloaddata(sumstats, downloaddata):
     download[135] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_hisorlatinam']) +'%</span>\n'
     with open(downloaddata, 'w') as file:
         file.writelines(download)
-    
+
 
 def update_header(headerfile):
     ''' update the 'last updated' part of the header on both tabs '''
@@ -560,86 +560,99 @@ def make_timeseries_df(Cat_Ancestry, data_path):
 
 
 def make_freetext_dfs(data_path):
-    Cat_Studies = pd.read_csv(os.path.join(data_path,
-                                           'catalog',
-                                           'raw',
-                                           'Cat_Stud.tsv'),
-                              sep='\t')
-    Cat_Studies['InitialClean'] = Cat_Studies.apply(
-        lambda row: ancestry_cleaner(row, 'INITIAL SAMPLE SIZE'), axis=1)
-    output_path = os.path.abspath(
-                  os.path.join(data_path,
-                               'catalog',
-                               'synthetic',
-                               'new_initial_sample.csv'))
-    ancestry_parser(output_path, 'InitialClean', Cat_Studies)
-    Cat_Studies['ReplicationClean'] = Cat_Studies.apply(
-        lambda row: ancestry_cleaner(row, 'REPLICATION SAMPLE SIZE'), axis=1)
-    output_path = os.path.abspath(
-                  os.path.join(data_path,
-                               'catalog',
-                               'synthetic',
-                               'new_replication_sample.csv'))
-    ancestry_parser(output_path, 'ReplicationClean', Cat_Studies)
-    clean_intial = pd.read_csv(os.path.abspath(
-                               os.path.join(data_path,
-                                            'catalog', 'synthetic',
-                                            'new_initial_sample.csv')),
-                               encoding='utf-8')
-    clean_initial_sum = pd.DataFrame(
-        clean_intial.groupby(['Cleaned_Ancestry']).sum())
-    clean_initial_sum.rename(
-        columns={'Cleaned_Ancestry_Size': 'Initial_Ancestry_Sum'},
-        inplace=True)
-    clean_initial_count = clean_intial.groupby(['Cleaned_Ancestry']).count()
-    clean_initial_count.rename(
-        columns={'Cleaned_Ancestry_Size': 'Initial_Ancestry_Count'},
-        inplace=True)
-    clean_initial_merged = clean_initial_sum.merge(pd.DataFrame(
-        clean_initial_count['Initial_Ancestry_Count']),
-        how='outer', left_index=True, right_index=True)
-    clean_initial_merged = clean_initial_merged.sort_values(
-        by='Initial_Ancestry_Sum', ascending=False)
-    clean_initial_merged['Initial_Ancestry_Sum_%'] =\
-        (clean_initial_merged['Initial_Ancestry_Sum'] /
-         clean_initial_merged['Initial_Ancestry_Sum'].sum())*100
-    clean_initial_merged['Initial_Ancestry_Count_%'] =\
-        (clean_initial_merged['Initial_Ancestry_Count'] /
-         clean_initial_merged['Initial_Ancestry_Count'].sum())*100
-    clean_replication = pd.read_csv(os.path.abspath(
-                                    os.path.join(
-                                        data_path, 'catalog', 'synthetic',
-                                        'new_replication_sample.csv')),
-                                    encoding='utf-8')
-    clean_replication_sum = pd.DataFrame(
-        clean_replication.groupby(['Cleaned_Ancestry']).sum())
-    clean_replication_sum.rename(
-        columns={'Cleaned_Ancestry_Size': 'Replication_Ancestry_Sum'},
-        inplace=True)
-    clean_replication_count = clean_replication.groupby(
-        ['Cleaned_Ancestry']).count()
-    clean_replication_count.rename(
-        columns={'Cleaned_Ancestry_Size': 'Replication_Ancestry_Count'},
-        inplace=True)
-    clean_replication_merged = clean_replication_sum.merge(
-        pd.DataFrame(clean_replication_count['Replication_Ancestry_Count']),
-        how='outer', left_index=True, right_index=True)
-    clean_replication_merged = clean_replication_merged.sort_values(
-        by='Replication_Ancestry_Sum', ascending=False)
-    clean_initial_merged = clean_initial_merged.sort_values(
-        by='Initial_Ancestry_Sum', ascending=False)
-    clean_replication_merged['Replication_Ancestry_Sum_%'] =\
-        (clean_replication_merged['Replication_Ancestry_Sum'] /
-         clean_replication_merged['Replication_Ancestry_Sum'].sum())*100
-    clean_replication_merged['Replication_Ancestry_Count_%'] =\
-        (clean_replication_merged['Replication_Ancestry_Count'] /
-         clean_replication_merged['Replication_Ancestry_Count'].sum())*100
-    merged = pd.merge(clean_initial_merged,
-                      clean_replication_merged,
-                      left_on='Cleaned_Ancestry',
-                      right_on='Cleaned_Ancestry',
-                      how='outer')
-    merged.to_csv(os.path.join(data_path, 'toplot', 'freetext_merged.csv'))
+    big_dataframe = pd.DataFrame()
+    for year in range(2008, 2020):
+        Cat_Studies = pd.read_csv(os.path.join(data_path,
+                                               'catalog',
+                                               'raw',
+                                               'Cat_Stud.tsv'),
+                                  sep='\t')
+        Cat_Studies = Cat_Studies[Cat_Studies['DATE'].str.contains(str(year))]
+        Cat_Studies['InitialClean'] = Cat_Studies.apply(
+            lambda row: ancestry_cleaner(row, 'INITIAL SAMPLE SIZE'), axis=1)
+        output_path = os.path.abspath(
+                      os.path.join(data_path,
+                                   'catalog',
+                                   'synthetic',
+                                   'new_initial_sample.csv'))
+        ancestry_parser(output_path, 'InitialClean', Cat_Studies)
+        Cat_Studies['ReplicationClean'] = Cat_Studies.apply(
+            lambda row: ancestry_cleaner(row, 'REPLICATION SAMPLE SIZE'),
+            axis=1)
+        output_path = os.path.abspath(
+                      os.path.join(data_path,
+                                   'catalog',
+                                   'synthetic',
+                                   'new_replication_sample.csv'))
+        ancestry_parser(output_path, 'ReplicationClean', Cat_Studies)
+        clean_intial = pd.read_csv(os.path.abspath(
+                                   os.path.join(data_path,
+                                                'catalog', 'synthetic',
+                                                'new_initial_sample.csv')),
+                                   encoding='utf-8')
+        clean_initial_sum = pd.DataFrame(
+            clean_intial.groupby(['Cleaned_Ancestry']).sum())
+        clean_initial_sum.rename(
+            columns={'Cleaned_Ancestry_Size': 'Initial_Ancestry_Sum'},
+            inplace=True)
+        clean_initial_count = clean_intial.groupby(['Cleaned_Ancestry']).\
+                              count()
+        clean_initial_count.rename(
+            columns={'Cleaned_Ancestry_Size': 'Initial_Ancestry_Count'},
+            inplace=True)
+        clean_initial_merged = clean_initial_sum.merge(pd.DataFrame(
+            clean_initial_count['Initial_Ancestry_Count']),
+            how='outer', left_index=True, right_index=True)
+        clean_initial_merged = clean_initial_merged.sort_values(
+            by='Initial_Ancestry_Sum', ascending=False)
+        clean_initial_merged['Initial_Ancestry_Sum_%'] =\
+            (clean_initial_merged['Initial_Ancestry_Sum'] /
+             clean_initial_merged['Initial_Ancestry_Sum'].sum())*100
+        clean_initial_merged['Initial_Ancestry_Count_%'] =\
+            (clean_initial_merged['Initial_Ancestry_Count'] /
+             clean_initial_merged['Initial_Ancestry_Count'].sum())*100
+        clean_replication = pd.read_csv(os.path.abspath(
+                                        os.path.join(
+                                            data_path, 'catalog', 'synthetic',
+                                            'new_replication_sample.csv')),
+                                        encoding='utf-8')
+        clean_replication_sum = pd.DataFrame(
+            clean_replication.groupby(['Cleaned_Ancestry']).sum())
+        clean_replication_sum.rename(
+            columns={'Cleaned_Ancestry_Size': 'Replication_Ancestry_Sum'},
+            inplace=True)
+        clean_replication_count = clean_replication.groupby(
+            ['Cleaned_Ancestry']).count()
+        clean_replication_count.rename(
+            columns={'Cleaned_Ancestry_Size': 'Replication_Ancestry_Count'},
+            inplace=True)
+        clean_replication_merged = clean_replication_sum.merge(
+            pd.DataFrame(clean_replication_count['Replication_Ancestry_Count']),
+            how='outer', left_index=True, right_index=True)
+        clean_replication_merged = clean_replication_merged.sort_values(
+            by='Replication_Ancestry_Sum', ascending=False)
+        clean_initial_merged = clean_initial_merged.sort_values(
+            by='Initial_Ancestry_Sum', ascending=False)
+        clean_replication_merged['Replication_Ancestry_Sum_%'] =\
+            (clean_replication_merged['Replication_Ancestry_Sum'] /
+             clean_replication_merged['Replication_Ancestry_Sum'].sum())*100
+        clean_replication_merged['Replication_Ancestry_Count_%'] =\
+            (clean_replication_merged['Replication_Ancestry_Count'] /
+             clean_replication_merged['Replication_Ancestry_Count'].sum())*100
+        merged = pd.merge(clean_initial_merged,
+                          clean_replication_merged,
+                          left_on='Cleaned_Ancestry',
+                          right_on='Cleaned_Ancestry',
+                          how='outer')
+        merged["Year"] = year
+        big_dataframe = pd.concat([big_dataframe, merged], ignore_index=False)
+    big_dataframe = big_dataframe.round(2).reset_index()
+    big_dataframe['Cleaned_Ancestry'] = big_dataframe['Cleaned_Ancestry'].str.\
+                                        replace('African American',
+                                                'African Am.')
+    big_dataframe.to_csv(os.path.join(data_path,
+                                      'toplot',
+                                      'freetext_merged.csv'))
 
 
 def make_doughnut_df(data_path):
@@ -903,11 +916,6 @@ def make_clean_CoR(Cat_Anc, data_path):
         'Micronesia \(Federated States of\)',
         'Micronesia, Federated States of')
     Clean_CoR = Clean_CoR[Clean_CoR['Cleaned Country'] != 'NR']
-#    print('Cleaning for single country of recruitment:\n' +
-#          str(round((len(Clean_CoR) / len(Cat_Anc)) * 100, 2)) +
-#          '% of the rows remain.')
-#    print(str(round((Clean_CoR['N'].sum() / Cat_Anc['N'].sum()) * 100, 2)) +
-#          '% of the N remains.')
     Clean_CoR.to_csv(os.path.abspath(
                      os.path.join(data_path, 'catalog', 'synthetic',
                                   'GWAScatalogue_CleanedCountry.tsv')),
@@ -1015,25 +1023,25 @@ if __name__ == "__main__":
                                                   'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
-        download_cat(data_path, ebi_download)
-        clean_gwas_cat(data_path)
-        make_bubbleplot_df(data_path)
-        make_doughnut_df(data_path)
-        make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
-                                                    'synthetic',
-                                                    'Cat_Anc_withBroader.tsv'),
-                                       sep='\t'), data_path)
-        make_choro_df(data_path)
+#        download_cat(data_path, ebi_download)
+#        clean_gwas_cat(data_path)
+#        make_bubbleplot_df(data_path)
+#        make_doughnut_df(data_path)
+#        make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
+#                                                    'synthetic',
+#                                                    'Cat_Anc_withBroader.tsv'),
+#                                       sep='\t'), data_path)
+#        make_choro_df(data_path)
         make_freetext_dfs(data_path)
-        make_heatmap_dfs(data_path)
-        update_header(index_filepath)
-        sumstats = create_summarystats(data_path)
-        update_summarystats(sumstats, index_filepath)
-        update_downloaddata(sumstats, index_filepath)
+#        make_heatmap_dfs(data_path)
+#        update_header(index_filepath)
+#        sumstats = create_summarystats(data_path)
+#        update_summarystats(sumstats, index_filepath)
+#        update_downloaddata(sumstats, index_filepath)
         diversity_logger.info('generate_data.py ran successfully!')
-        zip_toplot(os.path.join(data_path, 'toplot'),
-                   os.path.join(data_path, 'todownload',
-                                'gwasdiversitymonitor_download.zip'))
+#        zip_toplot(os.path.join(data_path, 'toplot'),
+#                   os.path.join(data_path, 'todownload',
+#                                'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
                                str(e))
