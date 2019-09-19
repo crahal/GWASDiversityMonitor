@@ -73,3 +73,10 @@
 #### 12th September, 2019. Version 0.7.0:
 * Reworked the summary part with cards and pill badges
 * removed colourbar and moved the slider
+
+#### 19th September, 2019. Version 0.8.0:
+* Increased the number of plots effected by the Year slider
+* Fixed an axis formatting bug of the time series plot
+* Better spacing in the summary part.
+* Fixed a bug with the html title
+* Small minor typing corrections
