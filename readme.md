@@ -31,4 +31,5 @@ This work is free. You can redistribute it and/or modify it under the terms of t
 
 1. Javascript callbacks to better generate the summary_statistics.html.
 2. Better sizing for mobiles.
-
+3. Better bootstrapped block colours
+4. Optimise for efficiency
