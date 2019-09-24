@@ -1023,25 +1023,25 @@ if __name__ == "__main__":
                                                   'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
-#        download_cat(data_path, ebi_download)
-#        clean_gwas_cat(data_path)
-#        make_bubbleplot_df(data_path)
-#        make_doughnut_df(data_path)
-#        make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
-#                                                    'synthetic',
-#                                                    'Cat_Anc_withBroader.tsv'),
-#                                       sep='\t'), data_path)
-#        make_choro_df(data_path)
+        download_cat(data_path, ebi_download)
+        clean_gwas_cat(data_path)
+        make_bubbleplot_df(data_path)
+        make_doughnut_df(data_path)
+        make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
+                                                    'synthetic',
+                                                    'Cat_Anc_withBroader.tsv'),
+                                       sep='\t'), data_path)
+        make_choro_df(data_path)
         make_freetext_dfs(data_path)
-#        make_heatmap_dfs(data_path)
-#        update_header(index_filepath)
-#        sumstats = create_summarystats(data_path)
-#        update_summarystats(sumstats, index_filepath)
-#        update_downloaddata(sumstats, index_filepath)
+        make_heatmap_dfs(data_path)
+        update_header(index_filepath)
+        sumstats = create_summarystats(data_path)
+        update_summarystats(sumstats, index_filepath)
+        update_downloaddata(sumstats, index_filepath)
         diversity_logger.info('generate_data.py ran successfully!')
-#        zip_toplot(os.path.join(data_path, 'toplot'),
-#                   os.path.join(data_path, 'todownload',
-#                                'gwasdiversitymonitor_download.zip'))
+        zip_toplot(os.path.join(data_path, 'toplot'),
+                   os.path.join(data_path, 'todownload',
+                                'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
                                str(e))

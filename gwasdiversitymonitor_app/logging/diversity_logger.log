@@ -202,3 +202,12 @@
 2019-09-19 17:56:50,144 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-19 17:56:56,865 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-09-24 15:57:14,634 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-24 16:02:03,547 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-24 16:05:25,204 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-09-24 16:18:48,711 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-24.tsv
+2019-09-24 16:18:53,399 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-24.tsv
+2019-09-24 16:20:08,183 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-09-24.tsv
+2019-09-24 16:20:09,767 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-09-24 16:20:20,208 - diversity_logger - DEBUG - Wuhoh! Need to update dictionary terms:
+European, South Asian, Asian unspecified, NR
+2019-09-24 16:23:04,066 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: cannot index with vector containing NA / NaN values
