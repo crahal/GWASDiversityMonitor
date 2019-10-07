@@ -1,5 +1,5 @@
-git pull origin master
 cd /home/tsl/Dropbox/gwasdiversitymonitor/
+git pull origin master
 python3 gwasdiversitymonitor_app/generate_data.py
 rm -rf .fuse*
 git add .
