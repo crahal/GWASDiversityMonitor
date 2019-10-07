@@ -1,6 +1,6 @@
 git pull origin master
-cd /media/charlie/raspi_usb/gwasdiversitymonitor/
-/home/charlie/berryconda3/bin/python3 gwasdiversitymonitor_app/generate_data.py
+cd /home/tsl/Dropbox/gwasdiversitymonitor/
+python3 gwasdiversitymonitor_app/generate_data.py
 rm -rf .fuse*
 git add .
 git reset HEAD -- correspondance/
