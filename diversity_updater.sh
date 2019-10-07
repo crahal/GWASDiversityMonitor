@@ -1,7 +1,6 @@
-#!/bin/bash
 cd /home/tsl/Dropbox/gwasdiversitymonitor/
 git pull origin master
-python3 gwasdiversitymonitor_app/generate_data.py
+/home/tsl/anaconda3/bin/python3 gwasdiversitymonitor_app/generate_data.py
 rm -rf .fuse*
 git add .
 git reset HEAD -- correspondance/
