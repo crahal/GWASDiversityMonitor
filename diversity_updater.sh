@@ -1,3 +1,4 @@
+#!/bin/bash
 cd /home/tsl/Dropbox/gwasdiversitymonitor/
 git pull origin master
 python3 gwasdiversitymonitor_app/generate_data.py
