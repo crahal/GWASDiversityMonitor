@@ -407,3 +407,10 @@ European, South Asian, Asian unspecified, NR
 2019-10-07 17:02:17,364 - diversity_logger - DEBUG - Wuhoh! Need to update dictionary terms:
 European, South Asian, Asian unspecified, NR
 2019-10-07 17:02:34,758 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: cannot index with vector containing NA / NaN values
+2019-10-08 06:00:04,985 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-09-24.tsv
+2019-10-08 06:00:05,673 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-09-24.tsv
+2019-10-08 06:00:14,414 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-09-24.tsv
+2019-10-08 06:00:15,327 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-08 06:00:16,836 - diversity_logger - DEBUG - Wuhoh! Need to update dictionary terms:
+European, South Asian, Asian unspecified, NR
+2019-10-08 06:00:31,631 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: cannot index with vector containing NA / NaN values
