@@ -9,8 +9,8 @@ import requests_ftp
 import os
 import re
 import csv
-import logging
 import shutil
+import traceback
 
 
 def setup_logging(logpath):
@@ -72,12 +72,13 @@ def create_summarystats(data_path):
                                          sum())
     sumstats['average_associations'] = float(Cat_Stud['ASSOCIATION COUNT'].
                                              mean())
-    noneuro_trait = pd.DataFrame(temp_bubble_df[temp_bubble_df['Broader']!='European'].\
-                    groupby(['DiseaseOrTrait']).size()).\
-                    sort_values(by=0, ascending=False).\
-                    reset_index()['DiseaseOrTrait'][0]
+    noneuro_trait = pd.DataFrame(temp_bubble_df[
+                                 temp_bubble_df['Broader'] != 'European'].
+                                 groupby(['DiseaseOrTrait']).size()).\
+                                 sort_values(by=0, ascending=False).reset_index()['DiseaseOrTrait'][0]
     sumstats['noneuro_trait'] = str(noneuro_trait)
-    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].astype(float).mean(), 10))
+    sumstats['average_pval'] = float(round(Cat_Full['P-VALUE'].
+                                           astype(float).mean(), 10))
     sumstats['threshold_pvals'] = int(len(Cat_Full[Cat_Full['P-VALUE'].
                                           astype(float) < 5.000000e-8]))
     sumstats['mostcommon_journal'] = str(Cat_Stud['JOURNAL'].mode()[0])
@@ -107,7 +108,7 @@ def create_summarystats(data_path):
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False, low_memory=False)
-    Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader']!='In Part Not Recorded']
+    Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
     total_european = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'] == 'European']['N'].
                              sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_european'] = total_european
@@ -504,11 +505,8 @@ def make_choro_df(data_path):
     annual_df.to_csv(os.path.join(data_path, 'toplot', 'choro_df.csv'))
 
 
-def make_timeseries_df(Cat_Ancestry, data_path):
-    Cat_Ancestry = Cat_Ancestry[Cat_Ancestry['Broader'] !=
-                                'In Part Not Recorded']
-    DateSplit = Cat_Ancestry['DATE'].str.\
-        split('-', expand=True).\
+def make_timeseries_df(Cat_Ancestry, data_path, savename):
+    DateSplit = Cat_Ancestry['DATE'].str.split('-', expand=True).\
         rename({0: 'Year', 1: 'Month', 2: 'Day'}, axis=1)
     Cat_Ancestry = pd.merge(Cat_Ancestry, DateSplit, how='left',
                             left_index=True, right_index=True)
@@ -538,24 +536,24 @@ def make_timeseries_df(Cat_Ancestry, data_path):
     ts_initial_sum_pc = ((ts_initial_sum.T / ts_initial_sum.T.sum()).T)*100
     ts_initial_sum_pc = ts_initial_sum_pc.reset_index()
     ts_initial_sum_pc.to_csv(os.path.join(data_path, 'toplot',
-                                          'ts_initial_sum.csv'), index=False)
+                                          savename + '_initial_sum.csv'), index=False)
     ts_initial_count_pc = ((ts_initial_count.T /
                             ts_initial_count.T.sum()).T)*100
     ts_initial_count_pc = ts_initial_count_pc.reset_index()
     ts_initial_count_pc.to_csv(os.path.join(data_path, 'toplot',
-                                            'ts_initial_count.csv'),
+                                            savename + '_initial_count.csv'),
                                index=False)
     ts_replication_sum_pc = ((ts_replication_sum.T /
                               ts_replication_sum.T.sum()).T)*100
     ts_replication_sum_pc = ts_replication_sum_pc.reset_index()
     ts_replication_sum_pc.to_csv(os.path.join(data_path, 'toplot',
-                                              'ts_replication_sum.csv'),
+                                              savename + '_replication_sum.csv'),
                                  index=False)
     ts_replication_count_pc = ((ts_replication_count.T /
                                 ts_replication_count.T.sum()).T)*100
     ts_replication_count_pc = ts_replication_count_pc.reset_index()
     ts_replication_count_pc.to_csv(os.path.join(data_path, 'toplot',
-                                                'ts_replication_count.csv'),
+                                                savename + '_replication_count.csv'),
                                    index=False)
 
 
@@ -1027,10 +1025,13 @@ if __name__ == "__main__":
         clean_gwas_cat(data_path)
         make_bubbleplot_df(data_path)
         make_doughnut_df(data_path)
-        make_timeseries_df(pd.read_csv(os.path.join(data_path, 'catalog',
-                                                    'synthetic',
-                                                    'Cat_Anc_withBroader.tsv'),
-                                       sep='\t'), data_path)
+        tsinput = pd.read_csv(os.path.join(data_path, 'catalog',
+                                           'synthetic',
+                                           'Cat_Anc_withBroader.tsv'),
+                              sep='\t')
+        make_timeseries_df(tsinput, data_path, 'ts1')
+        tsinput = tsinput[tsinput['Broader'] != 'In Part Not Recorded']
+        make_timeseries_df(tsinput, data_path, 'ts2')
         make_choro_df(data_path)
         make_freetext_dfs(data_path)
         make_heatmap_dfs(data_path)
@@ -1044,5 +1045,5 @@ if __name__ == "__main__":
                                 'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
-                               str(e))
+                               str(traceback.format_exc()))
     logging.shutdown()

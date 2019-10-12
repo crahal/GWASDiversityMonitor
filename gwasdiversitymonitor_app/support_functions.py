@@ -5,11 +5,11 @@ import os
 
 
 def create_width_dict():
-    width_dict = {'hbar_height': 430, 'hbar_width': 575,
+    width_dict = {'hbar_height': 275, 'hbar_width': 300,
                   'choro_height': 430, 'choro_width': 825,
-                  'ts_height': 430, 'ts_width': 575,
-                  'bubble_height': 430, 'bubble_width': 825,
-                  'doughnut_height': 285, 'doughnut_width': 425,
+                  'ts_height': 212, 'ts_width': 175,
+                  'bubble_height': 430, 'bubble_width': 25,
+                  'doughnut_height': 450, 'doughnut_width': 125,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 390, 'control_width': 325,
                   'twocolumn_width': 910, 'div_width': 20,
@@ -30,21 +30,31 @@ def import_data(data_path):
                                                   'STUDY ACCESSION'])
     freetext_df = pd.read_csv(os.path.join(data_path, 'toplot',
                                            'freetext_merged.csv'))
-    ts_init_count = pd.read_csv(os.path.join(data_path, 'toplot',
-                                             'ts_initial_count.csv'))
-    ts_init_sum = pd.read_csv(os.path.join(data_path, 'toplot',
-                                           'ts_initial_sum.csv'))
-    ts_rep_count = pd.read_csv(os.path.join(data_path, 'toplot',
-                                            'ts_replication_count.csv'))
-    ts_rep_sum = pd.read_csv(os.path.join(data_path, 'toplot',
-                                          'ts_replication_sum.csv'))
+    ts1_init_count = pd.read_csv(os.path.join(data_path, 'toplot',
+                                              'ts1_initial_count.csv'))
+    ts1_init_sum = pd.read_csv(os.path.join(data_path, 'toplot',
+                                            'ts1_initial_sum.csv'))
+    ts1_rep_count = pd.read_csv(os.path.join(data_path, 'toplot',
+                                             'ts1_replication_count.csv'))
+    ts1_rep_sum = pd.read_csv(os.path.join(data_path, 'toplot',
+                                           'ts1_replication_sum.csv'))
+    ts2_init_count = pd.read_csv(os.path.join(data_path, 'toplot',
+                                              'ts2_initial_count.csv'))
+    ts2_init_sum = pd.read_csv(os.path.join(data_path, 'toplot',
+                                            'ts2_initial_sum.csv'))
+    ts2_rep_count = pd.read_csv(os.path.join(data_path, 'toplot',
+                                             'ts2_replication_count.csv'))
+    ts2_rep_sum = pd.read_csv(os.path.join(data_path, 'toplot',
+                                           'ts2_replication_sum.csv'))
     choro_df, gdf = prepare_geo_data(os.path.join(data_path, 'toplot',
                                                   'choro_df.csv'),
                                      os.path.join(data_path, 'shapefiles',
                                                   'ne_110m_admin_0_countries.shp'))
-    doughnut_df = pd.read_csv(os.path.join(data_path, 'toplot', 'doughnut_df.csv'))
-    return bubble_df, freetext_df, ts_init_count, ts_init_sum,\
-        ts_rep_count, ts_rep_sum, choro_df, gdf, doughnut_df
+    doughnut_df = pd.read_csv(os.path.join(data_path, 'toplot',
+                                           'doughnut_df.csv'))
+    return bubble_df, freetext_df, ts1_init_count, ts1_init_sum,\
+        ts1_rep_count, ts1_rep_sum, choro_df, gdf, doughnut_df,\
+        ts2_init_count, ts2_init_sum, ts2_rep_count, ts2_rep_sum
 
 
 def widgets(control_width, bubble_df, ts_init_count, maxyear):

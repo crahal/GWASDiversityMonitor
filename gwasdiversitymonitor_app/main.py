@@ -1,6 +1,6 @@
 from bokeh.layouts import row, column
 from bokeh.models import (HoverTool, GeoJSONDataSource, ColumnDataSource,
-                          LinearColorMapper, NumeralTickFormatter)
+                          LinearColorMapper, NumeralTickFormatter, Span)
 from bokeh.palettes import brewer
 from bokeh.plotting import curdoc, figure
 from bokeh.transform import cumsum
@@ -17,7 +17,8 @@ def update():
     update_hbar_source()
     update_hbar_axis()
     update_choro()
-    update_ts()
+    update_ts1()
+    update_ts2()
     update_bubble()
     update_doughnut()
 
@@ -37,6 +38,8 @@ def update_hbar_source():
             hbar_source.data = dict(
              Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
              toplot=sorted_df['Initial_Ancestry_Count_%'][0:10]/100,
+             indexval=sorted_df.index[0:10],
+             offsetval=[0.01]*10,
              hbar_color=["#d7191c"]*10,
              hbar_legendval=['Initial Stage (%)']*10)
         elif str(stage.value) == 'Replication':
@@ -47,6 +50,8 @@ def update_hbar_source():
                 Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
                 toplot=sorted_df['Replication_Ancestry_Count_%'][0:10]/100,
                 hbar_color=["#2b83ba"]*10,
+                indexval=sorted_df.index[0:10],
+                offsetval=[0.01]*10,
                 hbar_legendval=['Replication Stage (%)']*10)
         hbar_plot.xaxis.axis_label = 'Percent of all Studies (%)'
         titletext = 'Fig 5: Free Text: ' + str(stage.value)
@@ -59,6 +64,8 @@ def update_hbar_source():
                 Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
                 toplot=sorted_df['Initial_Ancestry_Sum_%'][0:10]/100,
                 hbar_color=["#d7191c"]*10,
+                indexval=sorted_df.index[0:10],
+                offsetval=[0.01]*10,
                 hbar_legendval=['Discovery Stage (%)']*10)
         elif str(stage.value) == 'Replication':
             sorted_df = freetext_yr.\
@@ -68,15 +75,23 @@ def update_hbar_source():
                Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
                toplot=sorted_df['Replication_Ancestry_Sum_%'][0:10]/100,
                hbar_color=["#2b83ba"]*10,
+               indexval=sorted_df.index[0:10],
+               offsetval=[0.01]*10,
                hbar_legendval=['Replication Stage (%)']*10)
         hbar_plot.xaxis.axis_label = 'Percent of all Participants (%)'
-        titletext = 'Fig 5: Free Text: ' + str(stage.value)
-    hbar_plot.title.text = titletext + ' Stage: All Years and Parent ' + 'Categories'
+        titletext = 'Fig 5: Free Text'
+    hbar_plot.title.text = titletext + ': ' + str(slider.value) + \
+        ', all Parent Categories'
+    hbar_plot.title.align = "center"
 
 
 def update_hbar_axis():
     ''' Update the range (tick labels) for horizontal bar plot'''
     hbar_plot.y_range.factors = hbar_source.data['Cleaned_Ancestry']
+    # extremely hacky because major_label_text_align doesnt seem to be working
+    hbar_plot.yaxis.major_label_standoff = -405
+    hbar_plot.yaxis.axis_line_color = None
+
 
 def create_hbar_plot():
     '''
@@ -85,10 +100,9 @@ def create_hbar_plot():
              hbar_plot -- the plot itself
              hbar_source -- for updating upon interaction
     '''
-    freetext_yr = freetext_df[freetext_df['Year']==2018]
-    sorted_df = freetext_yr.\
-                    sort_values(by='Initial_Ancestry_Count_%',
-                    ascending=False)
+    freetext_yr = freetext_df[freetext_df['Year'] == 2018]
+    sorted_df = freetext_yr.sort_values(by='Initial_Ancestry_Count_%',
+                                        ascending=False)
     hbar_source = ColumnDataSource(data=dict(Cleaned_Ancestry=[], toplot=[],
                                              hbar_color=[], hbar_legendval=[]))
     hbar_source.data = dict(
@@ -97,11 +111,13 @@ def create_hbar_plot():
      hbar_color=["#d7191c"]*10,
      hbar_legendval=['Initial Stage (%)']*10)
     yrange = sorted_df['Cleaned_Ancestry'][0:10].to_list()
-    hbar_plot = figure(y_range=yrange,
+    hbar_plot = figure(y_range=yrange, x_range=(-.01, 1),
                        plot_height=width_dict['hbar_height'],
                        plot_width=width_dict['hbar_width'],
                        title="Fig 5: Free Text",
-                       tools=TOOLS, toolbar_location=None)
+                       tools=TOOLS, toolbar_location=None,
+                       y_axis_location='right')
+    # extremely hacky (i.e. right axis) as major_label_text_align not working?
     hbar_plot.hbar(y='Cleaned_Ancestry', right='toplot', height=0.6,
                    source=hbar_source, color='hbar_color', alpha=.6,
                    line_color="black", legend='hbar_legendval')
@@ -110,10 +126,24 @@ def create_hbar_plot():
                            ('$Percent Value: ', '@toplot{0.000%}')]
     hbar_plot.xaxis.formatter = NumeralTickFormatter(format='0 %')
     hbar_plot.legend.border_line_width = 1
+    vline = Span(location=-.001, dimension='height',
+                 line_color='black', line_width=0.75)
+    hbar_plot.renderers.extend([vline])
     hbar_plot.legend.border_line_color = "black"
-    hbar_plot.xgrid.grid_line_dash = 'dashed'
-    hbar_plot.ygrid.grid_line_dash = 'dashed'
-    hbar_plot.outline_line_color = None
+#   hbar_plot.yaxis.label_text_align = 'left'
+#    hbar_plot.xgrid.grid_line_dash = 'dashed'
+#    hbar_plot.ygrid.grid_line_dash = 'dashed'
+    hbar_plot.outline_line_color = 'white'
+#    labels = LabelSet(x='offsetval', y='indexval', text='Cleaned_Ancestry',
+#                      level='glyph', text_font_size="9pt",
+#                      source=hbar_source, render_mode='canvas',
+#                      x_offset=2, y_offset=3)
+    hbar_plot.yaxis.major_tick_line_color = None
+    hbar_plot.yaxis.minor_tick_line_color = None
+#    hbar_plot.yaxis.major_label_text_color = None
+#    hbar_plot.yaxis.major_label_text_font_size = '0.5pt'
+#    hbar_plot.yaxis.axis_label = 'Granular Ancestry Term'
+#    hbar_plot.add_layout(labels)
     return hbar_source, hbar_hover, hbar_plot
 
 
@@ -140,6 +170,7 @@ def update_choro_slider(attr, old, new):
     choro_plot.title.text = 'Fig 4: Recruitment Over Time, ' +\
                             'All Parent Categories and Both ' +\
                             'Research Stages: %d' % yr
+    choro_plot.title.align = "center"
 
 
 def update_choro():
@@ -181,85 +212,169 @@ def create_choro_plot(year):
     choro_plot.ygrid.grid_line_color = None
     choro_plot.min_border_left = 80
     choro_plot.min_border_right = 0
+    choro_plot.title.text = 'Fig 4: Recruitment Over Time, ' +\
+                            'All Parent Categories and Both ' +\
+                            'Research Stages: 2008'
+    choro_plot.title.align = "center"
     return geosource, choro_hover, choro_plot
 
 
-def update_ts():
+def update_ts1():
     ''' updates ts_source'''
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
-            ts_source.data = dict(
-                Year=[ts_init_count['index']],
-                ts_toplot=[ts_init_count[ancestry.value]/100],
-                ts_color=[["#2b83ba"]],
-                ts_legendval=[['Discovery Stage (%)']])
-            ts_plot.title.text = 'Fig 2: Discovery Stage,' +\
-                                 ' all Parent Categories: ' +\
-                                 str(ancestry.value) + ' Ancestry'
+            ts1_source.data = dict(
+                Year=[ts1_init_count['index']],
+                ts1_toplot=[ts1_init_count[ancestry.value]/100],
+                ts1_color=[["#2b83ba"]],
+                # ts_legendval=[['Discovery Stage (%)']]
+                )
+            ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
-            ts_source.data = dict(
-                Year=[ts_rep_count['index']],
-                ts_toplot=[ts_rep_count[ancestry.value]/100],
-                ts_color=[["#d7191c"]],
-                ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Fig 2: Replication Stage Across all ' +\
-                                 'Parent Categories: ' +\
-                                 str(ancestry.value) + ' Ancestry'
-        ts_plot.yaxis.axis_label = 'Percent of all Studies (%)'
+            ts1_source.data = dict(
+                Year=[ts1_rep_count['index']],
+                ts1_toplot=[ts1_rep_count[ancestry.value]/100],
+                ts1_color=[["#d7191c"]],
+                # ts_legendval=[['Replication Stage (%)']]
+                )
+            ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        ts1_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
-            ts_source.data = dict(
-                Year=[ts_init_sum['index']],
-                ts_toplot=[ts_init_sum[ancestry.value]/100],
-                ts_color=[["#2b83ba"]],
-                ts_legendval=[['Discovery Stage (%)']])
-            ts_plot.title.text = 'Fig 2: Discovery Stage Across ' +\
-                                 ' all Parent Categories: ' +\
-                                 str(ancestry.value) + ' Ancestry'
+            ts1_source.data = dict(
+                 Year=[ts1_init_sum['index']],
+                 ts1_toplot=[ts1_init_sum[ancestry.value]/100],
+                 ts1_color=[["#2b83ba"]],
+                 # ts_legendval=[['Discovery Stage (%)']]
+                 )
+            ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
         elif str(stage.value) == 'Replication':
-            ts_source.data = dict(
-                Year=[ts_rep_sum['index']],
-                ts_toplot=[ts_rep_sum[ancestry.value]/100],
-                ts_color=[["#d7191c"]],
-                ts_legendval=[['Replication Stage (%)']])
-            ts_plot.title.text = 'Fig 2: Replication Stage Across all ' +\
-                                 'Parent Categories: ' +\
-                                 str(ancestry.value) + ' Ancestry'
-        ts_plot.yaxis.axis_label = 'Percent of all Participants (%)'
-    ts_plot.x_range.start = slider.value
+            ts1_source.data = dict(
+                 Year=[ts1_rep_sum['index']],
+                 ts1_toplot=[ts1_rep_sum[ancestry.value]/100],
+                 ts1_color=[["#d7191c"]],
+                 # ts1_legendval=[['Replication Stage (%)']]
+                 )
+            ts1_plot.title.text = 'Fig 2a: Replication Stage Across,' +\
+                                  'all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        ts1_plot.yaxis.axis_label = 'Percent of all Participants (%)'
+    ts1_plot.x_range.start = slider.value
 
 
-def create_ts_plot(maxyear):
+def update_ts2():
+    ''' updates ts2_source'''
+    if 'number of studies' in str(metric.value).lower():
+        if str(stage.value) == 'Discovery':
+            ts2_source.data = dict(
+                Year=[ts2_init_count['index']],
+                ts2_toplot=[ts2_init_count[ancestry.value]/100],
+                ts2_color=[["#2b83ba"]],
+                # ts_legendval=[['Discovery Stage (%)']]
+                )
+            ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        elif str(stage.value) == 'Replication':
+            ts2_source.data = dict(
+                Year=[ts2_rep_count['index']],
+                ts2_toplot=[ts2_rep_count[ancestry.value]/100],
+                ts2_color=[["#d7191c"]],
+                # ts_legendval=[['Replication Stage (%)']]
+                )
+            ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        ts2_plot.yaxis.axis_label = 'Percent of all Studies (%)'
+    elif 'number of participants' in str(metric.value).lower():
+        if str(stage.value) == 'Discovery':
+            ts2_source.data = dict(
+                 Year=[ts2_init_sum['index']],
+                 ts2_toplot=[ts2_init_sum[ancestry.value]/100],
+                 ts2_color=[["#2b83ba"]],
+                 # ts_legendval=[['Discovery Stage (%)']]
+                 )
+            ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
+                                  ' all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        elif str(stage.value) == 'Replication':
+            ts2_source.data = dict(
+                 Year=[ts2_rep_sum['index']],
+                 ts2_toplot=[ts2_rep_sum[ancestry.value]/100],
+                 ts2_color=[["#d7191c"]],
+                 # ts1_legendval=[['Replication Stage (%)']]
+                 )
+            ts2_plot.title.text = 'Fig 2b: Replication Stage Across,' +\
+                                  'all Parent Categories: ' +\
+                                  str(ancestry.value) + ' Ancestry'
+        ts2_plot.yaxis.axis_label = 'Percent of all Participants (%)'
+    ts2_plot.x_range.start = slider.value
+
+
+def create_ts1_plot(maxyear):
     '''
     Creates the time series plot. Returns:
-        ts_source -- the source data which gets updated
-        ts_source -- the hovertool
-        ts_plot -- the actual time series plot
+        ts1_source -- the source data which gets updated
+        ts1_source -- the hovertool
+        ts1_plot -- the actual time series plot
     '''
-    ts_source = ColumnDataSource(data=dict(index=[], Year=[], ts_toplot=[],
-                                           ts_color=[], ts_legendval=[]))
-    ts_plot = figure(x_range=(2008, maxyear),
-                     plot_height=width_dict['ts_height'],
-                     plot_width=width_dict['ts_width'], tools=TOOLS,
-                     toolbar_location=None,
-                     y_axis_label='Percent of all Studies (%)',
-                     title="Fig 2: Percent of Studies Conducted (%)")
-    ts_plot.yaxis.formatter = NumeralTickFormatter(format='0 %')
-    ts_hover = ts_plot.select(dict(type=HoverTool))
-    ts_hover.tooltips = [("Year: ", "$x{int}"), ("Ancestry: ", ancestry.value),
-                         ("Percentage Value: ", "$y{0.000%}")]
-    ts_plot.multi_line(xs='Year', ys='ts_toplot', source=ts_source, alpha=0.8,
-                       line_width=2, color='ts_color', legend='ts_legendval')
-    ts_plot.legend.border_line_width = 1
-    ts_plot.legend.border_line_color = "black"
-    ts_plot.legend.location = "top_right"
-    ts_plot.legend.orientation = "horizontal"
-    ts_plot.xgrid.grid_line_dash = 'dashed'
-    ts_plot.ygrid.grid_line_dash = 'dashed'
-    ts_plot.yaxis.formatter = NumeralTickFormatter(format='0.0 %')
-    ts_plot.outline_line_color = None
-    ts_plot.min_border_left = 100
-    return ts_source, ts_hover, ts_plot
+    ts1_source = ColumnDataSource(data=dict(index=[], Year=[], ts1_toplot=[],
+                                            ts1_color=[], ts1_legendval=[]))
+    ts1_plot = figure(x_range=(2008, maxyear),
+                      plot_height=width_dict['ts_height'],
+                      plot_width=width_dict['ts_width'], tools=TOOLS,
+                      toolbar_location=None,
+                      y_axis_label='Percent of all Studies (%)',
+                      title="Fig 2a: Percent of Studies Conducted (%)")
+    ts1_plot.yaxis.formatter = NumeralTickFormatter(format='0 %')
+    ts1_hover = ts1_plot.select(dict(type=HoverTool))
+    ts1_hover.tooltips = [("Year: ", "$x{int}"),
+                          ("Ancestry: ", ancestry.value),
+                          ("Percentage Value: ", "$y{0.000%}")]
+    ts1_plot.multi_line(xs='Year', ys='ts1_toplot', source=ts1_source,
+                        alpha=0.8, line_width=2, color='ts1_color')
+    ts1_plot.xgrid.grid_line_dash = 'dashed'
+    ts1_plot.ygrid.grid_line_dash = 'dashed'
+    ts1_plot.yaxis.formatter = NumeralTickFormatter(format='0.0 %')
+    ts1_plot.outline_line_color = None
+    ts1_plot.min_border_left = 100
+    return ts1_source, ts1_hover, ts1_plot
+
+
+def create_ts2_plot(maxyear):
+    '''
+    Creates the time series plot. Returns:
+        ts2_source -- the source data which gets updated
+        ts2_source -- the hovertool
+        ts2_plot -- the actual time series plot
+    '''
+    ts2_source = ColumnDataSource(data=dict(index=[], Year=[], ts2_toplot=[],
+                                            ts2_color=[], ts2_legendval=[]))
+    ts2_plot = figure(x_range=(2008, maxyear),
+                      plot_height=width_dict['ts_height'],
+                      plot_width=width_dict['ts_width'], tools=TOOLS,
+                      toolbar_location=None,
+                      y_axis_label='Percent of all Studies (%)',
+                      title="Fig 2b: Percent of Studies Conducted (%)")
+    ts2_plot.yaxis.formatter = NumeralTickFormatter(format='0 %')
+    ts2_hover = ts2_plot.select(dict(type=HoverTool))
+    ts2_hover.tooltips = [("Year: ", "$x{int}"),
+                          ("Ancestry: ", ancestry.value),
+                          ("Percentage Value: ", "$y{0.000%}")]
+    ts2_plot.multi_line(xs='Year', ys='ts2_toplot', source=ts2_source,
+                        alpha=0.8, line_width=2, color='ts2_color')
+    ts2_plot.xgrid.grid_line_dash = 'dashed'
+    ts2_plot.ygrid.grid_line_dash = 'dashed'
+    ts2_plot.yaxis.formatter = NumeralTickFormatter(format='0.0 %')
+    ts2_plot.outline_line_color = None
+    ts2_plot.min_border_left = 100
+    return ts2_source, ts2_hover, ts2_plot
 
 
 def create_bubble_plot():
@@ -334,10 +449,12 @@ def update_bubble():
                               STAGE=df['STAGE'].str.title(),
                               PARENT=df['parentterm'],
                               TRAIT=df['DiseaseOrTrait'])
-    bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) + ' Ancestry and ' +\
+    bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) +\
+                             ' Ancestry and ' +\
                              str(parent.value) + ', ' + str(slider.value) +\
-                             ' to Present Day (' + str(stage.value) + ').'
+                             ' to Present Day (' + str(stage.value) + ')'
     bubble_plot.x_range.start = dt.date(slider.value, 1, 1)
+    bubble_plot.title.align = "center"
 
 
 def create_doughnut_plot():
@@ -365,8 +482,8 @@ def create_doughnut_plot():
                                ("Stage: ", "@doughnut_stage"),
                                ("Parent Category: ", "@parentterm"),
                                ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot.annular_wedge(x=-.35, y=0, inner_radius=0.225,
-                                outer_radius=0.525,
+    doughnut_plot.annular_wedge(x=0.1, y=0.1, inner_radius=0.315,
+                                outer_radius=0.575,
                                 start_angle=cumsum('doughnut_angle',
                                                    include_zero=True),
                                 end_angle=cumsum('doughnut_angle'),
@@ -378,9 +495,11 @@ def create_doughnut_plot():
     doughnut_plot.axis.visible = False
     doughnut_plot.grid.grid_line_color = None
     doughnut_plot.legend.border_line_width = 1
-    doughnut_plot.legend.border_line_color = "black"
+    doughnut_plot.legend.border_line_color = None
     doughnut_plot.legend.label_text_font_size = '8pt'
-    doughnut_plot.legend.location = "top_right"
+    doughnut_plot.legend.orientation = "horizontal"
+    doughnut_plot.legend.location = "bottom_center"
+    doughnut_plot.title.align = "center"
     doughnut_plot.outline_line_color = None
     return doughnut_source, doughnut_hover, doughnut_plot
 
@@ -407,9 +526,9 @@ def update_doughnut():
                                         df['ReplicationCount'].sum()*2*pi,
                                         doughnut_color=colorlist,
                                         doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Fig 3: # Studies for ' +\
+        doughnut_plot.title.text = 'Fig 3: Number Studies, ' +\
                                    str(parent.value) + ' at ' +\
-                                   str(stage.value) + '.'
+                                   str(stage.value)
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             doughnut_source.data = dict(Broader=df['Broader'],
@@ -427,9 +546,9 @@ def update_doughnut():
                                         df['ReplicationN'].sum()*2*pi,
                                         doughnut_color=colorlist,
                                         doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Fig 3: # Participants for ' +\
+        doughnut_plot.title.text = 'Fig 3: Number Participants, ' +\
                                    str(parent.value).title() + ' at ' +\
-                                   str(stage.value) + '.'
+                                   str(stage.value)
 
 
 def select_parent_doughnut():
@@ -441,20 +560,23 @@ def select_parent_doughnut():
 
 
 width_dict = create_width_dict()
-data_path = os.path.abspath(os.path.join('gwasdiversitymonitor_app', 'data'))
-template_path = os.path.abspath(os.path.join('gwasdiversitymonitor_app',
-                                'templates'))
-bubble_df, freetext_df, ts_init_count, ts_init_sum, ts_rep_count,\
-    ts_rep_sum, choro_df, gdf, doughnut_df = import_data(data_path)
+data_path = os.path.abspath(os.path.join(__file__, '..', 'data'))
+template_path = os.path.abspath(os.path.join(__file__, '..',
+                                             'gwasdiversitymonitor_app',
+                                             'templates'))
+bubble_df, freetext_df, ts1_init_count, ts1_init_sum, ts1_rep_count,\
+    ts1_rep_sum, choro_df, gdf, doughnut_df, ts2_init_count,\
+    ts2_init_sum, ts2_rep_count, ts2_rep_sum = import_data(data_path)
 maxyear = bubble_df['DATE'].max().year
 stage, parent, ancestry, metric, slider = widgets(width_dict['control_width'],
-                                                  bubble_df, ts_init_count,
+                                                  bubble_df, ts1_init_count,
                                                   maxyear)
 slider.on_change('value', update_choro_slider)
 TOOLS = "hover,save,pan,box_zoom,reset,wheel_zoom"
 hbar_source, hbar_hover, hbar_plot = create_hbar_plot()
 geosource, choro_hover, choro_plot = create_choro_plot(maxyear-1)
-ts_source, ts_hover, ts_plot = create_ts_plot(maxyear)
+ts1_source, ts1_hover, ts1_plot = create_ts1_plot(maxyear)
+ts2_source, ts2_hover, ts2_plot = create_ts2_plot(maxyear)
 bubble_source, bubble_hover, bubble_plot = create_bubble_plot()
 doughnut_source, doughnut_hover, doughnut_plot = create_doughnut_plot()
 
@@ -463,7 +585,8 @@ for control in controls:
     control.on_change('value', lambda attr, old, new: update_hbar_source())
     control.on_change('value', lambda attr, old, new: update_hbar_axis())
     control.on_change('value', lambda attr, old, new: update_choro())
-    control.on_change('value', lambda attr, old, new: update_ts())
+    control.on_change('value', lambda attr, old, new: update_ts1())
+    control.on_change('value', lambda attr, old, new: update_ts2())
     control.on_change('value', lambda attr, old, new: update_bubble())
     control.on_change('value', lambda attr, old, new: update_doughnut())
 update()
@@ -471,13 +594,15 @@ controls = controls[:-1]
 doughnut_plot.sizing_mode = "stretch_both"
 bubble_plot.sizing_mode = "stretch_both"
 choro_plot.sizing_mode = "stretch_both"
-ts_plot.sizing_mode = "stretch_both"
+ts1_plot.sizing_mode = "stretch_both"
+ts2_plot.sizing_mode = "stretch_both"
 hbar_plot.sizing_mode = "stretch_both"
 
 curdoc().add_root(row(bubble_plot, name='bubble'))
 curdoc().add_root(row(choro_plot, name='choro'))
-curdoc().add_root(row(ts_plot, name='ts'))
+curdoc().add_root(row(ts1_plot, name='ts1'))
 curdoc().add_root(row(hbar_plot, name='hbar'))
 curdoc().add_root(row(doughnut_plot, name='doh'))
 curdoc().add_root(row(column(*controls), slider))
+curdoc().add_root(row(ts2_plot, name='ts2'))
 curdoc().title = "GWAS Diversity Monitor"
