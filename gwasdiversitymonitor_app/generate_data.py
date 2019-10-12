@@ -536,7 +536,8 @@ def make_timeseries_df(Cat_Ancestry, data_path, savename):
     ts_initial_sum_pc = ((ts_initial_sum.T / ts_initial_sum.T.sum()).T)*100
     ts_initial_sum_pc = ts_initial_sum_pc.reset_index()
     ts_initial_sum_pc.to_csv(os.path.join(data_path, 'toplot',
-                                          savename + '_initial_sum.csv'), index=False)
+                                          savename + '_initial_sum.csv'),
+                             index=False)
     ts_initial_count_pc = ((ts_initial_count.T /
                             ts_initial_count.T.sum()).T)*100
     ts_initial_count_pc = ts_initial_count_pc.reset_index()
@@ -547,13 +548,15 @@ def make_timeseries_df(Cat_Ancestry, data_path, savename):
                               ts_replication_sum.T.sum()).T)*100
     ts_replication_sum_pc = ts_replication_sum_pc.reset_index()
     ts_replication_sum_pc.to_csv(os.path.join(data_path, 'toplot',
-                                              savename + '_replication_sum.csv'),
+                                              savename +
+                                              '_replication_sum.csv'),
                                  index=False)
     ts_replication_count_pc = ((ts_replication_count.T /
                                 ts_replication_count.T.sum()).T)*100
     ts_replication_count_pc = ts_replication_count_pc.reset_index()
     ts_replication_count_pc.to_csv(os.path.join(data_path, 'toplot',
-                                                savename + '_replication_count.csv'),
+                                                savename +
+                                                '_replication_count.csv'),
                                    index=False)
 
 
@@ -686,15 +689,16 @@ def make_doughnut_df(data_path):
                                                    'catalog', 'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False)
+    Cat_Anc_withBroader = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
     merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
                                                'parentterm']],
                       Cat_Anc_withBroader[['STUDY ACCESSION',
                                            'Broader', 'N', 'STAGE']],
                       how='left', on='STUDY ACCESSION')
     doughnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
-                                                'InitialN', 'ReplicationN',
-                                                'InitialCount',
-                                                'ReplicationCount'])
+                                                  'InitialN', 'ReplicationN',
+                                                  'InitialCount',
+                                                  'ReplicationCount'])
     merged = merged[merged['Broader'].notnull()]
     merged = merged[merged['parentterm'].notnull()]
     counter = 0

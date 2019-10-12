@@ -231,7 +231,7 @@ def update_ts1():
                 )
             ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         elif str(stage.value) == 'Replication':
             ts1_source.data = dict(
                 Year=[ts1_rep_count['index']],
@@ -241,7 +241,7 @@ def update_ts1():
                 )
             ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         ts1_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
@@ -253,7 +253,7 @@ def update_ts1():
                  )
             ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         elif str(stage.value) == 'Replication':
             ts1_source.data = dict(
                  Year=[ts1_rep_sum['index']],
@@ -261,9 +261,9 @@ def update_ts1():
                  ts1_color=[["#d7191c"]],
                  # ts1_legendval=[['Replication Stage (%)']]
                  )
-            ts1_plot.title.text = 'Fig 2a: Replication Stage Across,' +\
+            ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
                                   'all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         ts1_plot.yaxis.axis_label = 'Percent of all Participants (%)'
     ts1_plot.x_range.start = slider.value
 
@@ -280,7 +280,7 @@ def update_ts2():
                 )
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         elif str(stage.value) == 'Replication':
             ts2_source.data = dict(
                 Year=[ts2_rep_count['index']],
@@ -290,7 +290,7 @@ def update_ts2():
                 )
             ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         ts2_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
@@ -302,7 +302,7 @@ def update_ts2():
                  )
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         elif str(stage.value) == 'Replication':
             ts2_source.data = dict(
                  Year=[ts2_rep_sum['index']],
@@ -310,9 +310,9 @@ def update_ts2():
                  ts2_color=[["#d7191c"]],
                  # ts1_legendval=[['Replication Stage (%)']]
                  )
-            ts2_plot.title.text = 'Fig 2b: Replication Stage Across,' +\
+            ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   'all Parent Categories: ' +\
-                                  str(ancestry.value) + ' Ancestry'
+                                  str(ancestry.value)
         ts2_plot.yaxis.axis_label = 'Percent of all Participants (%)'
     ts2_plot.x_range.start = slider.value
 
@@ -410,6 +410,7 @@ def create_bubble_plot():
     bubble_plot.xgrid.grid_line_dash = 'dashed'
     bubble_plot.ygrid.grid_line_dash = 'dashed'
     bubble_plot.outline_line_color = None
+    bubble_plot.yaxis.formatter = NumeralTickFormatter(format="0")
     return bubble_source, bubble_hover, bubble_plot
 
 
@@ -506,8 +507,8 @@ def create_doughnut_plot():
 
 def update_doughnut():
     ''' update the doughnut chart with interactive choices'''
-    colorlist = ['#fee08b', '#d53e4f', '#99d594', '#bdbdbd',
-                 '#3288bd', '#fc8d59', '#807dba']
+    colorlist = ['#3288bd', '#fee08b', '#d53e4f',
+                 '#99d594', '#bdbdbd', '#fc8d59']
     df = select_parent_doughnut()
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
@@ -569,7 +570,7 @@ bubble_df, freetext_df, ts1_init_count, ts1_init_sum, ts1_rep_count,\
     ts2_init_sum, ts2_rep_count, ts2_rep_sum = import_data(data_path)
 maxyear = bubble_df['DATE'].max().year
 stage, parent, ancestry, metric, slider = widgets(width_dict['control_width'],
-                                                  bubble_df, ts1_init_count,
+                                                  bubble_df, ts2_init_count,
                                                   maxyear)
 slider.on_change('value', update_choro_slider)
 TOOLS = "hover,save,pan,box_zoom,reset,wheel_zoom"
