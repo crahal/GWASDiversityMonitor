@@ -110,11 +110,11 @@
 120,European,1843.0,31264924.0,Meng W,Diabetic maculopathy with decreased visual acuity in type 2 diabetes,initial,2019-07-02,GCST008545,Other measurement,#d53e4f
 121,European,1843.0,31264924.0,Meng W,Diabetic maculopathy with decreased visual acuity in type 2 diabetes,initial,2019-07-02,GCST008545,Metabolic disorder,#d53e4f
 122,European,2614.0,31264924.0,Meng W,Diabetic maculopathy in type 2 diabetes,initial,2019-07-02,GCST008546,Metabolic disorder,#d53e4f
-123,,1498.0,31260374.0,Pedergnana V,Pre-treatment viral load in hepatitis C virus genotype 3,initial,2019-07-01,GCST008515,Digestive system disorder,black
-124,,409.0,31260374.0,Pedergnana V,Response to direct-acting antiviral treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008520,Digestive system disorder,black
+123,Other/Mixed,1498.0,31260374.0,Pedergnana V,Pre-treatment viral load in hepatitis C virus genotype 3,initial,2019-07-01,GCST008515,Digestive system disorder,#99d594
+124,Other/Mixed,409.0,31260374.0,Pedergnana V,Response to direct-acting antiviral treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008520,Digestive system disorder,#99d594
 125,European,6064.0,31263063.0,Dufek S,Childhood steroid-sensitive nephrotic syndrome,initial,2019-07-01,GCST008456,Other disease,#d53e4f
-126,,1258.0,31260374.0,Pedergnana V,Response to interferon treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008517,Response to drug,black
-127,,1258.0,31260374.0,Pedergnana V,Response to interferon treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008517,Digestive system disorder,black
+126,Other/Mixed,1258.0,31260374.0,Pedergnana V,Response to interferon treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008517,Response to drug,#99d594
+127,Other/Mixed,1258.0,31260374.0,Pedergnana V,Response to interferon treatment in hepatitis C virus genotype 3,initial,2019-07-01,GCST008517,Digestive system disorder,#99d594
 128,European,935.0,31262040.0,Pujol-Moix N,Platelet reactivity measurement (collagen-ADP),initial,2019-06-30,GCST008458,Cardiovascular measurement,#d53e4f
 129,European,935.0,31262040.0,Pujol-Moix N,Platelet reactivity measurement (collagen-epinephrine),initial,2019-06-30,GCST008457,Cardiovascular measurement,#d53e4f
 130,Other/Mixed,1209.0,31299468.0,Condreay LD,Change in quality of life in response to fluticasone propionate/salmeterol in chronic obstructive pulmonary disease,initial,2019-06-29,GCST008292,Other disease,#99d594
