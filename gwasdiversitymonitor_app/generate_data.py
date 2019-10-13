@@ -135,47 +135,47 @@ def create_summarystats(data_path):
 def update_summarystats(sumstats, summaryfile):
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[163] = '<li> <p>There are a total of ' + \
+    summary[164] = '<li> <p>There are a total of ' + \
                    str(sumstats['number_studies']) +\
                    ' studies in the Catalog.</p></li>\n'
-    summary[164] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
+    summary[165] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[165] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
+    summary[166] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[166] = '<li> <p>Accession with biggest sample is PubMedID ' +\
+    summary[167] = '<li> <p>Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[167] = '<li> <p>There are a total of ' +\
+    summary[168] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_accessions']) +\
                    ' unique study accessions.</p></li>\n'
-    summary[168] = '<li> <p>There are a total of ' +\
+    summary[169] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
                    ' unique diseases and traits studied.</p></li>\n'
-    summary[169] = '<li> <p>There are a total of ' +\
+    summary[170] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</p></li>\n'
-    summary[170] = '<li> <p>The total number of associations found is ' +\
+    summary[171] = '<li> <p>The total number of associations found is ' +\
                    str(sumstats['found_associations']) +\
                    '.</p></li>\n'
-    summary[171] = '<li> <p>The average number of associations found is ' +\
+    summary[172] = '<li> <p>The average number of associations found is ' +\
                    str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
-    summary[172] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
+    summary[173] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
                    "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
-    summary[173] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
+    summary[174] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
                    str(sumstats['threshold_pvals']) + '.</p></li>\n'
-    summary[174] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
+    summary[175] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
                    str(sumstats['mostcommon_journal']) + '.</p></li>\n'
-    summary[175] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
+    summary[176] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
                    str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[176] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
+    summary[177] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
                    str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
