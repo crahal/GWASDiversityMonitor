@@ -27,10 +27,10 @@ This dashboard is currently at Version 0.8.0, and wholly represents a prototype.
 
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license, subject to the conditions imposed by the [EMBL-EBI license](https://www.ebi.ac.uk/about/terms-of-use). The dashboard comes without any warranty, to the extent permitted by applicable law.
 
+### Acknowledgements
 
-## Acknowledgements
+We are grateful to comments on the source code and infrastructure from [Ian Knowles](https://github.com/ianknowles), [Yi Liu](https://github.com/YiLiu6240), [Molly Przeworski](https://przeworskilab.com/), [Ben Domingue](https://github.com/ben-domingue), [Sam Trejo](https://cepa.stanford.edu/people/sam-trejo) and the [Sociogenome](http://www.sociogenome.org) group more generally.
 
-We are grateful to comments on the source code and infrastructure from [Ian Knowles](https://github.com/ianknowles), [Yi Liu](https://github.com/YiLiu6240), [Molly Przeworski](https://przeworskilab.com/), [Ben Domingue](https://github.com/ben-domingue), [Sam Trejo](https://cepa.stanford.edu/people/sam-trejo) and the [Sociogenome](http://www.sociogenome.org) group more generally
 ### To Do
 
 1. Javascript callbacks to better generate the ``summary_statistics.html``.
