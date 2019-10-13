@@ -10,7 +10,6 @@ import os
 import re
 import csv
 import shutil
-import traceback
 
 
 def setup_logging(logpath):
@@ -1049,5 +1048,5 @@ if __name__ == "__main__":
                                 'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
-                               str(traceback.format_exc()))
+                               str(e))
     logging.shutdown()
