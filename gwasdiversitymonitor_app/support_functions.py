@@ -57,15 +57,15 @@ def import_data(data_path):
         ts2_init_count, ts2_init_sum, ts2_rep_count, ts2_rep_sum
 
 
-def widgets(control_width, bubble_df, ts_init_count, maxyear):
+def widgets(control_width, parentlist, anclist, maxyear):
     stage = Select(title="Research Stage", value="Discovery",
                    options=['Discovery', 'Replication'],
                    width=control_width)
-    parent = Select(title="Parent Term", value="Cancer",
-                    options=bubble_df['parentterm'].unique().tolist(),
+    parent = Select(title="Parent Term", value="All",
+                    options=parentlist,
                     width=control_width)
-    ancestry = Select(title="Broader Ancestry", value="European",
-                      options=ts_init_count.columns.tolist()[1:],
+    ancestry = Select(title="Broader Ancestry", value="All",
+                      options=anclist,
                       width=control_width)
     metric = Select(title="Evaluation Metric",
                     value="Number of Participants (%)",

@@ -221,98 +221,106 @@ def create_choro_plot(year):
 
 def update_ts1():
     ''' updates ts_source'''
+    if str(ancestry.value) == 'All':
+        ancestry_value = 'European'
+    else:
+        ancestry_value = str(ancestry.value)
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             ts1_source.data = dict(
                 Year=[ts1_init_count['index']],
-                ts1_toplot=[ts1_init_count[ancestry.value]/100],
+                ts1_toplot=[ts1_init_count[ancestry_value]/100],
                 ts1_color=[["#2b83ba"]],
                 # ts_legendval=[['Discovery Stage (%)']]
                 )
             ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         elif str(stage.value) == 'Replication':
             ts1_source.data = dict(
                 Year=[ts1_rep_count['index']],
-                ts1_toplot=[ts1_rep_count[ancestry.value]/100],
+                ts1_toplot=[ts1_rep_count[ancestry_value]/100],
                 ts1_color=[["#d7191c"]],
                 # ts_legendval=[['Replication Stage (%)']]
                 )
             ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         ts1_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             ts1_source.data = dict(
                  Year=[ts1_init_sum['index']],
-                 ts1_toplot=[ts1_init_sum[ancestry.value]/100],
+                 ts1_toplot=[ts1_init_sum[ancestry_value]/100],
                  ts1_color=[["#2b83ba"]],
                  # ts_legendval=[['Discovery Stage (%)']]
                  )
             ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         elif str(stage.value) == 'Replication':
             ts1_source.data = dict(
                  Year=[ts1_rep_sum['index']],
-                 ts1_toplot=[ts1_rep_sum[ancestry.value]/100],
+                 ts1_toplot=[ts1_rep_sum[ancestry_value]/100],
                  ts1_color=[["#d7191c"]],
                  # ts1_legendval=[['Replication Stage (%)']]
                  )
             ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
                                   'all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         ts1_plot.yaxis.axis_label = 'Percent of all Participants (%)'
     ts1_plot.x_range.start = slider.value
 
 
 def update_ts2():
     ''' updates ts2_source'''
+    if str(ancestry.value) == 'All':
+        ancestry_value = 'European'
+    else:
+        ancestry_value = str(ancestry.value)
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             ts2_source.data = dict(
                 Year=[ts2_init_count['index']],
-                ts2_toplot=[ts2_init_count[ancestry.value]/100],
+                ts2_toplot=[ts2_init_count[ancestry_value]/100],
                 ts2_color=[["#2b83ba"]],
                 # ts_legendval=[['Discovery Stage (%)']]
                 )
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         elif str(stage.value) == 'Replication':
             ts2_source.data = dict(
                 Year=[ts2_rep_count['index']],
-                ts2_toplot=[ts2_rep_count[ancestry.value]/100],
+                ts2_toplot=[ts2_rep_count[ancestry_value]/100],
                 ts2_color=[["#d7191c"]],
                 # ts_legendval=[['Replication Stage (%)']]
                 )
             ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         ts2_plot.yaxis.axis_label = 'Percent of all Studies (%)'
     elif 'number of participants' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             ts2_source.data = dict(
                  Year=[ts2_init_sum['index']],
-                 ts2_toplot=[ts2_init_sum[ancestry.value]/100],
+                 ts2_toplot=[ts2_init_sum[ancestry_value]/100],
                  ts2_color=[["#2b83ba"]],
                  # ts_legendval=[['Discovery Stage (%)']]
                  )
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         elif str(stage.value) == 'Replication':
             ts2_source.data = dict(
                  Year=[ts2_rep_sum['index']],
-                 ts2_toplot=[ts2_rep_sum[ancestry.value]/100],
+                 ts2_toplot=[ts2_rep_sum[ancestry_value]/100],
                  ts2_color=[["#d7191c"]],
                  # ts1_legendval=[['Replication Stage (%)']]
                  )
             ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   'all Parent Categories: ' +\
-                                  str(ancestry.value)
+                                  str(ancestry_value)
         ts2_plot.yaxis.axis_label = 'Percent of all Participants (%)'
     ts2_plot.x_range.start = slider.value
 
@@ -418,7 +426,8 @@ def select_ancestry_bubble():
     ''' Update the ancestry data into the bubble source'''
     ancestry_val = ancestry.value
     selected = bubble_df
-    selected = selected[selected['Broader'] == ancestry_val]
+    if str(ancestry_val) != 'All':
+        selected = selected[selected['Broader'] == ancestry_val]
     return selected
 
 
@@ -569,8 +578,11 @@ bubble_df, freetext_df, ts1_init_count, ts1_init_sum, ts1_rep_count,\
     ts1_rep_sum, choro_df, gdf, doughnut_df, ts2_init_count,\
     ts2_init_sum, ts2_rep_count, ts2_rep_sum = import_data(data_path)
 maxyear = bubble_df['DATE'].max().year
+anclist = ts2_init_count.columns.tolist()[1:]
+anclist.insert(0, 'All')
+parentlist = doughnut_df['parentterm'].unique().tolist()
 stage, parent, ancestry, metric, slider = widgets(width_dict['control_width'],
-                                                  bubble_df, ts2_init_count,
+                                                  parentlist, anclist,
                                                   maxyear)
 slider.on_change('value', update_choro_slider)
 TOOLS = "hover,save,pan,box_zoom,reset,wheel_zoom"
