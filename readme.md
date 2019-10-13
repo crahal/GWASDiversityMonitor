@@ -9,7 +9,7 @@ This is a repository to accompany the GWAS Diversity Monitor, currently maintain
 <div align="center"> <a href="http://www.gwasdiversitymonitor.com">gwasdiversitymonitor.com</a></div>
 <br/><br/>
 
-The interactive plots are written in [Bokeh](https://bokeh.pydata.org/en/latest) and hosted on Heroku (currently free-tier, while prototyping). Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we run ```generate_date.py``` on a daily cron job and push to the master).
+The interactive plots are written in [Bokeh](https://bokeh.pydata.org/en/latest) and hosted on Heroku (currently free-tier, while prototyping). Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we run ```generate_date.py``` on a daily cron job and push to the master branch).
 
 ### Prerequisites
 
@@ -17,19 +17,27 @@ As a pre-requisite to running the Bokeh sever, you will need a working Python 3 
 
 ### Running the Code
 
-This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve gwasdiversitymonitor_app --show``` in a terminal to launch the server.
+This server is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. To run: clone this directory, ``cd`` into the directory, and then run ```bokeh serve gwasdiversitymonitor_app --show``` in a terminal to launch the server. In more detail, ``main.py`` generates the figures itself, and contains functions for each of the six plots which are then added to a Jinja2 template using curdoc().add_root(). The template is stored in templates/index.html, and contains html and css to build in additional content (pulling in things like funding templates) and bootstrap it. The ``generate_data.py`` script updates the html with summary statistics from ``gwasdiversitymonitor_app/data/summary/summary.json``.
 
 ### Versioning
 
-This dashboard is currently at Version 0.7.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary changes, or any suggestions which you may have in general.
+This dashboard is currently at Version 0.8.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary entries, or any suggestions which you may have in general.
 
 ### License
 
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license, subject to the conditions imposed by the [EMBL-EBI license](https://www.ebi.ac.uk/about/terms-of-use). The dashboard comes without any warranty, to the extent permitted by applicable law.
 
+
+## Acknowledgements
+
+We are grateful to comments on the source code and infrastructure from [Ian Knowles](https://github.com/ianknowles), [Yi Liu](https://github.com/YiLiu6240), [Molly Przeworski](https://przeworskilab.com/), [Ben Domingue](https://github.com/ben-domingue), [Sam Trejo](https://cepa.stanford.edu/people/sam-trejo) and the [Sociogenome](http://www.sociogenome.org) group more generally
 ### To Do
 
-1. Javascript callbacks to better generate the summary_statistics.html.
+1. Javascript callbacks to better generate the ``summary_statistics.html``.
 2. Better sizing for mobiles.
-3. Better bootstrapped block colours
-4. Optimise for efficiency
+3. Better bootstrapped block colours.
+4. Optimise for efficiency (dtypes, input dataframes, etc).
+5. Unit testing.
+6. Refactoring of both generate_data.py and main.py.
+
+Full MoSCoW analysis available on request.
