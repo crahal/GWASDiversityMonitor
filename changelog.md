@@ -74,9 +74,18 @@
 * Reworked the summary part with cards and pill badges
 * removed colourbar and moved the slider
 
-#### 19th September, 2019. Version 0.8.0:
+#### 19th September, 2019. Version 0.7.1:
 * Increased the number of plots effected by the Year slider
 * Fixed an axis formatting bug of the time series plot
 * Better spacing in the summary part.
 * Fixed a bug with the html title
 * Small minor typing corrections
+
+#### 13th October, 2019. Version 0.8.0:
+* Moved figure 5 to bottom left for better sizing, and moved the major tick labels inside the axis.
+* Added an additional time series plot (Fig 2 split into Fig2a and Fig2b).
+* Better sized the doughnut chart, and dropped the 'in part not recorded' rows from it.
+* Added 'All' parent and ancestry terms back into the widgets.
+* Set the tick formatter on the bubble chart to make it consistent across ancestries (and the corresponding sizes) for alignment.
+* Added additional acknowledgements to both the github and the dashboard
+* Some light code refactoring and docstring work.
