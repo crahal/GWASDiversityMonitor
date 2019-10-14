@@ -5,6 +5,11 @@ import os
 
 
 def create_width_dict():
+    '''
+    A function for defining the sizes used to construct the figures.
+    It returns a dict and the figures are sized in main.py with the
+    "stretch_both" option in bokeh
+    '''
     width_dict = {'hbar_height': 275, 'hbar_width': 300,
                   'choro_height': 430, 'choro_width': 825,
                   'ts_height': 212, 'ts_width': 175,
@@ -18,6 +23,12 @@ def create_width_dict():
 
 
 def import_data(data_path):
+    '''
+    A simple support function for returning the
+    dataframes to be plotted by bokeh in main.py.
+    Returns the individual dataframes one by one
+    '''
+
     bubble_df = pd.read_csv(os.path.join(data_path, 'toplot',
                                          'bubble_df.csv'),
                             parse_dates=['DATE'])
@@ -58,6 +69,17 @@ def import_data(data_path):
 
 
 def widgets(control_width, parentlist, anclist, maxyear):
+    '''
+    A support function for creating the widgets used in the dashboard.
+    Inputs:
+        controlwidth -- a size parametre for the width of the widgets
+        parentlist -- a list of parent terms to propogate the widget
+        anclist -- a list of ancestry terms to propogate the widget
+        maxyear -- the year of the most published gwas
+    Returns:
+        The five widgets featured in the dashboard
+    '''
+
     stage = Select(title="Research Stage", value="Discovery",
                    options=['Discovery', 'Replication'],
                    width=control_width)
@@ -79,6 +101,10 @@ def widgets(control_width, parentlist, anclist, maxyear):
 
 
 def prepare_geo_data(df_path, shapefile_path):
+    '''
+    Prepare a pandas and a geopandas df for
+    the generation of the choropleth map
+    '''
     choro_df = pd.read_csv(df_path, index_col='index')
     choro_df['Year'] = pd.to_numeric(choro_df['Year'])
     gdf = gpd.read_file(shapefile_path)[['ADMIN', 'ADM0_A3', 'geometry']]

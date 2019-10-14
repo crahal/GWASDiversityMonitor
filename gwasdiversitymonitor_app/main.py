@@ -13,7 +13,7 @@ from support_functions import (widgets, import_data, create_width_dict)
 
 
 def update():
-    ''' Initlize the data'''
+    ''' Initlize the data to the default settings'''
     update_hbar_source()
     update_hbar_axis()
     update_choro()
@@ -28,8 +28,9 @@ def update_hbar_source():
     Update horizontal bargraph plot.
     Appropriate widgets: stage -- initial or replication
                          metric -- number of studies or sum of particpants
+                         yaer -- the year of study conducted
     '''
-    freetext_yr = freetext_df[freetext_df['Year']==slider.value]
+    freetext_yr = freetext_df[freetext_df['Year'] == slider.value]
     if 'number of studies' in str(metric.value).lower():
         if str(stage.value) == 'Discovery':
             sorted_df = freetext_yr.\
@@ -39,7 +40,7 @@ def update_hbar_source():
              Cleaned_Ancestry=sorted_df['Cleaned_Ancestry'][0:10].to_list(),
              toplot=sorted_df['Initial_Ancestry_Count_%'][0:10]/100,
              indexval=sorted_df.index[0:10],
-             offsetval=[0.01]*10,
+             offsetval=[0.01]*10,  # @TODO colours embedded into ancestry dict
              hbar_color=["#d7191c"]*10,
              hbar_legendval=['Initial Stage (%)']*10)
         elif str(stage.value) == 'Replication':
@@ -86,9 +87,13 @@ def update_hbar_source():
 
 
 def update_hbar_axis():
-    ''' Update the range (tick labels) for horizontal bar plot'''
+    '''
+    Update the range (tick labels) for horizontal bar plot
+    This is presently extremely hacky because the
+    major_label_text_align method seems to be broken in bokeh.
+    This will need rewriting in the long run
+    '''
     hbar_plot.y_range.factors = hbar_source.data['Cleaned_Ancestry']
-    # extremely hacky because major_label_text_align doesnt seem to be working
     hbar_plot.yaxis.major_label_standoff = -405
     hbar_plot.yaxis.axis_line_color = None
 
@@ -117,7 +122,6 @@ def create_hbar_plot():
                        title="Fig 5: Free Text",
                        tools=TOOLS, toolbar_location=None,
                        y_axis_location='right')
-    # extremely hacky (i.e. right axis) as major_label_text_align not working?
     hbar_plot.hbar(y='Cleaned_Ancestry', right='toplot', height=0.6,
                    source=hbar_source, color='hbar_color', alpha=.6,
                    line_color="black", legend='hbar_legendval')
@@ -130,20 +134,9 @@ def create_hbar_plot():
                  line_color='black', line_width=0.75)
     hbar_plot.renderers.extend([vline])
     hbar_plot.legend.border_line_color = "black"
-#   hbar_plot.yaxis.label_text_align = 'left'
-#    hbar_plot.xgrid.grid_line_dash = 'dashed'
-#    hbar_plot.ygrid.grid_line_dash = 'dashed'
     hbar_plot.outline_line_color = 'white'
-#    labels = LabelSet(x='offsetval', y='indexval', text='Cleaned_Ancestry',
-#                      level='glyph', text_font_size="9pt",
-#                      source=hbar_source, render_mode='canvas',
-#                      x_offset=2, y_offset=3)
     hbar_plot.yaxis.major_tick_line_color = None
     hbar_plot.yaxis.minor_tick_line_color = None
-#    hbar_plot.yaxis.major_label_text_color = None
-#    hbar_plot.yaxis.major_label_text_font_size = '0.5pt'
-#    hbar_plot.yaxis.axis_label = 'Granular Ancestry Term'
-#    hbar_plot.add_layout(labels)
     return hbar_source, hbar_hover, hbar_plot
 
 
@@ -163,7 +156,7 @@ def json_data(selectedYear):
 
 
 def update_choro_slider(attr, old, new):
-    ''' updates the slider'''
+    ''' updates the slider and some features of the choropleth '''
     yr = slider.value
     new_data = json_data(yr)
     geosource.geojson = new_data
@@ -174,20 +167,23 @@ def update_choro_slider(attr, old, new):
 
 
 def update_choro():
-    ''' generates new data based on slider value'''
+    ''' generates a new geosoruce based on slider (year) value'''
     new_data = json_data(slider.value)
     geosource.geojson = new_data
 
 
 def create_choro_plot(year):
     '''
-    Creates the choropleth plot. Returns:
-        geosource -- the choropleth source
-        choro_plot -- the choropleth map itself
-        choro_hover -- the hovertool for the choropleth map
+    Creates the choropleth plot.
+        Inputs:
+            year -- the year of the slider.
+        Returns:
+            geosource -- the choropleth source
+            choro_plot -- the choropleth map itself
+            choro_hover -- the hovertool for the choropleth map
     '''
     geosource = GeoJSONDataSource(geojson=json_data(year))
-    palette = brewer['Blues'][6]
+    palette = brewer['Blues'][6]   # @TODO hacky adjustment of the colourmap
     palette = palette[::-1][1:-1]
     palette[0] = '#eef2ff'
     color_map = LinearColorMapper(palette=blues[25:], low=0, high=25,
@@ -220,7 +216,9 @@ def create_choro_plot(year):
 
 
 def update_ts1():
-    ''' updates ts_source'''
+    '''
+    Updates ts1_source. This needs refactoring in conjunction with update_ts2
+    '''
     if str(ancestry.value) == 'All':
         ancestry_value = 'European'
     else:
@@ -230,9 +228,7 @@ def update_ts1():
             ts1_source.data = dict(
                 Year=[ts1_init_count['index']],
                 ts1_toplot=[ts1_init_count[ancestry_value]/100],
-                ts1_color=[["#2b83ba"]],
-                # ts_legendval=[['Discovery Stage (%)']]
-                )
+                ts1_color=[["#2b83ba"]])
             ts1_plot.title.text = 'Fig 2a: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -240,9 +236,7 @@ def update_ts1():
             ts1_source.data = dict(
                 Year=[ts1_rep_count['index']],
                 ts1_toplot=[ts1_rep_count[ancestry_value]/100],
-                ts1_color=[["#d7191c"]],
-                # ts_legendval=[['Replication Stage (%)']]
-                )
+                ts1_color=[["#d7191c"]])
             ts1_plot.title.text = 'Fig 2a: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -273,7 +267,9 @@ def update_ts1():
 
 
 def update_ts2():
-    ''' updates ts2_source'''
+    '''
+    Updates ts2_source. This needs refactoring in conjunction with update_ts1
+    '''
     if str(ancestry.value) == 'All':
         ancestry_value = 'European'
     else:
@@ -283,9 +279,7 @@ def update_ts2():
             ts2_source.data = dict(
                 Year=[ts2_init_count['index']],
                 ts2_toplot=[ts2_init_count[ancestry_value]/100],
-                ts2_color=[["#2b83ba"]],
-                # ts_legendval=[['Discovery Stage (%)']]
-                )
+                ts2_color=[["#2b83ba"]])  # Legend taken out here
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -293,9 +287,7 @@ def update_ts2():
             ts2_source.data = dict(
                 Year=[ts2_rep_count['index']],
                 ts2_toplot=[ts2_rep_count[ancestry_value]/100],
-                ts2_color=[["#d7191c"]],
-                # ts_legendval=[['Replication Stage (%)']]
-                )
+                ts2_color=[["#d7191c"]])  # Legend taken out here
             ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   ' all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -305,9 +297,7 @@ def update_ts2():
             ts2_source.data = dict(
                  Year=[ts2_init_sum['index']],
                  ts2_toplot=[ts2_init_sum[ancestry_value]/100],
-                 ts2_color=[["#2b83ba"]],
-                 # ts_legendval=[['Discovery Stage (%)']]
-                 )
+                 ts2_color=[["#2b83ba"]])  # Legend taken out here
             ts2_plot.title.text = 'Fig 2b: Discovery Stage,' +\
                                   ' all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -315,9 +305,7 @@ def update_ts2():
             ts2_source.data = dict(
                  Year=[ts2_rep_sum['index']],
                  ts2_toplot=[ts2_rep_sum[ancestry_value]/100],
-                 ts2_color=[["#d7191c"]],
-                 # ts1_legendval=[['Replication Stage (%)']]
-                 )
+                 ts2_color=[["#d7191c"]])  # Legend taken out here
             ts2_plot.title.text = 'Fig 2b: Replication Stage,' +\
                                   'all Parent Categories: ' +\
                                   str(ancestry_value)
@@ -327,10 +315,13 @@ def update_ts2():
 
 def create_ts1_plot(maxyear):
     '''
-    Creates the time series plot. Returns:
-        ts1_source -- the source data which gets updated
-        ts1_source -- the hovertool
-        ts1_plot -- the actual time series plot
+    Creates the first time series plot.
+        Input: the year of the most recently published gwas
+        Returns:
+            ts1_source -- the source data which gets updated
+            ts1_source -- the hovertool
+            ts1_plot -- the actual time series plot
+    Needs refactoring in conjunction with create_ts2_plot
     '''
     ts1_source = ColumnDataSource(data=dict(index=[], Year=[], ts1_toplot=[],
                                             ts1_color=[], ts1_legendval=[]))
@@ -357,10 +348,13 @@ def create_ts1_plot(maxyear):
 
 def create_ts2_plot(maxyear):
     '''
-    Creates the time series plot. Returns:
-        ts2_source -- the source data which gets updated
-        ts2_source -- the hovertool
-        ts2_plot -- the actual time series plot
+    Creates the second time series plot.
+        Input: the year of the most recently published gwas
+        Returns:
+            ts2_source -- the source data which gets updated
+            ts2_source -- the hovertool
+            ts2_plot -- the actual time series plot
+    Needs refactoring in conjunction with create_ts1_plot
     '''
     ts2_source = ColumnDataSource(data=dict(index=[], Year=[], ts2_toplot=[],
                                             ts2_color=[], ts2_legendval=[]))
@@ -423,7 +417,7 @@ def create_bubble_plot():
 
 
 def select_ancestry_bubble():
-    ''' Update the ancestry data into the bubble source'''
+    ''' Update the ancestry data for the bubble source'''
     ancestry_val = ancestry.value
     selected = bubble_df
     if str(ancestry_val) != 'All':
@@ -432,14 +426,14 @@ def select_ancestry_bubble():
 
 
 def select_stage_bubble(df):
-    ''' Update the stage data into the bubble source'''
+    ''' Update the stage data for the bubble source'''
     stage_val = stage.value
     df = df[df['STAGE'].str.title() == stage_val]
     return df
 
 
 def select_parent_bubble(df):
-    ''' Update the EFO parent data into the bubble source'''
+    ''' Update the EFO parent data for the bubble source'''
     parent_val = parent.value
     if (parent_val != "All"):
         df = df[df['parentterm'] == parent_val]
@@ -515,7 +509,12 @@ def create_doughnut_plot():
 
 
 def update_doughnut():
-    ''' update the doughnut chart with interactive choices'''
+    '''
+        Update the doughnut chart with interactive choices.
+        This needs to be an ancestray based color dictionary,
+        harmonized with the bubble plot.
+        Ideally, this needs to be a better type of annular figure...
+    '''
     colorlist = ['#3288bd', '#fee08b', '#d53e4f',
                  '#99d594', '#bdbdbd', '#fc8d59']
     df = select_parent_doughnut()
@@ -578,12 +577,11 @@ bubble_df, freetext_df, ts1_init_count, ts1_init_sum, ts1_rep_count,\
     ts1_rep_sum, choro_df, gdf, doughnut_df, ts2_init_count,\
     ts2_init_sum, ts2_rep_count, ts2_rep_sum = import_data(data_path)
 maxyear = bubble_df['DATE'].max().year
-anclist = ts2_init_count.columns.tolist()[1:]
+anclist = ts2_init_count.columns.tolist()[1:]  # Make ancestry list
 anclist.insert(0, 'All')
-parentlist = doughnut_df['parentterm'].unique().tolist()
+parentlist = doughnut_df['parentterm'].unique().tolist() # Make parent list
 stage, parent, ancestry, metric, slider = widgets(width_dict['control_width'],
-                                                  parentlist, anclist,
-                                                  maxyear)
+                                                  parentlist, anclist, maxyear)
 slider.on_change('value', update_choro_slider)
 TOOLS = "hover,save,pan,box_zoom,reset,wheel_zoom"
 hbar_source, hbar_hover, hbar_plot = create_hbar_plot()
@@ -611,6 +609,7 @@ ts1_plot.sizing_mode = "stretch_both"
 ts2_plot.sizing_mode = "stretch_both"
 hbar_plot.sizing_mode = "stretch_both"
 
+#  Add the plots into the jinja2 template
 curdoc().add_root(row(bubble_plot, name='bubble'))
 curdoc().add_root(row(choro_plot, name='choro'))
 curdoc().add_root(row(ts1_plot, name='ts1'))

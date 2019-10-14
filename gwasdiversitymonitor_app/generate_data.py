@@ -13,6 +13,7 @@ import shutil
 
 
 def setup_logging(logpath):
+    ''' Set up the logging '''
     if os.path.exists(logpath) is False:
         os.makedirs(logpath)
     logger = logging.getLogger('diversity_logger')
@@ -32,6 +33,7 @@ def setup_logging(logpath):
 
 
 def create_summarystats(data_path):
+    ''' create the summarystats .json then used to propogate index.html '''
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t', low_memory=False)
@@ -133,6 +135,10 @@ def create_summarystats(data_path):
 
 
 def update_summarystats(sumstats, summaryfile):
+    '''
+    Write the summary stats json into the index.html
+    This is currently extremely hacky and as a minimum needs to be using
+    something like yattag, if not a custom js function to embed'''
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
     summary[164] = '<li> <p>There are a total of ' + \
@@ -182,6 +188,11 @@ def update_summarystats(sumstats, summaryfile):
 
 
 def update_downloaddata(sumstats, downloaddata):
+    '''
+        update the headline summary stats:
+        this should again be using something like yattag and then be loaded
+        in dynamically to the index.html, not just replacing lines
+    '''
     with open(downloaddata, 'r') as file:
         download = file.readlines()
     download[120] = '<span class="badge badge-primary badge-pill">' + str(sumstats['total_european']) + '%</span>\n'
@@ -245,6 +256,7 @@ def ancestry_cleaner(row, field):
 
 
 def make_heatmatrix(merged, stage, out_path):
+    ''' not currently used by the dashboard '''
     merged = merged[merged['STAGE'] == stage]
     ancestry_ranking = pd.DataFrame(merged.groupby(['Broader'])['Broader'].
                                     count()).rename({'Broader': 'Count'},
@@ -279,6 +291,7 @@ def make_heatmatrix(merged, stage, out_path):
 
 
 def make_heatmap_dfs(data_path):
+    ''' not currently used by the dashboard '''
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'), sep='\t')
     Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
@@ -333,6 +346,10 @@ def dict_replace(text):
 
     Keyword arguements:
     text: the free text string prior to splitting
+
+    Taken from the comms bio paper, possibly needs updating periodically.
+    This should probably be loaded in from a text file
+
     """
     replacedict = {'Arabian': 'Arab', 'HIspanic': 'Hispanic',
                    'Korculan': 'Korcula', 'Hispaic': 'Hispanic',
@@ -371,6 +388,10 @@ def list_remover(text):
 
     Keyword arguements:
     text: the free text string prior to splitting
+
+    Taken from the comms bio paper, possibly needs updating periodically.
+    This should probably be loaded in from a text file
+
     """
     removelist = ['AIS', 'APOE', 'HIV', 'Â', 'HER2-', '1000 Genomes',
                   'MYCN-amplification', 'Alzheimer', 'ASD', 'OCB', 'BD',
@@ -404,9 +425,11 @@ def list_remover(text):
 def remove_lower(free_text):
     """ remove lowercase letters (assumed to not be associated with
     countries, races or ancestries.)
-
     Keyword arguements:
     text: the free text string prior to splitting
+
+    Taken from the comms bio paper, possibly needs updating periodically.
+
     """
     free_text = free_text.replace('up to', '')
     for word in free_text.split(' '):
@@ -463,6 +486,7 @@ def ancestry_parser(output_path, input_series, Cat_Studies):
 
 
 def make_choro_df(data_path):
+    ''' Create the dataframe for the choropleth map '''
     Cat_Ancestry = pd.read_csv(os.path.join(data_path,
                                             'catalog',
                                             'synthetic',
@@ -505,6 +529,7 @@ def make_choro_df(data_path):
 
 
 def make_timeseries_df(Cat_Ancestry, data_path, savename):
+    '''   Make the timeseries dataframes (both for ts1 and ts2) '''
     DateSplit = Cat_Ancestry['DATE'].str.split('-', expand=True).\
         rename({0: 'Year', 1: 'Month', 2: 'Day'}, axis=1)
     Cat_Ancestry = pd.merge(Cat_Ancestry, DateSplit, how='left',
@@ -560,6 +585,7 @@ def make_timeseries_df(Cat_Ancestry, data_path, savename):
 
 
 def make_freetext_dfs(data_path):
+    ''' Make the dataframe for the free text analysis. Requires optimisation '''
     big_dataframe = pd.DataFrame()
     for year in range(2008, 2020):
         Cat_Studies = pd.read_csv(os.path.join(data_path,
@@ -656,6 +682,7 @@ def make_freetext_dfs(data_path):
 
 
 def make_doughnut_df(data_path):
+    ''' Make the doughnut chart dataframe for use in main.py'''
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t')
@@ -835,6 +862,7 @@ def make_bubbleplot_df(data_path):
 
 
 def clean_gwas_cat(data_path):
+    ''' Clean the catalog and do some general preprocessing '''
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            header=0, sep='\t', encoding='utf-8',
@@ -867,17 +895,20 @@ def clean_gwas_cat(data_path):
         'African American or Afro-Caribbean', 'African Am./Caribbean')
     Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
         'Hispanic or Latin American', 'Hispanic/Latin American')
-    Cat_Anc.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
-                                'Cat_Anc_withBroader.tsv'),
-                   sep='\t', index=False)
     if len(Cat_Anc[Cat_Anc['Broader'].isnull()]) > 0:
         diversity_logger.debug('Wuhoh! Need to update dictionary terms:\n' +
               '\n'.join(Cat_Anc[Cat_Anc['Broader'].
                         isnull()]['BROAD ANCESTRAL'].unique()))
+    Cat_Anc = Cat_Anc[Cat_Anc['Broader'].notnull()]
+    Cat_Anc = Cat_Anc[Cat_Anc['N'].notnull()]
+    Cat_Anc.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                'Cat_Anc_withBroader.tsv'),
+                   sep='\t', index=False)
 
 
 def make_clean_CoR(Cat_Anc, data_path):
-    """ clean the country of recruitment field for the geospatial analysis
+    """
+        Clean the country of recruitment field for the geospatial analysis.
     """
     with open(os.path.abspath(
               os.path.join(data_path, 'catalog', 'synthetic',
@@ -989,6 +1020,7 @@ def download_cat(data_path, ebi_download):
 
 
 def make_archive(source, destination):
+    ''' Make the archive for the zipfile download on the dashboard'''
     base = os.path.basename(destination)
     name = base.split('.')[0]
     format = base.split('.')[1]
@@ -1004,8 +1036,6 @@ def zip_toplot(source, destination):
         base = os.path.basename(destination)
         name = base.split('.')[0]
         format = base.split('.')[1]
-#        archive_from = os.path.dirname(source)
-#        archive_to = os.path.basename(source.strip(os.sep))
         shutil.make_archive(name, format, source)
         shutil.move('%s.%s' % (name, format), destination)
         diversity_logger.info('Successfully zipped the files to be downloaded')

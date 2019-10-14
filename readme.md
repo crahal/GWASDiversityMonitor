@@ -33,7 +33,7 @@ We are grateful to comments on the source code and infrastructure from [Ian Know
 
 ### To Do
 
-1. Javascript callbacks to better generate the ``summary_statistics.html``.
+1. Javascript callbacks to better generate the summary_statistics.
 2. Better sizing for mobiles.
 3. Better bootstrapped block colours.
 4. Optimise for efficiency (dtypes, input dataframes, etc).
