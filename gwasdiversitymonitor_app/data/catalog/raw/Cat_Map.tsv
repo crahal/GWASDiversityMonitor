@@ -116,9 +116,11 @@ Response to direct-acting antiviral treatment in hepatitis C virus genotype 3	re
 Atorvastatin-induced myopathy	response to atorvastatin	http://www.ebi.ac.uk/efo/EFO_0010124	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Blood protein levels	thioredoxin domain-containing protein 12 measurement	http://www.ebi.ac.uk/efo/EFO_0008298	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	teratocarcinoma-derived growth factor 1 measurement	http://www.ebi.ac.uk/efo/EFO_0008297	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Pre-treatment viral load in HIV-1 infection	viral load	http://www.ebi.ac.uk/efo/EFO_0010125	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pre-treatment viral load in hepatitis C virus genotype 3	viral load	http://www.ebi.ac.uk/efo/EFO_0010125	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
-Stem cell growth factor beta levels	stem Cell Growth Factor beta measurement	http://www.ebi.ac.uk/efo/EFO_0008292	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Smoking behaviour (age at first cigarette)	time to first cigarette measurement	http://www.ebi.ac.uk/efo/EFO_0010126	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Time to smoke first cigarette in the morning	time to first cigarette measurement	http://www.ebi.ac.uk/efo/EFO_0010126	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Stem cell growth factor beta levels	stem Cell Growth Factor beta measurement	http://www.ebi.ac.uk/efo/EFO_0008292	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Composite immunoglobulin trait (IgA x IgG x IgM)	serum immunoglobulin measurement	http://www.ebi.ac.uk/efo/EFO_0010127	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Stem cell factor levels	stem Cell Factor measurement	http://www.ebi.ac.uk/efo/EFO_0008291	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	superoxide dismutase [Mn], mitochondrial measurement	http://www.ebi.ac.uk/efo/EFO_0008294	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -476,6 +478,7 @@ Response to Pazopanib in cancer (hepatotoxicity)	serum alanine aminotransferase 
 Response to ximelagatran treatment (increased serum alanine aminotransferase levels)	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Select biomarker traits	serum alanine aminotransferase measurement	http://www.ebi.ac.uk/efo/EFO_0004735	Liver enzyme measurement	http://www.ebi.ac.uk/efo/EFO_0004582
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Birth weight or coronary artery disease (pleiotropy)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Chronic obstructive pulmonary disease or coronary artery disease (pleiotropy)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Coronary artery disease	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Coronary artery disease (myocardial infarction, percutaneous transluminal coronary angioplasty, coronary artery bypass grafting, angina or chromic ischemic heart disease)	coronary artery disease	http://www.ebi.ac.uk/efo/EFO_0000378	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -864,6 +867,7 @@ Subcutaneous adipose tissue	subcutaneous adipose tissue measurement	http://www.e
 Subcutaneous adipose tissue (sex interaction)	subcutaneous adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0004766	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Subcutaneous adipose tissue adjusted for BMI	subcutaneous adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0004766	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Subcutaneous adipose tissue attenuation (Hounsfield unit scale)	subcutaneous adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0004766	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Subscapular skin fold thickness	subcutaneous adipose tissue measurement	http://www.ebi.ac.uk/efo/EFO_0004766	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Pharmacokinetics of olanzapine in severe mental disorder (concentration dose ratio)	response to olanzapine	http://purl.obolibrary.org/obo/GO_0097333	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to antipsychotic treatment	response to olanzapine	http://purl.obolibrary.org/obo/GO_0097333	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Response to olanzapine in schizophrenia	response to olanzapine	http://purl.obolibrary.org/obo/GO_0097333	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -1159,6 +1163,7 @@ White matter microstructure in first episode schizophrenia (left posterior cingu
 White matter microstructure in first episode schizophrenia (right anterior cingulate cortex)	white matter microstructure measurement	http://www.ebi.ac.uk/efo/EFO_0005674	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 White matter microstructure in first episode schizophrenia (right posterior cingulate cortex)	white matter microstructure measurement	http://www.ebi.ac.uk/efo/EFO_0005674	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Anthropometric traits	waist circumference	http://www.ebi.ac.uk/efo/EFO_0004342	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or waist circumference (pleiotropy)	waist circumference	http://www.ebi.ac.uk/efo/EFO_0004342	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Cardiometabolic traits	waist circumference	http://www.ebi.ac.uk/efo/EFO_0004342	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Cardiovascular risk factors	waist circumference	http://www.ebi.ac.uk/efo/EFO_0004342	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Cardiovascular risk factors (age interaction)	waist circumference	http://www.ebi.ac.uk/efo/EFO_0004342	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
@@ -1196,6 +1201,7 @@ BMI x dairy intake interaction (1df interaction test)	body mass index	http://www
 Barrett's esophagus x BMI interaction	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Biomedical quantitative traits	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Bipolar disorder (body mass index interaction)	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or body mass index (pleiotropy)	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Blood pressure (anthropometric measures interaction)	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Body mass in chronic obstructive pulmonary disease	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Body mass index	body mass index	http://www.ebi.ac.uk/efo/EFO_0004340	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
@@ -1261,7 +1267,9 @@ knee peak torque response	knee peak torque measurement	http://www.ebi.ac.uk/efo/
 Age at smoking initiation in chronic obstructive pulmonary disease	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Age of smoking initiation	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Age of smoking initiation (MTAG)	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Smoking behaviour (age at first cigarette)	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Smoking initiation	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Smoking initiation (ever regular vs never regular)	smoking initiation	http://www.ebi.ac.uk/efo/EFO_0005670	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Anger	aggressive behavior	http://www.ebi.ac.uk/efo/EFO_0003015	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Cannabis-related aggression	aggressive behavior	http://www.ebi.ac.uk/efo/EFO_0003015	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Menstruation quality of life impact (aggressiveness)	aggressive behavior	http://www.ebi.ac.uk/efo/EFO_0003015	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -1303,12 +1311,28 @@ Response to Dalcetrapib treatment in acute coronary syndrome	acute coronary synd
 Ticagrelor levels in individuals with acute coronary syndromes treated with ticagrelor	acute coronary syndrome	http://www.ebi.ac.uk/efo/EFO_0005672	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Anthropometric traits in newborns	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Birth weight	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or HDL cholesterol levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or LDL cholesterol levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or body mass index (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or coronary artery disease (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or fasting glucose levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or fasting insulin levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or hemoglobin A1C levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or insulin secretion (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or insulin sensitivity index (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or myocardial infarction (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or total cholesterol levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or triglycerides levels (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or type 2 diabetes (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or waist circumference (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or waist-hip ratio (pleiotropy)	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Obesity-related traits	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Offspring birth weight	birth weight	http://www.ebi.ac.uk/efo/EFO_0004344	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Hepatitis B (viral clearance)	seroconversion	http://www.ebi.ac.uk/efo/EFO_0007851	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Age spots	solar lentigines measurement	http://www.ebi.ac.uk/efo/EFO_0007850	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Biomedical quantitative traits	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
+Birth weight or waist-hip ratio (pleiotropy)	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Body mass index and waist-hip ratio (pleiotropy)	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Cardiometabolic traits	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
 Metabolic syndrome	waist-hip ratio	http://www.ebi.ac.uk/efo/EFO_0004343	Body measurement	http://www.ebi.ac.uk/efo/EFO_0004324
@@ -2445,6 +2469,7 @@ CD19-positive B-lymphocyte count	CD19-positive B-lymphocyte count	http://www.ebi
 CD56-positive NK-lymphocyte cell count	CD56-positive NK-lymphocyte cell count	http://www.ebi.ac.uk/efo/EFO_0010109	Hematological measurement	http://www.ebi.ac.uk/efo/EFO_0004503
 Blood protein levels	polymeric immunoglobulin receptor measurement	http://www.ebi.ac.uk/efo/EFO_0008267	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cleft lip with or without cleft palate (maternal periconceptional cigarette smoking interaction)	tobacco smoke exposure measurement	http://www.ebi.ac.uk/efo/EFO_0009115	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Smoking behaviour (cigarette pack-years)	tobacco smoke exposure measurement	http://www.ebi.ac.uk/efo/EFO_0009115	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Feeling hurt	feeling emotionally hurt measurement	http://www.ebi.ac.uk/efo/EFO_0009599	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Blood protein levels	plexin-C1 measurement	http://www.ebi.ac.uk/efo/EFO_0008266	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cleft lip with or without cleft palate (maternal periconceptional vitamin use interaction)	vitamin supplement exposure measurement	http://www.ebi.ac.uk/efo/EFO_0009116	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -3076,6 +3101,11 @@ Aging (facial)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological proces
 Aging (time to death)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Aging (time to event)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Aging traits	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Differential aging (cerebellum)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Differential aging (frontal cortex)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Differential aging in older adults (cerebellum)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Differential aging in older adults (frontal cortex)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
+Differential aging in younger adults (frontal cortex)	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Epigenetic age acceleration in alcohol use disorder	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Extrinsic epigenetic age acceleration	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
 Intrinsic epigenetic age acceleration	aging	http://purl.obolibrary.org/obo/GO_0007568	Biological process	http://purl.obolibrary.org/obo/GO_0008150
@@ -3328,6 +3358,7 @@ Thiopurine-induced infection in inflammatory bowel disease	inflammatory bowel di
 Thiopurine-induced leukopenia in inflammatory bowel disease	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Thiopurine-induced leukopenia in inflammatory bowel disease (conditioned on rs116855232)	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Thiopurine-induced liver dysfunction in inflammatory bowel disease	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
+Thiopurine-induced myelosuppression in inflammatory bowel disease	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Thiopurine-induced pancreatitis in inflammatory bowel disease	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Thiopurine-induced severe alopecia in inflammatory bowel disease	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
 Thiopurine-induced severe alopecia in inflammatory bowel disease (conditioned on rs116855232)	inflammatory bowel disease	http://www.ebi.ac.uk/efo/EFO_0003767	Digestive system disorder	http://www.ebi.ac.uk/efo/EFO_0000405
@@ -3339,6 +3370,7 @@ Age-related diseases, mortality and associated endophenotypes	high density lipop
 Alzheimer's disease or HDL levels (pleiotropy)	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Biochemical measures	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
+Birth weight or HDL cholesterol levels (pleiotropy)	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 C-reactive protein levels or HDL-cholesterol levels (pleiotropy)	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Cardiometabolic and hematological traits	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Cardiometabolic traits	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
@@ -3401,6 +3433,7 @@ Very large HDL particle concentration	high density lipoprotein cholesterol measu
 Waist circumference and related phenotypes	high density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004612	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Biochemical measures	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
+Birth weight or LDL cholesterol levels (pleiotropy)	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 C-reactive protein levels or LDL-cholesterol levels (pleiotropy)	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Cardiometabolic traits	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Cardiovascular disease risk factors	low density lipoprotein cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004611	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
@@ -3916,6 +3949,7 @@ Memory dysfunction in frontotemporal lobe dementia	frontotemporal dementia	http:
 Parkinsonism in frontotemporal lobe dementia	frontotemporal dementia	http://www.orpha.net/ORDO/Orphanet_282	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Coronary spasm	coronary vasospasm	http://www.ebi.ac.uk/efo/EFO_0004225	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Coronary restenosis	coronary restenosis	http://www.ebi.ac.uk/efo/EFO_0004224	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
+Age at suicide	suicide behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0006882	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Deliberate self-harm	suicide behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0006882	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Predicted suicide risk	suicide behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0006882	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Suicidality	suicide behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0006882	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -4107,6 +4141,8 @@ Ambidextrousness	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	htt
 Handedness	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Handedness (Left-handed vs. non-left-handed)	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Handedness (Right-handed vs. non-right-handed)	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Handedness (left-handed vs. right-handed)	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Handedness (non-right-handed vs right-handed)	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Handedness in dyslexia	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Relative hand skill	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Relative hand skill in reading disability	handedness	http://www.ebi.ac.uk/efo/EFO_0009902	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
@@ -4438,6 +4474,7 @@ Thiopurine-induced infection in inflammatory bowel disease	response to thiopurin
 Thiopurine-induced leukopenia in inflammatory bowel disease	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Thiopurine-induced leukopenia in inflammatory bowel disease (conditioned on rs116855232)	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Thiopurine-induced liver dysfunction in inflammatory bowel disease	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Thiopurine-induced myelosuppression in inflammatory bowel disease	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Thiopurine-induced pancreatitis in inflammatory bowel disease	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Thiopurine-induced severe alopecia in inflammatory bowel disease	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Thiopurine-induced severe alopecia in inflammatory bowel disease (conditioned on rs116855232)	response to thiopurine	http://www.ebi.ac.uk/efo/EFO_0006317	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -4856,6 +4893,7 @@ Narcolepsy	narcolepsy with cataplexy	http://www.ebi.ac.uk/efo/EFO_0000614	Neurol
 Narcolepsy (age of onset)	narcolepsy with cataplexy	http://www.ebi.ac.uk/efo/EFO_0000614	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Narcolepsy (onset before 2009 H1N1 influenza pandemic)	narcolepsy with cataplexy	http://www.ebi.ac.uk/efo/EFO_0000614	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Narcolepsy with cataplexy	narcolepsy with cataplexy	http://www.ebi.ac.uk/efo/EFO_0000614	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
+Birth weight or myocardial infarction (pleiotropy)	myocardial infarction	http://www.ebi.ac.uk/efo/EFO_0000612	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Incident myocardial infarction	myocardial infarction	http://www.ebi.ac.uk/efo/EFO_0000612	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Myocardial infarction	myocardial infarction	http://www.ebi.ac.uk/efo/EFO_0000612	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Myocardial infarction (early onset)	myocardial infarction	http://www.ebi.ac.uk/efo/EFO_0000612	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
@@ -5361,6 +5399,7 @@ Postoperative survival time in hepatocellular carcinoma	hepatocellular carcinoma
 Pre-treatment pain in head and neck squamous cell carcinoma	head and neck squamous cell carcinoma	http://www.ebi.ac.uk/efo/EFO_0000181	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 B-cell malignancies (chronic lymphocytic leukemia, Hodgkin lymphoma or multiple myeloma) (pleiotropy)	hodgkins lymphoma	http://www.ebi.ac.uk/efo/EFO_0000183	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Hodgkin's lymphoma	hodgkins lymphoma	http://www.ebi.ac.uk/efo/EFO_0000183	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Birth weight or hemoglobin A1C levels (pleiotropy)	a1c measurement	http://www.ebi.ac.uk/efo/EFO_0004541	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Change in HbA1c levels in response to metformin treatment in type 2 diabetes	a1c measurement	http://www.ebi.ac.uk/efo/EFO_0004541	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diabetes related insulin traits	a1c measurement	http://www.ebi.ac.uk/efo/EFO_0004541	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Glycated hemoglobin levels	a1c measurement	http://www.ebi.ac.uk/efo/EFO_0004541	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -5506,6 +5545,7 @@ Age-related disease endophenotypes	triglyceride measurement	http://www.ebi.ac.uk
 Age-related diseases, mortality and associated endophenotypes	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Biochemical measures	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
+Birth weight or triglycerides levels (pleiotropy)	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 C-reactive protein levels or triglyceride levels (pleiotropy)	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Cardiometabolic traits	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
 Cardiovascular disease risk factors	triglyceride measurement	http://www.ebi.ac.uk/efo/EFO_0004530	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004529
@@ -5579,6 +5619,7 @@ Liver fibrosis severity in HIV/hepatitis C co-infection	HIV-1 infection	http://w
 Neurocognitive impairment in HIV-1 infection (continuous)	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Neurocognitive impairment in HIV-1 infection (dichotomous)	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Neutrophil count in HIV-infection	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
+Pre-treatment viral load in HIV-1 infection	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to abacavir-containing treatment in HIV-1 infection (virologic failure)	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to anti-retroviral therapy (ddI/d4T) in HIV-1 infection (Grade 1 peripheral neuropathy)	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Response to anti-retroviral therapy (ddI/d4T) in HIV-1 infection (Grade 2 peripheral neuropathy)	HIV-1 infection	http://www.ebi.ac.uk/efo/EFO_0000180	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
@@ -5841,6 +5882,7 @@ Age-related disease endophenotypes	total cholesterol measurement	http://www.ebi.
 Age-related diseases, mortality and associated endophenotypes	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Biochemical measures	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
+Birth weight or total cholesterol levels (pleiotropy)	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Body mass index and cholesterol (psychopharmacological treatment)	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 C-reactive protein levels or total cholesterol levels (pleiotropy)	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Cardiometabolic traits	total cholesterol measurement	http://www.ebi.ac.uk/efo/EFO_0004574	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
@@ -6127,6 +6169,7 @@ executive function (trail making test B)	executive function measurement	http://w
 executive function (trail making test B) (age interaction)	executive function measurement	http://www.ebi.ac.uk/efo/EFO_0009332	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 perceptual and visual search speed and executive function (trail making test BA)	executive function measurement	http://www.ebi.ac.uk/efo/EFO_0009332	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 perceptual and visual search speed and executive function (trail making test BA) (age interaction)	executive function measurement	http://www.ebi.ac.uk/efo/EFO_0009332	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Birth weight or insulin secretion (pleiotropy)	insulin secretion rate measurement	http://www.ebi.ac.uk/efo/EFO_0008001	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Insulin secretion rate	insulin secretion rate measurement	http://www.ebi.ac.uk/efo/EFO_0008001	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 insulin secretion rate (BMI adjusted)	insulin secretion rate measurement	http://www.ebi.ac.uk/efo/EFO_0008001	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Carbamazepine- or oxcarbazepine-induced hyponatremia in epilepsy	response to carbamazepine	http://www.ebi.ac.uk/efo/EFO_0008484	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
@@ -6724,6 +6767,7 @@ Hepcidin/transferrin saturation ratio	hepcidin:transferrin saturation ratio	http
 Advanced glycation end-product levels	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Alzheimer's disease or cardiovascular risk factors (pleiotropy)	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Alzheimer's disease or type 2 diabetes (pleiotropy)	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
+Birth weight or type 2 diabetes (pleiotropy)	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Cardiovascular heart disease in diabetics	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Cataracts in type 2 diabetes	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
 Change in HbA1c levels in response to metformin treatment in type 2 diabetes	type ii diabetes mellitus	http://www.ebi.ac.uk/efo/EFO_0001360	Metabolic disorder	http://www.ebi.ac.uk/efo/EFO_0000589
@@ -6943,7 +6987,7 @@ Non-muscle-invasive bladder cancer EORTC risk category	disease prognosis measure
 Poor prognosis in Crohn's disease	disease prognosis measurement	http://www.ebi.ac.uk/efo/EFO_0007936	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Urinary uric acid to urinary creatinine ratio	urinary uric acid to creatinine ratio	http://www.ebi.ac.uk/efo/EFO_0007935	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 LDL cholesterol to HDL cholesterol ratio	LDL cholesterol:HDL cholesterol ratio	http://www.ebi.ac.uk/efo/EFO_0007930	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
-Multiple keratinocyte cancers	mulitple keratinocyte carcinoma susceptibility measurement	http://www.ebi.ac.uk/efo/EFO_0007932	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Multiple keratinocyte cancers	multiple keratinocyte carcinoma susceptibility measurement	http://www.ebi.ac.uk/efo/EFO_0007932	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 NHDL cholesterol to HDL cholesterol ratio	non-HDL cholesterol:HDL cholesterol ratio	http://www.ebi.ac.uk/efo/EFO_0007931	Lipid or lipoprotein measurement	http://www.ebi.ac.uk/efo/EFO_0004732
 Atrioventricular septal defects in Down syndrome	Atrioventricular canal defect	http://purl.obolibrary.org/obo/HP_0006695	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 CSF tryptophan concentration in tuberculous meningitis	meningeal tuberculosis	http://www.ebi.ac.uk/efo/EFO_1000039	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
@@ -7084,6 +7128,7 @@ Tourette syndrome	Tourette syndrome	http://www.ebi.ac.uk/efo/EFO_0004895	Neurolo
 Tourette's syndrome or obsessive-compulsive disorder	Tourette syndrome	http://www.ebi.ac.uk/efo/EFO_0004895	Neurological disorder	http://www.ebi.ac.uk/efo/EFO_0000618
 Testicular dysgenesis syndrome	testicular dysgenesis syndrome	http://www.ebi.ac.uk/efo/EFO_0004893	Other disease	http://www.ebi.ac.uk/efo/EFO_0000408
 Ovarian clear cell cancer	ovarian clear cell adenocarcinoma	http://www.ebi.ac.uk/efo/EFO_1000042	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
+Ischemic heart disease	myocardial ischemia	http://www.ebi.ac.uk/efo/EFO_1001375	Cardiovascular disease	http://www.ebi.ac.uk/efo/EFO_0000319
 Pancreatic neuroendocrine tumor	pancreatic neuroendocrine tumor	http://www.ebi.ac.uk/efo/EFO_1000045	Cancer	http://www.ebi.ac.uk/efo/EFO_0000616
 Glycemic traits (pleiotropy)	HOMA-B	http://www.ebi.ac.uk/efo/EFO_0004469	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Homeostasis model assessment of beta-cell function	HOMA-B	http://www.ebi.ac.uk/efo/EFO_0004469	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7138,6 +7183,7 @@ Estrone levels	estrone measurement	http://www.ebi.ac.uk/efo/EFO_0007970	Other me
 Estrone/androstenedione ratio in resected early stage-receptor positive breast cancer	estrone measurement	http://www.ebi.ac.uk/efo/EFO_0007970	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma estrone levels in resected estrogen-receptor positive breast cancer	estrone measurement	http://www.ebi.ac.uk/efo/EFO_0007970	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alzheimer's disease or fasting insulin levels (pleiotropy)	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Birth weight or fasting insulin levels (pleiotropy)	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cardiometabolic traits	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diabetes related insulin traits	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Fasting blood insulin	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7159,6 +7205,7 @@ Hyperinsulinemia x saturated fatty acids interaction	fasting blood insulin measu
 Insulin-related traits	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Obesity-related traits	fasting blood insulin measurement	http://www.ebi.ac.uk/efo/EFO_0004466	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Alzheimer's disease or fasting glucose levels (pleiotropy)	fasting blood glucose measurement	http://www.ebi.ac.uk/efo/EFO_0004465	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Birth weight or fasting glucose levels (pleiotropy)	fasting blood glucose measurement	http://www.ebi.ac.uk/efo/EFO_0004465	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Elevated fasting plasma glucose	fasting blood glucose measurement	http://www.ebi.ac.uk/efo/EFO_0004465	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Fasting blood glucose	fasting blood glucose measurement	http://www.ebi.ac.uk/efo/EFO_0004465	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Fasting blood glucose (BMI interaction)	fasting blood glucose measurement	http://www.ebi.ac.uk/efo/EFO_0004465	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7188,6 +7235,11 @@ Brain structure	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other mea
 Brain structure (hippocampal volume)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Caudate nucleus volume	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Cortical brain region measurements (area, volume and thickness)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Differential aging (cerebellum)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Differential aging (frontal cortex)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Differential aging in older adults (cerebellum)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Differential aging in older adults (frontal cortex)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
+Differential aging in younger adults (frontal cortex)	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 White matter hyperintensity burden	brain measurement	http://www.ebi.ac.uk/efo/EFO_0004464	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Estrone conjugates/estrone ratio in resected early stage estrogen-receptor positive breast cancer	estrone conjugate measurement	http://www.ebi.ac.uk/efo/EFO_0007971	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Plasma estrone conjugates levels in resected early stage estrogen-receptor positive breast cancer	estrone conjugate measurement	http://www.ebi.ac.uk/efo/EFO_0007971	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -7208,6 +7260,7 @@ Angiotensin-converting enzyme inhibitor intolerance	response to angiotensin-conv
 Cardiovascular disease in hypertension (ACE inhibitor interaction)	response to angiotensin-converting enzyme inhibitor	http://www.ebi.ac.uk/efo/EFO_0005325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Cough in response to angiotensin-converting enzyme inhibitor drugs	response to angiotensin-converting enzyme inhibitor	http://www.ebi.ac.uk/efo/EFO_0005325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
 Myocardial infarction in hypertension (ACE inhibitor interaction)	response to angiotensin-converting enzyme inhibitor	http://www.ebi.ac.uk/efo/EFO_0005325	Response to drug	http://purl.obolibrary.org/obo/GO_0042493
+Birth weight or insulin sensitivity index (pleiotropy)	insulin sensitivity measurement	http://www.ebi.ac.uk/efo/EFO_0004471	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Corrected insulin response adjusted for insulin sensitivity index	insulin sensitivity measurement	http://www.ebi.ac.uk/efo/EFO_0004471	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Diabetes related insulin traits	insulin sensitivity measurement	http://www.ebi.ac.uk/efo/EFO_0004471	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Glucose homeostasis traits	insulin sensitivity measurement	http://www.ebi.ac.uk/efo/EFO_0004471	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
@@ -8173,6 +8226,7 @@ Schizophrenia (inflammation and infection response interaction)	Toxoplasma gondi
 Itch intensity from mosquito bite adjusted by bite size	mosquito bite reaction size measurement	http://www.ebi.ac.uk/efo/EFO_0008378	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Mosquito bite size	mosquito bite reaction size measurement	http://www.ebi.ac.uk/efo/EFO_0008378	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Platinum-induced myelosuppression in non-small cell lung cancer	myelosupression	http://www.ebi.ac.uk/efo/EFO_0007053	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
+Thiopurine-induced myelosuppression in inflammatory bowel disease	myelosupression	http://www.ebi.ac.uk/efo/EFO_0007053	Other trait	http://www.ebi.ac.uk/efo/EFO_0000001
 Tumor necrosis factor receptor II (red blood cell fatty acid level interaction)	tumor necrosis factor receptor II measurement	http://www.ebi.ac.uk/efo/EFO_0008384	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Adult antisocial behavior	antisocial behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0007052	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
 Antisocial behavior	antisocial behaviour measurement	http://www.ebi.ac.uk/efo/EFO_0007052	Other measurement	http://www.ebi.ac.uk/efo/EFO_0001444
