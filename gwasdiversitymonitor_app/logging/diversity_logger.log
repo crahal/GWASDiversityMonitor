@@ -106,3 +106,9 @@ TypeError: tuple indices must be integers or slices, not str
 2019-10-15 06:00:13,880 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
 2019-10-15 06:00:30,522 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-10-15 06:00:30,579 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-16 06:00:02,313 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-16 06:00:02,995 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-16 06:00:14,152 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-16 06:00:14,675 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-16 06:00:31,460 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-16 06:00:31,517 - diversity_logger - INFO - Successfully zipped the files to be downloaded
