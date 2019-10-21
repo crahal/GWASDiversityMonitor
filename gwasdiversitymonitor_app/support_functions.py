@@ -12,9 +12,9 @@ def create_width_dict():
     '''
     width_dict = {'hbar_height': 275, 'hbar_width': 300,
                   'choro_height': 430, 'choro_width': 825,
-                  'ts_height': 200, 'ts_width': 175,
-                  'bubble_height': 430, 'bubble_width': 825,
-                  'doughnut_height': 450, 'doughnut_width': 425,
+                  'ts_height': 225, 'ts_width': 175,
+                  'bubble_height': 425, 'bubble_width': 825,
+                  'doughnut_height': 415, 'doughnut_width': 425,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 390, 'control_width': 325,
                   'twocolumn_width': 910, 'div_width': 20,

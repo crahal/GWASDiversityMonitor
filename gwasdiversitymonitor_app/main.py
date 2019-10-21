@@ -491,8 +491,8 @@ def create_doughnut_plot1():
     doughnut_hover1.tooltips = [("Ancestry: ", "@Broader"),
                                 ("Parent Category: ", "@parentterm"),
                                 ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot1.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
-                                 outer_radius=.75,
+    doughnut_plot1.annular_wedge(x=0.0, y=0.0, inner_radius=0.55,
+                                 outer_radius=.7,
                                  start_angle=cumsum('doughnut_angle',
                                                     include_zero=True),
                                  end_angle=cumsum('doughnut_angle'),
@@ -539,8 +539,8 @@ def create_doughnut_plot2():
     doughnut_hover2.tooltips = [("Ancestry: ", "@Broader"),
                                 ("Parent Category: ", "@parentterm"),
                                 ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot2.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
-                                 outer_radius=.75,
+    doughnut_plot2.annular_wedge(x=0.0, y=0.0, inner_radius=0.55,
+                                 outer_radius=.7,
                                  start_angle=cumsum('doughnut_angle',
                                                     include_zero=True),
                                  end_angle=cumsum('doughnut_angle'),
@@ -587,8 +587,8 @@ def create_doughnut_plot3():
     doughnut_hover3.tooltips = [("Ancestry: ", "@Broader"),
                                 ("Parent Category: ", "@parentterm"),
                                 ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot3.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
-                                 outer_radius=.75,
+    doughnut_plot3.annular_wedge(x=0.0, y=0.0, inner_radius=0.55,
+                                 outer_radius=.7,
                                  start_angle=cumsum('doughnut_angle',
                                                     include_zero=True),
                                  end_angle=cumsum('doughnut_angle'),
