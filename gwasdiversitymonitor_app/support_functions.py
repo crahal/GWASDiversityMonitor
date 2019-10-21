@@ -12,9 +12,9 @@ def create_width_dict():
     '''
     width_dict = {'hbar_height': 275, 'hbar_width': 300,
                   'choro_height': 430, 'choro_width': 825,
-                  'ts_height': 212, 'ts_width': 175,
-                  'bubble_height': 430, 'bubble_width': 25,
-                  'doughnut_height': 450, 'doughnut_width': 125,
+                  'ts_height': 200, 'ts_width': 175,
+                  'bubble_height': 430, 'bubble_width': 825,
+                  'doughnut_height': 450, 'doughnut_width': 425,
                   'headerbox_height': 400, 'headerbox_width': 375,
                   'control_height': 390, 'control_width': 325,
                   'twocolumn_width': 910, 'div_width': 20,
@@ -38,7 +38,7 @@ def import_data(data_path):
     bubble_df = bubble_df.drop_duplicates(subset=['Broader', 'DATE',
                                                   'PUBMEDID', 'STAGE',
                                                   'AUTHOR', 'parentterm',
-                                                  'STUDY ACCESSION'])
+                                                  'ACCESSION'])
     freetext_df = pd.read_csv(os.path.join(data_path, 'toplot',
                                            'freetext_merged.csv'))
     ts1_init_count = pd.read_csv(os.path.join(data_path, 'toplot',

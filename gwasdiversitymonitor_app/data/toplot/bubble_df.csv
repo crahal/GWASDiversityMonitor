@@ -1,4 +1,4 @@
-,Broader,N,PUBMEDID,AUTHOR,DiseaseOrTrait,STAGE,DATE,STUDY ACCESSION,parentterm,color
+,Broader,N,PUBMEDID,AUTHOR,DiseaseOrTrait,STAGE,DATE,ACCESSION,parentterm,color
 0,European,133492.0,30054594.0,MacGregor S,Intraocular pressure,initial,2018-07-27,GCST006394,Other measurement,#d53e4f
 1,European,394929.0,30048462.0,Kim SK,Heel bone mineral density,initial,2018-07-26,GCST006433,Other measurement,#d53e4f
 2,European,8372.0,30049742.0,Terzikhan N,Diffusing capacity of the lung for carbon monoxide traits,initial,2018-07-26,GCST006473,Other measurement,#d53e4f

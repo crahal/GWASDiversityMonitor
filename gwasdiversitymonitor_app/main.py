@@ -20,7 +20,9 @@ def update():
     update_ts1()
     update_ts2()
     update_bubble()
-    update_doughnut()
+    update_doughnut1()
+    update_doughnut2()
+    update_doughnut3()
 
 
 def update_hbar_source():
@@ -388,20 +390,21 @@ def create_bubble_plot():
     '''
     bubble_source = ColumnDataSource(data=dict(DATE=[], N=[], bubble_color=[],
                                      Broader=[], Size=[], PUBMEDID=[],
-                                     Stage=[]))
+                                     Stage=[], Accession=[]))
     bubble_plot = figure(title='Fig 1: Ancestry Across All Samples Over Time',
                          plot_height=width_dict['bubble_height'],
                          plot_width=width_dict['bubble_width'],
                          y_axis_label='Number of Genotyped Participants',
-                         x_axis_type='datetime', y_axis_location='left',
-                         x_range=(dt.date(2008, 1, 1),
-                                  bubble_df['DATE'].max()),
+                         x_range=(dt.date(2008, 1, 1), bubble_df['DATE'].max()),
+                         x_axis_type='datetime',
+                         y_axis_location='left',
                          tools=TOOLS, toolbar_location=None)
     bubble_hover = bubble_plot.select(dict(type=HoverTool))
     bubble_hover.tooltips = [("Size", "@N"),
                              ("PUBMEDID", "@PUBMEDID"),
                              ("First Author", "@AUTHOR"),
-                             ("Trait", "@TRAIT")]
+                             ("Trait", "@TRAIT"),
+                             ("Accession", "@Accession")]
     bubble_plot.circle(x='DATE', y='N', source=bubble_source,
                        color='bubble_color', size='size', alpha=0.45,
                        line_color='black', line_width=0.175, legend='Broader')
@@ -452,7 +455,8 @@ def update_bubble():
                               AUTHOR=df['AUTHOR'], PUBMEDID=df['PUBMEDID'],
                               STAGE=df['STAGE'].str.title(),
                               PARENT=df['parentterm'],
-                              TRAIT=df['DiseaseOrTrait'])
+                              TRAIT=df['DiseaseOrTrait'],
+                              Accession=df['ACCESSION'])
     bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) +\
                              ' Ancestry and ' +\
                              str(parent.value) + ', ' + str(slider.value) +\
@@ -461,7 +465,7 @@ def update_bubble():
     bubble_plot.title.align = "center"
 
 
-def create_doughnut_plot():
+def create_doughnut_plot1():
     '''
         Creates the doughnut chart. Returns:
             doughnut_source -- the doughnut source data
@@ -470,45 +474,142 @@ def create_doughnut_plot():
     '''
     doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('In Part Not Recorded', 'In Part No Record')
-    doughnut_source = ColumnDataSource(data=dict(Broader=[],
-                                       doughnut_toplot=[],
-                                       doughnut_angle=[],
-                                       doughnut_color=[],
-                                       parentterm=[],
-                                       doughnut_stage=[]))
-    doughnut_plot = figure(plot_height=width_dict['doughnut_height'],
-                           plot_width=width_dict['doughnut_width'],
-                           tools=TOOLS, toolbar_location=None,
-                           title="Fig 3: Doughnut Chart",
-                           x_range=(-1, 1), y_range=(-1, 1))
-    doughnut_hover = doughnut_plot.select(dict(type=HoverTool))
-    doughnut_hover.tooltips = [("Ancestry: ", "@Broader"),
-                               ("Stage: ", "@doughnut_stage"),
-                               ("Parent Category: ", "@parentterm"),
-                               ("Percent: ", "@doughnut_toplot{0.000%}")]
-    doughnut_plot.annular_wedge(x=0.1, y=0.1, inner_radius=0.315,
-                                outer_radius=0.575,
-                                start_angle=cumsum('doughnut_angle',
-                                                   include_zero=True),
-                                end_angle=cumsum('doughnut_angle'),
-                                line_color="white", source=doughnut_source,
-                                fill_color='doughnut_color', legend='Broader',
-                                direction='anticlock',
-                                fill_alpha=0.8)
-    doughnut_plot.axis.axis_label = None
-    doughnut_plot.axis.visible = False
-    doughnut_plot.grid.grid_line_color = None
-    doughnut_plot.legend.border_line_width = 1
-    doughnut_plot.legend.border_line_color = None
-    doughnut_plot.legend.label_text_font_size = '8pt'
-    doughnut_plot.legend.orientation = "horizontal"
-    doughnut_plot.legend.location = "bottom_center"
-    doughnut_plot.title.align = "center"
-    doughnut_plot.outline_line_color = None
-    return doughnut_source, doughnut_hover, doughnut_plot
+    doughnut_source1 = ColumnDataSource(data=dict(Broader=[],
+                                        doughnut_toplot=[],
+                                        doughnut_angle=[],
+                                        doughnut_color=[],
+                                        parentterm=[],
+                                        year=[],
+                                        doughnut_stage=[]))
+    doughnut_plot1 = figure(plot_height=int(width_dict['doughnut_height']/2),
+                            plot_width=width_dict['doughnut_width'],
+                            tools=TOOLS,
+                            toolbar_location=None,
+                            title="Fig 3a: Studies",
+                            x_range=(-1, 1), y_range=(-1, 1))
+    doughnut_hover1 = doughnut_plot1.select(dict(type=HoverTool))
+    doughnut_hover1.tooltips = [("Ancestry: ", "@Broader"),
+                                ("Parent Category: ", "@parentterm"),
+                                ("Percent: ", "@doughnut_toplot{0.000%}")]
+    doughnut_plot1.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
+                                 outer_radius=.75,
+                                 start_angle=cumsum('doughnut_angle',
+                                                    include_zero=True),
+                                 end_angle=cumsum('doughnut_angle'),
+                                 line_color="white", source=doughnut_source1,
+                                 fill_color='doughnut_color',# legend='Broader',
+                                 direction='anticlock',
+                                 fill_alpha=0.8)
+    doughnut_plot1.axis.axis_label = None
+    doughnut_plot1.axis.visible = False
+    doughnut_plot1.grid.grid_line_color = None
+#    doughnut_plot1.legend.border_line_width = 1
+#    doughnut_plot1.legend.border_line_color = None
+#    doughnut_plot1.legend.label_text_font_size = '8pt'
+#    doughnut_plot1.legend.orientation = "horizontal"
+#    doughnut_plot1.legend.location = "bottom_center"
+    doughnut_plot1.title.align = "center"
+    doughnut_plot1.outline_line_color = None
+    return doughnut_source1, doughnut_hover1, doughnut_plot1
 
 
-def update_doughnut():
+def create_doughnut_plot2():
+    '''
+        Creates the doughnut chart. Returns:
+            doughnut_source -- the doughnut source data
+            doughnut_hover -- the doughnut hovertools
+            doughnut_plot -- the actual doughnut plot itself
+    '''
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
+        replace('In Part Not Recorded', 'In Part No Record')
+    doughnut_source2 = ColumnDataSource(data=dict(Broader=[],
+                                        doughnut_toplot=[],
+                                        doughnut_angle=[],
+                                        doughnut_color=[],
+                                        parentterm=[],
+                                        year=[],
+                                        doughnut_stage=[]))
+    doughnut_plot2 = figure(plot_height=int(width_dict['doughnut_height']/2),
+                            plot_width=width_dict['doughnut_width'],
+                            tools=TOOLS,
+                            toolbar_location=None,
+                            title="Fig 3b: Participants",
+                            x_range=(-1, 1), y_range=(-1, 1))
+    doughnut_hover2 = doughnut_plot2.select(dict(type=HoverTool))
+    doughnut_hover2.tooltips = [("Ancestry: ", "@Broader"),
+                                ("Parent Category: ", "@parentterm"),
+                                ("Percent: ", "@doughnut_toplot{0.000%}")]
+    doughnut_plot2.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
+                                 outer_radius=.75,
+                                 start_angle=cumsum('doughnut_angle',
+                                                    include_zero=True),
+                                 end_angle=cumsum('doughnut_angle'),
+                                 line_color="white", source=doughnut_source2,
+                                 fill_color='doughnut_color',# legend='Broader',
+                                 direction='anticlock',
+                                 fill_alpha=0.8)
+    doughnut_plot2.axis.axis_label = None
+    doughnut_plot2.axis.visible = False
+    doughnut_plot2.grid.grid_line_color = None
+#    doughnut_plot2.legend.border_line_width = 1
+#    doughnut_plot2.legend.border_line_color = None
+#    doughnut_plot2.legend.label_text_font_size = '8pt'
+#    doughnut_plot2.legend.orientation = "horizontal"
+#    doughnut_plot2.legend.location = "bottom_center"
+    doughnut_plot2.title.align = "center"
+    doughnut_plot2.outline_line_color = None
+    return doughnut_source2, doughnut_hover2, doughnut_plot2
+
+
+def create_doughnut_plot3():
+    '''
+        Creates the doughnut chart. Returns:
+            doughnut_source -- the doughnut source data
+            doughnut_hover -- the doughnut hovertools
+            doughnut_plot -- the actual doughnut plot itself
+    '''
+    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
+        replace('In Part Not Recorded', 'In Part No Record')
+    doughnut_source3 = ColumnDataSource(data=dict(Broader=[],
+                                        doughnut_toplot=[],
+                                        doughnut_angle=[],
+                                        doughnut_color=[],
+                                        parentterm=[],
+                                        year=[],
+                                        doughnut_stage=[]))
+    doughnut_plot3 = figure(plot_height=int(width_dict['doughnut_height']/2),
+                            plot_width=int(width_dict['doughnut_width']),
+                            tools=TOOLS,
+                            toolbar_location=None,
+                            title="Fig 3c: Associations",
+                            x_range=(-1, 1), y_range=(-1, 1))
+    doughnut_hover3 = doughnut_plot2.select(dict(type=HoverTool))
+    doughnut_hover3.tooltips = [("Ancestry: ", "@Broader"),
+                                ("Parent Category: ", "@parentterm"),
+                                ("Percent: ", "@doughnut_toplot{0.000%}")]
+    doughnut_plot3.annular_wedge(x=0.0, y=0.0, inner_radius=0.6,
+                                 outer_radius=.75,
+                                 start_angle=cumsum('doughnut_angle',
+                                                    include_zero=True),
+                                 end_angle=cumsum('doughnut_angle'),
+                                 line_color="white", source=doughnut_source3,
+                                 fill_color='doughnut_color', #legend='Broader',
+                                 direction='anticlock',
+                                 fill_alpha=0.8)
+    doughnut_plot3.axis.axis_label = None
+    doughnut_plot3.axis.visible = False
+    doughnut_plot3.grid.grid_line_color = None
+#    doughnut_plot3.legend.border_line_width = 1
+#    doughnut_plot3.legend.border_line_color = None
+#    doughnut_plot3.legend.label_text_font_size = '8pt'
+#    doughnut_plot3.legend.orientation = "horizontal"
+#    doughnut_plot3.legend.location = "bottom_center"
+    doughnut_plot3.title.align = "center"
+    doughnut_plot3.outline_line_color = None
+    return doughnut_source3, doughnut_hover3, doughnut_plot3
+
+
+def update_doughnut1():
     '''
         Update the doughnut chart with interactive choices.
         This needs to be an ancestray based color dictionary,
@@ -518,53 +619,57 @@ def update_doughnut():
     colorlist = ['#3288bd', '#fee08b', '#d53e4f',
                  '#99d594', '#bdbdbd', '#fc8d59']
     df = select_parent_doughnut()
-    if 'number of studies' in str(metric.value).lower():
-        if str(stage.value) == 'Discovery':
-            doughnut_source.data = dict(Broader=df['Broader'],
-                                        parentterm=df['parentterm'],
-                                        doughnut_toplot=df['InitialCount']/100,
-                                        doughnut_angle=df['InitialCount'] /
-                                        df['InitialCount'].sum()*2*pi,
-                                        doughnut_color=colorlist,
-                                        doughnut_stage=['Initial']*len(df))
-        elif str(stage.value) == 'Replication':
-            doughnut_source.data = dict(Broader=df['Broader'],
-                                        parentterm=df['parentterm'],
-                                        doughnut_toplot=df['ReplicationCount']/100,
-                                        doughnut_angle=df['ReplicationCount'] /
-                                        df['ReplicationCount'].sum()*2*pi,
-                                        doughnut_color=colorlist,
-                                        doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Fig 3: Number Studies, ' +\
-                                   str(parent.value) + ' at ' +\
-                                   str(stage.value)
-    elif 'number of participants' in str(metric.value).lower():
-        if str(stage.value) == 'Discovery':
-            doughnut_source.data = dict(Broader=df['Broader'],
-                                        parentterm=df['parentterm'],
-                                        doughnut_toplot=df['InitialN']/100,
-                                        doughnut_angle=df['InitialN'] /
-                                        df['InitialN'].sum()*2*pi,
-                                        doughnut_color=colorlist,
-                                        doughnut_stage=['Initial']*len(df))
-        elif str(stage.value) == 'Replication':
-            doughnut_source.data = dict(Broader=df['Broader'],
-                                        parentterm=df['parentterm'],
-                                        doughnut_toplot=df['ReplicationN']/100,
-                                        doughnut_angle=df['ReplicationN'] /
-                                        df['ReplicationN'].sum()*2*pi,
-                                        doughnut_color=colorlist,
-                                        doughnut_stage=['Replication']*len(df))
-        doughnut_plot.title.text = 'Fig 3: Number Participants, ' +\
-                                   str(parent.value).title() + ' at ' +\
-                                   str(stage.value)
+    doughnut_source1.data = dict(Broader=df['Broader'],
+                                 parentterm=df['parentterm'],
+                                 doughnut_toplot=df['InitialCount']/100,
+                                 doughnut_angle=df['InitialCount'] /
+                                 df['InitialCount'].sum()*2*pi,
+                                 doughnut_color=colorlist)
+
+
+def update_doughnut2():
+    '''
+        Update the doughnut chart with interactive choices.
+        This needs to be an ancestray based color dictionary,
+        harmonized with the bubble plot.
+        Ideally, this needs to be a better type of annular figure...
+    '''
+    colorlist = ['#3288bd', '#fee08b', '#d53e4f',
+                 '#99d594', '#bdbdbd', '#fc8d59']
+    df = select_parent_doughnut()
+    doughnut_source2.data = dict(Broader=df['Broader'],
+                                 parentterm=df['parentterm'],
+                                 doughnut_toplot=df['InitialN']/100,
+                                 doughnut_angle=df['InitialN'] /
+                                 df['InitialN'].sum()*2*pi,
+                                 doughnut_color=colorlist)
+
+
+def update_doughnut3():
+    '''
+        Update the doughnut chart with interactive choices.
+        This needs to be an ancestray based color dictionary,
+        harmonized with the bubble plot.
+        Ideally, this needs to be a better type of annular figure...
+    '''
+    colorlist = ['#3288bd', '#fee08b', '#d53e4f',
+                 '#99d594', '#bdbdbd', '#fc8d59']
+    df = select_parent_doughnut()
+    doughnut_source3.data = dict(Broader=df['Broader'],
+                                parentterm=df['parentterm'],
+                                doughnut_toplot=df['InitialAssociationSum']/100,
+                                doughnut_angle=df['InitialAssociationSum'] /
+                                df['InitialAssociationSum'].sum()*2*pi,
+                                doughnut_color=colorlist)
 
 
 def select_parent_doughnut():
     ''' select parent data for the doughnut'''
     parent_val = parent.value
+    year_val = slider.value
     selected = doughnut_df
-    selected = selected[selected['parentterm'] == parent_val]
+    selected = selected[(selected['parentterm'] == parent_val) &
+                        (selected['Year'] == year_val)]
     return selected
 
 
@@ -589,7 +694,9 @@ geosource, choro_hover, choro_plot = create_choro_plot(maxyear-1)
 ts1_source, ts1_hover, ts1_plot = create_ts1_plot(maxyear)
 ts2_source, ts2_hover, ts2_plot = create_ts2_plot(maxyear)
 bubble_source, bubble_hover, bubble_plot = create_bubble_plot()
-doughnut_source, doughnut_hover, doughnut_plot = create_doughnut_plot()
+doughnut_source1, doughnut_hover1, doughnut_plot1 = create_doughnut_plot1()
+doughnut_source2, doughnut_hover2, doughnut_plot2 = create_doughnut_plot2()
+doughnut_source3, doughnut_hover3, doughnut_plot3 = create_doughnut_plot3()
 
 controls = [metric, ancestry, parent, stage, slider]
 for control in controls:
@@ -599,10 +706,14 @@ for control in controls:
     control.on_change('value', lambda attr, old, new: update_ts1())
     control.on_change('value', lambda attr, old, new: update_ts2())
     control.on_change('value', lambda attr, old, new: update_bubble())
-    control.on_change('value', lambda attr, old, new: update_doughnut())
+    control.on_change('value', lambda attr, old, new: update_doughnut1())
+    control.on_change('value', lambda attr, old, new: update_doughnut2())
+    control.on_change('value', lambda attr, old, new: update_doughnut3())
 update()
 controls = controls[:-1]
-doughnut_plot.sizing_mode = "stretch_both"
+doughnut_plot1.sizing_mode = "stretch_both"
+doughnut_plot2.sizing_mode = "stretch_both"
+doughnut_plot3.sizing_mode = "stretch_both"
 bubble_plot.sizing_mode = "stretch_both"
 choro_plot.sizing_mode = "stretch_both"
 ts1_plot.sizing_mode = "stretch_both"
@@ -610,11 +721,13 @@ ts2_plot.sizing_mode = "stretch_both"
 hbar_plot.sizing_mode = "stretch_both"
 
 #  Add the plots into the jinja2 template
+curdoc().add_root(row(column(*controls), slider))
+curdoc().add_root(row(hbar_plot, name='hbar'))
 curdoc().add_root(row(bubble_plot, name='bubble'))
 curdoc().add_root(row(choro_plot, name='choro'))
 curdoc().add_root(row(ts1_plot, name='ts1'))
-curdoc().add_root(row(hbar_plot, name='hbar'))
-curdoc().add_root(row(doughnut_plot, name='doh'))
-curdoc().add_root(row(column(*controls), slider))
 curdoc().add_root(row(ts2_plot, name='ts2'))
+curdoc().add_root(row(doughnut_plot1, name='doh1'))
+curdoc().add_root(row(doughnut_plot2, name='doh2'))
+curdoc().add_root(row(doughnut_plot3, name='doh3'))
 curdoc().title = "GWAS Diversity Monitor"

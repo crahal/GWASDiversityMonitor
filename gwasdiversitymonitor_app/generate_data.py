@@ -5,6 +5,7 @@ import logging
 import datetime
 import numpy as np
 import requests
+import traceback
 import requests_ftp
 import os
 import re
@@ -141,47 +142,47 @@ def update_summarystats(sumstats, summaryfile):
     something like yattag, if not a custom js function to embed'''
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[164] = '<li> <p>There are a total of ' + \
+    summary[172] = '<li> <p>There are a total of ' + \
                    str(sumstats['number_studies']) +\
                    ' studies in the Catalog.</p></li>\n'
-    summary[165] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
+    summary[173] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
                    str(sumstats['first_study_pubmedid']) + ' on ' +\
                    str(sumstats['first_study_date']) + ' by ' +\
                    str(sumstats['first_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[166] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
+    summary[174] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
                    str(sumstats['last_study_pubmedid']) + ' on ' +\
                    str(sumstats['last_study_date']) + ' by ' +\
                    str(sumstats['last_study_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[167] = '<li> <p>Accession with biggest sample is PubMedID ' +\
+    summary[175] = '<li> <p>Accession with biggest sample is PubMedID ' +\
                    str(sumstats['large_accesion_pubmed']) + ' (N=' +\
                    str(sumstats['large_accesion_N']) + ') by ' +\
                    str(sumstats['large_accesion_firstauthor']) +\
                    ' et al.</p></li>\n'
-    summary[168] = '<li> <p>There are a total of ' +\
+    summary[176] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_accessions']) +\
                    ' unique study accessions.</p></li>\n'
-    summary[169] = '<li> <p>There are a total of ' +\
+    summary[177] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_diseasestraits']) +\
                    ' unique diseases and traits studied.</p></li>\n'
-    summary[170] = '<li> <p>There are a total of ' +\
+    summary[178] = '<li> <p>There are a total of ' +\
                    str(sumstats['number_mappedtrait']) +\
                    ' unique EBI "Mapped Traits".</p></li>\n'
-    summary[171] = '<li> <p>The total number of associations found is ' +\
+    summary[179] = '<li> <p>The total number of associations found is ' +\
                    str(sumstats['found_associations']) +\
                    '.</p></li>\n'
-    summary[172] = '<li> <p>The average number of associations found is ' +\
+    summary[180] = '<li> <p>The average number of associations found is ' +\
                    str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
-    summary[173] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
+    summary[181] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
                    "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
-    summary[174] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
+    summary[182] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
                    str(sumstats['threshold_pvals']) + '.</p></li>\n'
-    summary[175] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
+    summary[183] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
                    str(sumstats['mostcommon_journal']) + '.</p></li>\n'
-    summary[176] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
+    summary[184] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
                    str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[177] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
+    summary[185] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
                    str(sumstats['noneuro_trait']) + '.</p></li>\n'
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
@@ -257,37 +258,44 @@ def ancestry_cleaner(row, field):
 
 def make_heatmatrix(merged, stage, out_path):
     ''' not currently used by the dashboard '''
-    merged = merged[merged['STAGE'] == stage]
-    ancestry_ranking = pd.DataFrame(merged.groupby(['Broader'])['Broader'].
-                                    count()).rename({'Broader': 'Count'},
-                                                    axis=1).\
-        sort_values(ascending=False, by='Count')
-    parent_ranking = pd.DataFrame(merged.groupby(['parentterm'])['parentterm'].
-                                  count()).rename({'parentterm': 'Count'}, axis=1).\
-        sort_values(ascending=False, by='Count')
-    df_count = pd.DataFrame(index=ancestry_ranking.index.tolist(),
-                            columns=parent_ranking.index.tolist())
-    for index in df_count.index:
-        for column in df_count.columns:
-            df_count.at[index,
-                        column] = len(merged[(merged['Broader'] == index) &
-                                             (merged['parentterm'] == column)])
-
-    df_count.to_csv(os.path.join(out_path, 'heatmap_count_'+stage+'.csv'))
-    ancestry_ranking = pd.DataFrame(merged.groupby(['Broader'])['N'].
-                                    sum()).\
-        sort_values(ascending=False, by='N')
-    parent_ranking = pd.DataFrame(merged.groupby(['parentterm'])['N'].
-                                  sum()).sort_values(ascending=False, by='N')
-    df_sum = pd.DataFrame(index=ancestry_ranking.index.tolist(),
-                          columns=parent_ranking.index.tolist())
-    for index in df_sum.index:
-        for column in df_sum.columns:
-            df_sum.at[index,
-                      column] = merged[(merged['Broader'] == index) &
-                                       (merged['parentterm'] == column)]['N'].\
-                                       sum()
-    df_sum.to_csv(os.path.join(out_path, 'heatmap_sum_'+stage+'.csv'))
+    col_list = merged['parentterm'].unique().tolist()
+    col_list.append('Year')
+    index_list = merged[merged['Broader'].notnull()]['Broader'].unique().tolist()
+    count_df = pd.DataFrame(columns=col_list)
+    sum_df = pd.DataFrame(columns=col_list)
+    for year in range(2008, 2020):
+        temp_merged = merged[(merged['STAGE'] == stage) &
+                             (merged['DATE'].str.contains(str(year)))]
+#        ancestry_ranking = pd.DataFrame(merged.groupby(['Broader'])['Broader'].
+#                                        count()).rename({'Broader': 'Count'},
+#                                                        axis=1).\
+#            sort_values(ascending=False, by='Count')
+#        parent_ranking = pd.DataFrame(merged.groupby(['parentterm'])['parentterm'].
+#                                      count()).rename({'parentterm': 'Count'}, axis=1).\
+#            sort_values(ascending=False, by='Count')
+#        count_columns = parent_ranking.index.tolist()
+#        count_columns.append('Year')
+        temp_count_df = pd.DataFrame(index=index_list,
+                                     columns=col_list)
+        for index in temp_count_df.index:
+            for column in temp_count_df.columns:
+                temp_count_df.at[index,
+                                 column] = len(temp_merged[(temp_merged['Broader'] == index) &
+                                              (temp_merged['parentterm'] == column)])
+                temp_count_df.at[index, 'Year'] = year
+        count_df = count_df.append(temp_count_df, sort=False)
+        temp_sum_df = pd.DataFrame(index=index_list,
+                                   columns=col_list)
+        for index in temp_sum_df.index:
+            for column in temp_sum_df.columns:
+                temp_sum_df.at[index,
+                               column] = temp_merged[(temp_merged['Broader'] == index) &
+                                                     (temp_merged['parentterm'] == column)]['N'].\
+                                                     sum()
+            temp_sum_df.at[index, 'Year'] = year
+        sum_df = sum_df.append(temp_sum_df, sort=False)
+    sum_df.to_csv(os.path.join(out_path, 'heatmap_sum_'+stage+'.csv'))
+    count_df.to_csv(os.path.join(out_path, 'heatmap_count_'+stage+'.csv'))
 
 
 def make_heatmap_dfs(data_path):
@@ -332,7 +340,7 @@ def make_heatmap_dfs(data_path):
                                       '\t', index_col=False)
     merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
                                                'parentterm']],
-                      Cat_Anc_withBroader[['STUDY ACCESSION',
+                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
                                            'Broader', 'N', 'STAGE']],
                       how='left', on='STUDY ACCESSION')
     make_heatmatrix(merged, 'initial', os.path.join(data_path,
@@ -717,80 +725,120 @@ def make_doughnut_df(data_path):
                                       '\t', index_col=False)
     Cat_Anc_withBroader = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
     merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-                                               'parentterm']],
-                      Cat_Anc_withBroader[['STUDY ACCESSION',
+                                               'parentterm',
+                                               'ASSOCIATION COUNT']],
+                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
                                            'Broader', 'N', 'STAGE']],
                       how='left', on='STUDY ACCESSION')
-    doughnut_df = pd.DataFrame(index=[], columns=['Broader', 'parentterm',
-                                                  'InitialN', 'ReplicationN',
+    doughnut_df = pd.DataFrame(index=[], columns=['Broader',
+                                                  'parentterm',
+                                                  'Year',
+                                                  'InitialN',
                                                   'InitialCount',
-                                                  'ReplicationCount'])
+                                                  'ReplicationN',
+                                                  'ReplicationCount',
+                                                  'InitialAssociationSum',
+                                                  ])
     merged = merged[merged['Broader'].notnull()]
     merged = merged[merged['parentterm'].notnull()]
     counter = 0
-    for ancestry in merged['Broader'].unique().tolist():
-        doughnut_df.at[counter, 'Broader'] = ancestry
-        doughnut_df.at[counter, 'parentterm'] = 'All'
-        doughnut_df.at[counter,
-                     'ReplicationN'] = (merged[(
-                                        merged['STAGE'] == 'replication') &
-                                        (merged['Broader'] == ancestry)]['N'].
-                                        sum() /
-                                        merged[merged['STAGE'] ==
-                                        'replication']['N'].sum())*100
-        doughnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
-                                                     'initial') &
-                                                    (merged['Broader'] ==
-                                                     ancestry)]['N'].sum() /
-                                             merged[merged['STAGE'] ==
-                                                    'initial']['N'].sum())*100
-        doughnut_df.at[counter, 'ReplicationCount'] = (len(merged[
+    for year in range(2008, 2020):
+        for ancestry in merged['Broader'].unique().tolist():
+            doughnut_df.at[counter, 'Broader'] = ancestry
+            doughnut_df.at[counter, 'parentterm'] = 'All'
+            doughnut_df.at[counter, 'Year'] = year
+            doughnut_df.at[counter,
+                         'ReplicationN'] = (merged[(
+                                            merged['STAGE'] == 'replication') &
+                                            (merged['Broader'] == ancestry)]['N'].
+                                            sum() /
+                                            merged[merged['STAGE'] ==
+                                            'replication']['N'].sum())*100
+            doughnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
+                                                         'initial') &
+                                                        (merged['Broader'] ==
+                                                         ancestry) &
+                                                        (merged['DATE'].str.contains(str(year)))]['N'].sum() /
+                                                 merged[(merged['STAGE'] ==
+                                                        'initial') &
+                                                        (merged['DATE'].str.contains(str(year)))]['N'].sum())*100
+            doughnut_df.at[counter, 'InitialAssociationSum'] = (merged[(merged['STAGE'] ==
+                                                                'initial') &
+                                                               (merged['Broader'] ==
+                                                                ancestry) &
+                                                                (merged['DATE'].str.contains(str(year)))]['ASSOCIATION COUNT'].sum() /
+                                                               merged[(merged['STAGE'] ==
+                                                                      'initial') &
+                                                                  (merged['DATE'].str.contains(str(year)))]['ASSOCIATION COUNT'].sum())*100
+            doughnut_df.at[counter, 'ReplicationCount'] = (len(merged[
+                                                             (merged['Broader'] ==
+                                                              ancestry)]) /
+                                                         len(merged[
+                                                              merged['STAGE'] ==
+                                                             'replication']))*100
+            doughnut_df.at[counter, 'InitialCount'] = (len(merged[
+                                                         (merged['STAGE'] ==
+                                                          'initial') &
+                                                          (merged['DATE'].str.contains(str(year))) &
                                                          (merged['Broader'] ==
                                                           ancestry)]) /
-                                                     len(merged[
-                                                          merged['STAGE'] ==
-                                                         'replication']))*100
-        doughnut_df.at[counter, 'InitialCount'] = (len(merged[
-                                                     (merged['STAGE'] ==
-                                                      'initial') &
-                                                     (merged['Broader'] ==
-                                                      ancestry)]) /
-                                                 len(merged[merged['STAGE'] ==
-                                                            'initial']))*100
-        counter = counter + 1
-        for parent in merged['parentterm'].unique().tolist():
-            doughnut_df.at[counter, 'Broader'] = ancestry
-            doughnut_df.at[counter, 'parentterm'] = parent
-            doughnut_df.at[counter,
-                         'ReplicationN'] = (merged[
-                                            (merged['STAGE'] == 'replication') &
-                                            (merged['parentterm'] == parent) &
-                                            (merged['Broader'] == ancestry)]['N'].sum() /
-                                            merged[(merged['STAGE'] == 'replication') &
-                                            (merged['parentterm'] == parent)]['N'].sum())*100
-            doughnut_df.at[counter,
-                         'InitialN'] = (merged[(merged['STAGE'] == 'initial') &
-                                               (merged['Broader'] == ancestry) &
-                                               (merged['parentterm'] == parent)]['N'].sum() /
-                                        merged[(merged['STAGE'] == 'initial') &
-                                               (merged['parentterm'] == parent)]['N'].sum())*100
-            doughnut_df.at[counter,
-                         'ReplicationCount'] = (len(merged[
-                                                   (merged['STAGE'] == 'replication') &
-                                                   (merged['parentterm'] == parent) &
-                                                   (merged['Broader'] == ancestry)]) /
-                                                len(merged[
-                                                   (merged['STAGE'] == 'replication') &
-                                                   (merged['parentterm'] == parent)])) * 100
-            doughnut_df.at[counter,
-                         'InitialCount'] = (len(merged[
-                                               (merged['STAGE'] == 'initial') &
-                                               (merged['parentterm'] == parent) &
-                                               (merged['Broader'] == ancestry)]) /
-                                            len(merged[
-                                               (merged['STAGE'] == 'initial') &
-                                               (merged['parentterm'] == parent)])) * 100
+                                                     len(merged[(merged['STAGE'] ==
+                                                                'initial') &
+                                                                (merged['DATE'].str.contains(str(year)))]))*100
             counter = counter + 1
+            for parent in merged['parentterm'].unique().tolist():
+                try:
+                    doughnut_df.at[counter, 'Broader'] = ancestry
+                    doughnut_df.at[counter, 'parentterm'] = parent
+                    doughnut_df.at[counter, 'Year'] = year
+                    doughnut_df.at[counter,
+                                 'ReplicationN'] = (merged[
+                                                    (merged['STAGE'] == 'replication') &
+                                                    (merged['parentterm'] == parent) &
+                                                    (merged['DATE'].str.contains(str(year))) &
+                                                    (merged['Broader'] == ancestry)]['N'].sum() /
+                                                    merged[(merged['STAGE'] == 'replication') &
+                                                    (merged['DATE'].str.contains(str(year))) &
+                                                    (merged['parentterm'] == parent)]['N'].sum())*100
+                    doughnut_df.at[counter,
+                                 'InitialN'] = (merged[(merged['STAGE'] == 'initial') &
+                                                       (merged['Broader'] == ancestry) &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['parentterm'] == parent)]['N'].sum() /
+                                                merged[(merged['STAGE'] == 'initial') &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['parentterm'] == parent)]['N'].sum())*100
+                    doughnut_df.at[counter,
+                                   'InitialAssociationSum'] = (merged[(merged['STAGE'] == 'initial') &
+                                                       (merged['Broader'] == ancestry) &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['parentterm'] == parent)]['ASSOCIATION COUNT'].sum() /
+                                                merged[(merged['STAGE'] == 'initial') &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['parentterm'] == parent)]['ASSOCIATION COUNT'].sum())*100
+                    doughnut_df.at[counter,
+                                 'ReplicationCount'] = (len(merged[
+                                                           (merged['STAGE'] == 'replication') &
+                                                           (merged['parentterm'] == parent) &
+                                                           (merged['DATE'].str.contains(str(year))) &
+                                                           (merged['Broader'] == ancestry)]) /
+                                                        len(merged[
+                                                           (merged['STAGE'] == 'replication') &
+                                                           (merged['DATE'].str.contains(str(year))) &
+                                                           (merged['parentterm'] == parent)])) * 100
+                    doughnut_df.at[counter,
+                                 'InitialCount'] = (len(merged[
+                                                       (merged['STAGE'] == 'initial') &
+                                                       (merged['parentterm'] == parent) &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['Broader'] == ancestry)]) /
+                                                    len(merged[
+                                                       (merged['STAGE'] == 'initial') &
+                                                       (merged['DATE'].str.contains(str(year))) &
+                                                       (merged['parentterm'] == parent)])) * 100
+                except ZeroDivisionError:
+                    doughnut_df.at[counter, 'InitialN'] = np.nan
+                counter = counter + 1
     doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('African Am./Caribbean', 'Af. Am./Carib.')
     doughnut_df['Broader'] = doughnut_df['Broader'].str.\
@@ -858,6 +906,7 @@ def make_bubbleplot_df(data_path):
                                "#99d594", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'African',
                                "#fc8d59", merged["color"])
+    merged = merged.rename(columns={"STUDY ACCESSION": "ACCESSION"})
     merged.to_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'))
 
 
@@ -1078,5 +1127,5 @@ if __name__ == "__main__":
                                 'gwasdiversitymonitor_download.zip'))
     except Exception as e:
         diversity_logger.debug('generate_data.py failed, uncaught error: ' +
-                               str(e))
+                               str(traceback.format_exc()))
     logging.shutdown()
