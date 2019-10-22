@@ -96,3 +96,5 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasd
     with open(outpath, "w") as file:
 FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
 
+2019-10-22 17:40:50,471 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-22 17:40:51,639 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
