@@ -11,6 +11,7 @@ import os
 import re
 import csv
 import shutil
+from yattag import Doc, indent
 
 
 def setup_logging(logpath):
@@ -140,50 +141,99 @@ def update_summarystats(sumstats, summaryfile):
     Write the summary stats json into the index.html
     This is currently extremely hacky and as a minimum needs to be using
     something like yattag, if not a custom js function to embed'''
+
+    starttag = '<li> <p>'
+    endtag = '</p></li>\n'
+    sum_line_1 = 'There are a total of ' + str(sumstats['number_studies']) +\
+                 ' studies in the Catalog.'
+    sum_line_2 = 'Earliest study in catalogue was PubMedID ' +\
+                 str(sumstats['first_study_pubmedid']) + ' on ' +\
+                 str(sumstats['first_study_date']) + ' by ' +\
+                 str(sumstats['first_study_firstauthor']) + ' et al.'
+    sum_line_3 = 'Most recent study in the catalogue was PubMedID ' +\
+                 str(sumstats['last_study_pubmedid']) + ' on ' +\
+                 str(sumstats['last_study_date']) + ' by ' +\
+                 str(sumstats['last_study_firstauthor']) + ' et al.'
+    sum_line_4 = 'Accession with biggest sample is PubMedID ' +\
+                 str(sumstats['large_accesion_pubmed']) + ' (N=' +\
+                 str(sumstats['large_accesion_N']) + ') by ' +\
+                 str(sumstats['large_accesion_firstauthor']) + ' et al.'
+    sum_line_5 = 'There are a total of ' +\
+                 str(sumstats['number_accessions']) +\
+                 ' unique study accessions.'
+    sum_line_6 = 'There are a total of ' +\
+                 str(sumstats['number_diseasestraits']) +\
+                 ' unique diseases and traits studied.'
+    sum_line_7 = 'There are a total of ' +\
+                 str(sumstats['number_mappedtrait']) +\
+                 ' unique EBI "Mapped Traits".'
+    sum_line_8 = 'The total number of associations found is ' +\
+                 str(sumstats['found_associations']) + '.'
+    sum_line_9 = 'The average number of associations found is ' +\
+                 str(round(sumstats['average_associations'], 2)) + '.'
+    sum_line_10 = 'Mean P-Value for the strongest SNP risk allele is: ' +\
+                  "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.'
+    sum_line_11 = 'The number of associations reaching the 5e-8 significance threshold: ' +\
+                  str(sumstats['threshold_pvals']) + '.'
+    sum_line_12 = 'The journal to feature the most GWAS studies is: ' +\
+                  str(sumstats['mostcommon_journal']) + '.'
+    sum_line_13 = 'Total number of different journals publishing GWAS is: ' +\
+                  str(sumstats['unique_journals']) + '.'
+    sum_line_14 = 'Most frequently studied (Non-European) disease or trait: ' +\
+                  str(sumstats['noneuro_trait']) + '.'
+
+    outpath = os.path.abspath(os.path.join('.', 'templates', 'sumstats.html'))
+    doc, tag, text, line = Doc().ttl()
+    doc.asis('<!DOCTYPE html>')
+    with tag('head'):
+        doc.asis('<meta charset="utf-8">')
+        doc.asis('<meta name="viewport" content="width=device-width, initial-scale=1">')
+        doc.asis('<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">')
+        with tag('script', src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"):
+            pass
+        with tag('script', src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"):
+            pass
+        with tag('html'):
+            with tag('h1'):
+                text('Summary Statistics')
+            with tag('p'):
+                text('Here we present a range of summary statistics related to the data which powers the dashboard (and some which doesnt), updated when the Catalog is updated. Note that these summary statistics and the figures themselves only use raw (wrangled) data from the GWAS Catalog. Currently:')
+            with tag('body'):
+                with tag('ul', id='summary-list'):
+                    line('li', sum_line_1)
+                    line('li', sum_line_2)
+                    line('li', sum_line_3)
+                    line('li', sum_line_4)
+                    line('li', sum_line_5)
+                    line('li', sum_line_6)
+                    line('li', sum_line_7)
+                    line('li', sum_line_8)
+                    line('li', sum_line_9)
+                    line('li', sum_line_10)
+                    line('li', sum_line_11)
+                    line('li', sum_line_12)
+                    line('li', sum_line_13)
+                    line('li', sum_line_14)
+    summaryhtml = indent(doc.getvalue(), indent_text=True)
+    with open(outpath, "w") as file:
+        file.write(summaryhtml)
+
     with open(summaryfile, 'r') as file:
         summary = file.readlines()
-    summary[172] = '<li> <p>There are a total of ' + \
-                   str(sumstats['number_studies']) +\
-                   ' studies in the Catalog.</p></li>\n'
-    summary[173] = '<li> <p>Earliest study in catalogue was PubMedID ' +\
-                   str(sumstats['first_study_pubmedid']) + ' on ' +\
-                   str(sumstats['first_study_date']) + ' by ' +\
-                   str(sumstats['first_study_firstauthor']) +\
-                   ' et al.</p></li>\n'
-    summary[174] = '<li> <p>Most recent study in the catalogue was PubMedID ' +\
-                   str(sumstats['last_study_pubmedid']) + ' on ' +\
-                   str(sumstats['last_study_date']) + ' by ' +\
-                   str(sumstats['last_study_firstauthor']) +\
-                   ' et al.</p></li>\n'
-    summary[175] = '<li> <p>Accession with biggest sample is PubMedID ' +\
-                   str(sumstats['large_accesion_pubmed']) + ' (N=' +\
-                   str(sumstats['large_accesion_N']) + ') by ' +\
-                   str(sumstats['large_accesion_firstauthor']) +\
-                   ' et al.</p></li>\n'
-    summary[176] = '<li> <p>There are a total of ' +\
-                   str(sumstats['number_accessions']) +\
-                   ' unique study accessions.</p></li>\n'
-    summary[177] = '<li> <p>There are a total of ' +\
-                   str(sumstats['number_diseasestraits']) +\
-                   ' unique diseases and traits studied.</p></li>\n'
-    summary[178] = '<li> <p>There are a total of ' +\
-                   str(sumstats['number_mappedtrait']) +\
-                   ' unique EBI "Mapped Traits".</p></li>\n'
-    summary[179] = '<li> <p>The total number of associations found is ' +\
-                   str(sumstats['found_associations']) +\
-                   '.</p></li>\n'
-    summary[180] = '<li> <p>The average number of associations found is ' +\
-                   str(round(sumstats['average_associations'], 2)) + '.</p></li>\n'
-    summary[181] = '<li> <p>Mean P-Value for the strongest SNP risk allele is: ' +\
-                   "{:.3E}".format(Decimal(sumstats['average_pval'])) + '.</p></li>\n'
-    summary[182] = '<li> <p>The number of associations reaching the 5e-8 significance threshold: ' +\
-                   str(sumstats['threshold_pvals']) + '.</p></li>\n'
-    summary[183] = '<li> <p>The journal to feature the most GWAS studies is: ' +\
-                   str(sumstats['mostcommon_journal']) + '.</p></li>\n'
-    summary[184] = '<li> <p>Total number of different journals publishing GWAS is: ' +\
-                   str(sumstats['unique_journals']) + '.</p></li>\n'
-    summary[185] = '<li> <p style="margin-bottom:0.5cm;"> Most frequently studied (Non-European) disease or trait: ' +\
-                   str(sumstats['noneuro_trait']) + '.</p></li>\n'
+    summary[172] = starttag + sum_line_1 + endtag
+    summary[173] = starttag + sum_line_2 + endtag
+    summary[174] = starttag + sum_line_3 + endtag
+    summary[175] = starttag + sum_line_4 + endtag
+    summary[176] = starttag + sum_line_5 + endtag
+    summary[177] = starttag + sum_line_6 + endtag
+    summary[178] = starttag + sum_line_7 + endtag
+    summary[179] = starttag + sum_line_8 + endtag
+    summary[180] = starttag + sum_line_9 + endtag
+    summary[181] = starttag + sum_line_10 + endtag
+    summary[182] = starttag + sum_line_11 + endtag
+    summary[183] = starttag + sum_line_12 + endtag
+    summary[184] = starttag + sum_line_13 + endtag
+    summary[185] = starttag + sum_line_14 + endtag
     with open(summaryfile, 'w') as file:
         file.writelines(summary)
 
