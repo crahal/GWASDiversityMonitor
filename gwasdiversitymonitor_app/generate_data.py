@@ -130,6 +130,88 @@ def create_summarystats(data_path):
     total_hisorlatinam = round(((Cat_Anc_NoNR[Cat_Anc_NoNR['Broader'].str.contains('Hispanic')]['N'].
                            sum() / Cat_Anc_NoNR['N'].sum())*100), 2)
     sumstats['total_hisorlatinam'] = total_hisorlatinam
+
+    # now rotate through the 4 filters
+    Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
+    Cat_Anc_NoNR_initial = Cat_Anc_NoNR[Cat_Anc_NoNR['STAGE'] == 'initial']
+    discovery_participants_european = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'European']['N'].
+                                      sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_european'] = discovery_participants_european
+    discovery_participants_asian = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'Asian']['N'].
+                                   sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_asian'] = discovery_participants_asian
+    discovery_participants_african = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'African']['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_african'] = discovery_participants_african
+    discovery_participants_othermixed = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Other')]['N'].
+                               sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_othermixed'] = discovery_participants_othermixed
+    discovery_participants_afamafcam = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Cari')]['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_afamafcam'] = discovery_participants_afamafcam
+    discovery_participants_hisorlatinam = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['discovery_participants_hisorlatinam'] = discovery_participants_hisorlatinam
+
+    discovery_studies_european = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'European']) /
+                                        len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['discovery_studies_european'] = discovery_studies_european
+    discovery_studies_asian = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'Asian']) /
+                                     len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['discovery_studies_asian'] = discovery_studies_asian
+    discovery_studies_african = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'African']) /
+                                      len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['discovery_studies_african'] = discovery_studies_african
+    discovery_studies_othermixed = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Other')]) /
+                                         len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['discovery_studies_othermixed'] = discovery_studies_othermixed
+    discovery_studies_afamafcam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Cari')]) /
+                                        len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['discovery_studies_afamafcam'] = discovery_studies_afamafcam
+    discovery_studies_hisorlatinam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]) /
+                                           len(Cat_Anc_NoNR_initial))*100), 2)
+
+
+    Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
+    Cat_Anc_NoNR_initial = Cat_Anc_NoNR[Cat_Anc_NoNR['STAGE'] == 'replication']
+    replication_participants_european = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'European']['N'].
+                                      sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_european'] = replication_participants_european
+    replication_participants_asian = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'Asian']['N'].
+                                   sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_asian'] = replication_participants_asian
+    replication_participants_african = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'African']['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_african'] = replication_participants_african
+    replication_participants_othermixed = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Other')]['N'].
+                               sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_othermixed'] = replication_participants_othermixed
+    replication_participants_afamafcam = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Cari')]['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_afamafcam'] = replication_participants_afamafcam
+    replication_participants_hisorlatinam = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]['N'].
+                           sum() / Cat_Anc_NoNR_initial['N'].sum())*100), 2)
+    sumstats['replication_participants_hisorlatinam'] = replication_participants_hisorlatinam
+
+    replication_studies_european = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'European']) /
+                                        len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['replication_studies_european'] = replication_studies_european
+    replication_studies_asian = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'Asian']) /
+                                     len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['replication_studies_asian'] = replication_studies_asian
+    replication_studies_african = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'African']) /
+                                      len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['replication_studies_african'] = replication_studies_african
+    replication_studies_othermixed = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Other')]) /
+                                         len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['replication_studies_othermixed'] = replication_studies_othermixed
+    replication_studies_afamafcam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Cari')]) /
+                                        len(Cat_Anc_NoNR_initial))*100), 2)
+    sumstats['replication_studies_afamafcam'] = replication_studies_afamafcam
+    replication_studies_hisorlatinam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]) /
+                                           len(Cat_Anc_NoNR_initial))*100), 2)
+
+    sumstats['discovery_studies_hisorlatinam'] = discovery_studies_hisorlatinam
     json_path = os.path.join(data_path, 'summary', 'summary.json')
     with open(json_path, 'w') as outfile:
         json.dump(sumstats, outfile)
