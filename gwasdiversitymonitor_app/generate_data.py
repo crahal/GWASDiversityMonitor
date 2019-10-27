@@ -12,6 +12,8 @@ import re
 import csv
 import shutil
 from yattag import Doc, indent
+import warnings
+warnings.filterwarnings("ignore")
 
 
 def setup_logging(logpath):
@@ -1179,8 +1181,8 @@ def download_cat(data_path, ebi_download):
                                    'cat_full', catfull_name),
                 'wb') as tsvfile:
                 tsvfile.write(r.content)
-            diversity_logger.info('Successfully downloaded ' + catfull_name)
         else:
+            diversity_logger.info('Successfully downloaded ' + catfull_name)
             diversity_logger.debug('Problem downloading the Cat_full file...')
         requests_ftp.monkeypatch_session()
         s = requests.Session()
