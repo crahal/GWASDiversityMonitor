@@ -405,7 +405,7 @@ def create_bubble_plot():
                              ("First Author", "@AUTHOR"),
                              ("Trait", "@TRAIT"),
                              ("Accession", "@Accession"),
-                             ("EFOTerm","@EFOTerm")]
+                             ("EFO Term","@EFOTerm")]
     bubble_plot.circle(x='DATE', y='N', source=bubble_source,
                        color='bubble_color', size='size', alpha=0.45,
                        line_color='black', line_width=0.175, legend='Broader')
