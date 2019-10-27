@@ -319,3 +319,13 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasd
     with open(outpath, "w") as file:
 FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
 
+2019-10-27 12:33:50,151 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-27 12:33:50,946 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-27 12:33:58,650 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 12:35:55,151 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "gwasdiversitymonitor_app/generate_data.py", line 1260, in <module>
+    update_summarystats(sumstats, index_filepath)
+  File "gwasdiversitymonitor_app/generate_data.py", line 302, in update_summarystats
+    with open(outpath, "w") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
+
