@@ -175,3 +175,106 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasd
     with open(outpath, "w") as file:
 FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
 
+2019-10-26 23:35:32,438 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-26 23:35:33,472 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-26 23:35:41,842 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-26 23:35:42,344 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-26 23:35:44,727 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1240, in <module>
+    make_bubbleplot_df(data_path)
+  File "generate_data.py", line 1010, in make_bubbleplot_df
+    'DISEASE/TRAIT', 'parentterm']].drop_duplicates()
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py", line 2934, in __getitem__
+    raise_missing=True)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1354, in _convert_to_indexer
+    return self._get_listlike_indexer(obj, axis, **kwargs)[1]
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1161, in _get_listlike_indexer
+    raise_missing=raise_missing)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1252, in _validate_read_indexer
+    raise KeyError("{} not in index".format(not_found))
+KeyError: "['DISEASE/TRAIT'] not in index"
+
+2019-10-26 23:41:07,241 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-26 23:41:08,442 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-26 23:41:17,065 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-26 23:41:17,604 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-26 23:41:19,936 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1242, in <module>
+    make_bubbleplot_df(data_path)
+  File "generate_data.py", line 1014, in make_bubbleplot_df
+    'DISEASE/TRAIT', 'parentterm']].drop_duplicates()
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py", line 2934, in __getitem__
+    raise_missing=True)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1354, in _convert_to_indexer
+    return self._get_listlike_indexer(obj, axis, **kwargs)[1]
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1161, in _get_listlike_indexer
+    raise_missing=raise_missing)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1252, in _validate_read_indexer
+    raise KeyError("{} not in index".format(not_found))
+KeyError: "['DISEASE/TRAIT'] not in index"
+
+2019-10-26 23:42:37,327 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-26 23:42:38,810 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-26 23:42:46,834 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-26 23:42:47,340 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-26 23:42:50,073 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1242, in <module>
+    make_bubbleplot_df(data_path)
+  File "generate_data.py", line 1022, in make_bubbleplot_df
+    'parentterm', 'DISEASE/TRAIT']],
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py", line 2934, in __getitem__
+    raise_missing=True)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1354, in _convert_to_indexer
+    return self._get_listlike_indexer(obj, axis, **kwargs)[1]
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1161, in _get_listlike_indexer
+    raise_missing=raise_missing)
+  File "/home/tsl/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py", line 1252, in _validate_read_indexer
+    raise KeyError("{} not in index".format(not_found))
+KeyError: "['STUDY ACCESSION'] not in index"
+
+2019-10-26 23:45:01,673 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-26 23:45:03,084 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-26 23:45:11,262 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-26 23:45:12,183 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-26 23:47:13,120 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-26 23:47:13,180 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-26 23:59:21,893 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-26 23:59:23,192 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-26 23:59:31,937 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-26 23:59:32,357 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 00:01:35,945 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-27 00:01:36,009 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-27 00:10:54,424 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-27 00:10:55,741 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-27 00:11:31,510 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-27 00:11:31,930 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 00:13:25,254 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-27 00:13:25,317 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-27 00:18:03,195 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-27 00:18:04,786 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-27 00:18:13,501 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-27 00:18:13,940 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 00:20:07,998 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-27 00:20:08,064 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-27 00:25:37,429 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-27 00:25:38,644 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-27 00:25:46,945 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-27 00:25:47,366 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 00:27:46,444 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "gwasdiversitymonitor_app/generate_data.py", line 1258, in <module>
+    update_summarystats(sumstats, index_filepath)
+  File "gwasdiversitymonitor_app/generate_data.py", line 300, in update_summarystats
+    with open(outpath, "w") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
+
+2019-10-27 06:00:02,509 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-10-27 06:00:03,221 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-10-27 06:00:10,286 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0-associations_e96_r2019-10-14.tsv
+2019-10-27 06:00:10,721 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-10-27 06:02:06,831 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "gwasdiversitymonitor_app/generate_data.py", line 1258, in <module>
+    update_summarystats(sumstats, index_filepath)
+  File "gwasdiversitymonitor_app/generate_data.py", line 300, in update_summarystats
+    with open(outpath, "w") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
+

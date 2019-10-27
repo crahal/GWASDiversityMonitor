@@ -390,7 +390,7 @@ def create_bubble_plot():
     '''
     bubble_source = ColumnDataSource(data=dict(DATE=[], N=[], bubble_color=[],
                                      Broader=[], Size=[], PUBMEDID=[],
-                                     Stage=[], Accession=[]))
+                                     Stage=[], Accession=[], EFOTerm=[]))
     bubble_plot = figure(title='Fig 1: Ancestry Across All Samples Over Time',
                          plot_height=width_dict['bubble_height'],
                          plot_width=width_dict['bubble_width'],
@@ -404,7 +404,8 @@ def create_bubble_plot():
                              ("PUBMEDID", "@PUBMEDID"),
                              ("First Author", "@AUTHOR"),
                              ("Trait", "@TRAIT"),
-                             ("Accession", "@Accession")]
+                             ("Accession", "@Accession"),
+                             ("EFOTerm","@EFOTerm")]
     bubble_plot.circle(x='DATE', y='N', source=bubble_source,
                        color='bubble_color', size='size', alpha=0.45,
                        line_color='black', line_width=0.175, legend='Broader')
@@ -456,7 +457,8 @@ def update_bubble():
                               STAGE=df['STAGE'].str.title(),
                               PARENT=df['parentterm'],
                               TRAIT=df['DiseaseOrTrait'],
-                              Accession=df['ACCESSION'])
+                              Accession=df['ACCESSION'],
+                              EFOTerm=df['EFOTerm'])
     bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) +\
                              ' Ancestry and ' +\
                              str(parent.value) + ', ' + str(slider.value) +\

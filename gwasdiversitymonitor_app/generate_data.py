@@ -459,8 +459,7 @@ def make_heatmap_dfs(data_path):
                                               'Cat_Map.tsv'), sep='\t')
     EFO_Parent_Map = EFO_Parent_Map.rename(columns={"Parent term":
                                                     "parentterm"})
-    EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.lower(
-    ).str.strip()
+    EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.strip()
     EFO_Parent_Map = EFO_Parent_Map[[
         'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
     EFO_Parent_Paper_Merged = pd.merge(
@@ -1006,24 +1005,29 @@ def make_bubbleplot_df(data_path):
                                                     "parentterm"})
     EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.lower(
     ).str.strip()
-    EFO_Parent_Map = EFO_Parent_Map[[
-        'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
+#    EFO_Parent_Map = EFO_Parent_Map[[
+#        'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
     EFO_Parent_Paper_Merged = pd.merge(
         EFOsPerPaper, EFO_Parent_Map, on='EFO URI', how='left')
+    EFO_Parent_Paper_Merged = EFO_Parent_Paper_Merged[[
+        'DISEASE/TRAIT', 'parentterm', 'STUDY ACCESSION', 'EFO term']].drop_duplicates()
     Cat_Anc_withBroader = pd.read_csv(os.path.join(data_path,
                                                    'catalog',
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False,
                                       parse_dates=['DATE'])
-    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
+    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION', 'EFO term',
                                                'parentterm', 'DISEASE/TRAIT']],
                       Cat_Anc_withBroader, how='left', on='STUDY ACCESSION')
     merged["AUTHOR"] = merged["FIRST AUTHOR"]
     merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR", "DISEASE/TRAIT",
-                     "STAGE", 'DATE', "STUDY ACCESSION", "parentterm"]]
+                     "STAGE", 'DATE', "STUDY ACCESSION", "parentterm",
+                     'EFO term']]
     merged = merged.rename(columns={'DISEASE/TRAIT':
                                     'DiseaseOrTrait'})
+    merged = merged.rename(columns={'EFO term':
+                                    'EFOTerm'})
     merged = merged[merged['Broader'] != 'In Part Not Recorded']
     merged["color"] = 'black'
     merged["color"] = np.where(merged["Broader"] == 'European',
