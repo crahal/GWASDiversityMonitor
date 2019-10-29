@@ -983,53 +983,32 @@ def make_bubbleplot_df(data_path):
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t')
-    Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
-    with open(os.path.join(data_path, 'catalog', 'synthetic',
-                           'Mapped_EFO.csv'), 'w', encoding="utf-8") as fileout:
-        efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
-        efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
-                          'PUBMEDID', 'ASSOCIATION COUNT', 'DISEASE/TRAIT'])
-        for index, row in Cat_Stud.iterrows():
-            listoftraits = row['MAPPED_TRAIT_URI'].split(',')
-            for trait in listoftraits:
-                efo_out.writerow([trait.lower().strip(),
-                                  row['STUDY ACCESSION'],
-                                  str(row['PUBMEDID']),
-                                  str(row['ASSOCIATION COUNT']),
-                                  str(row['DISEASE/TRAIT'])])
-    EFOsPerPaper = pd.read_csv(os.path.join(data_path, 'catalog',
-                                            'synthetic', 'Mapped_EFO.csv'),
-                               sep=',')
-    EFO_Parent_Map = pd.read_csv(os.path.join(data_path, 'catalog',
-                                              'raw', 'Cat_Map.tsv'),
-                                 sep='\t')
-    EFO_Parent_Map = EFO_Parent_Map.rename(columns={"Parent term":
-                                                    "parentterm"})
-    EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.lower(
-    ).str.strip()
-#    EFO_Parent_Map = EFO_Parent_Map[[
-#        'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
-    EFO_Parent_Paper_Merged = pd.merge(
-        EFOsPerPaper, EFO_Parent_Map, on='EFO URI', how='left')
-    EFO_Parent_Paper_Merged = EFO_Parent_Paper_Merged[[
-        'DISEASE/TRAIT', 'parentterm', 'STUDY ACCESSION', 'EFO term']].drop_duplicates()
+    Cat_Stud = Cat_Stud[['STUDY ACCESSION', 'DISEASE/TRAIT']]
+    Cat_Map = pd.read_csv(os.path.join(data_path, 'catalog',
+                                        'raw', 'Cat_Map.tsv'),
+                           sep='\t')
+    Cat_Map = Cat_Map[['Disease trait', 'Parent term']]
+    Cat_StudMap = pd.merge(Cat_Stud, Cat_Map, how='left',
+                           left_on = 'DISEASE/TRAIT',
+                           right_on = 'Disease trait')
+    Cat_StudMap.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                    'Disease_to_Parent_Mappings.tsv'), sep='\t')
+    Cat_StudMap = Cat_StudMap[['Parent term', 'STUDY ACCESSION',
+                               'DISEASE/TRAIT']].drop_duplicates()
+    Cat_StudMap = Cat_StudMap.rename(columns={"Parent term": "parentterm"})
     Cat_Anc_withBroader = pd.read_csv(os.path.join(data_path,
                                                    'catalog',
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
                                       '\t', index_col=False,
                                       parse_dates=['DATE'])
-    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION', 'EFO term',
-                                               'parentterm', 'DISEASE/TRAIT']],
-                      Cat_Anc_withBroader, how='left', on='STUDY ACCESSION')
+    merged = pd.merge(Cat_StudMap, Cat_Anc_withBroader,
+                      how='left', on='STUDY ACCESSION')
     merged["AUTHOR"] = merged["FIRST AUTHOR"]
     merged = merged[["Broader", "N", "PUBMEDID", "AUTHOR", "DISEASE/TRAIT",
-                     "STAGE", 'DATE', "STUDY ACCESSION", "parentterm",
-                     'EFO term']]
+                     "STAGE", 'DATE', "STUDY ACCESSION", "parentterm"]]
     merged = merged.rename(columns={'DISEASE/TRAIT':
                                     'DiseaseOrTrait'})
-    merged = merged.rename(columns={'EFO term':
-                                    'EFOTerm'})
     merged = merged[merged['Broader'] != 'In Part Not Recorded']
     merged["color"] = 'black'
     merged["color"] = np.where(merged["Broader"] == 'European',
@@ -1045,6 +1024,17 @@ def make_bubbleplot_df(data_path):
     merged["color"] = np.where(merged["Broader"] == 'African',
                                "#fc8d59", merged["color"])
     merged = merged.rename(columns={"STUDY ACCESSION": "ACCESSION"})
+    merged['DiseaseOrTrait'] = merged['DiseaseOrTrait'].astype(str)
+    merged["parentterm"] = merged["parentterm"].astype(str)
+    make_disease_list(merged)
+    merged = merged.groupby(["Broader", "N", "PUBMEDID", "AUTHOR", "STAGE",
+                             "DATE",  "DiseaseOrTrait", "color",
+                             "ACCESSION"])['parentterm'].\
+                             apply(', '.join).reset_index()
+    merged = merged.groupby(["Broader", "N", "PUBMEDID", "AUTHOR",
+                             "parentterm", "STAGE", "DATE", "color",
+                             "ACCESSION"])['DiseaseOrTrait'].\
+                             apply(', '.join).reset_index()
     merged.to_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'))
 
 
@@ -1230,6 +1220,12 @@ def zip_toplot(source, destination):
         diversity_logger.debug('Problem zipping the files to tbe downloaded' +
                                str(e))
 
+def make_disease_list(df):
+    uniq_dis_trait = pd.Series(df['DiseaseOrTrait'].unique())
+    uniq_dis_trait.to_csv(os.path.join(data_path, 'summary',
+                          'uniq_dis_trait.txt'),
+                          header=False, index=False)
+
 
 if __name__ == "__main__":
     logpath = os.path.abspath(os.path.join(__file__, '..',
@@ -1241,8 +1237,8 @@ if __name__ == "__main__":
                                                   'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
-        download_cat(data_path, ebi_download)
-        clean_gwas_cat(data_path)
+#        download_cat(data_path, ebi_download)
+#        clean_gwas_cat(data_path)
         make_bubbleplot_df(data_path)
         make_doughnut_df(data_path)
         tsinput = pd.read_csv(os.path.join(data_path, 'catalog',

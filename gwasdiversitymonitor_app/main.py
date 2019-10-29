@@ -390,7 +390,7 @@ def create_bubble_plot():
     '''
     bubble_source = ColumnDataSource(data=dict(DATE=[], N=[], bubble_color=[],
                                      Broader=[], Size=[], PUBMEDID=[],
-                                     Stage=[], Accession=[], EFOTerm=[]))
+                                     Stage=[], Accession=[], TRAIT=[]))
     bubble_plot = figure(title='Fig 1: Ancestry Across All Samples Over Time',
                          plot_height=width_dict['bubble_height'],
                          plot_width=width_dict['bubble_width'],
@@ -403,9 +403,9 @@ def create_bubble_plot():
     bubble_hover.tooltips = [("Size", "@N"),
                              ("PUBMEDID", "@PUBMEDID"),
                              ("First Author", "@AUTHOR"),
-                             ("Trait", "@TRAIT"),
+                             ("Disease or Trait", "@TRAIT"),
                              ("Accession", "@Accession"),
-                             ("EFO Term","@EFOTerm")]
+                             ("Parent Term", "@PARENT")]
     bubble_plot.circle(x='DATE', y='N', source=bubble_source,
                        color='bubble_color', size='size', alpha=0.45,
                        line_color='black', line_width=0.175, legend='Broader')
@@ -437,10 +437,9 @@ def select_stage_bubble(df):
 
 
 def select_parent_bubble(df):
-    ''' Update the EFO parent data for the bubble source'''
     parent_val = parent.value
     if (parent_val != "All"):
-        df = df[df['parentterm'] == parent_val]
+        df = df[df['parentterm'].contains(str(parent_val))]
     return df
 
 
@@ -452,13 +451,14 @@ def update_bubble():
     df["size"] = (df["N"]/df['N'].max())*100
     bubble_source.data = dict(DATE=df['DATE'], N=df['N'],
                               bubble_color=df["color"],
-                              Broader=df['Broader'], size=df['size'],
-                              AUTHOR=df['AUTHOR'], PUBMEDID=df['PUBMEDID'],
+                              Broader=df['Broader'],
+                              size=df['size'],
+                              AUTHOR=df['AUTHOR'],
+                              PUBMEDID=df['PUBMEDID'],
                               STAGE=df['STAGE'].str.title(),
                               PARENT=df['parentterm'],
                               TRAIT=df['DiseaseOrTrait'],
-                              Accession=df['ACCESSION'],
-                              EFOTerm=df['EFOTerm'])
+                              Accession=df['ACCESSION'])
     bubble_plot.title.text = 'Fig 1: ' + str(ancestry.value) +\
                              ' Ancestry and ' +\
                              str(parent.value) + ', ' + str(slider.value) +\
