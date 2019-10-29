@@ -173,7 +173,6 @@ def create_summarystats(data_path):
     discovery_studies_hisorlatinam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]) /
                                            len(Cat_Anc_NoNR_initial))*100), 2)
 
-
     Cat_Anc_NoNR = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
     Cat_Anc_NoNR_initial = Cat_Anc_NoNR[Cat_Anc_NoNR['STAGE'] == 'replication']
     replication_participants_european = round(((Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'] == 'European']['N'].
@@ -212,8 +211,9 @@ def create_summarystats(data_path):
     sumstats['replication_studies_afamafcam'] = replication_studies_afamafcam
     replication_studies_hisorlatinam = round(((len(Cat_Anc_NoNR_initial[Cat_Anc_NoNR_initial['Broader'].str.contains('Hispanic')]) /
                                            len(Cat_Anc_NoNR_initial))*100), 2)
-
     sumstats['discovery_studies_hisorlatinam'] = discovery_studies_hisorlatinam
+    sumstats['timeupdated'] = datetime.datetime.now().\
+                              strftime("%Y-%m-%d %H:%M:%S")
     json_path = os.path.join(data_path, 'summary', 'summary.json')
     with open(json_path, 'w') as outfile:
         json.dump(sumstats, outfile)
@@ -1035,6 +1035,7 @@ def make_bubbleplot_df(data_path):
                              "parentterm", "STAGE", "DATE", "color",
                              "ACCESSION"])['DiseaseOrTrait'].\
                              apply(', '.join).reset_index()
+    merged = merged.sort_values(by='DATE', ascending=True)
     merged.to_csv(os.path.join(data_path, 'toplot', 'bubble_df.csv'))
 
 
