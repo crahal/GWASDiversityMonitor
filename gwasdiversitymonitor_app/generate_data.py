@@ -400,15 +400,6 @@ def make_heatmatrix(merged, stage, out_path):
     for year in range(2008, 2020):
         temp_merged = merged[(merged['STAGE'] == stage) &
                              (merged['DATE'].str.contains(str(year)))]
-#        ancestry_ranking = pd.DataFrame(merged.groupby(['Broader'])['Broader'].
-#                                        count()).rename({'Broader': 'Count'},
-#                                                        axis=1).\
-#            sort_values(ascending=False, by='Count')
-#        parent_ranking = pd.DataFrame(merged.groupby(['parentterm'])['parentterm'].
-#                                      count()).rename({'parentterm': 'Count'}, axis=1).\
-#            sort_values(ascending=False, by='Count')
-#        count_columns = parent_ranking.index.tolist()
-#        count_columns.append('Year')
         temp_count_df = pd.DataFrame(index=index_list,
                                      columns=col_list)
         for index in temp_count_df.index:
@@ -435,47 +426,32 @@ def make_heatmatrix(merged, stage, out_path):
 def make_heatmap_dfs(data_path):
     ''' not currently used by the dashboard '''
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
-                                        'raw', 'Cat_Stud.tsv'), sep='\t')
-    Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
-    with open(os.path.join(data_path,
-                           'catalog',
-                           'synthetic',
-                           'Mapped_EFO.csv'), 'w') as fileout:
-        efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
-        efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
-                          'PUBMEDID', 'ASSOCIATION COUNT'])
-        for index, row in Cat_Stud.iterrows():
-            listoftraits = row['MAPPED_TRAIT_URI'].split(',')
-            for trait in listoftraits:
-                efo_out.writerow([trait.lower().strip(),
-                                  row['STUDY ACCESSION'],
-                                  str(row['PUBMEDID']),
-                                  str(row['ASSOCIATION COUNT'])])
-    EFOsPerPaper = pd.read_csv(os.path.join(data_path,
-                                            'catalog',
-                                            'synthetic',
-                                            'Mapped_EFO.csv'), sep=',')
-    EFO_Parent_Map = pd.read_csv(os.path.join(data_path,
-                                              'catalog',
-                                              'raw',
-                                              'Cat_Map.tsv'), sep='\t')
-    EFO_Parent_Map = EFO_Parent_Map.rename(columns={"Parent term":
-                                                    "parentterm"})
-    EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.strip()
-    EFO_Parent_Map = EFO_Parent_Map[[
-        'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
-    EFO_Parent_Paper_Merged = pd.merge(
-        EFOsPerPaper, EFO_Parent_Map, on='EFO URI', how='left')
+                                        'raw', 'Cat_Stud.tsv'),
+                           sep='\t')
+    Cat_Stud = Cat_Stud[['STUDY ACCESSION', 'DISEASE/TRAIT']]
+    Cat_Map = pd.read_csv(os.path.join(data_path, 'catalog',
+                                        'raw', 'Cat_Map.tsv'),
+                           sep='\t')
+    Cat_Map = Cat_Map[['Disease trait', 'Parent term']]
+    Cat_StudMap = pd.merge(Cat_Stud, Cat_Map, how='left',
+                           left_on = 'DISEASE/TRAIT',
+                           right_on = 'Disease trait')
+    Cat_StudMap.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                    'Disease_to_Parent_Mappings.tsv'), sep='\t')
+    Cat_StudMap = Cat_StudMap[['Parent term', 'STUDY ACCESSION',
+                               'DISEASE/TRAIT']].drop_duplicates()
+    Cat_StudMap = Cat_StudMap.rename(columns={"Parent term": "parentterm"})
     Cat_Anc_withBroader = pd.read_csv(os.path.join(data_path,
                                                    'catalog',
                                                    'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
-                                      '\t', index_col=False)
-    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-                                               'parentterm']],
-                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
-                                           'Broader', 'N', 'STAGE']],
+                                      '\t', index_col=False,
+                                      parse_dates=['DATE'])
+    Cat_Anc_withBroader = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
+    merged = pd.merge(Cat_StudMap, Cat_Anc_withBroader,
                       how='left', on='STUDY ACCESSION')
+    merged["parentterm"] = merged["parentterm"].astype(str)
+    merged["DATE"] = merged["DATE"].astype(str)
     make_heatmatrix(merged, 'initial', os.path.join(data_path,
                                                     'toplot'))
     make_heatmatrix(merged, 'replication', os.path.join(data_path,
@@ -827,42 +803,37 @@ def make_doughnut_df(data_path):
     Cat_Stud = pd.read_csv(os.path.join(data_path, 'catalog',
                                         'raw', 'Cat_Stud.tsv'),
                            sep='\t')
-    Cat_Stud = Cat_Stud[Cat_Stud['MAPPED_TRAIT_URI'].notnull()]
-    with open(os.path.join(data_path,  'catalog', 'synthetic',
-                           'Mapped_EFO.csv'), 'w') as fileout:
-        efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
-        efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
-                          'PUBMEDID', 'ASSOCIATION COUNT'])
-        for index, row in Cat_Stud.iterrows():
-            listoftraits = row['MAPPED_TRAIT_URI'].split(',')
-            for trait in listoftraits:
-                efo_out.writerow([trait.lower().strip(),
-                                  row['STUDY ACCESSION'],
-                                  str(row['PUBMEDID']),
-                                  str(row['ASSOCIATION COUNT'])])
-    EFOsPerPaper = pd.read_csv(os.path.join(data_path, 'catalog', 'synthetic',
-                                            'Mapped_EFO.csv'), sep=',')
-    EFO_Parent_Map = pd.read_csv(os.path.join(data_path, 'catalog', 'raw',
-                                              'Cat_Map.tsv'), sep='\t')
-    EFO_Parent_Map = EFO_Parent_Map.rename(columns={"Parent term":
-                                                    "parentterm"})
-    EFO_Parent_Map['EFO URI'] = EFO_Parent_Map['EFO URI'].str.\
-        lower().str.strip()
-    EFO_Parent_Map = EFO_Parent_Map[[
-        'EFO URI', 'parentterm', 'EFO term']].drop_duplicates()
-    EFO_Parent_Paper_Merged = pd.merge(
-        EFOsPerPaper, EFO_Parent_Map, on='EFO URI', how='left')
+    Cat_Stud = Cat_Stud[['STUDY ACCESSION', 'DISEASE/TRAIT',
+                         'ASSOCIATION COUNT']]
+    Cat_Map = pd.read_csv(os.path.join(data_path, 'catalog',
+                                        'raw', 'Cat_Map.tsv'),
+                           sep='\t')
+    Cat_Map = Cat_Map[['Disease trait', 'Parent term']]
+    Cat_StudMap = pd.merge(Cat_Stud, Cat_Map, how='left',
+                           left_on = 'DISEASE/TRAIT',
+                           right_on = 'Disease trait')
+    Cat_StudMap.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                    'Disease_to_Parent_Mappings.tsv'), sep='\t')
+    Cat_StudMap = Cat_StudMap[['Parent term', 'STUDY ACCESSION',
+                               'DISEASE/TRAIT', 'ASSOCIATION COUNT']].\
+                               drop_duplicates()
+    Cat_StudMap = Cat_StudMap.rename(columns={"Parent term": "parentterm"})
     Cat_Anc_withBroader = pd.read_csv(os.path.join(data_path,
-                                                   'catalog', 'synthetic',
+                                                   'catalog',
+                                                   'synthetic',
                                                    'Cat_Anc_withBroader.tsv'),
-                                      '\t', index_col=False)
+                                      '\t', index_col=False,
+                                      parse_dates=['DATE'])
     Cat_Anc_withBroader = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
-    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-                                               'parentterm',
-                                               'ASSOCIATION COUNT']],
-                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
-                                           'Broader', 'N', 'STAGE']],
+    merged = pd.merge(Cat_StudMap, Cat_Anc_withBroader,
                       how='left', on='STUDY ACCESSION')
+    merged["DATE"] = merged["DATE"].astype(str)
+#    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
+#                                               'parentterm',
+#                                               'ASSOCIATION COUNT']],
+#                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
+#                                           'Broader', 'N', 'STAGE']],
+#                      how='left', on='STUDY ACCESSION')
     doughnut_df = pd.DataFrame(index=[], columns=['Broader',
                                                   'parentterm',
                                                   'Year',
