@@ -450,6 +450,12 @@ def make_heatmap_dfs(data_path):
     Cat_Anc_withBroader = Cat_Anc_withBroader[Cat_Anc_withBroader['Broader'] != 'In Part Not Recorded']
     merged = pd.merge(Cat_StudMap, Cat_Anc_withBroader,
                       how='left', on='STUDY ACCESSION')
+    #### TODO -- QUANTIFY THIS FOR THE SUMSTATS.HTML INTO THE JSON
+    merged.to_csv(os.path.join(data_path,
+                               'catalog',
+                               'synthetic',
+                               'Cat_Anc_withBroader_withParents.tsv'), '\t')
+    merged = merged[merged["parentterm"].notnull()]
     merged["parentterm"] = merged["parentterm"].astype(str)
     merged["DATE"] = merged["DATE"].astype(str)
     make_heatmatrix(merged, 'initial', os.path.join(data_path,

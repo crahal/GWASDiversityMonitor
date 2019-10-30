@@ -1,23 +1,30 @@
-2019-10-30 16:35:10,454 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "gwasdiversitymonitor_app/generate_data.py", line 1228, in <module>
-    update_summarystats(sumstats, index_filepath)
-  File "gwasdiversitymonitor_app/generate_data.py", line 302, in update_summarystats
-    with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
+2019-10-30 17:41:54,854 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1230, in <module>
+    make_heatmap_dfs(data_path)
+  File "generate_data.py", line 457, in make_heatmap_dfs
+    '\t', index_col=False)
+TypeError: to_csv() got an unexpected keyword argument 'index_col'
 
-2019-10-30 16:38:00,746 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "gwasdiversitymonitor_app/generate_data.py", line 1228, in <module>
+2019-10-30 17:44:21,465 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1233, in <module>
     update_summarystats(sumstats, index_filepath)
-  File "gwasdiversitymonitor_app/generate_data.py", line 302, in update_summarystats
+  File "generate_data.py", line 302, in update_summarystats
     with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/templates/sumstats.html'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
 
-2019-10-30 16:40:44,753 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "gwasdiversitymonitor_app/generate_data.py", line 1228, in <module>
+2019-10-30 17:49:40,978 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1232, in <module>
     update_summarystats(sumstats, index_filepath)
-  File "gwasdiversitymonitor_app/generate_data.py", line 302, in update_summarystats
+  File "generate_data.py", line 302, in update_summarystats
     with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor/templates/sumstats.html'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
 
-2019-10-30 16:43:40,006 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-10-30 16:43:40,063 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-10-30 18:07:13,525 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
+  File "generate_data.py", line 1234, in <module>
+    update_summarystats(sumstats, index_filepath)
+  File "generate_data.py", line 302, in update_summarystats
+    with open(outpath, "w") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
+
+2019-10-30 18:31:20,644 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-10-30 18:31:20,692 - diversity_logger - INFO - Successfully zipped the files to be downloaded
