@@ -266,7 +266,7 @@ def update_summarystats(sumstats, summaryfile):
     sum_line_14 = 'Most frequently studied (Non-European) disease or trait: ' +\
                   str(sumstats['noneuro_trait']) + '.'
 
-    outpath = os.path.abspath(os.path.join('gwasdiversitymonitor', 'templates', 'sumstats.html'))
+    outpath = os.path.abspath(os.path.join('gwasdiversitymonitor_app', 'templates', 'sumstats.html'))
     doc, tag, text, line = Doc().ttl()
     doc.asis('<!DOCTYPE html>')
     with tag('head'):
