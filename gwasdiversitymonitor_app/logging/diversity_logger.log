@@ -40,3 +40,5 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasd
 2019-11-03 06:02:06,160 - diversity_logger - INFO - Successfully zipped the files to be downloaded
 2019-11-04 06:02:11,395 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-11-04 06:02:11,500 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-11-05 06:02:05,622 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-11-05 06:02:05,721 - diversity_logger - INFO - Successfully zipped the files to be downloaded
