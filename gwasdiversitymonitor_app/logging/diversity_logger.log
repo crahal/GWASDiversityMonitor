@@ -26,3 +26,10 @@
 2019-11-06 01:12:34,220 - diversity_logger - DEBUG - Wuhoh! There are some empty disease terms!
 2019-11-06 01:12:42,353 - diversity_logger - INFO - generate_data.py ran successfully!
 2019-11-06 01:12:42,410 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-11-06 06:00:03,197 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-11-06 06:00:05,205 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-11-06 06:00:14,775 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-11-06 06:00:16,122 - diversity_logger - INFO - No missing Broader terms! Nice!
+2019-11-06 06:02:17,263 - diversity_logger - DEBUG - Wuhoh! There are some empty disease terms!
+2019-11-06 06:02:24,617 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-11-06 06:02:24,675 - diversity_logger - INFO - Successfully zipped the files to be downloaded
