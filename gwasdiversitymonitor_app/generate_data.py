@@ -890,11 +890,12 @@ def make_doughnut_df(data_path):
                                                                       'initial') &
                                                                   (merged['DATE'].str.contains(str(year)))]['ASSOCIATION COUNT'].sum())*100
             doughnut_df.at[counter, 'ReplicationCount'] = (len(merged[
-                                                             (merged['Broader'] ==
-                                                              ancestry)]) /
-                                                         len(merged[
-                                                              merged['STAGE'] ==
-                                                             'replication']))*100
+                                                              (merged['STAGE'] =='initial') &
+                                                              (merged['DATE'].str.contains(str(year))) &
+                                                              (merged['Broader'] == ancestry)]) /
+                                                           len(merged[(merged['STAGE'] ==
+                                                                       'replication') &
+                                                                      (merged['DATE'].str.contains(str(year)))]))*100
             doughnut_df.at[counter, 'InitialCount'] = (len(merged[
                                                          (merged['STAGE'] ==
                                                           'initial') &
