@@ -1,44 +1,14 @@
-2019-10-30 17:41:54,854 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "generate_data.py", line 1230, in <module>
-    make_heatmap_dfs(data_path)
-  File "generate_data.py", line 457, in make_heatmap_dfs
-    '\t', index_col=False)
-TypeError: to_csv() got an unexpected keyword argument 'index_col'
-
-2019-10-30 17:44:21,465 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "generate_data.py", line 1233, in <module>
-    update_summarystats(sumstats, index_filepath)
-  File "generate_data.py", line 302, in update_summarystats
-    with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
-
-2019-10-30 17:49:40,978 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "generate_data.py", line 1232, in <module>
-    update_summarystats(sumstats, index_filepath)
-  File "generate_data.py", line 302, in update_summarystats
-    with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
-
-2019-10-30 18:07:13,525 - diversity_logger - DEBUG - generate_data.py failed, uncaught error: Traceback (most recent call last):
-  File "generate_data.py", line 1234, in <module>
-    update_summarystats(sumstats, index_filepath)
-  File "generate_data.py", line 302, in update_summarystats
-    with open(outpath, "w") as file:
-FileNotFoundError: [Errno 2] No such file or directory: '/home/tsl/Dropbox/gwasdiversitymonitor/gwasdiversitymonitor_app/gwasdiversitymonitor_app/templates/sumstats.html'
-
-2019-10-30 18:31:20,644 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-10-30 18:31:20,692 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-10-30 18:35:37,654 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-10-30 18:35:37,704 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-10-31 06:02:01,807 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-10-31 06:02:01,906 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-11-01 06:02:26,711 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-11-01 06:02:26,821 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-11-02 06:02:02,493 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-11-02 06:02:02,597 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-11-03 06:02:06,035 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-11-03 06:02:06,160 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-11-04 06:02:11,395 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-11-04 06:02:11,500 - diversity_logger - INFO - Successfully zipped the files to be downloaded
-2019-11-05 06:02:05,622 - diversity_logger - INFO - generate_data.py ran successfully!
-2019-11-05 06:02:05,721 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-11-05 23:58:46,990 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-11-05 23:58:50,159 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-11-05 23:59:09,076 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-11-05 23:59:10,572 - diversity_logger - INFO - No missing Broader terms! Nice!
+2019-11-06 00:01:29,922 - diversity_logger - DEBUG - Wuhoh! There are some empty disease terms!
+2019-11-06 00:01:39,620 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-11-06 00:01:39,697 - diversity_logger - INFO - Successfully zipped the files to be downloaded
+2019-11-06 00:05:57,741 - diversity_logger - INFO - Successfully downloaded gwas_catalog_v1.0.2-studies_r2019-10-14.tsv
+2019-11-06 00:06:00,394 - diversity_logger - INFO - Successfully downloaded gwas_catalog-ancestry_r2019-10-14.tsv
+2019-11-06 00:06:20,894 - diversity_logger - INFO - Successfully downloaded efo-trait-mappings
+2019-11-06 00:06:22,433 - diversity_logger - INFO - No missing Broader terms! Nice!
+2019-11-06 00:08:23,522 - diversity_logger - DEBUG - Wuhoh! There are some empty disease terms!
+2019-11-06 00:08:31,592 - diversity_logger - INFO - generate_data.py ran successfully!
+2019-11-06 00:08:31,651 - diversity_logger - INFO - Successfully zipped the files to be downloaded

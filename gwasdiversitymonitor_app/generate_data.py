@@ -214,6 +214,13 @@ def create_summarystats(data_path):
     sumstats['discovery_studies_hisorlatinam'] = discovery_studies_hisorlatinam
     sumstats['timeupdated'] = datetime.datetime.now().\
                               strftime("%Y-%m-%d %H:%M:%S")
+    if os.path.exists(os.path.join(data_path, 'unmapped',
+                                   'unmapped_diseases.txt')):
+        unmapped_dis = pd.read_csv(os.path.join(data_path, 'unmapped',
+                                       'unmapped_diseases.txt'))
+        sumstats['unmapped_diseases'] = len(unmapped_dis)
+    else:
+        sumstats['unmapped_diseases'] = 0
     json_path = os.path.join(data_path, 'summary', 'summary.json')
     with open(json_path, 'w') as outfile:
         json.dump(sumstats, outfile)
@@ -455,6 +462,14 @@ def make_heatmap_dfs(data_path):
                                'catalog',
                                'synthetic',
                                'Cat_Anc_withBroader_withParents.tsv'), '\t')
+    if len(merged[merged['parentterm'].isnull()]) > 0:
+        diversity_logger.debug('Wuhoh! There are some empty disease terms!')
+        pd.Series(merged[merged['parentterm'].\
+                         isnull()]['DISEASE/TRAIT'].unique()).\
+        to_csv(os.path.join(data_path, 'unmapped', 'unmapped_diseases.txt'),
+               index=False)
+    else:
+        diversity_logger.info('No missing disease terms! Nice!')
     merged = merged[merged["parentterm"].notnull()]
     merged["parentterm"] = merged["parentterm"].astype(str)
     merged["DATE"] = merged["DATE"].astype(str)
@@ -796,9 +811,9 @@ def make_freetext_dfs(data_path):
         merged["Year"] = year
         big_dataframe = pd.concat([big_dataframe, merged], ignore_index=False)
     big_dataframe = big_dataframe.round(2).reset_index()
-    big_dataframe['Cleaned_Ancestry'] = big_dataframe['Cleaned_Ancestry'].str.\
-                                        replace('African American',
-                                                'African Am.')
+#    big_dataframe['Cleaned_Ancestry'] = big_dataframe['Cleaned_Ancestry'].str.\
+#                                        replace('African American',
+#                                                'African Am.')
     big_dataframe.to_csv(os.path.join(data_path,
                                       'toplot',
                                       'freetext_merged.csv'))
@@ -834,12 +849,6 @@ def make_doughnut_df(data_path):
     merged = pd.merge(Cat_StudMap, Cat_Anc_withBroader,
                       how='left', on='STUDY ACCESSION')
     merged["DATE"] = merged["DATE"].astype(str)
-#    merged = pd.merge(EFO_Parent_Paper_Merged[['STUDY ACCESSION',
-#                                               'parentterm',
-#                                               'ASSOCIATION COUNT']],
-#                      Cat_Anc_withBroader[['STUDY ACCESSION', 'DATE',
-#                                           'Broader', 'N', 'STAGE']],
-#                      how='left', on='STUDY ACCESSION')
     doughnut_df = pd.DataFrame(index=[], columns=['Broader',
                                                   'parentterm',
                                                   'Year',
@@ -950,8 +959,6 @@ def make_doughnut_df(data_path):
                     doughnut_df.at[counter, 'InitialN'] = np.nan
                 counter = counter + 1
     doughnut_df['Broader'] = doughnut_df['Broader'].str.\
-        replace('African Am./Caribbean', 'Af. Am./Carib.')
-    doughnut_df['Broader'] = doughnut_df['Broader'].str.\
         replace('Hispanic/Latin American', 'Hispanic/L.A.')
     doughnut_df.to_csv(os.path.join(data_path, 'toplot', 'doughnut_df.csv'))
 
@@ -992,7 +999,7 @@ def make_bubbleplot_df(data_path):
                                "#d53e4f", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'Asian',
                                "#3288bd", merged["color"])
-    merged["color"] = np.where(merged["Broader"] == 'African Am./Caribbean',
+    merged["color"] = np.where(merged["Broader"] == 'African American or Afro-Caribbean',
                                "#fee08b", merged["color"])
     merged["color"] = np.where(merged["Broader"] == 'Hispanic/Latin American',
                                "#807dba", merged["color"])
@@ -1046,14 +1053,19 @@ def clean_gwas_cat(data_path):
     Cat_Anc = Cat_Anc[Cat_Anc['N'].notnull()]
     Cat_Anc['N'] = Cat_Anc['N'].astype(int)
     Cat_Anc = Cat_Anc.sort_values(by='Dates')
-    Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
-        'African American or Afro-Caribbean', 'African Am./Caribbean')
-    Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
-        'Hispanic or Latin American', 'Hispanic/Latin American')
+#    Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
+#        'African American/Afro-Caribbean', 'African Am./Caribbean')
+#    Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
+#        'Hispanic or Latin American', 'Hispanic/Latin American')
     if len(Cat_Anc[Cat_Anc['Broader'].isnull()]) > 0:
         diversity_logger.debug('Wuhoh! Need to update dictionary terms:\n' +
               '\n'.join(Cat_Anc[Cat_Anc['Broader'].
                         isnull()]['BROAD ANCESTRAL'].unique()))
+        Cat_Anc[Cat_Anc['Broader'].\
+                isnull()]['BROAD ANCESTRAL'].\
+        to_csv(os.path.join(data_path, 'unmapped', 'unmapped_broader.txt'))
+    else:
+        diversity_logger.info('No missing Broader terms! Nice!')
     Cat_Anc = Cat_Anc[Cat_Anc['Broader'].notnull()]
     Cat_Anc = Cat_Anc[Cat_Anc['N'].notnull()]
     Cat_Anc.to_csv(os.path.join(data_path, 'catalog', 'synthetic',
@@ -1204,6 +1216,26 @@ def make_disease_list(df):
                           'uniq_dis_trait.txt'),
                           header=False, index=False)
 
+def make_parent_list(data_path):
+    df = pd.read_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                  'Cat_Anc_withBroader_withParents.tsv'),
+                    sep='\t')
+    uniq_parent = pd.Series(df[df['parentterm'].\
+                               notnull()]['parentterm'].unique())
+    uniq_parent.to_csv(os.path.join(data_path, 'summary',
+                                    'uniq_parent.txt'),
+                       header=False, index=False)
+
+
+def make_broader_list(data_path):
+    df = pd.read_csv(os.path.join(data_path, 'catalog', 'synthetic',
+                                  'Cat_Anc_withBroader_withParents.tsv'),
+                     sep='\t')
+    uniq_broader = pd.Series(df[df['Broader'].notnull()]['Broader'].unique())
+    uniq_broader.to_csv(os.path.join(data_path, 'summary',
+                                    'uniq_broader.txt'),
+                       header=False, index=False)
+
 
 if __name__ == "__main__":
     logpath = os.path.abspath(os.path.join(__file__, '..',
@@ -1215,8 +1247,8 @@ if __name__ == "__main__":
                                                   'templates', 'index.html'))
     ebi_download = 'https://www.ebi.ac.uk/gwas/api/search/downloads/'
     try:
-#        download_cat(data_path, ebi_download)
-#        clean_gwas_cat(data_path)
+        download_cat(data_path, ebi_download)
+        clean_gwas_cat(data_path)
         make_bubbleplot_df(data_path)
         make_doughnut_df(data_path)
         tsinput = pd.read_csv(os.path.join(data_path, 'catalog',
@@ -1230,6 +1262,8 @@ if __name__ == "__main__":
         make_freetext_dfs(data_path)
         make_heatmap_dfs(data_path)
         update_header(index_filepath)
+        make_parent_list(data_path)
+        make_broader_list(data_path)
         sumstats = create_summarystats(data_path)
         update_summarystats(sumstats, index_filepath)
         update_downloaddata(sumstats, index_filepath)
