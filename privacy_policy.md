@@ -7,9 +7,6 @@ Our website address is: http://gwasdiversitymonitor.com/. We are based at the Le
 ### Visitors
 We do not currently collect any data from visitors to our site.
 
-### Cookies
-Default Heroku cookies may be set in your browser but they are not used by us to store or collect any data. Note that as with all cookies third-parties may be able to read them and their contents but there should not be any personal data in cookies from our site.
-
 ### Embedded content from other websites
 Our site currently has no embedded content so other sites should not be able to track your visit here.
 
