@@ -10,8 +10,8 @@ We do not currently collect any data from visitors to our site.
 ### Embedded content from other websites
 Our site currently has no embedded content so other sites should not be able to track your visit here.
 
-### Analytics
-We use Heroku as a PaaS and our dyno includes traffic analysis.
+### Cookies and Analytics
+We use Google Analytics for anonymised site traffic analysis. These are the only cookies which we use.
 
 ### GWAS Catalog Data
 We collect aggregate, anonymous counts of genotyped participants from the EMBL-EBI GWAS Catalog. We receive only an counts of users and we do not process or store any individual user genetic data. This data is then processed and combined with other data and used as inputs in our prediction models to generate the gender gap estimates presented. All visualisations and estimates generated as a part of the project is shared freely for academic, research and informational purposes.
@@ -29,4 +29,4 @@ If we held any of your personal data, you can request to receive an exported fil
 We do not transfer personal data to anyone else.
 
 ### Our contact information
-Please contact us directly if you have any questions, concerns or data enquires.
+Please contact us directly on contactus@gwasdiversitymonitor.com if you have any questions, concerns or data enquires.
