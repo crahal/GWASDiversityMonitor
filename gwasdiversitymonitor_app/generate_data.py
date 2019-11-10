@@ -866,13 +866,14 @@ def make_doughnut_df(data_path):
             doughnut_df.at[counter, 'Broader'] = ancestry
             doughnut_df.at[counter, 'parentterm'] = 'All'
             doughnut_df.at[counter, 'Year'] = year
-            doughnut_df.at[counter,
-                         'ReplicationN'] = (merged[(
-                                            merged['STAGE'] == 'replication') &
-                                            (merged['Broader'] == ancestry)]['N'].
-                                            sum() /
-                                            merged[merged['STAGE'] ==
-                                            'replication']['N'].sum())*100
+            doughnut_df.at[counter, 'ReplicationN'] = (merged[(merged['STAGE'] ==
+                                                         'replication') &
+                                                        (merged['Broader'] ==
+                                                         ancestry) &
+                                                        (merged['DATE'].str.contains(str(year)))]['N'].sum() /
+                                                 merged[(merged['STAGE'] ==
+                                                        'replication') &
+                                                        (merged['DATE'].str.contains(str(year)))]['N'].sum())*100
             doughnut_df.at[counter, 'InitialN'] = (merged[(merged['STAGE'] ==
                                                          'initial') &
                                                         (merged['Broader'] ==
