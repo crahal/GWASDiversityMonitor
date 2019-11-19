@@ -4,12 +4,12 @@
 
 ### Introduction
 
-This is a repository to accompany the GWAS Diversity Monitor, currently maintained as part of the [Leverhulme Centre for Demographic Science](http://www.demographicscience.ox.ac.uk/). The dashboard can be found at:
+This is a repository which holds an early prototype of the GWAS Diversity Monitor, currently maintained as part of the [Leverhulme Centre for Demographic Science](http://www.demographicscience.ox.ac.uk/). The re-released dashboard can be found at:
 
 <div align="center"> <a href="http://www.gwasdiversitymonitor.com">gwasdiversitymonitor.com</a></div>
 <br/><br/>
 
-The interactive plots are written in [Bokeh](https://bokeh.pydata.org/en/latest) and hosted on Heroku (currently free-tier, while prototyping). Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we run ```generate_date.py``` on a daily cron job and push to the master branch).
+The interactive plots in this version are written in [Bokeh](https://bokeh.pydata.org/en/latest) and were prototyped on Heroku. Grateful attributions regarding data are made to the [EMBL-EBI GWAS Catalog](https://www.ebi.ac.uk/gwas/). In summary, the dashboard visualizes a systematic interactive review of all GWAS published to date. It borrows a couple of functions from our [Scientometric Review of all GWAS](https://www.nature.com/articles/s42003-018-0261-x). This repo can be cloned and ran on-the-fly to generate a server on localhost as required. The dashboard and associated summary statistics check daily for updates from the Catalog and update with new releases (i.e. we used to run ```generate_date.py``` on a daily cron job and push to the master branch for Heroku to catch).
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ This server is operating system independent (through the ``os`` module) and shou
 
 ### Versioning
 
-This dashboard is currently at Version 0.8.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in this repo to alert us of any necessary entries, or any suggestions which you may have in general.
+This dashboard prototype was halted at Version 0.8.0, and wholly represents a prototype. Please note: although the library logs data updates, it could be that additional dictionary based classifications are required with regards to the ```/data/support/dict_replacer_broad.tsv``` file. Please raise an issue in the new page for the project.
 
 ### License
 
@@ -30,14 +30,3 @@ This work is free. You can redistribute it and/or modify it under the terms of t
 ### Acknowledgements
 
 We are grateful to comments on the source code and infrastructure from [Ian Knowles](https://github.com/ianknowles), [Yi Liu](https://github.com/YiLiu6240), [Molly Przeworski](https://przeworskilab.com/), [Ben Domingue](https://github.com/ben-domingue), [Sam Trejo](https://cepa.stanford.edu/people/sam-trejo) and the [Sociogenome](http://www.sociogenome.org) group more generally.
-
-### To Do
-
-1. Javascript callbacks to better generate the summary_statistics.
-2. Better sizing for mobiles.
-3. Better bootstrapped block colours.
-4. Optimise for efficiency (dtypes, input dataframes, etc).
-5. Unit testing.
-6. Refactoring of both generate_data.py and main.py.
-
-Full MoSCoW analysis available on request.
